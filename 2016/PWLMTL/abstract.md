@@ -18,7 +18,7 @@ Overall, our implementation of Roaring can be several times faster (up to two or
 traditional RLE-based alternatives (WAH, Concise, EWAH) while compressing better. We review the design choices and optimizations 
 that make these good results possible.
 
-One interesting feature of this work is that it has been out in the open from the start.  Roaring bitmaps is the result of a far ranging collaborative effort. We believed that it played a role in its success.
+One interesting feature of this work is that it has been out in the open from the start.  Roaring bitmaps is the result of a far ranging collaborative effort. We believe that it played a role in its success.
  
  If time allows, ongoing and future development efforts will be discussed.
  
