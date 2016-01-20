@@ -23,12 +23,12 @@ One interesting feature of this work is that it has been out in the open from th
  If time allows, ongoing and future development efforts will be discussed.
  
 About the speaker
- ---------------
+---------------
  
  Daniel Lemire is a computer science professor at the Université du Québec. He has also been a research officer at the National Research Council of Canada and an entrepreneur. He has written over 45 peer-reviewed publications, including more than 25 journal articles. He has held competitive research grants for the last 15 years. He has been an expert on several committees with funding agencies (NSERC and FQRNT). He has served as program committee member on leading computer science conferences (e.g., ACM CIKM, ACM WSDM, ACM SIGIR, ACM RecSys). His research interests include databases, information retrieval and high-performance programming. He blogs regularly on computer science at http://lemire.me/blog/.
  
 References
- ---------------
+---------------
  
  Samy Chambi, Daniel Lemire, Owen Kaser, Robert Godin, Better bitmap performance with Roaring bitmaps, Software: Practice and Experience (to appear)
  http://onlinelibrary.wiley.com/doi/10.1002/spe.2325/abstract (available from the publisher under open access)
@@ -38,7 +38,7 @@ References
 
 
  Source code:
- ---------------
+---------------
 
 http://roaringbitmap.org
 
