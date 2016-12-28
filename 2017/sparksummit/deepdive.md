@@ -6,6 +6,7 @@ Joint work with lots of super smart people
 
 ---
 
+reason in cpu cycles (popcnt)
 
 fast hashing (zobrist, etc.)
 
