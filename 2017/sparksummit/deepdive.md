@@ -6,6 +6,8 @@ Joint work with lots of super smart people
 
 ---
 
+power of simd  http://lemire.me/blog/2016/12/30/can-your-c-compi…a-scalar-product/ 
+
 reason in cpu cycles (popcnt)
 
 fast hashing (zobrist, etc.)
