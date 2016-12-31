@@ -5,6 +5,8 @@ Presenter: Daniel Lemire https://lemire.me
 Joint work with lots of super smart people
 
 ---
+Amdahl's law 
+
 short values (16-bit, 32-bit) are better than wider ones (64-bit) once you vectorize
 
 
