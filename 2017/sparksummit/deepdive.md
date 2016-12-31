@@ -5,6 +5,8 @@ Presenter: Daniel Lemire https://lemire.me
 Joint work with lots of super smart people
 
 ---
+short values (16-bit, 32-bit) are better than wider ones (64-bit) once you vectorize
+
 
 power of simd  http://lemire.me/blog/2016/12/30/can-your-c-compi…a-scalar-product/ 
 
