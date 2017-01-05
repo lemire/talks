@@ -4,13 +4,16 @@ Presenter: Daniel Lemire https://lemire.me
 
 Joint work with lots of super smart people
 
+NSERC grant #26143
+
+
 ---
 Amdahl's law 
 
 short values (16-bit, 32-bit) are better than wider ones (64-bit) once you vectorize
 
 
-power of simd  http://lemire.me/blog/2016/12/30/can-your-c-compi…a-scalar-product/ 
+power of simd  http://lemire.me/blog/2016/12/30/can-your-c-compi��地-scalar-product/ 
 
 reason in cpu cycles (popcnt)
 
@@ -54,3 +57,12 @@ your processor is superscalar
 
 hard to reason about performance from code
 There are no comments on this page.
+
+
+---
+
+## What helps us...
+
+- All modern processors have fast population-count functions (``popcnt``) to count the number of 1s in a word. 
+- Cheap to keep track of the number of values stored in a bitset!
+- Available from Java as an intrinsic!
