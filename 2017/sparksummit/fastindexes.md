@@ -17,6 +17,11 @@ Used by
 - Lucene, Solr, Elastic, Whoosh, Druid
 - Apache Kylin
 
+Further reading:
+- <a href="https://techblog.king.com/player-segmentation-using-bitmap-data-structures/">Player segmentation using bitmap data structures</a> (at <a href="https://en.wikipedia.org/wiki/King_(company)">King Digital Entertainment</a>, the company behind <a href="https://en.wikipedia.org/wiki/Candy_Crush_Saga">Candy Crush</a>)
+- <a href="https://www.elastic.co/blog/frame-of-reference-and-roaring-bitmaps">Frame of Reference and Roaring Bitmaps</a> (at Elastic, the company behind <a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch</a>)
+
+
 ---
 
 ## Set data structures
