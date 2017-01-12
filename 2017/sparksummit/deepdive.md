@@ -1,11 +1,17 @@
+<!-- page_number: true -->
+<style>
+.slide h2 {
+color:#008dc8;}
+}
+</style>
+
 ## ENGINEERING FAST INDEXES (DEEP DIVE)
 
-Presenter: Daniel Lemire https://lemire.me 
+
+Daniel Lemire 
+https://lemire.me 
 
 Joint work with lots of super smart people
-
-NSERC grant #26143
-
 
 ---
 Amdahl's law 
@@ -13,7 +19,7 @@ Amdahl's law
 short values (16-bit, 32-bit) are better than wider ones (64-bit) once you vectorize
 
 
-power of simd  http://lemire.me/blog/2016/12/30/can-your-c-compi��地-scalar-product/ 
+power of simd  http://lemire.me/blog/2016/12/30/can-your-c-compiï¿½ï¿½åœ°-scalar-product/ 
 
 reason in cpu cycles (popcnt)
 

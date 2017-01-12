@@ -1,13 +1,52 @@
 <!--open with Marp-->
+
+<style>
+.slide h2 {
+color:#008dc8;
+}
+.slide   {
+border-bottom-color:#008dc8;
+border-bottom-style:solid;
+border-bottom-width:10px;
+}
+.slide {
+    background-repeat: no-repeat;
+    background-position:  1% 99%;
+background-image: url("sparksummit2017small.png");
+}
+
+</style>
+
+<!-- *template: invert -->
+<style>
+ *[data-template~="invert"] {
+color:white !important;
+background-color:#008dc8 !important;
+}
+ *[data-template~="invert"] * {
+color:white !important;
+background-color:#008dc8 !important;
+}
+</style>
+
+
 ## ENGINEERING FAST INDEXES
 
-Presenter: Daniel Lemire https://lemire.me 
+
+<img src="sparksummit2017large.png" style="float:right; width:10%"/>
+
+Daniel Lemire 
+https://lemire.me 
 
 Joint work with lots of super smart people
 
-NSERC grant #26143
+<!--NSERC grant #26143-->
+
 
 ---
+
+<!-- page_number: true -->
+
 ## Our recent work: Roaring Bitmaps
 
 https://github.com/RoaringBitmap/
@@ -319,7 +358,11 @@ Union: Always generate a bitset (fast).
 
 Intersection: Always an array. Use galloping if the sizes differs.
 
+ADD CODE
+
 Union: If sum of cardinalities is large, go for a bitset. Revert to an array if we got it wrong.
+
+ADD CODE
 
 ---
 
@@ -327,11 +370,29 @@ Union: If sum of cardinalities is large, go for a bitset. Revert to an array if 
 
 Intersection: Always an array. Very fast.
 
+```
+answer = new array
+for value in array {
+  if value in bitset {// branch but no data dependency
+    append value to answer
+  }
+}
+```
+
 Union: Always a bitset. Very fast.
 
 
+```
+answer = clone the bitset
+for value in array { // branchless
+  set bit in answer at index value
+}
+```
 
 ---
+
+<!-- *template: invert -->
+
 
 ## Go try it out!
 
