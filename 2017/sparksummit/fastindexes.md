@@ -35,7 +35,7 @@ background-color:#008dc8 !important;
 
 <img src="sparksummit2017large.png" style="float:right; width:10%"/>
 
-Daniel Lemire 
+Daniel Lemire :maple_leaf:
 https://lemire.me 
 
 Joint work with lots of super smart people
@@ -49,11 +49,13 @@ Joint work with lots of super smart people
 
 ## Our recent work: Roaring Bitmaps
 
-https://github.com/RoaringBitmap/
+http://roaringbitmap.org/
 
 Used by 
 - Apache Spark
-- Lucene, Solr, Elastic, Whoosh, Druid
+- Apache Lucene, 
+- Whoosh, 
+- Metamarket's Druid
 - Apache Kylin
 
 Further reading:
@@ -68,12 +70,20 @@ Further reading:
 
 We focus on sets of **integers**: $S= \{ 1,2,3, 1000 \}$. Ubiquitous in database or search engines.
 
+- tests: $x \in S$?
 - intersections: $S_2 \cap S_1$
 - unions: $S_2 \cup S_1$
 - differences: $S_2 \setminus S_1$
-- tests: $x \in S$?
-- iterate in sorted order
+- Jaccard Index (Tanimoto similarity) $\vert S_1 \cap S_1 \vert  /\vert  S_1 \cup S_2\vert$
 
+---
+
+## "Ordered" Set 
+
+- iterate in sorted order, in reverse order, over ranges
+- Rank: how many elements of the set are smaller than $k$?
+- Select: find the k<sup>th</sup> smallest value
+- Min/max: find the maximal and minimal value
 
 
 ---
@@ -84,7 +94,7 @@ We focus on sets of **integers**: $S= \{ 1,2,3, 1000 \}$. Ubiquitous in database
 - sorted arrays (``std::vector<uint32_t>``)
 - $\ldots$
 - bitsets (``java.util.BitSet``)
-- **compressed bitsets**
+- :heart: :heart: :heart: **compressed bitsets** :heart: :heart: :heart:
 
 
 ---
@@ -107,6 +117,19 @@ contains(x) {
   return array[x / 64] & (1 << (x % 64))
 }
 ```
+
+---
+
+## How fast can you set bits in a bitset?
+
+Very fast! Roughly three instructions (on x64)...
+
+```
+index = x / 64         -> a single shift
+mask = 1 << ( x % 64)  -> a single shift
+array[ index ] |- mask -> a logical OR
+```
+(Or can use BMI's ``bts``.)
 
 ---
 

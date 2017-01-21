@@ -1,14 +1,39 @@
-<!-- page_number: true -->
+<!--open with Marp-->
+
 <style>
 .slide h2 {
-color:#008dc8;}
+color:#008dc8;
+}
+.slide   {
+border-bottom-color:#008dc8;
+border-bottom-style:solid;
+border-bottom-width:10px;
+}
+.slide {
+    background-repeat: no-repeat;
+    background-position:  1% 99%;
+background-image: url("sparksummit2017small.png");
+}
+
+</style>
+
+<!-- *template: invert -->
+<style>
+ *[data-template~="invert"] {
+color:white !important;
+background-color:#008dc8 !important;
+}
+ *[data-template~="invert"] * {
+color:white !important;
+background-color:#008dc8 !important;
 }
 </style>
 
 ## ENGINEERING FAST INDEXES (DEEP DIVE)
 
+<img src="sparksummit2017large.png" style="float:right; width:10%"/>
 
-Daniel Lemire 
+Daniel Lemire :maple_leaf:
 https://lemire.me 
 
 Joint work with lots of super smart people
