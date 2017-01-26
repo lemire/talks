@@ -39,6 +39,24 @@ https://lemire.me
 Joint work with lots of super smart people
 
 ---
+
+Parallelism is not just multicore.
+
+Does vectorization matters?
+
+AVX2 is 256 bits (4x 64 bits)
+
+  for(size_t i = 0; i < len; i++) {
+    a[i] |= b[i];
+  }
+  
+  using scalar : 1.5 cycles per byte 
+  with AVX2 : 0.43 cycles per byte (3.5 x better)
+  
+  
+  With AVX-512 (knights landing), the performance gap exceeds 5 x
+
+
 Amdahl's law 
 
 short values (16-bit, 32-bit) are better than wider ones (64-bit) once you vectorize

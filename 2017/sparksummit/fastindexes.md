@@ -52,14 +52,16 @@ Joint work with lots of super smart people
 http://roaringbitmap.org/
 
 Used by 
-- Apache Spark
+- Apache Spark,
+- Netflix Atlas,
+- LinkedIn Pinot,
 - Apache Lucene, 
 - Whoosh, 
 - Metamarket's Druid
-- Apache Kylin
+- eBay's Apache Kylin
 
 Further reading:
-- <a href="https://techblog.king.com/player-segmentation-using-bitmap-data-structures/">Player segmentation using bitmap data structures</a> (at <a href="https://en.wikipedia.org/wiki/King_(company)">King Digital Entertainment</a>, the company behind <a href="https://en.wikipedia.org/wiki/Candy_Crush_Saga">Candy Crush</a>)
+<!--- <a href="https://techblog.king.com/player-segmentation-using-bitmap-data-structures/">Player segmentation using bitmap data structures</a> (at <a href="https://en.wikipedia.org/wiki/King_(company)">King Digital Entertainment</a>, the company behind <a href="https://en.wikipedia.org/wiki/Candy_Crush_Saga">Candy Crush</a>)-->
 - <a href="https://www.elastic.co/blog/frame-of-reference-and-roaring-bitmaps">Frame of Reference and Roaring Bitmaps</a> (at Elastic, the company behind <a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch</a>)
 
 
@@ -80,7 +82,10 @@ We focus on sets of **integers**: $S= \{ 1,2,3, 1000 \}$. Ubiquitous in database
 
 ## "Ordered" Set 
 
-- iterate in sorted order, in reverse order, over ranges
+- iterate 
+  - in sorted order, 
+  - in reverse order, 
+  - skippable iterators (jump to first value $\geq x$)
 - Rank: how many elements of the set are smaller than $k$?
 - Select: find the k<sup>th</sup> smallest value
 - Min/max: find the maximal and minimal value
@@ -127,9 +132,11 @@ Very fast! Roughly three instructions (on x64)...
 ```
 index = x / 64         -> a single shift
 mask = 1 << ( x % 64)  -> a single shift
-array[ index ] |- mask -> a logical OR
+array[ index ] |- mask -> a logical OR to memory
 ```
 (Or can use BMI's ``bts``.)
+
+On recent x64 can set one bit every $\approx 1.65$ cycles (in cache)
 
 ---
 
@@ -139,11 +146,55 @@ Intersection between {0, 1, 3} and {1, 3}
 can be computed as AND operation between
 ``0b1011`` and ``0b1010``.
 
+SHIT SHIT SHIT SHIT
+Explain how fast this works, also include popcnt analysis.
+SHIT SHIT SHIT SHIT
+
+
 *Bit-level parallelism*.
 
-*Branchless* and *vectorizable*.
+Enables *Branchless* processing.
 
 Economical: A **single byte** can represent *any* subset of {0, 1, 2, 3, 4, 5, 6, 7}.
+
+---
+
+## Bitsets are vectorizable
+
+Logical ORs, ANDs, ANDNOTs, XORs can be computed *fast* with Single instruction, multiple data (SIMD) instructions.
+
+- Intel Cannonlake (late 2017), AVX-512
+  - Operate on 64 bytes with ONE instruction 
+  - $\to$ **Several** 512-bit ops/cycle :cupid:
+  - Java 9's Hotspot can use AVX 512
+- ARM v8-A to get Scalable Vector Extension... 
+  - up to 2048 bits!!!
+
+Sadly... In Java's HotSpot mostly used copy arrays. :frowning:
+
+<!--http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8076276-->
+
+
+---
+
+## Bitsets are vectorizable... sadly...
+
+
+Java's hotspot is limited in what it can autovectorize:
+
+1. Copying arrays
+2. String.indexOf
+3. 
+Logical ORs, ANDs, ANDNOTs, XORs can be computed *fast* with Single instruction, multiple data (SIMD) instructions.
+
+- Intel Cannonlake (late 2017), AVX-512
+  - Operate on 64 bytes with ONE instruction 
+  - $\to$ **Several** 512-bit ops/cycle
+  - Java 9's Hotspot can use AVX 512
+- ARM v8-A to get Scalable Vector Extension... 
+  - up to 2048 bits!!!
+
+Sadly...
 
 ---
 
@@ -240,7 +291,7 @@ Threshold? ~1:100
 
 ---
 
-## What is happening? (Hash sets)
+## Hash sets do not scale!
 
 Hash sets have great one-value look-up. But
 if you have poor **data locality**...
@@ -253,7 +304,7 @@ if you have poor **data locality**...
      insert x in h2 // "sure" to hit a new cache line!!!!
 ```
 
-Big hash sets mess with your cache!
+Big hash sets mess with your cache! The bigger the hash sets, the worse things are!
 
 
 ---
@@ -420,7 +471,8 @@ for value in array { // branchless
 ## Go try it out!
 
 
-- Java, Go, C, C++, C#, Rust, Python...
+- Java, Go, C, C++, C#, Rust, Python... (soon: Swift)
+- http://roaringbitmap.org
 - Documented interoperable serialized format.
 - Free. Well-tested. 
 - Wide community.
