@@ -29,8 +29,12 @@ background-color:#008dc8 !important;
 }
 </style>
 
+
+
 ## ENGINEERING FAST INDEXES (DEEP DIVE)
 
+
+work done with indeed
 <img src="sparksummit2017large.png" style="float:right; width:10%"/>
 
 Daniel Lemire :maple_leaf:
@@ -115,3 +119,42 @@ There are no comments on this page.
 - All modern processors have fast population-count functions (``popcnt``) to count the number of 1s in a word. 
 - Cheap to keep track of the number of values stored in a bitset!
 - Available from Java as an intrinsic!
+
+---
+
+## Bitsets are vectorizable
+
+Logical ORs, ANDs, ANDNOTs, XORs can be computed *fast* with Single instruction, multiple data (SIMD) instructions.
+
+- Intel Cannonlake (late 2017), AVX-512
+  - Operate on 64 bytes with ONE instruction 
+  - $\to$ **Several** 512-bit ops/cycle :cupid:
+  - Java 9's Hotspot can use AVX 512
+- ARM v8-A to get Scalable Vector Extension... 
+  - up to 2048 bits!!!
+
+Sadly... In Java's HotSpot mostly used copy arrays. :frowning:
+
+<!--http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8076276-->
+
+
+---
+
+## Bitsets are vectorizable... sadly...
+
+
+Java's hotspot is limited in what it can autovectorize:
+
+1. Copying arrays
+2. String.indexOf
+3. 
+Logical ORs, ANDs, ANDNOTs, XORs can be computed *fast* with Single instruction, multiple data (SIMD) instructions.
+
+- Intel Cannonlake (late 2017), AVX-512
+  - Operate on 64 bytes with ONE instruction 
+  - $\to$ **Several** 512-bit ops/cycle
+  - Java 9's Hotspot can use AVX 512
+- ARM v8-A to get Scalable Vector Extension... 
+  - up to 2048 bits!!!
+
+Sadly...

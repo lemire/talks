@@ -1,6 +1,20 @@
 <!--open with Marp-->
 
 <style>
+progress:before {
+   content: attr(value);
+}
+progress {
+  text-align:center;
+  height: 100px;
+  margin:0;
+  padding:0;
+}
+progress[over] {
+color:red;
+}
+</style>
+<style>
 .slide h2 {
 color:#008dc8;
 }
@@ -42,7 +56,6 @@ Joint work with lots of super smart people
 
 <!--NSERC grant #26143-->
 
-
 ---
 
 <!-- page_number: true -->
@@ -52,7 +65,7 @@ Joint work with lots of super smart people
 http://roaringbitmap.org/
 
 Used by 
-- Apache Spark,
+- Apache Spark,<img src="" />
 - Netflix Atlas,
 - LinkedIn Pinot,
 - Apache Lucene, 
@@ -93,10 +106,20 @@ We focus on sets of **integers**: $S= \{ 1,2,3, 1000 \}$. Ubiquitous in database
 
 ---
 
+## Let us make some assumptions...
+
+- Many sets containing more than a few integers
+- Integers span a wide range (e.g., $[0,100 000)$)
+- Mostly immutable (read often, write rarely)
+
+---
+
 ## How do we implement integer sets?
 
-- hash sets (``java.util.HashSet<Integer>``, ``std::unordered_set<uint32_t>``)
+Assume sets are *mostly* imutable.
+
 - sorted arrays (``std::vector<uint32_t>``)
+- hash sets (``java.util.HashSet<Integer>``, ``std::unordered_set<uint32_t>``)
 - $\ldots$
 - bitsets (``java.util.BitSet``)
 - :heart: :heart: :heart: **compressed bitsets** :heart: :heart: :heart:
@@ -112,6 +135,13 @@ E.g., 0, 1, 3, 4 becomes ``0b11011`` or "27".
 
 Also called a "bitmap" or a "bit array".
 
+---
+
+## Add and contains on bitset
+
+Most of the processors work on 64-bit words.
+
+Given index ``x``, the corresponding word index is ``x/64`` and within-word bit index is ``x % 64``.
 
 ```
 add(x) {
@@ -138,84 +168,69 @@ array[ index ] |- mask -> a logical OR to memory
 
 On recent x64 can set one bit every $\approx 1.65$ cycles (in cache)
 
+**Recall** : Modern processors are superscalar (more than one instruction per cycle)
+
+
 ---
 
-## Bitsets are efficient
+## Bit-level parallelism
+Bitsets are efficient: intersections
 
 Intersection between {0, 1, 3} and {1, 3}
 can be computed as AND operation between
 ``0b1011`` and ``0b1010``.
 
-SHIT SHIT SHIT SHIT
-Explain how fast this works, also include popcnt analysis.
-SHIT SHIT SHIT SHIT
+Result is ``0b1010`` or {1, 3}.
 
-
-*Bit-level parallelism*.
 
 Enables *Branchless* processing.
 
-Economical: A **single byte** can represent *any* subset of {0, 1, 2, 3, 4, 5, 6, 7}.
 
 ---
 
-## Bitsets are vectorizable
+## Bitsets are efficient: in practice
 
-Logical ORs, ANDs, ANDNOTs, XORs can be computed *fast* with Single instruction, multiple data (SIMD) instructions.
+```java
+for i in [0...n]
+  out[i] = A[i] & B[i]
+```
 
-- Intel Cannonlake (late 2017), AVX-512
-  - Operate on 64 bytes with ONE instruction 
-  - $\to$ **Several** 512-bit ops/cycle :cupid:
-  - Java 9's Hotspot can use AVX 512
-- ARM v8-A to get Scalable Vector Extension... 
-  - up to 2048 bits!!!
+Recent x64 processors can do this at a speed of $\approx 0.5$ cycles per pair of input 64-bit words (in cache) for `` n = 1024 ``.
 
-Sadly... In Java's HotSpot mostly used copy arrays. :frowning:
-
-<!--http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8076276-->
+<progress value="0.5" max="1"  />
 
 
----
-
-## Bitsets are vectorizable... sadly...
+``memcpy``runs at $\approx0.3$ cycles.
 
 
-Java's hotspot is limited in what it can autovectorize:
-
-1. Copying arrays
-2. String.indexOf
-3. 
-Logical ORs, ANDs, ANDNOTs, XORs can be computed *fast* with Single instruction, multiple data (SIMD) instructions.
-
-- Intel Cannonlake (late 2017), AVX-512
-  - Operate on 64 bytes with ONE instruction 
-  - $\to$ **Several** 512-bit ops/cycle
-  - Java 9's Hotspot can use AVX 512
-- ARM v8-A to get Scalable Vector Extension... 
-  - up to 2048 bits!!!
-
-Sadly...
+<progress value="0.3" max="1" />
 
 ---
 
 ## Bitsets can be inefficient
 
-Relatively wasteful to represent {1, 32000, 64000} with a bitset.
+Relatively wasteful to represent {1, 32000, 64000} with a bitset. Would use 1000 bytes to store 3 numbers.
 
 So we use compression...
+
+<!--
 
 ---
 
 ## Memory usage (example 1)
 
+
 dataset : weather_sept_85
+
+
+
 
 | format                      | bits per value|
 | ---------------------------- | -----:|
-| hash sets (``std::unordered_set``) | 220 |
-| arrays                       |   32 |
-| bitsets                      |   15.26|
-| compressed bitsets (Roaring) |   5.38 |
+| hash sets (``std::unordered_set``) | <progress value="220" max="220" /> |
+| arrays                       |   <progress value="32" max="220" /> |
+| bitsets                      |  <progress value="15.26" max="220"  /> |
+| compressed bitsets (Roaring) |   <progress value="5.38" max="220"  /> |
 
 
 https://github.com/RoaringBitmap/CBitmapCompetition
@@ -230,29 +245,33 @@ dataset : weather_sept_85
 
 | format                       | CPU cycles per value|
 | ---------------------------- | -----:|
-| hash sets (``std::unordered_set``) | 300 |
-| arrays                       |   8 |
-| bitsets                      |   0.6|
-| compressed bitsets (Roaring) |   0.6 |
+| hash sets (``std::unordered_set``) | <progress value="300" max="300"  /> |
+| arrays                       |   <progress value="8" max="300"  /> |
+| bitsets                      |   <progress value="0.6" max="300"  />|
+| compressed bitsets (Roaring) |   <progress value="0.6" max="300"  /> |
 
 
 
 https://github.com/RoaringBitmap/CBitmapCompetition
 
 
+-->
+
 ---
 
-## Memory usage (example 2)
+
+## Memory usage example
+
 
 dataset : census1881_srt
 
 
 | format                      | bits per value|
 | ---------------------------- | -----:|
-| hash sets (``std::unordered_set``) | 200 |
-| arrays                       |   30 |
-| bitsets                      |   900 |
-| compressed bitsets (Roaring) |   2 |
+| hash sets | <progress value="200" max="220" /> |
+| arrays                       |   <progress value="32" max="220" /> |
+| bitsets                      |   <progress value="900" max="220" over="yes" /> |
+| compressed bitsets (Roaring) |   <progress value="2" max="220" /> |
 
 
 https://github.com/RoaringBitmap/CBitmapCompetition
@@ -260,7 +279,7 @@ https://github.com/RoaringBitmap/CBitmapCompetition
 
 ---
 
-## Performance: union + cardinality (example 2)
+## Performance example (unions)
 
 dataset : census1881_srt
 
@@ -268,10 +287,10 @@ dataset : census1881_srt
 
 | format                       | CPU cycles per value|
 | ---------------------------- | -----:|
-| hash sets (``std::unordered_set``) | 200 |
-| arrays                       |   6 |
-| bitsets                      |   30|
-| compressed bitsets (Roaring) |   1 |
+| hash sets | <progress value="200" max="200" /> |
+| arrays                       |   <progress value="6" max="200" /> |
+| bitsets                      |   <progress value="30" max="200" />|
+| compressed bitsets (Roaring) |   <progress value="1" max="200" /> |
 
 
 https://github.com/RoaringBitmap/CBitmapCompetition
@@ -286,6 +305,9 @@ Bitsets are often best... except if data is
 very sparse (lots of 0s). Then you spend a
 lot of time scanning zeros.
 
+- Large memory usage
+- Bad performance
+
 Threshold? ~1:100
 
 
@@ -294,7 +316,7 @@ Threshold? ~1:100
 ## Hash sets do not scale!
 
 Hash sets have great one-value look-up. But
-if you have poor **data locality**...
+they have poor **data locality**...
 
 ```
   h1 <- some hash set
@@ -341,10 +363,10 @@ dataset : weather_sept_85
 
 | format                       | CPU cycles per query|
 | ---------------------------- | -----:|
-| hash sets (``std::unordered_set``) | 50 |
-| arrays                       |   900 |
-| bitsets                      |    4|
-| compressed bitsets (Roaring) |   80 |
+| hash sets (``std::unordered_set``) | <progress value="50" max="900" /> |
+| arrays                       |   <progress value="900" max="900" /> |
+| bitsets                      |    <progress value="4" max="900" />|
+| compressed bitsets (Roaring) |   <progress value="80" max="900" /> |
 
 
 
@@ -356,7 +378,9 @@ dataset : weather_sept_85
 - Use run-length encoding (RLE)
 
 Example: $000000001111111100$ can be coded as 
-<5><0> <5><1> <2><0>
+$00000000-11111111-00$
+or
+<5><0> - <5><1> - <2><0>
 using the format < number of repetitions >< value being repeated >
 
 ---
@@ -376,33 +400,32 @@ http://githubengineering.com/counting-objects/
 
 ## Downsides of RLE
 
-"Complex" algorithms:
-- data dependencies (hard to skip)
-- lots of branches
-- random access?
+
+- lots of branches, difficult to vectorize/optimize
+- must often scan all of the data (no skipping)
+- random access can be stupidly difficult
 
 
 ---
 
-## Going back to performance: union + cardinality 
-
-dataset : weather_sept_85
+## Performance: union   (weather_sept_85)
 
 
 
 | format                       | CPU cycles per value|
 | ---------------------------- | -----:|
-| bitsets                      |   0.6|
-| WAH                      |   4|
-| EWAH                      |   2|
-| Concise                      |   5|
-| Roaring |   0.6 |
+| bitsets                      |   <progress value="0.6" max="5" />|
+| WAH                      |   <progress value="4" max="5" /> |
+| EWAH                      |   <progress value="2" max="5" />|
+| Concise                      |   <progress value="5" max="5" />|
+| Roaring |   <progress value="0.6" max="5" /> |
 
-https://github.com/RoaringBitmap/CBitmapCompetition
 
 ---
 
-## Better than RLE: Hybrid Model
+## Hybrid Model
+
+
 
 Decompose 32-bit space into
 16-bit spaces (chunk).
@@ -416,6 +439,7 @@ Within each subspace use either...
 
 That's Roaring!
 
+Prior work: O'Neil's RIDBit + BitMagic
 
 ---
 
@@ -425,6 +449,7 @@ Intersection: First compute the cardinality of the result. If low, use an array 
 
 Union: Always generate a bitset (fast).
 
+EXPLAIN HOW TO MAINTAIN CARDINALITY
 
 ---
 
@@ -442,7 +467,7 @@ ADD CODE
 
 ## Array vs. Bitmap...
 
-Intersection: Always an array. Very fast.
+Intersection: Always an array. Very fast. Few cycles per value in array.
 
 ```
 answer = new array
@@ -453,7 +478,7 @@ for value in array {
 }
 ```
 
-Union: Always a bitset. Very fast.
+Union: Always a bitset. Very fast. Few cycles per value in array.
 
 
 ```
@@ -462,6 +487,8 @@ for value in array { // branchless
   set bit in answer at index value
 }
 ```
+
+
 
 ---
 
@@ -474,5 +501,5 @@ for value in array { // branchless
 - Java, Go, C, C++, C#, Rust, Python... (soon: Swift)
 - http://roaringbitmap.org
 - Documented interoperable serialized format.
-- Free. Well-tested. 
-- Wide community.
+- Free. Well-tested. Benchmarked. Peer reviewed.
+- Wide community (dozens of contributors).
