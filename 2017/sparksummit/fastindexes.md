@@ -501,5 +501,9 @@ for value in array { // branchless
 - Java, Go, C, C++, C#, Rust, Python... (soon: Swift)
 - http://roaringbitmap.org
 - Documented interoperable serialized format.
-- Free. Well-tested. Benchmarked. Peer reviewed.
+- Free. Well-tested. Benchmarked. 
+- Peer reviewed
+  - Consistently faster and smaller compressed bitmaps with Roaring. Softw., Pract. Exper.  (2016)
+  - Better bitmap performance with Roaring bitmaps. Softw., Pract. Exper. (2016)
 - Wide community (dozens of contributors).
+
