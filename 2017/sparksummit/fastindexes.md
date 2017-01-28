@@ -313,10 +313,10 @@ Threshold? ~1:100
 
 ---
 
-## Hash sets do not scale!
+## Hash sets are not always fast
 
 Hash sets have great one-value look-up. But
-they have poor **data locality**...
+they have poor **data locality** and non-trivial overhead...
 
 ```
   h1 <- some hash set
@@ -326,7 +326,6 @@ they have poor **data locality**...
      insert x in h2 // "sure" to hit a new cache line!!!!
 ```
 
-Big hash sets mess with your cache! The bigger the hash sets, the worse things are!
 
 
 ---
@@ -380,7 +379,7 @@ dataset : weather_sept_85
 Example: $000000001111111100$ can be coded as 
 $00000000-11111111-00$
 or
-<5><0> - <5><1> - <2><0>
+ <5><1> 
 using the format < number of repetitions >< value being repeated >
 
 ---
@@ -391,20 +390,10 @@ using the format < number of repetitions >< value being repeated >
 - WAH (FastBit)
 - EWAH (Git + Apache Hive)
 - Concise (Druid)
-- - $\ldots$
+- $\ldots$
 
 Further reading:
 http://githubengineering.com/counting-objects/
-
----
-
-## Downsides of RLE
-
-
-- lots of branches, difficult to vectorize/optimize
-- must often scan all of the data (no skipping)
-- random access can be stupidly difficult
-
 
 ---
 
@@ -421,76 +410,18 @@ http://githubengineering.com/counting-objects/
 | Roaring |   <progress value="0.6" max="5" /> |
 
 
----
-
-## Hybrid Model
-
-
-
-Decompose 32-bit space into
-16-bit spaces (chunk).
-
-For each chunk, use best container:
-
-Within each subspace use either...
-- a sorted array ({1,20,144})
-- a bitset (0b10000101011)
-- a sequences of sorted runs ([0,10],[15,20])
-
-That's Roaring!
-
-Prior work: O'Neil's RIDBit + BitMagic
 
 ---
 
-## Bitset vs. Bitset...
 
-Intersection: First compute the cardinality of the result. If low, use an array for the result (slow), otherwise generate a bitset (fast).
+## What helps us...
 
-Union: Always generate a bitset (fast).
-
-EXPLAIN HOW TO MAINTAIN CARDINALITY
-
----
-
-## Array vs. Array...
-
-Intersection: Always an array. Use galloping if the sizes differs.
-
-ADD CODE
-
-Union: If sum of cardinalities is large, go for a bitset. Revert to an array if we got it wrong.
-
-ADD CODE
+- All modern processors have fast population-count functions (``popcnt``) to count the number of 1s in a word. Available from Java!
+- Cheap to keep track of the number of values stored in a bitset!
+- Choice between array, run and bitset covers many use cases!
 
 ---
 
-## Array vs. Bitmap...
-
-Intersection: Always an array. Very fast. Few cycles per value in array.
-
-```
-answer = new array
-for value in array {
-  if value in bitset {// branch but no data dependency
-    append value to answer
-  }
-}
-```
-
-Union: Always a bitset. Very fast. Few cycles per value in array.
-
-
-```
-answer = clone the bitset
-for value in array { // branchless
-  set bit in answer at index value
-}
-```
-
-
-
----
 
 <!-- *template: invert -->
 
@@ -505,5 +436,6 @@ for value in array { // branchless
 - Peer reviewed
   - Consistently faster and smaller compressed bitmaps with Roaring. Softw., Pract. Exper.  (2016)
   - Better bitmap performance with Roaring bitmaps. Softw., Pract. Exper. (2016)
+  - Optimizing Druid with Roaring bitmaps, IDEAS 2016, 2016
 - Wide community (dozens of contributors).
 
