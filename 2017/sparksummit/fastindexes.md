@@ -326,6 +326,28 @@ they have poor **data locality** and non-trivial overhead...
      insert x in h2 // "sure" to hit a new cache line!!!!
 ```
 
+---
+
+## Want to kill Swift?
+
+Swift is Apple's new language. Try this:
+
+
+
+```
+var d = Set<Int>()
+for i in 1...size {
+  d.insert(i)
+}
+//
+var z = Set<Int>()
+for i in d {
+    z.insert(i)
+}
+```
+
+This blows up! Quadratic-time.
+
 
 
 ---
@@ -395,11 +417,47 @@ using the format < number of repetitions >< value being repeated >
 Further reading:
 http://githubengineering.com/counting-objects/
 
+
+
+
+ ----
+ 
+ ## Hybrid Model
+ 
+ 
+ 
+ Decompose 32-bit space into
+ 16-bit spaces (chunk).
+ 
+Given value $x$, its chunk index is $x \div 2^{16}$ (16 most significant bits). 
+ 
+ For each chunk, use best container to store least 16 significant bits:
+ 
+ - a sorted array ({1,20,144})
+ - a bitset (0b10000101011)
+ - a sequences of sorted runs ([0,10],[15,20])
+ 
+ That's Roaring!
+ 
+ Prior work: O'Neil's RIDBit + BitMagic
+  
+
+
+ ----
+ 
+ ## Roaring
+ 
+ - All containers fit in 8 kB (several fit in L1 cache)
+ - Attempts to select the best container as you build the bitmaps 
+ - Calling ``runOptimize`` will scan (quickly!) non-run containers and try to convert them to run containers
+ 
+
 ---
 
 ## Performance: union   (weather_sept_85)
 
 
+<div style="margin-left:auto; margin-right:auto; width:60% ">
 
 | format                       | CPU cycles per value|
 | ---------------------------- | -----:|
@@ -408,7 +466,7 @@ http://githubengineering.com/counting-objects/
 | EWAH                      |   <progress value="2" max="5" />|
 | Concise                      |   <progress value="5" max="5" />|
 | Roaring |   <progress value="0.6" max="5" /> |
-
+</div>
 
 
 ---
@@ -416,7 +474,7 @@ http://githubengineering.com/counting-objects/
 
 ## What helps us...
 
-- All modern processors have fast population-count functions (``popcnt``) to count the number of 1s in a word. Available from Java!
+- All modern processors have fast population-count functions (``popcnt``) to count the number of 1s in a word. 
 - Cheap to keep track of the number of values stored in a bitset!
 - Choice between array, run and bitset covers many use cases!
 

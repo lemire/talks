@@ -56,22 +56,6 @@ A collection of containers...
 
 ---
 
-## For each operation 
-
-
-- union
-- intersection
-- difference
-- ...
-
-Must specialize by container type:
-
-|                  | array | bitset | run |
-| ---------------- | -----:|-----:|-----:|
-| array | ? | ? | ?|
-| bitset |? | ? | ? |
-| run |? |?  | ? |
-
 ---
 
 ## Keeping track
@@ -85,6 +69,8 @@ In Roaring, we do it :stars: :stars: :stars: **automagically** :stars: :stars: :
 ---
 
 ## Setting/Flipping/Clearing bits while keeping track
+
+**Important** : avoid mispredicted branches
 
 Pure C/Java:
 
@@ -105,14 +91,35 @@ bts %[p], %[ow] //  ow |= ( 1<< (p % 64)) + flag
 sbb $-1, %[cardinality] // update card based on flag
 mov %[load], (%[w],%[q],8) // w[q] = ow 
 ```
+---
+
+## For each operation 
+
+
+- union
+- intersection
+- difference
+- ...
+
+Must specialize by container type:
+
+|                  | array | bitset | run |
+| ---------------- | -----:|-----:|-----:|
+| array | ? | ? | ?|
+| bitset |? | ? | ? |
+| run |? |?  | ? |
+
 
 ---
 
 ## Bitset vs. Bitset...
 
-Intersection: First compute the cardinality of the result. If low, use an array for the result (slow), otherwise generate a bitset (fast).
+- Intersection: 
+  - First compute the cardinality of the result. 
+  - If low, use an array for the result (slow), otherwise generate a bitset (fast).
+- Union: Always generate a bitset (fast).
 
-Union: Always generate a bitset (fast).
+We generally keep track of the cardinality of the result.
 
 ---
 
@@ -134,7 +141,7 @@ This counts the number of 1s in a 64-bit word.
 
 ---
 
-## How Java does bitCount?
+## Population count in Java
 
 ```java
 // Hacker`s Delight 
@@ -202,11 +209,19 @@ Compile with ``-O1 -march=native`` on a recent x64 machine:
 popcnt  rax, rdi
 ```
 
-``popcnt`` : throughput of 1 instruction per cycle
+---
+
+## Why care for ``popcnt``
+
+
+``popcnt`` : throughput of 1 instruction per cycle (recent Intel CPUs)
+
+
+Really fast.
 
 ---
 
-## How Java does bitCount?
+## Population count in Java?
 
 ```java
 // Hacker`s Delight 
@@ -225,13 +240,15 @@ int bitCount(long i) {
 
 ---
 
-## How Java does bitCount?
+## Population count in Java!
 
 Also compiles to ``popcnt``  if hardware supports it 
 
 ```
-$ java  -XX:+PrintFlagsFinal | grep UsePopCountInstruction
-     bool UsePopCountInstruction   = true
+$ java  -XX:+PrintFlagsFinal 
+  | grep UsePopCountInstruction
+
+bool UsePopCountInstruction   = true
 ````
 
 **But** only if you call it from ``Long.bitCount``
@@ -269,6 +286,18 @@ A bit over $\approx 2$ cycles per pair of 64-bit words.
 - load A, load B
 - bitwise AND
 - ``popcnt``
+
+---
+
+## Take away
+
+Bitset vs. Bitset operations are fast
+
+**even** if you need to track the cardinality.
+
+**even** in Java
+
+e.g., ``popcnt`` overhead might be negligible compared to other costs like cache misses.
 
 ---
 
@@ -310,7 +339,7 @@ while (true) {
 }
 ```
 
-If the small set is tiny this runs in $O(\log (\text{size of big set}))$
+If the small set is tiny, runs in $O(\log (\text{size of big set}))$
 
 
 ---
@@ -346,7 +375,7 @@ Intersection: Always an array. Very fast. Few cycles per value in array.
 ```
 answer = new array
 for value in array {
-  if value in bitset {// branch but no data dependency
+  if value in bitset {
     append value to answer
   }
 }
@@ -398,6 +427,7 @@ With scalar code, working on 16-bit integers is *not* $2\times$ faster than 32-b
 
 But with SIMD instructions, going from 64-bit integers to 16-bit integers can mean $4\times$ gain.
 
+**Roaring uses arrays of 16-bit integers.**
 
 ---
 
@@ -438,6 +468,24 @@ for(size_t i = 0; i < len; i++) {
 With AVX-512, the performance gap exceeds $5\times$
 
 - Can also vectorize OR, AND, ANDNOT, XOR + population count (AVX2-Harley-Seal)
+
+
+---
+
+## Vectorization beats ``popcnt``
+
+
+```
+int count = 0;
+for(size_t i = 0; i < len; i++) {
+  count += popcount(a[i]);
+}
+```
+- using fast scalar (popcnt): 1 cycle per input byte
+- using AVX2 Harley-Seal: 0.5 cycles per input byte
+- even greater gain with AVX-512
+
+
 
 ---
 
