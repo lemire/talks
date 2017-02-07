@@ -54,7 +54,6 @@ A collection of containers...
 - **run**: sequences of  runs ([0,10],[15,20])
 
 
----
 
 ---
 
@@ -70,7 +69,7 @@ In Roaring, we do it :stars: :stars: :stars: **automagically** :stars: :stars: :
 
 ## Setting/Flipping/Clearing bits while keeping track
 
-**Important** : avoid mispredicted branches
+**Important** : avoid mispredicted branches 
 
 Pure C/Java:
 
@@ -78,12 +77,11 @@ Pure C/Java:
 q = p / 64
 ow = w[ q ];
 nw = ow | (1 << (p % 64) );
-cardinality += (ow ^ nw) >> (p % 64) ;
+cardinality += (ow ^ nw) >> (p % 64) ; // EXTRA
 w[ q ] = nw;
 ```
-
+---
 In x64 assembly with BMI instructions:
-
 ```
 shrx %[6], %[p], %[q]  //  q = p / 64
 mov (%[w],%[q],8), %[ow]  // ow = w [q]
@@ -91,6 +89,9 @@ bts %[p], %[ow] //  ow |= ( 1<< (p % 64)) + flag
 sbb $-1, %[cardinality] // update card based on flag
 mov %[load], (%[w],%[q],8) // w[q] = ow 
 ```
+
+``sbb`` is the extra work
+
 ---
 
 ## For each operation 
@@ -105,9 +106,15 @@ Must specialize by container type:
 
 |                  | array | bitset | run |
 | ---------------- | -----:|-----:|-----:|
-| array | ? | ? | ?|
-| bitset |? | ? | ? |
-| run |? |?  | ? |
+| array | ? | ?Â | ?|
+| bitset |? |Â ? | ? |
+| run |? |? Â | ? |
+
+---
+
+## High-level API or Sipping Straw?
+
+<img src="straw.jpg" />
 
 
 ---
@@ -117,7 +124,8 @@ Must specialize by container type:
 - Intersection: 
   - First compute the cardinality of the result. 
   - If low, use an array for the result (slow), otherwise generate a bitset (fast).
-- Union: Always generate a bitset (fast).
+- Union: Always generate a bitset (fast). 
+  - (Unless cardinality is high then maybe create a run!)
 
 We generally keep track of the cardinality of the result.
 
@@ -179,6 +187,8 @@ int count(uint64_t x) {
 }
 ```
 
+
+---
 Compile with ``-O1 -march=native`` on a recent x64 machine:
 
 ```asm
@@ -187,31 +197,7 @@ popcnt  rax, rdi
 
 ---
 
-## Population count in C
-
-How do you think that the C compiler ``clang`` compiles this code?
-
-```C
-#include <stdint.h>
-int count(uint64_t x) {
-  int v = 0;
-  while(x != 0) {
-    x &= x - 1;
-    v++;
-  }
-  return v;
-}
-```
-
-Compile with ``-O1 -march=native`` on a recent x64 machine:
-
-```asm
-popcnt  rax, rdi
-```
-
----
-
-## Why care for ``popcnt``
+## Why care for ``popcnt``?
 
 
 ``popcnt`` : throughput of 1 instruction per cycle (recent Intel CPUs)
@@ -261,7 +247,6 @@ bool UsePopCountInstruction   = true
 - ``Long.bitCount``, ``Integer.bitCount``
 - ``Integer.reverseBytes``, ``Long.reverseBytes``
 - ``Integer.numberOfLeadingZeros``, ``Long.numberOfLeadingZeros``
-- ``Integer.numberOfTrailingZeros``, ``Long.numberOfTrailingZeros``
 - ``Integer.numberOfTrailingZeros``, ``Long.numberOfTrailingZeros``
 - ``System.arraycopy``
 - ...
@@ -368,9 +353,11 @@ union (A,B) {
 
 ---
 
-## Array vs. Bitmap...
+## Array vs. Bitmap (Intersection)...
 
-Intersection: Always an array. Very fast. Few cycles per value in array.
+Intersection: Always an array. 
+
+Branchy (3 to 16 cycles per array value):
 
 ```
 answer = new array
@@ -381,7 +368,25 @@ for value in array {
 }
 ```
 
-Union: Always a bitset. Very fast. Few cycles per value in array.
+---
+
+Branchless (3 cycles per array value):
+
+```
+answer = new array
+pos = 0
+for value in array {
+  answer[pos] = value
+  pos += bit_value(bitset, value)
+}
+```
+
+---
+
+## Array vs. Bitmap (Union)...
+
+
+Always a bitset. Very fast. Few cycles per value in array.
 
 
 ```
@@ -392,7 +397,9 @@ for value in array { // branchless
 ```
 
 
+Without tracking the cardinality $\approx 1.65$ cycles per value
 
+Tracking the cardinality $\approx 2.2$ cycles per value
 
 ---
 
@@ -475,7 +482,7 @@ With AVX-512, the performance gap exceeds $5\times$
 ## Vectorization beats ``popcnt``
 
 
-```
+```C
 int count = 0;
 for(size_t i = 0; i < len; i++) {
   count += popcount(a[i]);

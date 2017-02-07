@@ -324,6 +324,7 @@ they have poor **data locality** and non-trivial overhead...
   ...
   for(x in h1) {
      insert x in h2 // "sure" to hit a new cache line!!!!
+  }
 ```
 
 ---
@@ -348,7 +349,7 @@ for i in d {
 
 This blows up! Quadratic-time.
 
-
+Same problem with Rust. 
 
 ---
 
