@@ -1,4 +1,4 @@
-First part : https://prezi.com/pnlwlk8upli0/edit/#4_24309637
 
-Second part (dive) : 
-https://yhatt.github.io/marp/
+- Engineering Fast Indexes for Big Data Applications https://www.youtube.com/watch?v=ubykHUyNi_0
+- Engineering Fast Indexes for Big Data Applications (deep dive) https://www.youtube.com/watch?v=1QMgGxiCFWE
+

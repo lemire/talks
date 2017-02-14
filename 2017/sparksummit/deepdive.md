@@ -106,9 +106,9 @@ Must specialize by container type:
 
 |                  | array | bitset | run |
 | ---------------- | -----:|-----:|-----:|
-| array | ? | ?Â | ?|
-| bitset |? |Â ? | ? |
-| run |? |? Â | ? |
+| array | ? | ? | ?|
+| bitset |? | ? | ? |
+| run |? |?  | ? |
 
 ---
 
