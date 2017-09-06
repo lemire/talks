@@ -5,9 +5,11 @@
 \usepackage{textcomp}
 \title{Write good papers}
 \date{}
-\author{\href{http://lemire.me/en/}{Daniel Lemire}}
+\author{\href{http://lemire.me/en/}{Daniel Lemire, Ph.D.}}
 \DeclareGraphicsRule{*}{pdf}{*}{}
 \institute{
+  Professor of Computer Science\\
+  University of Quebec\\
 	\url{http://lemire.me/en/}\\
 	blog: \url{http://lemire.me/blog/}\\
 	~\\
@@ -182,7 +184,7 @@ escapeinside={\%}{)},          % if you want to add a comment within your code
  \begin{itemize}
   \item<1-> If you must use MS Office: learn to use it \important{properly}.
  \item<2-> Use a spell checker. Just do it. (e.g., \texttt{aspell})
- \item<3-> Learn \LaTeX{} and BibTeX.
+ \item<3-> Learn \LaTeX{} and BibTeX if you do a lot of math.
   \item<4-> Use version control (subversion, git).
   \item<5-> Use grammar and style checkers: \texttt{style-check.rb}, \texttt{lacheck}.
    \end{itemize}
@@ -254,6 +256,16 @@ escapeinside={\%}{)},          % if you want to add a comment within your code
 
 \frame
 {
+  \frametitle{Be consistent (2)}
+  \begin{itemize}
+  \item<1->  Do: ``Fig.~5 is below Fig.~6 and to the right of Fig.~4.''
+  \item<2->  Do: ``Figure~5 is below Figure~6 and to the right of Figure~4.''
+  \item<3->  Avoid: ``Fig.~5 is below fig6 and to the right of Figure~4.''
+ \end{itemize}
+ }
+
+\frame
+{
   \frametitle{Use spaces when appropriate}
 
  \begin{itemize}
@@ -285,6 +297,15 @@ escapeinside={\%}{)},          % if you want to add a comment within your code
  \end{itemize}
  }
 
+\frame
+{
+  \frametitle{Report your error margin}
+ \begin{itemize}
+  \item<1->  If you report ``1\,s'', would it be ``1\,s'' again if you reran the experiment?
+  \item<2->  Always gather many numbers.
+  \item<3->  Then report your error margin (pick one: percentage, standard variation, statistical test).
+ \end{itemize}
+ }
 
 \frame
 {
@@ -312,6 +333,8 @@ escapeinside={\%}{)},          % if you want to add a comment within your code
   \item<2-> Do: ``We showed that test A was faster.''
  \end{itemize}
  }
+
+
 
 \frame
 {
@@ -595,14 +618,26 @@ escapeinside={\%}{)},          % if you want to add a comment within your code
 \begin{itemize}
  \item<1->You need to confront your ideas with the real-world.
   \item<2-> Even theory papers should have simulations, applications or examples. Avoid pure abstract nonsensical theory.
-  \item<3-> Must be reproducible. Avoid secret data. Avoid secret
-recipes. Avoid secret software.
   \item<4-> Yet experiments are no substitute for theory.
-  \item<5->Compare with the best results from your competitors.
+  \item<5-> Compare with the best results from your competitors.
   \item<6-> Use \important{examples} to explain your results.
-  \item<7-> Describe fully your methodology and setup: be reproducible.
 \end{itemize}
 }
+
+
+\frame
+{
+  \frametitle{Make your work reproducible}
+ \begin{itemize}
+  \item<1-> Describe fully your methodology and setup: be reproducible.
+  \item<2->  Given only your paper\ldots
+  \item<3->  Someone should be able to reproduce all your numbers.
+  \item<4->  I am serious.
+  \item<5-> Avoid secret data. Avoid secret
+recipes. Avoid secret software.
+ \end{itemize}
+ }
+
 
 \frame
 {
