@@ -51,6 +51,8 @@ background-color:#008dc8 !important;
 
 Daniel Lemire 
 https://lemire.me 
+Twitter: @lemire
+GitHub: https://github.com/lemire
 
 (Travaux réalisés en collaboration)
 
@@ -310,5 +312,23 @@ Industry feedback: kudos for making something that makes my software run 5x fast
 
 
 ---
+
+## Développement logiciel
+
+
+- Version Java de Roaring: 26 auteurs, 124 versions, 1697 *commits*
+```
+$ sloccount . | grep java
+91967   jmh             java=91967
+23871   test            java=23871
+19024   main            java=19024
+```
+
+1. L'essentiel du code: profilage, benchmark
+1. Second: tests
+1. En dernier, la mise en oeuvre
+
+---
+
 
 continuer ici avec stream vbyte
