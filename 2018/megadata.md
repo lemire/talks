@@ -225,7 +225,7 @@ On utilise donc la compression!
 
 ---
 
-## GitHub (Git) utilise EWAH
+## Git (GitHub) utilise EWAH
 
 Codage par plage
 
@@ -234,9 +234,11 @@ $00000000-11111111-00$
 
 On peut coder les longues séquences de 1 ou de 0 de manière concise.
 
+https://github.com/git/git/blob/master/ewah/bitmap.c
+
 * Daniel Lemire et al., Data & Knowledge Engineering 69 (1), 2010. http://arxiv.org/abs/0901.3751
 * http://githubengineering.com/counting-objects/
-- Google Open Source Peer Bonus Program (2012)
+* Google Open Source Peer Bonus Program (2012)
 ---
 
 - Après une comparaison exhaustive des techniques de compressions par plage sur les bitmaps, Guzun et al. (ICDE 2014) en arrive à la conclusion...
