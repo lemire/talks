@@ -156,7 +156,7 @@ for i in d {
 |--------|-----------|
 | 1M     | 0.8       |
 | 8M     | 22        |
-| 64M     | > 10 min        |
+| 64M     | 1400        |
 
 
 * Maps and sets can have quadratic-time performance https://lemire.me/blog/2017/01/30/maps-and-sets-can-have-quadratic-time-performance/
