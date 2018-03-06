@@ -49,14 +49,10 @@ background-color:#008dc8 !important;
 
 <img src="roaring.png" style="float:right; width:30%"/>
 
-Daniel Lemire 
+Daniel Lemire et collaborateurs
 https://lemire.me 
-Twitter: @lemire
-GitHub: https://github.com/lemire
 
-(Travaux réalisés en collaboration)
 
-* CRSNG: *Faster Compressed Indexes On Next-Generation Hardware* (2017-2022)
 
 ---
 
@@ -90,13 +86,11 @@ GitHub: https://github.com/lemire
 
 Les tableaux sont vos amis: simples, fiables, économiques.
 
-Mais la recherche binaire cause des échecs et contient beaucoup d'embranchements difficiles à prédire.
 
 ```
     while (low <= high) {
       int middleIndex = (low + high) >>> 1;
       int middleValue = array.get(middleIndex);
-
       if (middleValue < ikey) {
         low = middleIndex + 1;
       } else if (middleValue > ikey) {
@@ -108,6 +102,11 @@ Mais la recherche binaire cause des échecs et contient beaucoup d'embranchement
     return -(low + 1);
 ```
 
+---
+
+<img src="binary-search.png" style="float:right; width:100%"/>
+
+Source: https://theproductiveprogrammer.blog
 
 
 
@@ -118,7 +117,6 @@ Mais la recherche binaire cause des échecs et contient beaucoup d'embranchement
 - valeur $x$ stockée à l'index $h(x)$ 
 - accès aléatoire à une valeur rapide
 - accès ordonné pénible 
-- opération ensembliste?
 
 
 ---
@@ -166,13 +164,17 @@ for i in d {
 
 ---
 
----
 
 ## Les bitmaps
 
 Façon efficace de représenter les ensembles d'entiers.
 
 Par ex., 0, 1, 3, 4 devient ``0b11011`` ou "27".
+
+* $\{0\}\to$ ``0b00001``
+* $\{0, 3\}\to$ ``0b01001``
+* $\{0, 3, 4\}\to$ ``0b11001``
+* $\{0, 1, 3, 4\}\to$ ``0b11011``
 
 
 ---
@@ -217,6 +219,29 @@ Aucun embranchement!
 
 ---
 
+## Les bitmaps bénéficient des mots étendus
+
+- Processeurs 64 bits
+- SIMD: Single Intruction Multiple Data
+  - SSE (Pentium 4), ARM NEON 128 bits
+  - AVX/AVX2 (256 bits)
+  - AVX-512 (512 bits)
+
+
+---
+
+## Similarité ensembliste avec les bitmaps
+
+- Jaccard/Tanimoto : $\vert S_1 \cap S_1 \vert  /\vert  S_1 \cup S_2\vert$ 
+- devient $\frac{| B_1 \mathrm{~AND~} B_2 | }{ | B_1 \mathrm{~OR~} B_2 |}$
+- 1.15 cycles par paire de mots (64-bit) 
+- Wojciech Muła, Nathan Kurz, Daniel Lemire
+Faster Population Counts Using AVX2 Instructions
+Computer Journal 61 (1), 2018
+- (adopté par clang)
+
+---
+
 ## Les bitsets peuvent être gourmants
 
 {1, 32000, 64000} : 1000 octets pour 3 nombres
@@ -234,11 +259,17 @@ $00000000-11111111-00$
 
 On peut coder les longues séquences de 1 ou de 0 de manière concise.
 
+
 https://github.com/git/git/blob/master/ewah/bitmap.c
 
+
+---
+
+> it [EWAH] has already saved our users roughly a century of waiting for their fetches to complete (and the equivalent amount of CPU time in our fileservers). http://githubengineering.com/counting-objects/
+
 * Daniel Lemire et al., Data & Knowledge Engineering 69 (1), 2010. http://arxiv.org/abs/0901.3751
-* http://githubengineering.com/counting-objects/
 * Google Open Source Peer Bonus Program (2012)
+
 ---
 
 - Après une comparaison exhaustive des techniques de compressions par plage sur les bitmaps, Guzun et al. (ICDE 2014) en arrive à la conclusion...
@@ -281,7 +312,11 @@ C'est Roaring!
  
 Travaux similaires: O'Neil's RIDBit + BitMagic
   
+---
 
+<img src="roaringstruct.png" />
+
+Voir https://github.com/RoaringBitmap/RoaringFormatSpec
 
  ----
  
@@ -294,6 +329,8 @@ Travaux similaires: O'Neil's RIDBit + BitMagic
 ---
 
 > Use Roaring for bitmap compression whenever possible. Do not use other bitmap compression methods (Wang et al., SIGMOD 2017)
+
+> kudos for making something that makes my software run 5x faster (Charles Parker, BigML)
 
 <!--
 - Daniel Lemire et al., Roaring Bitmaps: Implementation of an Optimized Software Library, Software: Practice and Experience (to appear)
@@ -310,7 +347,6 @@ Travaux similaires: O'Neil's RIDBit + BitMagic
 |census1881   | 9.85 | 542   | 1010 | 2.6 |
 |weather   | 0.35 | 94   | 237 | 0.16 |
 
-Industry feedback: kudos for making something that makes my software run 5x faster (Charles Parker from BigML)
 
 
 ---
@@ -330,7 +366,103 @@ $ sloccount . | grep java
 1. Second: tests
 1. En dernier, la mise en oeuvre
 
+--- 
+
+## Compression d'entiers
+
+- Technique "standard" : VByte, VarInt, VInt
+- Utilisation de 1, 2, 3, 4, ... octets per entiers
+- Utilise un bit par octet pour indique longueur des entiers en octets
+- Lucene, Protocol Buffers, etc.
+
+--- 
+
+## varint-GB de Google
+
+- VByte: un embranchement par entier
+- varint-GB: un embranchmement par bloc de 4 entiers 
+- chaque bloc de 4 entiers est précédé d'un octet 'descriptif'
+- Exige de modifier le format (pas compatible avec VByte)
+
+
+--- 
+
+## Accélération par vectorisation
+
+- Stepanov (inventeur du STL en C++) travaillant pour Amazon a proposé  varint-G8IU
+- Stocke autant d'entiers que possible par blocs de 8 octets
+- Utilise la vectorisation (SIMD)
+- Exige de modifier le format (pas compatible avec VByte)
+- *Protégé par un brevet*
+
+ SIMD-Based Decoding of Posting Lists, CIKM 2011
+ https://stepanovpapers.com/SIMD_Decoding_TR.pdf
+
+--- 
+
+## Observations de Stepanov et al. (partie 1)
+
+- Incapable de vectoriser VByte (original)
+
+--- 
+
+## Accélérer VByte (sans changer le format)
+
+- C'est possible nonobstant l'échec de Stepanov et al.
+- Décodeur avec SIMD: Masked VByte 
+- Travaux réalisés avec Indeed.com (en production)
+
+Jeff Plaisance, Nathan Kurz, Daniel Lemire, Vectorized VByte Decoding, International Symposium on Web Algorithms 2015, 2015.
+
 ---
 
+<img src="maskedvbyte.png" width="100%">
 
-continuer ici avec stream vbyte
+
+
+--- 
+
+## Observations de Stepanov et al. (partie 2)
+
+
+- Possible de vectoriser le varint-GB de Google, mais moins performant que varint-G8IU
+
+--- 
+
+## Stream VByte
+
+- Reprend l'idée du varint-GB de Google
+- Mais au lieu de mélanger les octets descriptifs avec le reste des données...
+- On sépare les octets descriptifs du reste 
+
+Daniel Lemire, Nathan Kurz, Christoph Rupp
+Stream VByte: Faster Byte-Oriented Integer Compression
+Information Processing Letters 130, 2018
+
+--- 
+
+<img src="streamvbyte.png" width="100%">
+
+
+---
+
+## Stream VByte est utilisé par...
+
+- Redis (au sein de RediSearch) https://redislabs.com
+- upscaledb https://upscaledb.com
+- tantivy https://github.com/tantivy-search/tantivy 
+- Trinity https://github.com/phaistos-networks/Trinity
+
+---
+
+## Pour en savoir plus...
+
+
+<img src="img-logo-en.png" style="float:right; width:5em"/>
+
+* Blogue (2 fois/semaine) : https://lemire.me/blog/
+* GitHub: https://github.com/lemire
+* Page personnelle : https://lemire.me/fr/
+* CRSNG : *Faster Compressed Indexes On Next-Generation Hardware* (2017-2022)
+* Twitter <img src="twitter.png" style="width:1.5em"/> @lemire
+
