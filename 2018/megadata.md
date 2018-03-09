@@ -286,7 +286,7 @@ https://github.com/git/git/blob/master/ewah/bitmap.c
 
 http://roaringbitmap.org/
 
-- Apache Lucene, Solr et Elasticsearch, Metamarkets’ Druid, Apache Spark, Apache Hive, Apache Tez, Netflix Atlas, LinkedIn Pinot, InfluxDB, Pilosa, Microsoft Visual Studio Team Services (VSTS), Intel’s Optimized Analytics Package (OAP), Apache Hivemall, eBay’s Apache Kylin.
+- Apache Lucene, Solr et Elasticsearch, Metamarkets’ Druid, Apache Spark, Apache Hive, Apache Tez, Netflix Atlas, LinkedIn Pinot, InfluxDB, Pilosa, Microsoft Visual Studio Team Services (VSTS), Couchbase's Bleve, Intel’s Optimized Analytics Package (OAP), Apache Hivemall, eBay’s Apache Kylin.
 
 - Mise en oeuvre en Java, C, Go (interopérable)
 
