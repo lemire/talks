@@ -364,6 +364,14 @@ $ sloccount . | grep java
 1. Second: tests
 1. En dernier, la mise en oeuvre
 
+
+
+---
+
+## Développement logiciel
+
+
+
 --- 
 
 ## Compression d'entiers
