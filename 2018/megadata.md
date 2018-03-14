@@ -349,6 +349,17 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
 
 ---
 
+## "Memory-file mapping"
+
+- Druid (Metamarkets: Java/Scala) et bleve (Couchbase: Go)
+- étant donné octets sur disque ou ailleurs en mémoire,  donne accès à la structure de données sans copie
+- évite les allocations de mémoire
+- permet à plusieurs processus de partager la même mémoire
+- contourne le *garbage collector*
+
+
+---
+
 ## Développement logiciel
 
 
@@ -364,11 +375,12 @@ $ sloccount . | grep java
 1. Second: tests
 1. En dernier, la mise en oeuvre
 
-
+Versions en C, C++, Go, Python, Rust, etc.
 
 ---
 
-## Développement logiciel
+
+<img src="https://lemire.me/img/twittertestimony2017.png" >
 
 
 
