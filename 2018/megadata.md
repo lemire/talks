@@ -53,6 +53,24 @@ Daniel Lemire et collaborateurs
 https://lemire.me 
 
 
+---
+
+<blockquote>
+“One Size Fits All”: An Idea Whose Time Has Come and Gone (Stonebraker, 2005)
+</blockquote>
+
+
+
+---
+
+## Redécouvrir Unix
+
+Plusieurs composantes spécialisées et réutilisables:
+- Calcite : SQL + optimisation
+- Hadoop
+- etc.
+
+"Make your own database from parts"
 
 ---
 
@@ -82,29 +100,26 @@ https://lemire.me
 
 ## Tableaux
 
-Les tableaux sont vos amis: simples, fiables, économiques.
-
+<img src="binary-search.png" style="float:right; width:50%; height:400px"/>
 
 ```
-    while (low <= high) {
-      int middleIndex = (low + high) >>> 1;
-      int middleValue = array.get(middleIndex);
-      if (middleValue < ikey) {
-        low = middleIndex + 1;
-      } else if (middleValue > ikey) {
-        high = middleIndex - 1;
-      } else {
-        return middleIndex;
-      }
-    }
-    return -(low + 1);
+while (low <= high) {
+   int mI = 
+   (low + high) >>> 1;
+   int m = array.get(mI);
+   if (m < key) {
+     low = mI + 1;
+   } else if (m > key) {
+     high = mI - 1;
+   } else {
+     return mI;
+   }
+}
+return -(low + 1);
 ```
 
----
 
-<img src="binary-search.png" style="float:right; width:100%"/>
-
-Source: https://theproductiveprogrammer.blog
+<!-- Source: https://theproductiveprogrammer.blog -->
 
 
 
@@ -116,6 +131,19 @@ Source: https://theproductiveprogrammer.blog
 - accès aléatoire à une valeur rapide
 - accès ordonné pénible 
 
+
+---
+
+## accès ordonné pénible 
+
+- $[15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, \color{red}{1}, 14, 10, 7]$
+- $[15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, \color{red}{2}, 1, 14, 10, 7]$
+- $[15, \color{red}{3}, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+- $[15, 3, 0, 6, 11, \color{red}{4}, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+- $[15, 3, 0, 6, 11, 4, \color{red}{5}, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+- $[15, 3, 0, \color{red}{6}, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+
+(Robin Hood,  sondage linéaire, fonction de mixage MurmurHash3)
 
 ---
 
@@ -141,7 +169,7 @@ Source: https://theproductiveprogrammer.blog
 ```
 var S1 = Set<Int>(1...size)
 var S2 = Set<Int>()
-for i in d {
+for i in S1 {
     S2.insert(i)
 }
 ```
@@ -163,7 +191,7 @@ for i in d {
 ---
 
 
-## Les bitmaps
+## Les bitmaps ou bitsets
 
 Façon efficace de représenter les ensembles d'entiers.
 
@@ -279,6 +307,14 @@ https://github.com/git/git/blob/master/ewah/bitmap.c
 ---
 
 
+## Complexité
+
+- Intersection : $O(|S_1| + |S_2|)$ ou $O(\min(|S_1|, |S_2|))$
+- Union en place ($S_2 \leftarrow S_1 \cup S_2$): $O(|S_1| + |S_2|)$ ou $O(|S_2|)$
+
+---
+
+
 
 <!-- page_number: true -->
 
@@ -322,7 +358,9 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
  
  - Tous les contenants ont  8 kB ou moins
  - On prédit le type de structure à la volée pendant les calculs
-
+ - Par ex. quand un tableau devient trop volumineux, on passe au bitset
+ - L'union de deux grands tableaux est prédite comme étant un bitset...
+ - Des dizaines d'heuristiques... réseaux de tri, etc.
 
 ---
 
@@ -338,12 +376,24 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
 
 ---
 
-## Unions de 200 bitmaps (cycles par valeur en entrée)
+## Unions de 200 éléments 
+
+taille en bits par éléments :
 
 |   | bitset | tableau   | hachage | Roaring |
 |---|------|-----------|---------|---------|
-|census1881   | 9.85 | 542   | 1010 | 2.6 |
-|weather   | 0.35 | 94   | 237 | 0.16 |
+|census1881   | 524 | 32  | 195 | <span style="color:red">15.1</span> |
+|weather   | 15.3 | 32   | 195 | <span style="color:red">5.38</span> |
+
+
+cycles par valeur par éléments :
+
+|   | bitset | tableau   | hachage | Roaring |
+|---|------|-----------|---------|---------|
+|census1881   | 9.85 | 542   | 1010 | <span style="color:red">2.6</span> |
+|weather   | 0.35 | 94   | 237 | <span style="color:red">0.16</span> |
+
+* Roaring Bitmaps: Implementation of an Optimized Software Library, Software: Practice and Experience Volume 48, Issue 4 April 2018 https://arxiv.org/abs/1709.07821
 
 
 
@@ -352,7 +402,7 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
 ## "Memory-file mapping"
 
 - Druid (Metamarkets: Java/Scala) et bleve (Couchbase: Go)
-- étant donné octets sur disque ou ailleurs en mémoire,  donne accès à la structure de données sans copie
+- Étant donné octets sur disque ou ailleurs en mémoire,  donne accès à la structure de données sans copie
 - évite les allocations de mémoire
 - permet à plusieurs processus de partager la même mémoire
 - contourne le *garbage collector*
@@ -377,12 +427,6 @@ $ sloccount . | grep java
 
 Versions en C, C++, Go, Python, Rust, etc.
 
----
-
-
-<img src="https://lemire.me/img/twittertestimony2017.png" >
-
-
 
 --- 
 
@@ -392,7 +436,8 @@ Versions en C, C++, Go, Python, Rust, etc.
 - Utilisation de 1, 2, 3, 4, ... octets per entiers
 - Utilise un bit par octet pour indique longueur des entiers en octets
 - Lucene, Protocol Buffers, etc.
-
+- 32 : <span style="color:blue">0</span>0100000
+- 128 : <span style="color:blue">1</span>0000000 + <span style="color:blue">0</span>0000001
 --- 
 
 ## varint-GB de Google
@@ -402,6 +447,9 @@ Versions en C, C++, Go, Python, Rust, etc.
 - chaque bloc de 4 entiers est précédé d'un octet 'descriptif'
 - Exige de modifier le format (pas compatible avec VByte)
 
+---
+
+<img src="varintgb.png" />
 
 --- 
 
@@ -415,6 +463,11 @@ Versions en C, C++, Go, Python, Rust, etc.
 
  SIMD-Based Decoding of Posting Lists, CIKM 2011
  https://stepanovpapers.com/SIMD_Decoding_TR.pdf
+
+
+---
+
+<img src="varintg8iu.png" />
 
 --- 
 
@@ -459,8 +512,20 @@ Information Processing Letters 130, 2018
 
 --- 
 
+
+<img src="streamvbytediag.png" />
+
+---
+
+
 <img src="streamvbyte.png" width="100%">
 
+---
+<img src="https://lemire.me/img/headers/racer.jpg" width="100%">
+
+---
+
+<img src="streamvbytecode.png" />
 
 ---
 
@@ -470,6 +535,12 @@ Information Processing Letters 130, 2018
 - upscaledb https://upscaledb.com
 - tantivy https://github.com/tantivy-search/tantivy 
 - Trinity https://github.com/phaistos-networks/Trinity
+
+---
+
+
+> As you can see, Stream VByte is over 30% faster than the second fastest, (...) This is quite an impressive improvement in terms of query execution time, which is almost entirely dominated by postings list access time (i.e integers decoding speed). https://medium.com/@markpapadakis/trinity-updates-and-integer-codes-benchmarks-6a4fa2eb3fd1
+
 
 ---
 
