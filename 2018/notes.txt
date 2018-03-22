@@ -1,0 +1,2 @@
+With frame-of-reference (with or without SIMD), you can use binary
+search over the compressed data without decompression.
