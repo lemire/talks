@@ -59,7 +59,7 @@ https://lemire.me
 “One Size Fits All”: An Idea Whose Time Has Come and Gone (Stonebraker, 2005)
 </blockquote>
 
-
+<img src="https://www.paradigm4.com/wp-content/uploads/2016/09/michael-stonebraker.jpg" />
 
 ---
 
@@ -72,7 +72,46 @@ Plusieurs composantes spécialisées et réutilisables:
 
 "Make your own database from parts"
 
+* Edmon Begoli, Jesús Camacho Rodríguez, Julian Hyde, Michael J. Mior, Daniel Lemire, Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources, ACM SIGMOD’18, 2018
+
 ---
+
+<img src="https://lemire.me/img/headers/racer.jpg" width="100%">
+
+
+---
+
+## La performance logicielle dans les mégadonnées
+
+- Beaucoup de coeurs
+- Utilisation peu efficace de chaque coeur
+
+Problèmes:
+
+- latence de la mémoire
+- aucune utilisation délibérée de la vectorisation
+
+
+---
+
+## Computer Language Benchmarks Game (fasta)
+
+
+|            | temps écoulé | temps total |
+|------------|--------------|-------------|
+| 1 coeur | 1.35 s | 1.35 s|
+| 4 coeurs | 1.00 s | 2.00 s|
+| vectorisé (1 coeur) | 0.31 s | 0.31 s|
+
+>  If you can vectorize your solution, you will get better performance and a corresponding power benefit. (Steigerwald and Agrawal, Developing Green Software)
+
+
+https://lemire.me/blog/2018/01/02/multicore-versus-simd-instructions-the-fasta-case-study/
+
+
+
+---
+
 
 ## Ensembles
 
@@ -258,13 +297,20 @@ Aucun embranchement!
 
 ## Similarité ensembliste avec les bitmaps
 
-- Jaccard/Tanimoto : $\vert S_1 \cap S_1 \vert  /\vert  S_1 \cup S_2\vert$ 
+- Jaccard/Tanimoto : $\frac{\vert S_1 \cap S_1 \vert  }{\vert  S_1 \cup S_2\vert}$ 
 - devient $\frac{| B_1 \mathrm{~AND~} B_2 | }{ | B_1 \mathrm{~OR~} B_2 |}$
 - 1.15 cycles par paire de mots (64-bit) 
 - Wojciech Muła, Nathan Kurz, Daniel Lemire
 Faster Population Counts Using AVX2 Instructions
 Computer Journal 61 (1), 2018
-- (adopté par clang)
+
+---
+
+
+(adopté par clang --- LLVM)
+
+
+<img src="clangpopcount.png" with="100%" />
 
 ---
 
@@ -506,9 +552,8 @@ Jeff Plaisance, Nathan Kurz, Daniel Lemire, Vectorized VByte Decoding, Internati
 - Mais au lieu de mélanger les octets descriptifs avec le reste des données...
 - On sépare les octets descriptifs du reste 
 
-Daniel Lemire, Nathan Kurz, Christoph Rupp
-Stream VByte: Faster Byte-Oriented Integer Compression
-Information Processing Letters 130, 2018
+
+Daniel Lemire, Nathan Kurz, Christoph Rupp, Stream VByte: Faster Byte-Oriented Integer Compression, Information Processing Letters&nbsp;130, 2018
 
 --- 
 
@@ -519,9 +564,6 @@ Information Processing Letters 130, 2018
 
 
 <img src="streamvbyte.png" width="100%">
-
----
-<img src="https://lemire.me/img/headers/racer.jpg" width="100%">
 
 ---
 
@@ -550,8 +592,9 @@ Information Processing Letters 130, 2018
 <img src="img-logo-en.png" style="float:right; width:5em"/>
 
 * Blogue (2 fois/semaine) : https://lemire.me/blog/
-* GitHub: https://github.com/lemire
+* GitHub: https://github.com/lemire (1,100 *followers*)
 * Page personnelle : https://lemire.me/fr/
 * CRSNG : *Faster Compressed Indexes On Next-Generation Hardware* (2017-2022)
-* Twitter <img src="twitter.png" style="width:1.5em"/> @lemire
+* Twitter  @lemire <img src="twitter.png" style="width:1.5em"/> (8,000 *followers*)
 
+<img src="https://lemire.me/img/portrait2018facebook.jpg" style="float:left; width:15em"/>
