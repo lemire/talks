@@ -542,7 +542,6 @@ Information Processing Letters 130, 2018
 
 - Redis (au sein de RediSearch) https://redislabs.com
 - upscaledb https://upscaledb.com
-- tantivy https://github.com/tantivy-search/tantivy 
 - Trinity https://github.com/phaistos-networks/Trinity
 
 ---

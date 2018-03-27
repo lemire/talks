@@ -44,15 +44,15 @@ background-color:#008dc8 !important;
 </style>
 
 
-## Les subventions à la découverte du CRSNG 
+## Les subventions à la découverte du CRSNG
 
 ### Trucs et stratégies
 
 
 <img src="nserc.jpg" style="float:right; width:30%"/>
 
-Daniel Lemire 
-https://lemire.me 
+Daniel Lemire
+https://lemire.me
 
 
 
@@ -66,7 +66,7 @@ https://lemire.me
 
 ---
 
-## Comité 
+## Comité
 
 - 340 demandes
 - chaque membre du comité évalue environ 50 demandes
@@ -95,7 +95,7 @@ https://lemire.me
 ---
 
 ## Biais
- 
+
 - Ne pas divulguer le genre du chercheur
 - Ne pas attaquer l'institution (petite, grande)
 
@@ -147,7 +147,7 @@ https://lemire.me
 
 ## Remplissez la demande avec soin
 
-- Incluez des notices complètes 
+- Incluez des notices complètes
 - Relisez votre demande
 
 ---
@@ -171,7 +171,7 @@ https://lemire.me
 - Publier avec les étudiants : +1
 - Publier souvent seul : -1
 - Volume de citation : +/-
-- Rôle 
+- Rôle
 
 ---
 
@@ -190,7 +190,7 @@ https://lemire.me
 - Doit être compréhensible!
 - Deep Learning applied to IoT with Bitcoin
 - Incidence?
-- Bien couvrir l'état de la question 
+- Bien couvrir l'état de la question
 
 ---
 
@@ -215,6 +215,49 @@ https://lemire.me
 
 ---
 
+## 1. Colère
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Ira%29.jpg" style="width:30%; float:right" />
+Soyez patient en remplissant les formulaires. 
+
+## 2. Avarice
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Avaricia%29.jpg" style="width:30%; float:right" />
+Contribuez à votre communauté avec générosité.
+
+
+## 3. Envie
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Invidia%29.jpg" style="width:30%; float:right" />
+On sait que vous avez envie de faire la même chose que les vedettes... mais concentrez-vous sur vos affaires.
+
+
+## 4. Orgueil
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Superbia%29.jpg" style="width:30%; float:right" />
+Si vous ne savez pas bien comment faire quelque chose, faire semblant est une stratégie risquée. Admettez vos limites et expliquez plutôt comment vous allez les surmonter. Demandez de l'aide !
+
+## 5. Gourmandise
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Gula%29.jpg" style="width:30%; float:right" />
+Vos propositions doivent être réalistes.
+
+## 6. Paresse
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Accidia%29.jpg" style="width:30%; float:right" />
+Une multitude de projets qui n'aboutissent pas...
+
+## 7. Luxure
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Luxuria%29.jpg" style="width:30%; float:right" />
+Vous rendre 20 fois par an dans un lieu touristique pour y présenter vos travaux ne fait pas de vous une sommité.
+
+---
+
 ## Pour en savoir plus...
 
 
@@ -224,4 +267,3 @@ https://lemire.me
 * Page personnelle : https://lemire.me/fr/
 * CRSNG : *Faster Compressed Indexes On Next-Generation Hardware* (2017-2022)
 * Twitter <img src="twitter.png" style="width:1.5em"/> @lemire
-
