@@ -54,6 +54,7 @@ https://lemire.me
 
 
 ---
+<!-- page_number: true -->
 
 <blockquote>
 “One Size Fits All”: An Idea Whose Time Has Come and Gone (Stonebraker, 2005)
@@ -72,9 +73,19 @@ Plusieurs composantes spécialisées et réutilisables:
 
 "Make your own database from parts"
 
+
 ---
 
 ## Ensembles
+
+Un concept fondamental (ensemble de documents, d'enregistrements)
+
+$\to$ Pour la performance, on utilise des ensemble d'**entiers** (identifiants).
+
+$\to$ Souvent des entiers à 32 bits suffise (identifiants locaux).
+
+---
+
 
 
 
@@ -83,7 +94,11 @@ Plusieurs composantes spécialisées et réutilisables:
 - unions : $S_2 \cup S_1$
 - differences : $S_2 \setminus S_1$
 - Jaccard/Tanimoto : $\vert S_1 \cap S_1 \vert  /\vert  S_1 \cup S_2\vert$
-
+- iteration: 
+```
+for x in S do
+    print(x)
+```
 
 ---
 
@@ -165,6 +180,7 @@ return -(low + 1);
 ## Faire "crasher" Swift
 
 
+<img src="swiftlogo.png" width="40%" style="float:right;margin-left:5%"/>
 
 ```
 var S1 = Set<Int>(1...size)
@@ -176,7 +192,7 @@ for i in S1 {
 
 ---
 
-## Quelques chiffres
+## Quelques chiffres: une demi-heure pour 64M 
 
 | taille | temps (s) |
 |--------|-----------|
@@ -187,6 +203,11 @@ for i in S1 {
 
 * Maps and sets can have quadratic-time performance https://lemire.me/blog/2017/01/30/maps-and-sets-can-have-quadratic-time-performance/
 * Rust hash iteration+reinsertion https://accidentallyquadratic.tumblr.com/post/153545455987/rust-hash-iteration-reinsertion
+
+---
+
+
+<img src="swiftcrash.png" style="float:left;width:100%" />
 
 ---
 
@@ -247,12 +268,12 @@ Aucun embranchement!
 
 ## Les bitmaps bénéficient des mots étendus
 
-- Processeurs 64 bits
 - SIMD: Single Intruction Multiple Data
   - SSE (Pentium 4), ARM NEON 128 bits
   - AVX/AVX2 (256 bits)
   - AVX-512 (512 bits)
 
+AVX-512 est maintenant disponible (par ex. chez Dell!) avec les processors ayant une microarchitecture Skylake-X.
 
 ---
 
@@ -300,10 +321,11 @@ https://github.com/git/git/blob/master/ewah/bitmap.c
 
 ---
 
-> it [EWAH] has already saved our users roughly a century of waiting for their fetches to complete (and the equivalent amount of CPU time in our fileservers). http://githubengineering.com/counting-objects/
+> [EWAH in Git] has already saved our users roughly a century of waiting for their fetches to complete (and the equivalent amount of CPU time in our fileservers). http://githubengineering.com/counting-objects/
 
-* Daniel Lemire et al., Data & Knowledge Engineering 69 (1), 2010. http://arxiv.org/abs/0901.3751
+<!-- * Daniel Lemire et al., Data & Knowledge Engineering 69 (1), 2010. http://arxiv.org/abs/0901.3751
 * Google Open Source Peer Bonus Program (2012)
+-->
 
 ---
 
@@ -323,9 +345,9 @@ https://github.com/git/git/blob/master/ewah/bitmap.c
 
 ---
 
+<!-- footer: Roaring bitmaps -->
 
 
-<!-- page_number: true -->
 
 ##  Roaring Bitmaps
 
@@ -365,7 +387,7 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
  
  ## Roaring
  
- - Tous les contenants ont  8 kB ou moins
+ - Tous les contenants ont  8 kB ou moins (mémoire cache du processeur)
  - On prédit le type de structure à la volée pendant les calculs
  - Par ex. quand un tableau devient trop volumineux, on passe au bitset
  - L'union de deux grands tableaux est prédite comme étant un bitset...
@@ -405,6 +427,7 @@ cycles par valeur par éléments :
 * Roaring Bitmaps: Implementation of an Optimized Software Library, Software: Practice and Experience Volume 48, Issue 4 April 2018 https://arxiv.org/abs/1709.07821
 
 
+<!--
 
 ---
 
@@ -436,8 +459,11 @@ $ sloccount . | grep java
 
 Versions en C, C++, Go, Python, Rust, etc.
 
+-->
 
 --- 
+
+<!-- footer: Compression d'entiers -->
 
 ## Compression d'entiers
 
@@ -452,7 +478,7 @@ Versions en C, C++, Go, Python, Rust, etc.
 ## varint-GB de Google
 
 - VByte: un embranchement par entier
-- varint-GB: un embranchmement par bloc de 4 entiers 
+- varint-GB: un embranchemement par bloc de 4 entiers 
 - chaque bloc de 4 entiers est précédé d'un octet 'descriptif'
 - Exige de modifier le format (pas compatible avec VByte)
 
@@ -551,6 +577,8 @@ Information Processing Letters 130, 2018
 
 
 ---
+
+<!-- footer: @lemire -->
 
 ## Pour en savoir plus...
 

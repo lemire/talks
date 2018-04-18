@@ -2,8 +2,7 @@
 
 <!-- *template: invert -->
 <style>
-* { font-size: 1.1em;
-}
+
  *[data-template~="invert"] {
 color:white !important;
 background-color:#cccccc !important;
@@ -44,6 +43,7 @@ Montreal :canada:
 
 
 ---
+<!-- page_number: true -->
 
 <blockquote>
 “One Size Fits All”: An Idea Whose Time Has Come and Gone (Stonebraker, 2005)
@@ -63,28 +63,44 @@ In 2018, Big Data Engineering is made of several specialized and re-usable compo
 
 ---
 
-"Make your own database engine from parts"
+> "Make your own database engine from parts"
 
+We are in a Cambrian explosion, with thousands of organizations and companies building their custom high-speed systems.
+
+- Specialized used cases
+- Heterogeneous data (not everything is in your Oracle DB)
 
 ---
 
-## For high-speed...
+## For high-speed in data engineering you need...
 
-- Need 
+- High-level optimizations (e.g., Calcite)
+- Indexes (e.g., Pilosa, Elasticsearch)
+  - Great compression routimnes 
+  - Specialized data structures
+- ....
+
 
 ---
 
 ## Sets
 
+A fundamental concept (sets of documents, identifiers, tuples...)
 
+$\to$ For performance, we often work with sets of **integers** (identifiers).
+
+$\to$ Often 32-bit integers suffice (local identifiers).
+
+---
 
 - tests : $x \in S$?
-- intersections : $S_2 \cap S_1$
-- unions : $S_2 \cup S_1$
-- differences : $S_2 \setminus S_1$
-- Jaccard/Tanimoto : $\vert S_1 \cap S_1 \vert  /\vert  S_1 \cup S_2\vert$
-
-
+- intersections : $S_2 \cap S_1$, unions : $S_2 \cup S_1$, differences : $S_2 \setminus S_1$
+- Similarity (Jaccard/Tanimoto): $\vert S_1 \cap S_1 \vert  /\vert  S_1 \cup S_2\vert$
+- Iteration 
+```
+for x in S do
+    print(x)
+```
 ---
 
 ## How to implement sets?
@@ -98,46 +114,57 @@ In 2018, Big Data Engineering is made of several specialized and re-usable compo
 
 ---
 
-## Tableaux
+## Arrays are your friends
 
-Les tableaux sont vos amis: simples, fiables, économiques.
-
+<img src="binary-search.png" style="float:right; width:50%; height:400px"/>
 
 ```
-    while (low <= high) {
-      int middleIndex = (low + high) >>> 1;
-      int middleValue = array.get(middleIndex);
-      if (middleValue < ikey) {
-        low = middleIndex + 1;
-      } else if (middleValue > ikey) {
-        high = middleIndex - 1;
-      } else {
-        return middleIndex;
-      }
-    }
-    return -(low + 1);
+while (low <= high) {
+   int mI = 
+   (low + high) >>> 1;
+   int m = array.get(mI);
+   if (m < key) {
+     low = mI + 1;
+   } else if (m > key) {
+     high = mI - 1;
+   } else {
+     return mI;
+   }
+}
+return -(low + 1);
 ```
 
----
 
-<img src="binary-search.png" style="float:right; width:100%"/>
-
-Source: https://theproductiveprogrammer.blog
+<!-- Source: https://theproductiveprogrammer.blog -->
 
 
 
 ---
 
-## table de hachage
+## Hash tables
 
-- valeur $x$ stockée à l'index $h(x)$ 
-- accès aléatoire à une valeur rapide
-- accès ordonné pénible 
+- value $x$ at index $h(x)$ 
+- random access to a value in expected constant-time 
+   - **much** faster than arrays
+
+---
+
+## in-order access is kind of terrible
+
+
+- $[15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, \color{red}{1}, 14, 10, 7]$
+- $[15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, \color{red}{2}, 1, 14, 10, 7]$
+- $[15, \color{red}{3}, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+- $[15, 3, 0, 6, 11, \color{red}{4}, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+- $[15, 3, 0, 6, 11, 4, \color{red}{5}, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+- $[15, 3, 0, \color{red}{6}, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
+
+(Robin Hood,  linear probing,  MurmurHash3 hash function)
 
 
 ---
 
-## Opérations ensemblistes sur les tables de hachage
+## Set operations on hash tables
 
 
 ```
@@ -145,16 +172,16 @@ Source: https://theproductiveprogrammer.blog
   h2 <- hash set
   ...
   for(x in h1) {
-     insert x in h2 // échec (mémoire tampon)
+     insert x in h2 // cache miss?
   }
 ```
 
 
 ---
 
-## Faire "crasher" Swift
+## "Crash" Swift
 
-
+<img src="swiftlogo.png" width="40%" style="float:right;margin-left:5%"/>
 
 ```
 var S1 = Set<Int>(1...size)
@@ -164,15 +191,19 @@ for i in d {
 }
 ```
 
+
 ---
 
-## Quelques chiffres
+## Some numbers: half an hour for 64M keys
 
-| taille | temps (s) |
+
+
+| size | time (s) |
 |--------|-----------|
 | 1M     | 0.8       |
 | 8M     | 22        |
 | 64M     | 1400        |
+
 
 
 * Maps and sets can have quadratic-time performance https://lemire.me/blog/2017/01/30/maps-and-sets-can-have-quadratic-time-performance/
@@ -180,12 +211,16 @@ for i in d {
 
 ---
 
+<img src="swiftcrash.png" style="height:120%" />
 
-## Les bitmaps
 
-Façon efficace de représenter les ensembles d'entiers.
+---
 
-Par ex., 0, 1, 3, 4 devient ``0b11011`` ou "27".
+## Bitmaps
+
+Efficient way to represent sets of integers.
+
+For example, 0, 1, 3, 4 becomes ``0b11011`` or "27".
 
 * $\{0\}\to$ ``0b00001``
 * $\{0, 3\}\to$ ``0b01001``
@@ -195,11 +230,11 @@ Par ex., 0, 1, 3, 4 devient ``0b11011`` ou "27".
 
 ---
 
-## Manipuler un bitmap
+## Manipulate a bitmap
 
-Processeur 64 bits.
+64-bit processor.
 
-Étant donné ``x``, l'index du mot est ``x/64`` et l'index du bit est ``x % 64``.
+Given``x``, word index is ``x/64`` and bit index ``x % 64``.
 
 ```
 add(x) {
@@ -208,72 +243,62 @@ add(x) {
 
 ```
 
+
+
 ---
 
-## Est-ce que c'est rapide?
+## How fast is it?
 
 ```
-index = x / 64         -> un shift
-mask = 1 << ( x % 64)  -> un shift
-array[ index ] |- mask -> un OR avec la mémoire
+index = x / 64         -> a shift
+mask = 1 << ( x % 64)  -> a shift
+array[ index ] |- mask -> a OR with memory
 ```
 
-Un bit par $\approx 1.65$ cycles à cause de la superscalarité
+One bit every $\approx 1.65$ cycles because of superscalarity
 
 ---
 
-## Parallélisme des bits 
+## Bit parallelism 
 
 
-Intersection entre {0, 1, 3} et {1, 3}
-équivaut à une seule opération AND 
-entre ``0b1011`` et ``0b1010``.
+Intersection between {0, 1, 3} and {1, 3}
+a single AND operation 
+between ``0b1011`` and ``0b1010``.
 
-Résultat est ``0b1010`` ou {1, 3}.
+Result is``0b1010`` or {1, 3}.
 
-Aucun embranchement!
+No branching!
 
 ---
 
-## Les bitmaps bénéficient des mots étendus
+## Bitmaps love :heart: wide registers
 
-- Processeurs 64 bits
 - SIMD: Single Intruction Multiple Data
   - SSE (Pentium 4), ARM NEON 128 bits
   - AVX/AVX2 (256 bits)
   - AVX-512 (512 bits)
 
+AVX-512 is now  available (e.g., from Dell!) with Skylake-X processors.
 
 ---
 
-## Similarité ensembliste avec les bitmaps
+## Bitsets can take too much memory
 
-- Jaccard/Tanimoto : $\vert S_1 \cap S_1 \vert  /\vert  S_1 \cup S_2\vert$ 
-- devient $\frac{| B_1 \mathrm{~AND~} B_2 | }{ | B_1 \mathrm{~OR~} B_2 |}$
-- 1.15 cycles par paire de mots (64-bit) 
-- Wojciech Muła, Nathan Kurz, Daniel Lemire
-Faster Population Counts Using AVX2 Instructions
-Computer Journal 61 (1), 2018
-- (adopté par clang)
+{1, 32000, 64000} : 1000 bytes for three values
 
----
-
-## Les bitsets peuvent être gourmants
-
-{1, 32000, 64000} : 1000 octets pour 3 nombres
-
-On utilise donc la compression!
+We use compression!
 
 ---
 
 ## Git (GitHub) utilise EWAH
 
-Codage par plage
+Run-length encoding
 
-Exemple: $000000001111111100$ est
+Example: $000000001111111100$ est
 $00000000-11111111-00$
 
-On peut coder les longues séquences de 1 ou de 0 de manière concise.
+Code long runs of 0s or 1s efficiently.
 
 
 https://github.com/git/git/blob/master/ewah/bitmap.c
@@ -281,24 +306,15 @@ https://github.com/git/git/blob/master/ewah/bitmap.c
 
 ---
 
-> it [EWAH] has already saved our users roughly a century of waiting for their fetches to complete (and the equivalent amount of CPU time in our fileservers). http://githubengineering.com/counting-objects/
 
-* Daniel Lemire et al., Data & Knowledge Engineering 69 (1), 2010. http://arxiv.org/abs/0901.3751
-* Google Open Source Peer Bonus Program (2012)
+## Complexity
 
----
-
-- Après une comparaison exhaustive des techniques de compressions par plage sur les bitmaps, Guzun et al. (ICDE 2014) en arrive à la conclusion...
-
-> EWAH offers the best query time for all distributions.
-
-
+- Intersection : $O(|S_1| + |S_2|)$ or $O(\min(|S_1|, |S_2|))$
+- In-place union ($S_2 \leftarrow S_1 \cup S_2$): $O(|S_1| + |S_2|)$ or $O(|S_2|)$
 
 ---
+<!-- footer: Roaring bitmaps -->
 
-
-
-<!-- page_number: true -->
 
 ##  Roaring Bitmaps
 
@@ -306,27 +322,27 @@ http://roaringbitmap.org/
 
 - Apache Lucene, Solr et Elasticsearch, Metamarkets’ Druid, Apache Spark, Apache Hive, Apache Tez, Netflix Atlas, LinkedIn Pinot, InfluxDB, Pilosa, Microsoft Visual Studio Team Services (VSTS), Couchbase's Bleve, Intel’s Optimized Analytics Package (OAP), Apache Hivemall, eBay’s Apache Kylin.
 
-- Mise en oeuvre en Java, C, Go (interopérable)
+- Java, C, Go (interoperable)
 
-- Point départ: thèse de S. Chambi (UQAM), co-dirigée avec Robert Godin
 
 
 
  ----
  
- ## Modèle hybride
+ ## Hybrid model
  
  
  
- Décompose l'espace 32 bits en des sous-espaces de 16 bits. Au sein du sous-espace de 16 bits, utilisons la meilleure structure (contenant):
- 
- - tableau trié ({1,20,144})
+Set of containers 
+
+ - sorted arrays ({1,20,144})
  - bitset (0b10000101011)
- - plages ([0,10],[15,20])
+ - runs ([0,10],[15,20])
  
-C'est Roaring!
  
-Travaux similaires: O'Neil's RIDBit + BitMagic
+<!-- Earlier work: O'Neil's RIDBit + BitMagic-->
+
+Related to: O'Neil's RIDBit + BitMagic-
   
 ---
 
@@ -338,17 +354,22 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
  
  ## Roaring
  
- - Tous les contenants ont  8 kB ou moins
- - On prédit le type de structure à la volée pendant les calculs
+ - All containers are small (8 kB), fit in CPU cache
+ - We predict the output container type during computations
+ - E.g., when array gets too large, we switch to a bitset
+ - Union of two large arrays is materialized as a bitset...
+ - Dozens of heuristics... sorting networks and so on
+
 
 
 ---
 
 > Use Roaring for bitmap compression whenever possible. Do not use other bitmap compression methods (Wang et al., SIGMOD 2017)
 
+<!--
 > kudos for making something that makes my software run 5x faster (Charles Parker, BigML)
 
-<!--
+
 - Daniel Lemire et al., Roaring Bitmaps: Implementation of an Optimized Software Library, Software: Practice and Experience (to appear)
 - Samy Chambi et al.,  Better bitmap performance with Roaring bitmaps, Software: Practice and Experience 46 (5), 2016
 - Daniel Lemire et al. Consistently faster and smaller compressed bitmaps with Roaring Software: Practice and Experience 46 (11), 2016
@@ -356,111 +377,69 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
 
 ---
 
-## Unions de 200 bitmaps (cycles par valeur en entrée)
+## Unions of 200 bitmaps (cycles per input input value)
 
-|   | bitset | tableau   | hachage | Roaring |
+
+|   | bitset | array   | hash table | Roaring |
 |---|------|-----------|---------|---------|
-|census1881   | 9.85 | 542   | 1010 | 2.6 |
-|weather   | 0.35 | 94   | 237 | 0.16 |
+|census1881   | 524 | 32  | 195 | <span style="color:red">15.1</span> |
+|weather   | 15.3 | 32   | 195 | <span style="color:red">5.38</span> |
 
-
-
----
-
-## Développement logiciel
-
-
-- Version Java de Roaring: 26 auteurs, 124 versions, 1697 *commits*
-```
-$ sloccount . | grep java
-91967   jmh             java=91967
-23871   test            java=23871
-19024   main            java=19024
-```
-
-1. L'essentiel du code: profilage, benchmark
-1. Second: tests
-1. En dernier, la mise en oeuvre
-
-Versions en C, C++, Go, Python, Rust, etc.
-
----
-
-
-<img src="https://lemire.me/img/twittertestimony2017.png" >
-
+|   | bitset | array   | hash table | Roaring |
+|---|------|-----------|---------|---------|
+|census1881   | 9.85 | 542   | 1010 | <span style="color:red">2.6</span> |
+|weather   | 0.35 | 94   | 237 | <span style="color:red">0.16</span> |
 
 
 --- 
+<!-- footer: Integer compression -->
 
-## Compression d'entiers
+## Integer compression
 
-- Technique "standard" : VByte, VarInt, VInt
-- Utilisation de 1, 2, 3, 4, ... octets per entiers
-- Utilise un bit par octet pour indique longueur des entiers en octets
+- "Standard" technique: VByte, VarInt, VInt
+- Use 1, 2, 3, 4, ... byte per integer
+- Use one bit per byte to indicate the length of the integers in bytes
 - Lucene, Protocol Buffers, etc.
 
 --- 
 
-## varint-GB de Google
+## varint-GB from Google
 
-- VByte: un embranchement par entier
-- varint-GB: un embranchmement par bloc de 4 entiers 
-- chaque bloc de 4 entiers est précédé d'un octet 'descriptif'
-- Exige de modifier le format (pas compatible avec VByte)
+- VByte: one branch per integer
+- varint-GB: one branch per  4 integers 
+- each 4-integer block is preceded byte a *control byte*
 
 
 --- 
 
-## Accélération par vectorisation
+## Vectorisation
 
-- Stepanov (inventeur du STL en C++) travaillant pour Amazon a proposé  varint-G8IU
-- Stocke autant d'entiers que possible par blocs de 8 octets
-- Utilise la vectorisation (SIMD)
-- Exige de modifier le format (pas compatible avec VByte)
-- *Protégé par un brevet*
+- Stepanov (STL in C++) working for Amazon proposed varint-G8IU
+- Use vectorization (SIMD)
+- *Patented*
+- Fastest byte-oriented compression technique (until recently)
 
  SIMD-Based Decoding of Posting Lists, CIKM 2011
  https://stepanovpapers.com/SIMD_Decoding_TR.pdf
 
---- 
-
-## Observations de Stepanov et al. (partie 1)
-
-- Incapable de vectoriser VByte (original)
-
---- 
-
-## Accélérer VByte (sans changer le format)
-
-- C'est possible nonobstant l'échec de Stepanov et al.
-- Décodeur avec SIMD: Masked VByte 
-- Travaux réalisés avec Indeed.com (en production)
-
-Jeff Plaisance, Nathan Kurz, Daniel Lemire, Vectorized VByte Decoding, International Symposium on Web Algorithms 2015, 2015.
-
----
-
-<img src="maskedvbyte.png" width="100%">
-
 
 
 --- 
 
-## Observations de Stepanov et al. (partie 2)
+## Observations from Stepanov et al. 
 
 
-- Possible de vectoriser le varint-GB de Google, mais moins performant que varint-G8IU
+- We can vectorize Google's varint-GB, but it is not as fast as  varint-G8IU
 
 --- 
 
 ## Stream VByte
 
-- Reprend l'idée du varint-GB de Google
-- Mais au lieu de mélanger les octets descriptifs avec le reste des données...
-- On sépare les octets descriptifs du reste 
+- Reuse varint-GB from Google
+- But instead of mixing control bytes and data bytes, ...
+- We store control bytes separately and consecutively...  
 
-Daniel Lemire, Nathan Kurz, Christoph Rupp
+> Daniel Lemire, Nathan Kurz, Christoph Rupp
 Stream VByte: Faster Byte-Oriented Integer Compression
 Information Processing Letters 130, 2018
 
@@ -468,37 +447,59 @@ Information Processing Letters 130, 2018
 
 <img src="streamvbyte.png" width="100%">
 
-
 ---
 
-## Stream VByte est utilisé par...
+## Stream VByte is used by...
 
-- Redis (au sein de RediSearch) https://redislabs.com
+- Redis (within RediSearch) https://redislabs.com
 - upscaledb https://upscaledb.com
-- tantivy https://github.com/tantivy-search/tantivy 
 - Trinity https://github.com/phaistos-networks/Trinity
 
+
 ---
 
-## Pour en savoir plus...
+## Dictionary coding
+
+Use, e.g., by Apache Arrow
+
+Given a list of values: 
+- "Montreal", "Toronto", "Boston", "Montreal", "Boston"...
+
+Map to integers
+
+- 0, 1, 2, 0, 2
+
+Compress integers: 
+
+- Given $2^n$ distinct values...
+- Can use $n$-bit per values (binary packing, patched coding, frame-of-reference)
+
+---
+
+## Dictionary coding + SIMD
+
+| dict. size  | bits per value | scalar    | AVX2 (256-bit)  | AVX-512 (512-bit)  |
+|---|---|---|---|---|
+|  32 | 5 | 8  |  3 |  1.5 |  
+|  1024 | 10 | 8  |  3.5 |  2 |  
+|  65536 | 16 | 12  |  5.5 |  4.5 |  
+
+(cycles per value decoded)
+
+https://github.com/lemire/dictionary
+
+---
+
+<!-- footer: @lemire -->
+
+## To learn more...
 
 
 <img src="img-logo-en.png" style="float:right; width:5em"/>
 
-* Blogue (2 fois/semaine) : https://lemire.me/blog/
+* Blog (twice a week) : https://lemire.me/blog/
 * GitHub: https://github.com/lemire
-* Page personnelle : https://lemire.me/fr/
+* Home page : https://lemire.me/en/
 * CRSNG : *Faster Compressed Indexes On Next-Generation Hardware* (2017-2022)
 * Twitter <img src="twitter.png" style="width:1.5em"/> @lemire
 
-
----
-
-Dictionary coding
-
-binary packing 
-
-
-40 mins
-
-apache arrow

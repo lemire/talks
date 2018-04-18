@@ -62,16 +62,44 @@ https://lemire.me
 
 - Membre du comité CRNSG informatique 1507 (2017-2020)
 - Subvention à la découverte du CRNSG depuis 2002
+- Oeuvre au sein d'une mini-université au sein de l'UQ (TÉLUQ)
+
+---
+
+## Le CRSNG
+
+- Gouvernement fédéral canadien
+- Finance la recherche en génie et science 
+
+
+---
+
+## Les subventions à la découverte
+
+- Normalement sur cinq ans (avec extension automatique sans financement supplémentaire à six ans)
+- Trois critères: excellence of researcher, merit of proposal, HQP
+- Une note par critère (insufficient, moderate, strong, very strong, outstanding, exceptional)
+- Évaluation pan-canadienne par discipline
+- Un évaluation de "strong" dans "excellence of researcher" ouvre la porte à d'autres subventions
 
 
 ---
 
 ## Comité
 
-- 340 demandes
+- Un comité par discipline (par ex. informatique)
+- Le chercheur choisit (librement) son comité
+- Les membres peuvent venir de l'industrie, de l'étranger, de petites et de grandes universités, femmes, minorités, etc.
+
+---
+
+## Fonctionnement du comité
+
+- En présence à Ottawa
+- ~300 à 400 demandes
 - chaque membre du comité évalue environ 50 demandes
 - les demandes sont réparties par sections (systèmes, théorie, etc.)
-- Un membre peut intervenir dans différentes sections
+- Un membre peut intervenir dans différentes sections au sein du comité selon ses compétences
 
 
 
@@ -88,20 +116,27 @@ https://lemire.me
 
 ## $$$
 
-- Le financement n'est pas discuté
-- On somme les trois notes
-- Les directeurs de section déterminent avec le CRSNG les fonds octroyés en fonction des notes
+- Le financement n'est pas discuté lors de l'évaluation des demandes
+- On somme les trois notes (insufficient, moderate, strong, very strong, outstanding, exceptional), c'est la somme qui détermine le financement :
+  - strong, strong, outstanding 
+  - very strong, very strong, strong
+- Les directeurs de section déterminent avec le CRSNG les fonds octroyés en fonction de la somme des notes
+
 
 ---
 
-## Biais
+## Seuil minimal
 
-- Ne pas divulguer le genre du chercheur
-- Ne pas attaquer l'institution (petite, grande)
+Pour être financé, il faut avoir au moins strong dans chaque catégorie... sauf...
+
+1. Un chercheur en début de carrière peut avoir un moderate et deux strongs. 
+2. Un moderate dans *merit of the proposal* accompagné d'un very strong et d'un strong donne un financement d'un an
+3. En aucun cas est-ce qu'on peut être financé avec un *insufficient*.
+
 
 ---
 
-## Critères
+## On se résume...
 
 - excellence of researcher, merit of the proposal, HQP
 - insufficient, moderate, strong, very strong, outstanding, exceptional
@@ -109,6 +144,15 @@ https://lemire.me
 - la plupart des notes {moderate, strong, very strong}
 - rare: insufficient, outstanding
 - très rare: exceptional
+
+---
+
+## Biais
+
+- Ne pas divulguer le genre du chercheur.
+- Ne pas attaquer l'institution (petite, grande).
+- Pas de racisme.
+
 
 ---
 
@@ -156,8 +200,9 @@ https://lemire.me
 ## Évaluations externes
 
 - Elles peuvent avoir un grand ou un petit poids
+- On peut demander à complètement retirer un évaluation externe, ou choisir de ne pas en tenir compte.
 - Identité de l'évaluateur importe
-- Les amis ?
+- Les amis ? Pas toujours gagnant (les gens ne sont pas nonos)
 
 ---
 
@@ -167,11 +212,11 @@ https://lemire.me
 - Volume a peu d'importance
 - Qualité, qualité, qualité
 - Certaines publications sont négatives
-- Junk journal !!!
+- Junk journal !!! No No No
 - Publier avec les étudiants : +1
 - Publier souvent seul : -1
-- Volume de citation : +/-
-- Rôle
+- Volume de citation : +/- important
+- Rôle dans la puplication est important
 
 ---
 
@@ -220,17 +265,25 @@ https://lemire.me
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Ira%29.jpg" style="width:30%; float:right" />
 Soyez patient en remplissant les formulaires. 
 
+---
+
+
 ## 2. Avarice
 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Avaricia%29.jpg" style="width:30%; float:right" />
 Contribuez à votre communauté avec générosité.
 
+Oui, la générosité finit par transparaître!
+
+---
 
 ## 3. Envie
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Invidia%29.jpg" style="width:30%; float:right" />
 On sait que vous avez envie de faire la même chose que les vedettes... mais concentrez-vous sur vos affaires.
+
+---
 
 
 ## 4. Orgueil
@@ -239,10 +292,14 @@ On sait que vous avez envie de faire la même chose que les vedettes... mais con
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Superbia%29.jpg" style="width:30%; float:right" />
 Si vous ne savez pas bien comment faire quelque chose, faire semblant est une stratégie risquée. Admettez vos limites et expliquez plutôt comment vous allez les surmonter. Demandez de l'aide !
 
+---
+
 ## 5. Gourmandise
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Gula%29.jpg" style="width:30%; float:right" />
-Vos propositions doivent être réalistes.
+Vos propositions doivent être réalistes. On peut vouloir trop faire. On peut avoir trop de publications (peu abouties), etc.
+
+---
 
 ## 6. Paresse
 
@@ -250,11 +307,21 @@ Vos propositions doivent être réalistes.
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Accidia%29.jpg" style="width:30%; float:right" />
 Une multitude de projets qui n'aboutissent pas...
 
+Absence de progrès véritable...
+
+Refaire les mêmes choses sans cesse parce que c'est facile...
+
+
+
+---
+
 ## 7. Luxure
 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Luxuria%29.jpg" style="width:30%; float:right" />
 Vous rendre 20 fois par an dans un lieu touristique pour y présenter vos travaux ne fait pas de vous une sommité.
+
+Il vaut mieux être humble et faire des travaux de qualité que d'essayer d'épater la galerie.
 
 ---
 
