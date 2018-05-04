@@ -74,9 +74,10 @@ We are in a Cambrian explosion, with thousands of organizations and companies bu
 
 ## For high-speed in data engineering you need...
 
-- High-level optimizations (e.g., Calcite)
+- Front-end (data frame, SQL, visualisation)
+- High-level optimizations 
 - Indexes (e.g., Pilosa, Elasticsearch)
-  - Great compression routimnes 
+  - Great compression routines 
   - Specialized data structures
 - ....
 
@@ -89,7 +90,7 @@ A fundamental concept (sets of documents, identifiers, tuples...)
 
 $\to$ For performance, we often work with sets of **integers** (identifiers).
 
-$\to$ Often 32-bit integers suffice (local identifiers).
+
 
 ---
 
@@ -342,7 +343,7 @@ Set of containers
  
 <!-- Earlier work: O'Neil's RIDBit + BitMagic-->
 
-Related to: O'Neil's RIDBit + BitMagic-
+Related to: O'Neil's RIDBit + BitMagic
   
 ---
 
@@ -377,13 +378,17 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
 
 ---
 
-## Unions of 200 bitmaps (cycles per input input value)
+## Unions of 200 bitmaps 
+
+#### bits per stored value
 
 
 |   | bitset | array   | hash table | Roaring |
 |---|------|-----------|---------|---------|
 |census1881   | 524 | 32  | 195 | <span style="color:red">15.1</span> |
 |weather   | 15.3 | 32   | 195 | <span style="color:red">5.38</span> |
+
+### cycles per input input value:
 
 |   | bitset | array   | hash table | Roaring |
 |---|------|-----------|---------|---------|
