@@ -237,6 +237,7 @@ Pour être financé, il faut avoir au moins strong dans chaque catégorie... sau
 - Deep Learning applied to IoT with Bitcoin
 - Incidence?
 - Bien couvrir l'état de la question
+- Vous devez avoir des contributions originales
 
 ---
 
