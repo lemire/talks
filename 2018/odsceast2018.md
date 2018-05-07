@@ -388,7 +388,7 @@ Voir https://github.com/RoaringBitmap/RoaringFormatSpec
 |census1881   | 524 | 32  | 195 | <span style="color:red">15.1</span> |
 |weather   | 15.3 | 32   | 195 | <span style="color:red">5.38</span> |
 
-### cycles per input input value:
+### cycles per input  value:
 
 |   | bitset | array   | hash table | Roaring |
 |---|------|-----------|---------|---------|

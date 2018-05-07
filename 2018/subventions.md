@@ -81,7 +81,8 @@ https://lemire.me
 - Une note par critère (insufficient, moderate, strong, very strong, outstanding, exceptional)
 - Évaluation pan-canadienne par discipline
 - Un évaluation de "strong" dans "excellence of researcher" ouvre la porte à d'autres subventions
-
+- Taux de succès d'environ 66%, financement moyen d'environ 30k$
+- Bugdet d'environ 70 millions de dollars (6 millions en informatique)
 
 ---
 
