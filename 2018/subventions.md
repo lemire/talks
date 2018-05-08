@@ -81,8 +81,22 @@ https://lemire.me
 - Une note par critère (insufficient, moderate, strong, very strong, outstanding, exceptional)
 - Évaluation pan-canadienne par discipline
 - Un évaluation de "strong" dans "excellence of researcher" ouvre la porte à d'autres subventions
+
+---
+
+## Jeu à somme nulle? (partie 1)
+
+- Les chercheurs sont en compétition les uns avec les autres...
 - Taux de succès d'environ 66%, financement moyen d'environ 30k$
 - Bugdet d'environ 70 millions de dollars (6 millions en informatique)
+
+---
+
+## Jeu à somme nulle? (partie 2)
+
+- C'est peut-être moins une compétition et plus un effort collaboratif
+- De bons projets avec des retombées claires permet au CRNSG de justifier plus de budgets
+- "Create value for Canada" est plus qu'une phrase creuse
 
 ---
 
@@ -325,6 +339,18 @@ Vous rendre 20 fois par an dans un lieu touristique pour y présenter vos travau
 
 Il vaut mieux être humble et faire des travaux de qualité que d'essayer d'épater la galerie.
 
+
+---
+
+## À retenir
+
+- Difficile de tromper les membres du comité avec du verbiaillage
+- Un seul papier de qualité peut être mieux que 50 papiers
+- Contribuez vraiment à votre communauté
+- Portez attention à vos (bons) étudiants
+- Expliquez-vous honnêtement
+
+
 ---
 
 ## Pour en savoir plus...
@@ -336,3 +362,8 @@ Il vaut mieux être humble et faire des travaux de qualité que d'essayer d'épa
 * Page personnelle : https://lemire.me/fr/
 * CRSNG : *Faster Compressed Indexes On Next-Generation Hardware* (2017-2022)
 * Twitter <img src="twitter.png" style="width:1.5em"/> @lemire
+
+
+
+
+<img src="https://www.teluq.ca/siteweb/univ/fichiers/images/profs/dlemire.jpg" style="float:left; width:50%"/>
