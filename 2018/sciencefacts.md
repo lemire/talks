@@ -35,9 +35,13 @@ Daniel Lemire
 blog: https://lemire.me 
 twitter: [@lemire](https://twitter.com/lemire)
 
-Université du Québec (TÉLUQ)
+Université du Québec (TELUQ)
 Montreal :canada:
 
+---
+
+
+<img src="homepage.png" height="600" />
 
 ---
 <!-- page_number: true -->
@@ -52,13 +56,29 @@ Montreal :canada:
 
 ---
 
+## How fast is Google?
+
+About 0.2 s
+
+---
+
 ## Montreal - Los Angeles
 
 4 500 km
 
-Takes 0.015 s
+One-way 0.015 s 
 
-Two-way 0.030 s
+Two-way 0.030 s 
+
+---
+
+## Montreal - Australia
+
+about 20 000 km
+
+One-way 0.07 s 
+
+Two-way 0.15 s
 
 ---
 
@@ -109,11 +129,24 @@ You come from a single cell from your mother.
 
 All of your cells have the same genetic information.
 
-All of the mother's cells come from a cell in your mother's and so forth.
+
+---
+
+All of the mother's cells come from a cell from your grand-mother's and so forth.
+
+---
+
 
 It goes all the way back to the origin of life (bacteria).
 
-All our cells share the same DNA (genes): your genes encode about 1 GB of data (easily fits in memory on a cheap phone).
+
+---
+
+All our cells share the same DNA (genes)
+
+---
+
+your genes encode about 1 GB of data (easily fits in memory on a cheap phone).
 
 
 ---
@@ -138,14 +171,18 @@ IQ increases at a rate ranging from 0.2 to 0.4 each year. About 3 IQ points per 
 
 ---
 
-## More people?
+People born after 2000 have a life expectancy > 100 years.
 
-It is estimated the human population world-wide will peak around 2150. And then decrease.
+https://www.sciencedirect.com/science/article/pii/S0140673609614604
+
+---
+
+## More people?
 
 Population in Japan and Germany is decreasing.
 
 
-When population decrease, they get "older". Already a third of Japan is made of people 65 years or older.
+Already a third of Japan is made of people 65 years or older.
 
 ---
 
