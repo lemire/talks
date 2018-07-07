@@ -68,42 +68,40 @@ https://lemire.me
 
 ## Le CRSNG
 
-- Gouvernement fédéral canadien
-- Finance la recherche en génie et science 
+- Gouvernement fédéral canadien :canada:
+- Finance la recherche en génie et science  
 
 
 ---
 
 ## Les subventions à la découverte
 
-- Normalement sur cinq ans (avec extension automatique sans financement supplémentaire à six ans)
-- Trois critères: excellence of researcher, merit of proposal, HQP
-- Une note par critère (insufficient, moderate, strong, very strong, outstanding, exceptional)
+- Normalement sur cinq ans 
 - Évaluation pan-canadienne par discipline
-- Un évaluation de "strong" dans "excellence of researcher" ouvre la porte à d'autres subventions
 
 ---
 
-## Jeu à somme nulle? (partie 1)
+## Les critères
 
-- Les chercheurs sont en compétition les uns avec les autres...
-- Taux de succès d'environ 66%, financement moyen d'environ 30k$
+- Trois critères: 
+  - excellence of researcher, 👨‍🔬
+  - merit of proposal,  🗺️
+  - HQP 👩‍🎓👩‍🎓👩‍🎓
+- Une note par critère 
+  - insufficient,  :cry::cry::cry: ... :cry: 
+  - moderate, :cry:
+  - strong, 
+  - very strong, 
+  - outstanding, :heart: 
+  - exceptional :heart: :heart: :heart:
 
 ---
 
-## Jeu à somme nulle? (partie 2)
+## Jeu à somme nulle? 
 
-- C'est peut-être moins une compétition et plus un effort collaboratif
-- De bons projets avec des retombées claires permet au CRNSG de justifier plus de budgets
-- "Create value for Canada" est plus qu'une phrase creuse
+- Taux de succès d'environ 66%, 
+- financement moyen d'environ 30k$
 
----
-
-## Comité
-
-- Un comité par discipline (par ex. informatique)
-- Le chercheur choisit (librement) son comité
-- Les membres peuvent venir de l'industrie, de l'étranger, de petites et de grandes universités, femmes, minorités, etc.
 
 ---
 
@@ -112,8 +110,6 @@ https://lemire.me
 - En présence à Ottawa
 - ~300 à 400 demandes
 - chaque membre du comité évalue environ 50 demandes
-- les demandes sont réparties par sections (systèmes, théorie, etc.)
-- Un membre peut intervenir dans différentes sections au sein du comité selon ses compétences
 
 
 
@@ -123,65 +119,28 @@ https://lemire.me
 
 - jury de cinq membres pour chaque demande
 - délibérations principalement en anglais
-- quinze minutes (top chrono)
-- premier lecteur, second lecteur...
+- quinze minutes (top chrono) ⌚
 
 ---
 
 ## $$$
 
-- Le financement n'est pas discuté lors de l'évaluation des demandes
-- On somme les trois notes (insufficient, moderate, strong, very strong, outstanding, exceptional), c'est la somme qui détermine le financement :
-  - strong, strong, outstanding 
-  - very strong, very strong, strong
-- Les directeurs de section déterminent avec le CRSNG les fonds octroyés en fonction de la somme des notes
+- Le financement n'est pas discuté.
+- La somme des notes détermine le montant octroyé.
 
 
 ---
 
 ## Seuil minimal
 
-Pour être financé, il faut avoir au moins strong dans chaque catégorie... sauf...
+Pour être financé, il faut avoir au moins 
 
-1. Un chercheur en début de carrière peut avoir un moderate et deux strongs. 
-2. Un moderate dans *merit of the proposal* accompagné d'un very strong et d'un strong donne un financement d'un an
-3. En aucun cas est-ce qu'on peut être financé avec un *insufficient*.
+  - strong
+  - strong
+  - strong
+ 
+Avec des exceptions.
 
-
----
-
-## On se résume...
-
-- excellence of researcher, merit of the proposal, HQP
-- insufficient, moderate, strong, very strong, outstanding, exceptional
-- financé: strong, strong, strong (sauf exceptions)
-- la plupart des notes {moderate, strong, very strong}
-- rare: insufficient, outstanding
-- très rare: exceptional
-
----
-
-## Biais
-
-- Ne pas divulguer le genre du chercheur.
-- Ne pas attaquer l'institution (petite, grande).
-- Pas de racisme.
-
-
----
-
-## Le hasard ?
-
-- Dans la plupart des cas (80%) il n'y a que de petits  écarts entre les évaluations.
-- On utilise la médiane de cinq évaluations.
-- Le premier lecteur a un poids plus grand, mais pas déterminant
-- Possible pour un membre de faire changer les opinions (en 2 minutes)
-
----
-
-## Moderate, insufficient
-
-- Le premier lecteur doit produire un rapport
 
 ---
 
@@ -197,26 +156,17 @@ Pour être financé, il faut avoir au moins strong dans chaque catégorie... sau
 
 ## La triche
 
-- Soyez honnête.
 - Un atelier n'est pas la conférence.
+- *A short paper is not a long paper.*
 
----
-
-
-## Remplissez la demande avec soin
-
-- Incluez des notices complètes
-- Relisez votre demande
 
 ---
 
 
 ## Évaluations externes
 
-- Elles peuvent avoir un grand ou un petit poids
-- On peut demander à complètement retirer un évaluation externe, ou choisir de ne pas en tenir compte.
 - Identité de l'évaluateur importe
-- Les amis ? Pas toujours gagnant (les gens ne sont pas nonos)
+- Qualité des arguments importe
 
 ---
 
@@ -226,11 +176,7 @@ Pour être financé, il faut avoir au moins strong dans chaque catégorie... sau
 - Volume a peu d'importance
 - Qualité, qualité, qualité
 - Certaines publications sont négatives
-- Junk journal !!! No No No
-- Publier avec les étudiants : +1
-- Publier souvent seul : -1
-- Volume de citation : +/- important
-- Rôle dans la puplication est important
+- Rôle dans la publication est important
 
 ---
 
@@ -238,8 +184,10 @@ Pour être financé, il faut avoir au moins strong dans chaque catégorie... sau
 
 ## Excellence of researcher
 
-- Financement est formellement ignoré mais pas nécessairement positif
-- Service
+- Financement est formellement ignoré mais pas nécessairement positif... Menez vos projets à bien! 
+  - "He had 500k$ and that's all he did?" 
+- Service importe: 
+  - "ask not what your community can do for you - ask what you can do for your community"
 
 
 ---
@@ -247,7 +195,6 @@ Pour être financé, il faut avoir au moins strong dans chaque catégorie... sau
 ## Merit of proposal
 
 - Doit être compréhensible!
-- Deep Learning applied to IoT with Bitcoin
 - Incidence?
 - Bien couvrir l'état de la question
 - Vous devez avoir des contributions originales
@@ -268,86 +215,42 @@ Pour être financé, il faut avoir au moins strong dans chaque catégorie... sau
 - training plan
 - training philosophy
 - volume
-- genre
 - succès des étudiants
 
 
 
----
-
-## 1. Colère
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Ira%29.jpg" style="width:30%; float:right" />
-Soyez patient en remplissant les formulaires. 
 
 ---
 
+## Stratégie 1.
 
-## 2. Avarice
 
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Avaricia%29.jpg" style="width:30%; float:right" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Avaricia%29.jpg" style="width:50%; float:right" />
 Contribuez à votre communauté avec générosité.
 
 Oui, la générosité finit par transparaître!
 
----
-
-## 3. Envie
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Invidia%29.jpg" style="width:30%; float:right" />
-On sait que vous avez envie de faire la même chose que les vedettes... mais concentrez-vous sur vos affaires.
 
 ---
 
+## Stratégie 2.
 
-## 4. Orgueil
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Gula%29.jpg" style="width:50%; float:right" />
 
+Menez vos projets à bien. 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Superbia%29.jpg" style="width:30%; float:right" />
-Si vous ne savez pas bien comment faire quelque chose, faire semblant est une stratégie risquée. Admettez vos limites et expliquez plutôt comment vous allez les surmonter. Demandez de l'aide !
+On peut avoir trop de publications (peu abouties).
 
----
-
-## 5. Gourmandise
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Gula%29.jpg" style="width:30%; float:right" />
-Vos propositions doivent être réalistes. On peut vouloir trop faire. On peut avoir trop de publications (peu abouties), etc.
+* *Do 2 or 3 big things over 5 years. That is all we ask.*
 
 ---
 
-## 6. Paresse
+## Stratégie 3.
 
+Honnêteté et transparence avant tout.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Accidia%29.jpg" style="width:30%; float:right" />
-Une multitude de projets qui n'aboutissent pas...
+- Difficile de tromper les membres du comité avec du remplissage
 
-Absence de progrès véritable...
-
-Refaire les mêmes choses sans cesse parce que c'est facile...
-
-
-
----
-
-## 7. Luxure
-
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Jheronimus_Bosch_Table_of_the_Mortal_Sins_%28Luxuria%29.jpg" style="width:30%; float:right" />
-Vous rendre 20 fois par an dans un lieu touristique pour y présenter vos travaux ne fait pas de vous une sommité.
-
-Il vaut mieux être humble et faire des travaux de qualité que d'essayer d'épater la galerie.
-
-
----
-
-## À retenir
-
-- Difficile de tromper les membres du comité avec du verbiaillage
-- Un seul papier de qualité peut être mieux que 50 papiers
-- Contribuez vraiment à votre communauté
-- Portez attention à vos (bons) étudiants
-- Expliquez-vous honnêtement
 
 
 ---
