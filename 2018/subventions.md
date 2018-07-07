@@ -88,7 +88,6 @@ https://lemire.me
 
 - Les chercheurs sont en compétition les uns avec les autres...
 - Taux de succès d'environ 66%, financement moyen d'environ 30k$
-- Bugdet d'environ 70 millions de dollars (6 millions en informatique)
 
 ---
 
