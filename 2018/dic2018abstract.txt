@@ -1,0 +1,11 @@
+Ingénierie des mégadonnées
+
+Obtenir de bonnes performances en ingénierie des données est un défi de taille. Notre objectif est de traiter des milliards d'enregistrement par seconde par coeur.  Nous présenterons nos travaux sur la conception d'index plus rapides et utilisant peu de mémoire.  Certains de nos travaux incluent les index Roaring faisant partie de systèmes tels que Spark, Hive, Druid, Netflix Atlas, LinkedIn Pinot, Kylin (eBay),  Microsoft Visual Studio Team Services,  et les index  EWAH faisant partie de Git (GitHub). Nous discuterons l'utilisation des algorithmes conçus pour les instructions single-instruction-multiple-data (SIMD)  disponibles sur tous nos processeurs courants.
+
+
+Bio
+Daniel Lemire est professeur d'informatique à la TÉLUQ. Il a aussi été agent de recherche au Conseil national de recherche du Canada et entrepreneur dans les belles années du dot-com.  Il a écrit plus de 70 communications et articles, incluant plus de 40 articles.
+
+Il programme en C, C++, Java, JavaScript, Python, Swift et Go. Il travaille principalement dans le contexte de l'open source.  En 2012, il a reçu un prix du Google Open Source Peer Bonus Program.
+
+Il est un de premiers utilisateurs de Twitter (@lemire) et son blogue compte plus de 30,000 visiteurs uniques par mois.
