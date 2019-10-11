@@ -1,3 +1,6 @@
+---
+marp: true
+---
 <!--open with Marp-->
 
 <!-- *template: invert -->
