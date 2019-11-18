@@ -22,12 +22,9 @@ background-color:white;
 
 
 
-
-
 ## Fast indexes with roaring
 
-
-<img src="../2018/roaring.png" style="float:right; width:30%"/>
+![center](../2018/roaring.png)
 
 Daniel Lemire and collaborators
 blog: https://lemire.me 
@@ -89,14 +86,13 @@ $\to$ For performance, we often work with sets of **integers** (identifiers).
  in-order access is kind of terrible
 
 
-- $[15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, \color{red}{1}, 14, 10, 7]$
-- $[15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, \color{red}{2}, 1, 14, 10, 7]$
-- $[15, \color{red}{3}, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
-- $[15, 3, 0, 6, 11, \color{red}{4}, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
-- $[15, 3, 0, 6, 11, 4, \color{red}{5}, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
-- $[15, 3, 0, \color{red}{6}, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]$
 
-(Robin Hood,  linear probing,  MurmurHash3 hash function)
+- [15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, 1 :frog:, 14, 10, 7]
+- [15, 3, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2 :frog:, 1, 14, 10, 7]
+- [15, 3 :frog:, 0, 6, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]
+- [15, 3, 0, 6, 11, 4 :frog:, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]
+- [15, 3, 0, 6, 11, 4, 5 :frog:, 9, 12, 13, 8, 2, 1, 14, 10, 7]
+- [15, 3, 0, 6 :frog:, 11, 4, 5, 9, 12, 13, 8, 2, 1, 14, 10, 7]
 
 
 ---
@@ -194,7 +190,11 @@ https://github.com/git/git/blob/master/ewah/bitmap.c
 ##  Roaring Bitmaps
 
 
-- Java, C, Go (interoperable)
+- Java, C, Go, Swift, Python, Node/JavaScript, Rust, C#
+
+- interoperable
+
+
 
 ---
 
@@ -204,23 +204,23 @@ Roaring bitmaps (http://roaringbitmap.org/) are found in:
 * [Apache Lucene](http://lucene.apache.org/core/) and derivative systems such as Solr and [Elasticsearch](https://www.elastic.co),
 * [Apache Druid](http://druid.io/),
 * [Apache Spark](http://spark.apache.org),
-* [Apache Hive](http://hive.apache.org),
-* [Apache Tez](http://tez.apache.org),
-* [Apache Zeppelin](https://zeppelin.apache.org),
-* [Apache Doris](http://doris.incubator.apache.org),
-* [Apache CarbonData](https://carbondata.apache.org),
 * [Yandex ClickHouse](https://clickhouse.yandex),
 * [Netflix Atlas](https://github.com/Netflix/atlas),
 * [LinkedIn Pinot](https://github.com/linkedin/pinot/wiki),
 * [Whoosh](https://pypi.python.org/pypi/Whoosh/),
 * [Microsoft Visual Studio Team Services (VSTS)](https://www.visualstudio.com/team-services/),
 * [Intel's Optimized Analytics Package (OAP)](https://github.com/Intel-bigdata/OAP),
-* [Tablesaw](https://github.com/jtablesaw/tablesaw),
-* [Jive Miru](https://github.com/jivesoftware/miru),
-* [Gaffer](https://github.com/gchq/Gaffer),
-* [Apache Hivemall](http://hivemall.incubator.apache.org),
-* eBay's [Apache Kylin](http://kylin.io). """
+* eBay's [Apache Kylin](http://kylin.io),
+* and many more!!!
 
+
+---
+
+## Several papers
+
+- Roaring Bitmaps: Implementation of an Optimized Software Library, Software: Practice and Experience 48 (4), April 2018. 
+- Better bitmap performance with Roaring bitmaps, Software: Practice and Experience 46 (5), May 2016.
+- Consistently faster and smaller compressed bitmaps with Roaring, Software: Practice and Experience 46 (11),  November 2016. 
 
 
  ----
@@ -237,7 +237,12 @@ Set of containers
  
 ---
 
-<img src="../2018/roaringstruct.png" />
+![center](../2018/roaringstruct.png)
+
+
+---
+
+## Format specification
 
 See https://github.com/RoaringBitmap/RoaringFormatSpec
 
@@ -284,7 +289,8 @@ https://lemire.me/blog/2017/09/05/go-does-not-inline-functions-when-it-should/
 
 ## Go guards too much
 
-```Gobits.OnesCount64(x)
+```Go
+bits.OnesCount64(x)
 ```
 
 ---
@@ -306,6 +312,55 @@ https://lemire.me/blog/2017/09/05/go-does-not-inline-functions-when-it-should/
 0x109356e 488b542410 MOVQ 0x10(SP), DX
 0x1093573 488b5c2440 MOVQ 0x40(SP), BX
 0x1093578 eba3 JMP 0x109351d
+```
+
+---
+
+## Thankfully assembly in Go is "easy"
+
+```
+TEXT ·popcntOrSliceAsm(SB),4,$0-56
+XORQ	AX, AX
+MOVQ	s+0(FP), SI
+MOVQ	s_len+8(FP), CX
+TESTQ	CX, CX
+JZ		popcntOrSliceEnd
+MOVQ	m+24(FP), DI
+popcntOrSliceLoop:
+MOVQ	(DI), DX
+ORQ		(SI), DX
+POPCNTQ_DX_DX
+ADDQ	DX, AX
+ADDQ	$8, SI
+ADDQ	$8, DI
+LOOP	popcntOrSliceLoop
+popcntOrSliceEnd:
+MOVQ	AX, ret+48(FP)
+RET
+```
+
+---
+
+[But may not work in the cloud](https://cloud.google.com/appengine/kb/).
+
+---
+
+## Fast serialization
+
+```Go
+		buf := &bytes.Buffer{}
+		_, err := rb.WriteTo(buf)
+```
+
+---
+
+## Fast deserialization
+
+No memory allocation, no copy!
+
+```Go
+		r := NewBitmap()
+		_, err = r.FromBuffer(buf.Bytes())
 ```
 
 ---
@@ -340,14 +395,58 @@ func byteSliceAsUint16Slice(slice []byte) (result []uint16) { // here we create 
 
 ---
 
+## Iterators: don't drink from straws
+
+![center](../2017/sparksummit/straw.jpg)
+
+
+---
+
+## Old School
+
+```Go
+it := b.Iterator()
+for it.HasNext() {
+...
+}
+```
+
+---
+
+## Batched Iterations
+
+```Go
+buf := make([]uint32, 4096)
+
+...
+
+for n := it.NextMany(buf); n != 0; n = it.NextMany(buf) {
+	for _, v := range buf[:n] {
+		...
+	}
+}
+```
+
+---
+
+```
+BENCH_REAL_DATA=1 go test -bench BenchmarkRealData -run -
+
+BenchmarkRealDataNext/census1881-4       8479939 ns/op
+BenchmarkRealDataNextMany/census1881-4   1057743 ns/op
+```
+
+Batched iterators can be 8 times faster!
+
+---
+
 ## To learn more...
 
 
-<img src="img-logo-en.png" style="float:right; width:5em"/>
 
 * Blog (twice a week) : https://lemire.me/blog/
 * GitHub: https://github.com/lemire
 * Home page : https://lemire.me/en/
 * CRSNG : *Faster Compressed Indexes On Next-Generation Hardware* (2017-2022)
-* Twitter <img src="twitter.png" style="width:1.5em"/> @lemire
+* Twitter @lemire
 
