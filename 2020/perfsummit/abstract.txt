@@ -1,0 +1,3 @@
+ “Data Engineering at the Speed of Your Disk” by Daniel Lemire (Université du Québec)
+Our current best disk can read data at speeds of gigabytes per second; the best networks are even faster. We should aim for data engineering tasks (data filtering, parsing, validation) to achieve similar high speeds. Bottleneck tasks such as JSON ingestion can be much faster than they currently are.
+
