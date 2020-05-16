@@ -356,7 +356,7 @@ Using only three multiplications (instead of 7):
 
 
 
-| simdjson  |	660 MB/s |
+| function  |	speed |
 ------------|-----------|
 | simdjson  |	660 MB/s |
 | abseil, from_chars |	330 MB/s |
