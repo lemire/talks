@@ -1,0 +1,6 @@
+Floating-point number parsing with perfect accuracy at a gigabyte per second
+
+
+Parsing decimal numbers from strings of characters into binary types is a common but relatively expensive task. Parsing a single number can require hundreds of instructions and dozens of branches. Standard C functions may parse numbers at 200 MB/s while recent disks have bandwidths in the gigabytes per second. Number parsing becomes the bottleneck when ingesting CSV, JSON, or XML files containing numerical data.
+
+We consider the problem of rounding exactly to the nearest floating-point value. The general problem requires variable-precision arithmetic. We show that a relatively simple approach can be many times faster than the conventional algorithms often present in standard C and C++ libraries. We break the gigabyte per second barrier without sacrificing safety or accuracy.  To ensure reproducibility, our work is available as open-source software.  Our approach has been adopted by the standard library of the Go programming language for its ParseFloat function.
