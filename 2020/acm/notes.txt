@@ -1,0 +1,98 @@
+Double-blind peer review 
+
+I am a researcher and a blogger. I do not consider myself an expert in science publishing. Thus
+I hope you will take my commentary as that of a fellow computer scientist and nothing more.
+
+
+There are many undesirable biases involved in a professional setting. Of course, there are
+undesirable biases against some minorities and women. And it should be clear that I am not, ever,
+going to deny the significance of the problem. There are other biases as well. There are indications that
+the prestige of the author can be a determining factor when judging a piece of work. People generally
+tend to review people who are like themselves more highly. There are undesirable orthodoxy biases as well: 
+uncommon ideas are far more difficult to defend even when the most common ideas have not been revisited lately.
+Conventional affiliations are more highly rated than unconventionally affilliations.
+
+Yet we should not immediately accept that hiding the identity of the author is the solution. 
+
+Clearly, we believe that we can effectively combat undesirable prejudices in hiring since most employers
+do not hire based on a double-blind process. PhD students submit their thesis for review without hiding their name.
+
+
+I was co-chair of the NSERC Computer Science commmittee in 2019-2020. NSERC is the equivalent of the American NSF.
+In Canada, during grant applications, we have the name and the affiliation of the individual,
+both of which can be misused. As everone knows, it is often possible to determine the gender and maybe even guess the skin
+colour from someone's name. During deliberations, we are, however, forbidden from using gendered language.
+We are similarly forbidden from unwarranted qualifications based on the affiliation. It goes without saying
+that open racial prejudice is unacceptable.
+
+So why would we not want to hide the identity of the researchers despite the apparent advantages?
+
+
+Telling someone from a poorly known organization, from a poor or non-English country or from non-dominant gender that
+they need to hide who they are to be treated fairly is not altoghether a positive message. I certainly want
+to live in a world where a woman can publish her work as a woman. Stressing biases without properly
+addressing them can render fields unattractive to those who might suffer from these biases.
+
+I have been posting most my papers online, prior to peer review on arXiv or others servers, sometimes years before
+they are even submitted. I write all my software openly, engaging freely with multiple engineers and researchers.
+I practice what I call open scholarship. I have a physical lab with computers in them, but my real lab. is out
+there on the Internet where I am part of an extended network. I have published well cited papers with people who
+do not even have a high school degree, from non-English countries. Open scholarship leads to a glorious view of the world.
+ Are we to accept that it is a privilege that only a  white man from an English speaking country may enjoy? 
+ This seems a pessismistic outlook.
+
+And what happens after the work has been accepted. When the referees are biased, why would the readers not be 
+biased as well? What is more important,  the readers or the reviewers? Do we write papers to be published or
+to be read? I vote for the latter without hesitation. Are we all about maximizing the impact factor or do we care
+to produce impactful research?
+
+There is no free lunch. Double-blind peer review is not without cost.
+
+Blank (1991) reported that authors from outside academia have a lower acceptance rate under 
+double-blind peer review. Moreover, Blank indicates that double-blind peer review is overall harsher.
+
+
+Blank, R.M., The effects of double-blind versus single-blind reviewing: Experimental evidence from the American 
+Economic Review, The American Economic Review 81 (5), 1991.
+
+
+This "harsh" nature has been replicated and quantified. Double-Blind Peer Review manuscripts are less likely 
+to be successful than Single-Blind Peer Review manuscripts.
+
+McGillivray, B., De Ranieri, E. Uptake and outcome of manuscripts in Nature journals by review model and author characteristics. Res Integr Peer Rev 3, 5 (2018). https://doi.org/10.1186/s41073-018-0049-z
+
+So there are unintended consequences to double-blind peer review. Having hasher reviews and lower acceptance rates
+may not be a positive. It is not at all obvious to me, for example, that we will keep more women in computing under
+a regime of harsher reviews and lower acceptance rates. "Why continue to seek approval, when you can leave science and 
+do something else where you'll be appreciated?"
+
+
+If we want, for example, to increase the representation of women, there are potentially other means that are less
+intrusive and more positive, like, for example, including more women in the peer review process as reviewers, editors and so forth.
+The same applies to other biases. For example, you should ensure that people from small colleges are represented,
+or from poorer or non-English countries.  And what about including people who have less orthodox ideas?
+
+"We show that women are underrepresented in the peer-review process, that editors of both genders operate with substantial same-gender preference (homophily), 
+that the mechanisms of this homophily are gender-dependent."
+Helmer M, Schottdorf M, Neef A, Battaglia D. Research: gender bias in scholarly peer review. eLife. 2017;6:e21718.
+
+Furthermore, we should not always assume, for example, that all reviewers are biased against women, something I call the pessimistic
+angle. There is also an optimistic angle.
+
+"Comparisons of oral non-gender-blind tests with written gender-blind tests for about 100,000 individuals observed in 11 different fields over the period 2006-2013 reveal a bias in favor of women that is strongly increasing with the extent of a field's male-domination. This bias turns (...) to about 10 percentile ranks for women in math, physics, or philosophy."
+
+Thomas Breda, Mélina Hillion, Teaching accreditation exams reveal grading biases favor women in male-dominated disciplines in France, Science  29 Jul 2016.
+
+
+In Ulf Sandström, Martin Hallsten, Persistent nepotism in peer-review, Scientometrics, Vol. 74, No. 2 (2008) 175–189
+
+Our results indicate that female principal investigators (PIs) receive a bonus of 10% on scores, in relation to their male colleagues. However, male and female PIs having a reviewer affiliation collect an even higher bonus, approximately 15%. Nepotism seems to be a persistent problem in the Swedish grant peer review system.
+
+My claim is that at all that women and minorities are generally favoured, but we should resist going in a wholly pessimist 
+position.
+
+Maybe everyone should be watching Star Trek more often.
+
+So I will conclude by saying that though the problems that double-blind peer review seeks to address are real and significant, 
+double-blind peer review is itself a rather crude and pessimistic solution that has several undesirable
+consequences. I do not want to work in a field where people have to hide their identities so that they can get a fair shot.
