@@ -139,7 +139,7 @@ false
 # Generic rules regarding "exact" IEEE support
 
 - Always round to nearest floating-point number (*,+,/)
-- Resolve ties by rounding to nearest with an nearest mantissa.
+- Resolve ties by rounding to nearest with an even mantissa.
 
 
 ---
@@ -197,7 +197,7 @@ m * 2^p
 
 Start with 3e-1 or 0.3.
 
-Lookup 10 as a float: 20   (exact)
+Lookup 10 as a float: 10   (exact)
 
 Convert 3 to a float (exact)
 
@@ -229,7 +229,7 @@ Approximation * Approximation = Even worse approximation!
 
 # Insight
 
-You can always represent floats  exactly  (binar64) using at most 17 digits.
+You can always represent floats  exactly  (binary64) using at most 17 digits.
 
 
 Never to this:
