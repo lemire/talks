@@ -39,7 +39,7 @@ Telling someone from a poorly known organization, from a poor or non-English cou
 they need to hide who they are to be treated fairly is not altoghether a positive message.  Stressing biases without properly
 addressing them can render fields unattractive to those who might suffer from these biases.
 
-I have been posting most my papers online, prior to peer review on arXiv or others servers, sometimes years before
+I have been posting most of my papers online, prior to peer review on arXiv or others servers, sometimes years before
 they are even submitted. I write all my software openly, engaging freely with multiple engineers and researchers.
 I practice what I call open scholarship. I have a physical lab with computers in them, but my real lab. is out
 there on the Internet where I am part of an extended network. I have published well cited papers with people who
@@ -49,7 +49,7 @@ do not even have a high school degree, from non-English countries. Open scholars
 
 
 Moreover, when I work on a problem, I like to identify the trends, the players. Even in computer
-science, there is a narrative to the research. At NSERC, we want researchers to present a 
+science, there is a narrative to the research. We want researchers to present a 
 research program. A program is more than a collection of papers. When I provide feedback to an
 author, I seek to help them more than to judge them. Where they started and where they are going
 matters to me, because it helps me to understand their choices. You may think that who the authors
