@@ -59,6 +59,10 @@ And what happens after the work has been accepted. When the referees are biased,
 biased as well? What is more important,  the readers or the reviewers? Do we write papers to be published or
 to be read? I vote for the latter without hesitation. Are we all about maximizing the impact factor or do we care
 to produce impactful research?
+San Francisco Declaration on Research Assessment ask us to 
+Challenge research assessment practices that rely inappropriately on 
+venues as opposed to research outputs.
+
 
 There is no free lunch. Double-blind peer review is not without cost.
 
@@ -79,6 +83,8 @@ So there are unintended consequences to double-blind peer review. Having hasher 
 may not be a positive. It is not at all obvious to me, for example, that we will keep more women in computing under
 a regime of harsher reviews and lower acceptance rates. "Why continue to seek approval, when you can leave science and 
 do something else where you'll be appreciated?"
+
+
 
 
 If we want, for example, to increase the representation of women, there are potentially other means that are less
