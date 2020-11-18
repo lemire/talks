@@ -74,37 +74,30 @@ to be successful than Single-Blind Peer Review manuscripts.
 McGillivray, B., De Ranieri, E. Uptake and outcome of manuscripts in Nature journals by review model and author characteristics. Res Integr Peer Rev 3, 5 (2018). https://doi.org/10.1186/s41073-018-0049-z
 
 So there are unintended consequences to double-blind peer review. Having hasher reviews and lower acceptance rates
-may not be a positive. It is not at all obvious to me, for example, that we will keep more women in computing under
-a regime of harsher reviews and lower acceptance rates. "Why continue to seek approval, when you can leave science and
+may not be a positive. Let me quote one of my female students: "Why continue to seek approval, when you can leave science and
 do something else where you'll be appreciated?"
 
 
 If we want, for example, to increase the representation of women, there are potentially other means that are less
 intrusive and more positive, like, for example, including more women in the peer review process as reviewers, editors and so forth.
 The same applies to other biases. For example, you should ensure that people from small colleges are represented,
-or from poorer or non-English countries.  And what about including people who have less orthodox ideas?
+or from poorer or non-English countries.  And what about including people who have less orthodox ideas? What about
+including more outsiders? What about what Stonebraker might call "consumers of the research".
 
 "We show that women are underrepresented in the peer-review process, that editors of both genders operate with substantial same-gender preference (homophily),
 that the mechanisms of this homophily are gender-dependent."
 Helmer M, Schottdorf M, Neef A, Battaglia D. Research: gender bias in scholarly peer review. eLife. 2017;6:e21718.
 
-Furthermore, we should not always assume, for example, that all reviewers are biased against women, something I call the pessimistic
-angle. There is also an optimistic angle.
 
-"Comparisons of oral non-gender-blind tests with written gender-blind tests for about 100,000 individuals observed in 11 different fields over the period 2006-2013 reveal a bias in favor of women that is strongly increasing with the extent of a field's male-domination. This bias turns (...) to about 10 percentile ranks for women in math, physics, or philosophy."
-
-Thomas Breda, Mélina Hillion, Teaching accreditation exams reveal grading biases favor women in male-dominated disciplines in France, Science  29 Jul 2016.
-
-
-In Ulf Sandström, Martin Hallsten, Persistent nepotism in peer-review, Scientometrics, Vol. 74, No. 2 (2008) 175–189
-
-Our results indicate that female principal investigators (PIs) receive a bonus of 10% on scores, in relation to their male colleagues. However, male and female PIs having a reviewer affiliation collect an even higher bonus, approximately 15%. Nepotism seems to be a persistent problem in the Swedish grant peer review system.
-
-My claim is that at all that women and minorities are generally favoured, but we should resist going in a wholly pessimist
-position.
-
-Maybe everyone should be watching Star Trek more often.
+And here is another  idea. Do we need the crazy low acceptance rates? Do we realize that the outcome is unavoidably
+a power hierarchy controlled by a select few who pick the winners. By accepting more papers, we would necessarily make biases
+in peer review less harmful. We would reduce the power of the select few.  Open source journals like PLOS One have shown that you can turn
+peer review away from a selection of the winners to a pruning of the bad research, with good results. The argument used to be
+that the conference was to be held in a hotel with only so many rooms, but zoom and youtube have millions of rooms.
+Of course, the downside then is that hiring and promotion committees
+cannot simply count the number of papers at prestigious venues and they must read the papers and discuss them.
+It is hard work. And the candidate can no longer just offer a list of papers, they have to explain why their work matters in a way that we can understand.
 
 So I will conclude by saying that though the problems that double-blind peer review seeks to address are real and significant,
 double-blind peer review is itself a rather crude and pessimistic solution that has several undesirable
-consequences. I do not want to work in a field where people have to hide their identities so that they can get a fair shot.
+consequences. We can do better.
