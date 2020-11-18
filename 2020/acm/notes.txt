@@ -53,7 +53,9 @@ science, there is a narrative to the research. We want researchers to present a
 research program. A program is more than a collection of papers. When I provide feedback to an
 author, I seek to help them more than to judge them. Where they started and where they are going
 matters to me, because it helps me to understand their choices. You may think that who the authors
-are should not matter, but it is a very idealized view of the world.
+are should not matter, but it is a very idealized view of the world. If we thought so, we could publish papers without affiliation, author name, and 
+we could even hide away the venue. To my knowledge, this isn't done. In fact,
+we tie very closely the results to the name of the authors and the time.
 
 And what happens after the work has been accepted. When the referees are biased, why would the readers not be 
 biased as well? What is more important,  the readers or the reviewers? Do we write papers to be published or
