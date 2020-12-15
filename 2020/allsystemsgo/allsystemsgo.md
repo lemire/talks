@@ -362,7 +362,7 @@ credit: godbolt
 
 ---
 
-## Ressources
+## Resources
 
 - Fast and exact implementation of the C++ from_chars functions  https://github.com/lemire/fast_float 
 (used by Apache Arrow, PR in Yandex ClickHouse)
