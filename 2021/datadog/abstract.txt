@@ -1,0 +1,9 @@
+Parsing numbers at a gigabyte per second
+
+Back when disks could barely provide megabytes of bandwidth per second, slow data processing software was acceptable. It is now time to revisit our performance expectations.
+With disks and networks providing gigabytes per second, parsing decimal numbers from strings  becomes a  bottleneck. We consider the problem of parsing decimal numbers 
+to the nearest binary floating-point value. We present a C++ implementation that is often 4 times faster than standard C library on modern 64-bit systems (Intel, AMD, ARM and POWER9). 
+Our work is available as open source software used by major systems such as Apache Arrow and Yandex ClickHouse. The Go standard library has adopted a version of our approach. The Rust port of our library 
+is much faster than the state-of-the-art lexical library.
+
+Daniel is a computer science professor at the University of Quebec, and long-time blogger. He is @lemire on Twitter, and he blogs at https://lemire.me/ His 75 research papers have been cited about 4000 times. He is among the top 500 GitHub users in terms of follower count: https://github.com/lemire
