@@ -384,11 +384,12 @@ credit: godbolt
 
 - Algorithm adapted to Go's standard library (ParseFloat) by Nigel Tao and others
 
-- Blog post by Tao: [The Eisel-Lemire ParseNumberF64 Algorithm](https://nigeltao.github.io/blog/2020/eisel-lemire.html)
 
-- Performance boost between 44% and 8%.
+
+- Release notes (version 1.16): *ParseFloat (...) improving performance by up to a factor of 2.* 
 - Perfect rounding.
 
+- Blog post by Tao: [The Eisel-Lemire ParseNumberF64 Algorithm](https://nigeltao.github.io/blog/2020/eisel-lemire.html)
 
 --- 
 
@@ -409,11 +410,14 @@ rcppfastfloat: https://github.com/eddelbuettel/rcppfastfloat
 
 --- 
 
-## C# (.NET 5)
+## C#
 
-To be published soon.
 
-`FastFloat.ParseDouble` is 3x faster than  standard library (`Double.Parse`)
+`FastFloat.ParseDouble` is 5x faster than  standard library (`Double.Parse`)
+
+https://github.com/CarlVerret/csFastFloat/
+
+credit:  Carl Verret and Egor Bogatov (Microsoft)
 
 
 ---
