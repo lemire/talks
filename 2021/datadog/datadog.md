@@ -24,7 +24,7 @@ blog: https://lemire.me
 twitter: [@lemire](https://twitter.com/lemire)
 GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
-:exclamation:  work with Michael Eisel, Ivan Smirnov, Nigel Tao, R. Oudompheng, and others!
+:exclamation:  work with Michael Eisel, Ivan Smirnov, Nigel Tao, R. Oudompheng, Carl Verret and others!
 
 
 ---
