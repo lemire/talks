@@ -1,0 +1,10 @@
+Daniel is a computer science professor at the University of Quebec (TELUQ).
+In 2020, he received the University of Quebec’s 2020 Award of Excellence
+for Achievement in Research for his work on the acceleration of JSON
+parsing. His open source software has been used by major corporations such
+as Google, LinkedIn, Netflix and Facebook. He is among the top 500 GitHub
+users worldwide in terms of follower count: GitHub is the main platform for
+open-source software publishing and it has over 40 million users.  His
+research interests include databases, information retrieval, and
+high-performance programming.  He is @lemire on Twitter, and he blogs at
+https://lemire.me/

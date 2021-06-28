@@ -1,0 +1,7 @@
+Title: Unicode at gigabytes per second
+
+We often represent text using Unicode formats (UTF-8 and UTF-16).  UTF-8 is increasingly popular (XML, HTML, JSON, Rust, Go, Swift, Ruby). UTF-16 is most common in Java, .NET, and inside operating systems such as Windows.
+
+Software systems frequently have to validate text or convert text from one encoding to the other. While recent disks have bandwidths of 5 GB/s or more, conventional approaches transcode non-ASCII text at a fraction of a gigabyte per second.
+
+We show that we can transcode (UTF-8, UTF-16) at gigabytes per second on current systems (x64 and ARM) without sacrificing safety. Our open-source library can be ten times faster than the popular ICU library on non-ASCII strings and even faster on ASCII strings.
