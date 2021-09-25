@@ -222,12 +222,11 @@ UTF-8: XML, JSON, HTML, Go, Rust, Swift
 
 |                | UTF-8 to UTF-16 | UTF-16 to UTF-8   | validation | table size |
 |:---------------|:-----------------|:-----------------|:------------|:-----------|
-| Cameron (2008)      | yes              | no               | yes         | N/A |
+| Cameron's u8u16 (2008)      | yes              | no               | yes         | N/A |
 | Inoue et al. (2008) | partial              | no           | no         |  105 kB |
-| Goffart (2012)      | yes              | no               | yes         |  none |
-| Gatilov (2019)      | yes              | yes               | yes         | 2+ MB |
 | simdutf             | yes              | yes               | yes         | 11 kB + 8.7 kB |
 
+Software implementations (no formal paper): Goffart (2012) and Gatilov (2019)
 
 ---
 
@@ -343,39 +342,28 @@ If all 16-bit words are in the ranges 0000-D7FF, E000-FFFF, we use another simil
 Otherwise, when we detect that the input register contains at least one part of a surrogate pair, we fall back to a conventional/scalar code path.
 
 
+---
+
+# Experiments
+
+- AMD processor (AMD EPYC 7262,  Zen 2 microarchitecture, 3.39 GHz) and GCC10.
+- International Components for Unicode (UCI)
+- u8u16 library
+- lipsum text in various languages
 
 
-\section{Experiments}
-\label{sec:experiments}
+---
 
-We make available our software as a portable open-source  C++ library.\footnote{\url{https://github.com/simdutf/simdutf}}
-As a benchmarking system, we use a recent AMD processor (AMD EPYC 7262,  Zen~2 microarchitecture, \SI{3.39}{\GHz}) and GCC~10.
-We compare against a popular library: International Components for Unicode (UCI)~\cite{uci} (version~67.1).
-We also use the \texttt{u8u16} library~\cite{cameron2008case}. Unlike UCI and our own work, the  \texttt{u8u16} library only provides UTF-8 to UTF-16 transcoding.
-For our experiments, we use lipsum text in various languages.\footnote{\url{https://github.com/rusticstuff/simdutf8}} 
-All of our transcoding tests include validation.
-To measure the speed, we record the time by repeating the task \num{2000}~times. We compare the average time with the minimal time and find that we have an accuracy of at least 1\%. We divide the input volume by the time required for the transcoding. Fig.~\ref{fig:transcoding} shows our results. 
-Our UTF-8 to UTF-16 transcoding speed exceeds  \SI{4}{\gibi\byte\per\second} for Chinese and Japanese texts, which is about four times faster than UCI. In our tests, the \texttt{u8u16} library only surpasses ICU significantly for Arabic.
-Our UTF-16 to UTF-8 transcoding speed is nearly \SI{6}{\gibi\byte\per\second} in all tests which is nearly ten~times faster than UCI.
+# ASCII transcoding
 
-For ASCII transcoding (not shown in the figures), we achieve  \SI{36}{\gibi\byte\per\second} for UTF-16 to UTF-8 transcoding, and  \SI{20}{\gibi\byte\per\second} for UTF-8 to UTF-16 transcoding. Effectively, we are so fast that we are nearly limited by memory bandwidth. Comparatively, UCI delivers \SI{2}{\gibi\byte\per\second} and \SI{1}{\gibi\byte\per\second} in our tests.
+|          | UTF-8 to UTF-16     | UTF-16 to UTF-8 |
+|:---------|:--------------------|:----------------|
+| simdutf  | 20 GB/s             |   36 GB/s       |
+| UCI      | 1 GB/s             |   2 GB/s         |
 
-\begin{figure}\centering
-\subfloat[UTF-8 to UTF-16 transcoding]{
-\includegraphics[width=0.49\textwidth]{lipsumspeedutf8utf16.tikz}
-}
-\subfloat[UTF-16 to UTF-8 transcoding]{
-\includegraphics[width=0.49\textwidth]{lipsumspeedutf16utf8.tikz}
-}
+---
 
-\caption{\label{fig:transcoding} Transcoding speeds for various test files. }
-\end{figure}
-
-\section{Conclusion}
-
-
-
-Our SIMD-based transcoders can surpass popular transcoders (e.g., UCI) by a wide margin (e.g., $4\times$). Our UTF-16 to UTF-8 transcoder achieves speed of about \SI{6}{\gibi\byte\per\second} for many Asiatic languages using a recent x64 processor. In some cases, we achieve  \SI{4}{\gibi\byte\per\second}  for UTF-8 to UTF-16 transcoding with full validation. For ASCII inputs, we achieve tens of gigabytes per second.
+![width:600px](various.png)
 
 
 ---
