@@ -12,7 +12,7 @@ _paginate: false
 ## <!--fit--> Unicode at gigabytes per second
 
 
-Daniel Lemire 
+Daniel Lemire with Wojciech Muła and John Keiser
 professor, Université du Québec (TÉLUQ)
 Montreal :canada: 
 
@@ -20,7 +20,10 @@ blog: https://lemire.me
 twitter: [@lemire](https://twitter.com/lemire)
 GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
-:exclamation:  work with Wojciech Muła, John Keiser and others!
+credit for figures: Wojciech Muła
+
+
+:exclamation: many other contributors!
 
 
 ---
@@ -149,8 +152,8 @@ UTF-8: XML, JSON, HTML, Go, Rust, Swift
 
 # UTF-8 format
 
-- Most significant bit of leading is zero, ASCII.
-- 3 most significant bits 110, two-byte sequence.
+- Most significant bit of leading is zero, ASCII: [01000001].
+- 3 most significant bits 110, two-byte sequence: [11000100] [10000101].
 - 4 most significant bits 1100, three-byte sequence.
 - 5 most significant bits 11000, four-byte sequence.
 - Non-leading bytes have 10 as the two most significant bits.
@@ -165,6 +168,32 @@ UTF-8: XML, JSON, HTML, Go, Rust, Swift
 - The decoded character must be larger than 7F for two-byte sequences, larger than 7FF for three-byte sequences, and larger than FFFF for four-byte sequences. 
 - The decoded code-point value  must be less  than 110000 
 - The code-point value must not be in the range D800-DFFF.
+
+
+---
+
+# UTF-8/UTF-16 comparison (ASCII)
+
+![width:600px](example_ascii.png)
+
+
+---
+
+# UTF-8/UTF-16 comparison (2-bytes)
+
+![width:600px](example_twobytes.png)
+
+---
+
+# UTF-8/UTF-16 comparison (3-bytes)
+
+![width:600px](example_threebytes.png)
+
+---
+
+# UTF-8/UTF-16 comparison (4-bytes)
+
+![width:600px](example_fourbytes.png)
 
 ---
 
@@ -184,32 +213,134 @@ UTF-8: XML, JSON, HTML, Go, Rust, Swift
 
 ---
 
-# Can we go to gigabytes per second?
+# Gigabytes per second?
 
 - x64, ARM, POWER: have SIMD instructions.
+
+
+---
+
+|                | UTF-8 to UTF-16 | UTF-16 to UTF-8   | validation | table size |
+|:---------------|:-----------------|:-----------------|:------------|:-----------|
+| Cameron (2008)      | yes              | no               | yes         | N/A |
+| Inoue et al. (2008) | partial              | no           | no         |  105 kB |
+| Goffart (2012)      | yes              | no               | yes         |  none |
+| Gatilov (2019)      | yes              | yes               | yes         | 2+ MB |
+| simdutf             | yes              | yes               | yes         | 11 kB + 8.7 kB |
+
+
+---
+
+# Vectorized permutation
+
 - Can permute blocks of 16 bytes (or 32 bytes) using a single cheap instruction.
+- Need a precomputed shuffle mask.
+
+
+- data         :  [a b c d e f g]
+- shuffle mask :  [3 1 0 3 3 2 -1] (indexes)
+- result       :  [d b a d d c 0] 
+
+
  
 ---
 
-# UTF-8 to UTF-16 transcoding
+# UTF-8 to UTF-16 transcoding (core)
+
+- Take a block of bytes.
+- Continuation bytes (leading bits 10, less than -64)
+- Non-continuation bytes are leading bytes
+- Bytes before a leading byte end a character
+- Build a bitmap
+- Use the bitmap in a lookup table
+ 
+---
+
+# UTF-8 to UTF-16 transcoding (example)
+
+Start with...
+
+ [01000001] ([11000100] [10000101])
+  [01100011] ([11000011] [10000011]) [01101100] ([11000101] [10111010])
+
+We have 9 bytes. Build a 9-bit bitmap where '1' means the end of a character
+
+101101101
+
+Use this as index in a table.
+
+---
+
+# UTF-8 to UTF-16 transcoding (table)
+
+- If using 12-byte blocks, need 4096-long table.
+- Each entry points to a shuffle mask and number of consumed bytes.
 
 
+---
 
-All commodity software with SIMD instructions (e.g., x64, ARM, POWER) have fast instructions to  permute bytes within a SIMD register  according to a sequence of indexes. Our transcoding techniques depend critically on this feature: we code in a table the necessary parameters---including the indexes (sometimes called shuffle masks)---necessary to process a variety of incoming characters.
-
-Our  accelerated  UTF-8 to UTF-16 transcoding algorithm  processes  up to 12~input UTF-8 bytes at a time. From the input bytes, we can quickly determine the leading bytes and thus the end beginning of each character. We use a 12-bit word as a key in a 1024-entry table. Each entry in the table contains the number of UTF-8 bytes that will be consumed and an index into another table where we find shuffle masks. The value of the index into the other table also determines one of three possible code paths. The first 64~index values  indicate  that we have 6~characters spanning between one and two bytes.  Index values in $[64,145)$ indicate that we have 4~characters spanning between one and three bytes. The remaining indexes represent the general case: 3~characters spanning between one and four bytes.
-The shuffle mask can then be applied to the 12~input bytes to form a vector register that can be transformed efficiently.
-We use this 12-byte routine inside  64-byte blocks. After loading a 64-byte block,  
-we apply the Keiser-Lemire validation routine~\cite{keiser2020validating}. Afterward,
-we identify the leading bytes, and then process the block in multiple iterations, using up to 12~bytes each time. In the special case where all 64~bytes are ASCII, we use a fast path.
-For even greater efficiency, we have three other fast paths within the 12-byte routine: we check whether the next 16~bytes are ASCII bytes,  whether they are all two-byte characters, or all  three-byte characters. 
+![width:600px](transform.png)
 
 
+---
 
-Our UTF-16 to UTF-8 algorithm iteratively reads a block of input bytes in a SIMD register.  If all 16-bit words in the loaded SIMD register are in the range \codepointrange{0000}{007f}, we use a fast routine to convert the 16~input bytes into eight equivalent ASCII bytes.
- If all 16-bit words are in the range \codepointrange{0000}{07ff}, then we use a fast routine to produce sequences of one-byte or two-byte UTF-8 characters. Given an 8-bit bitset which indicates which 16-bit words are ASCII, we load a byte value from a table indicating how many bytes will be written, and a 16-byte shuffle mask. 
-If all 16-bit words are in the ranges \codepointrange{0000}{d777}, \codepointrange{e000}{ffff}, we use another similar specialized  routine to produce sequences of one-byte, two-byte and three-byte UTF-8 characters.
-Otherwise, when we detect that the input register contains at least one part of a surrogate pair, we fall back to a conventional code path.
+# UTF-8 to UTF-16 transcoding (cases)
+
+Shuffle masks are sorted into 'cases'.
+
+1. First 64 cases correspond to 1-byte or 2-byte characters only.
+2. Next 81 cases correspond to 1, 2 or 3 bytes per character.
+3. Next 64 cases correspond to general case (1 to 4 bytes).
+
+Each case corresponds to a code path.
+
+---
+
+# UTF-8 to UTF-16 transcoding (more tricks)
+
+1. Load blocks of 64 bytes.
+2. Check for fast paths (e.g. all ASCII).
+3. Eat 12 bytes at a time within 64 bytes.
+4. Add a few fast path (e.g., all ASCII, all 2-byte, all 3-byte).
+
+
+---
+
+# UTF-8 to UTF-16 transcoding (validation)
+
+Given a 64-byte block, we can use a fast vectorized
+validation routine.
+
+- Validating UTF-8 In Less Than One Instruction Per Byte, Software: Practice and Experience 51 (5), 2021
+
+---
+
+# UTF-16 to UTF-8
+
+The other direction (from UTF-16 to UTF-8) is somewhat easier!
+
+
+---
+
+# UTF-16 to UTF-8 (ASCII)
+
+If all 16-bit words are ASCII (0000-007F), use a fast routine: 16 bytes into 8 'packed' bytes.
+
+
+---
+
+# UTF-16 to UTF-8 (0000-07FF)
+
+If all 16-bit words are in (0000-07FF)... build an 8-bit bitset indicating which 16-byte
+words are ASCII (0000-007F), load a shuffle mask, permute and patch.
+
+---
+
+# UTF-16 to UTF-8 (0000-07FF, E000-FFFF)
+
+If all 16-bit words are in the ranges 0000-D7FF, E000-FFFF, we use another similar specialized  routine to produce sequences of one-byte, two-byte and three-byte UTF-8 characters.
+
+Otherwise, when we detect that the input register contains at least one part of a surrogate pair, we fall back to a conventional/scalar code path.
 
 
 
@@ -255,8 +386,11 @@ Our SIMD-based transcoders can surpass popular transcoders (e.g., UCI) by a wide
 
 https://github.com/simdutf/simdutf
 
+- Open source, no patent.
 - ARM NEON, SSE, AVX...
-
+- Support runtime dispatch: adapts to your CPU.
+- Easy to use: drop `simdutf.cpp` and `simdutf.h` in your project.
+- Compiles to tens of kilobytes.
 
 ---
 
