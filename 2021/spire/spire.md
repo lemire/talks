@@ -60,8 +60,11 @@ Morse code
 - Hollerith code (~1896). 6 bits.
 - American Standard-Code for Information Interchange or ASCII (~1961). 7 bits. 128 characters.
 
-![width:600px](ascii.png)
+---
 
+![width:300px](ascii.png)
+
+---
 
 # Too many fixed-length codes!
 
@@ -224,7 +227,7 @@ UTF-8: XML, JSON, HTML, Go, Rust, Swift
 |:---------------|:-----------------|:-----------------|:------------|:-----------|
 | Cameron's u8u16 (2008)      | yes              | no               | yes         | N/A |
 | Inoue et al. (2008) | partial              | no           | no         |  105 kB |
-| simdutf             | yes              | yes               | yes         | 11 kB + 8.7 kB |
+| simdutf             | yes              | yes               | yes         | 20 kB |
 
 Software implementations (no formal paper): Goffart (2012) and Gatilov (2019)
 
@@ -240,7 +243,7 @@ Software implementations (no formal paper): Goffart (2012) and Gatilov (2019)
 - shuffle mask :  [3 1 0 3 3 2 -1] (indexes)
 - result       :  [d b a d d c 0] 
 
-
+- Conversely may be used as a form of vectorized table lookup.
  
 ---
 
@@ -278,7 +281,7 @@ Use this as index in a table.
 
 ---
 
-![width:600px](transform.png)
+![width:900px](transform.png)
 
 
 ---
@@ -311,6 +314,60 @@ Given a 64-byte block, we can use a fast vectorized
 validation routine.
 
 - Validating UTF-8 In Less Than One Instruction Per Byte, Software: Practice and Experience 51 (5), 2021
+
+
+---
+
+# UTF-8 to UTF-16 transcoding (core algo)
+
+
+- You can identify most UTF-8 errors by looking at sequences of 3 nibbles (4-bit).
+- E.g., ASCII followed by continuation, leading not followed by continuation byte.
+
+
+Do three lookups (using shuffe mask) and compute a bitwise AND. We call this
+vectorized classification.
+
+----
+
+# Simplified vectorized classification
+
+- Suppose you want to find all instances where  value 3 is followed by 
+value 1 or 2.
+
+- Create two lookup tables. 
+- One for first nibble [0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+- second nibble [0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+- Lookup first nibble in table, lookup second, compute bitwise AND.
+- If result is 1, you have a match.
+- Can do this in parallel over many values.
+
+
+----
+
+# Fancier vectorized classification
+
+- Suppose you want to find all instances where  value 3 is followed by 
+value 1 or 2. Value 5 followed by 0. Value 6 followed by 10.
+
+- Create two lookup table2. 
+- One for first nibble [0,0,0,1,0,2,4,0,0,0,0,0,0,0,0,0]
+- second nibble [2,1,1,0,0,0,0,0,0,0,4,0,0,0,0,0]
+- Lookup first nibble in table, lookup second, compute bitwise AND.
+
+
+----
+
+```
+  simd8<uint8_t> classify(simd8<uint8_t> input, simd8<uint8_t> previous_input) {
+    // shift the input by 1 byte, shifting in the last byte of the previous input
+    auto prev1 = input.prev<1>(previous_input);
+    auto byte_1_high = prev1.shift_right<4>().lookup_16(table1);
+    auto byte_1_low = (prev1 & 0x0F).lookup_16(table2);
+    auto byte_2_high = input.shift_right<4>().lookup_16(table3);
+    return (byte_1_high & byte_1_low & byte_2_high);
+  }
+```
 
 ---
 
@@ -363,14 +420,12 @@ Otherwise, when we detect that the input register contains at least one part of 
 
 ---
 
-![width:600px](various.png)
+![width:900px](various.png)
 
 
 ---
 
 ## Software
-
-<!-- This is a presenter note for this page. -->
 
 https://github.com/simdutf/simdutf
 
