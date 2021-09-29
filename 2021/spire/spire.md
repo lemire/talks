@@ -38,20 +38,6 @@ Morse code
 
 26 letters.
 
-
----
-
-# From characters to bits
-
-Morse code
-
-- A : 0 1
-- B : 1 0 0 0
-- C : 1 0 1 0
-
-26 letters.
-
-
 ---
 
 # Fixed-length codes
@@ -128,21 +114,10 @@ UTF-8: XML, JSON, HTML, Go, Rust, Swift
 
 # UTF-16 (surrogate pair)
 
-- first word in d800-dbff.
-- second word in dc00-dfff.
+- first word in D800-DBFF.
+- second word in DC00-DFFF.
 - character value is 10 least significant bits of each---second element is least significant.
 - add 0x10000 to the result.
-
----
-
-# UTF-16 (pros/cons)
-
-- pro: often just 16-bit characters (no surrogate pair).
-- pro: easy validation (just check for values in range d800-dfff).
-
-- con: not binary compatible with ASCII.
-- con: less concise when content is mostly just ASCII.
-- con: emoji usage makes surrogate pairs more common.
 
 ---
 
@@ -200,10 +175,8 @@ UTF-8: XML, JSON, HTML, Go, Rust, Swift
 
 ---
 
-# UTF-8 to UTF-16 transcoding
+# UTF-8/UTF-16 transcoding
 
-- Need both UTF-8 and UTF-16.
-- Most validate both formats.
 - Must convert (transcode) from one format to the other format, while validating the input.
 
 ---
@@ -278,12 +251,6 @@ Use this as index in a table.
 - If using 12-byte blocks, need 4096-long table.
 - Each entry points to a shuffle mask and number of consumed bytes.
 
-
----
-
-![width:900px](transform.png)
-
-
 ---
 
 # UTF-8 to UTF-16 transcoding (cases)
@@ -295,6 +262,12 @@ Shuffle masks are sorted into 'cases'.
 3. Next 64 cases correspond to general case (1 to 4 bytes).
 
 Each case corresponds to a code path.
+
+
+---
+
+![width:900px](transform.png)
+
 
 ---
 
@@ -358,16 +331,12 @@ value 1 or 2. Value 5 followed by 0. Value 6 followed by 10.
 
 ----
 
-```
-  simd8<uint8_t> classify(simd8<uint8_t> input, simd8<uint8_t> previous_input) {
-    // shift the input by 1 byte, shifting in the last byte of the previous input
-    auto prev1 = input.prev<1>(previous_input);
-    auto byte_1_high = prev1.shift_right<4>().lookup_16(table1);
-    auto byte_1_low = (prev1 & 0x0F).lookup_16(table2);
-    auto byte_2_high = input.shift_right<4>().lookup_16(table3);
-    return (byte_1_high & byte_1_low & byte_2_high);
-  }
-```
+Array of nibbles:
+
+- original: [a0 a1 a2 a3 a4 ...]
+- shift: [a1 a2 a3 a4 ...]
+- shift: [a2 a3 a4 ...]
+- f([a0 a1 a2 a3 a4 ...]) AND g([a1 a2 a3 a4 ...]) AND g([a2 a3 a4 ...])
 
 ---
 
