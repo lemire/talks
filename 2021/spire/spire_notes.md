@@ -394,8 +394,6 @@ operations. I call the general idea a vectorized classification.
 
 ----
 
-# Simplified vectorized classification
-
 To understand how vectorized classification works, let us consider an example.
 Suppose that I want to find all instances where the value 3 is followed by
 values 1 or 2.
