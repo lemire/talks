@@ -23,7 +23,6 @@ _paginate: false
 #include <iostream>
 
 #include "simdutf.cpp"
-#include "simdutf.h"
 
 int main() {
   const char *source = "1234";
@@ -48,7 +47,6 @@ int main() {
 #include <iostream>
 
 #include "simdutf.cpp"
-#include "simdutf.h"
 
 int main() {
   const char *source = "1234";
@@ -68,7 +66,6 @@ int main() {
 #include <iostream>
 
 #include "simdutf.cpp"
-#include "simdutf.h"
 
 int main() {
   const char *source = "1234";
@@ -90,7 +87,6 @@ int main() {
 #include <iostream>
 
 #include "simdutf.cpp"
-#include "simdutf.h"
 
 int main() {
   const char16_t * source = u"1234";
@@ -113,7 +109,6 @@ int main() {
 #include <iostream>
 
 #include "simdutf.cpp"
-#include "simdutf.h"
 
 int main() {
   const char16_t * source = u"1234";
@@ -132,7 +127,6 @@ int main() {
 #include <iostream>
 
 #include "simdutf.cpp"
-#include "simdutf.h"
 
 int main() {
   const char16_t * source = u"1234";
