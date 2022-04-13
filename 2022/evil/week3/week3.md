@@ -24,6 +24,18 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 Conquer the Web
 
+
+http requests (types)
+why can't they remain open
+performance
+sending and receiving images
+
+concurrency/corruption
+sqlite
+
+package it up as a container
+push it on aws
+
 ---
 # Homework
 
