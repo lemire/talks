@@ -188,6 +188,55 @@ x<<3
 ```
 
 ---
+# Two's complement
+
+```
+0b00011
+0b00010
+0b00001
+0b00000
+```
+
+---
+# Two's complement
+
+```
+0b00011
+0b00010
+0b00001
+0b00000
+-------
+0b11111
+0b11110
+0b11101
+```
+
+
+---
+# Two's complement
+
+```
+2**63-1
+...
+1
+0
+2**64-1
+2**63-2
+....
+2**63
+```
+
+
+
+---
+
+# shift right
+
+```
+-16>>2
+```
+
+---
 
 
 ```
@@ -442,6 +491,23 @@ while(not result):
 ```
 
 ---
+
+```Python
+from z3 import *
+
+s = Solver()
+a = BitVec('seed', 128)
+s.add(LShR(a*0xda942042e4dd58b5,64) == 0x01020304050607)
+if(s.check() == z3.sat):
+    m = s.model()
+    print(m[a])
+```
+
+https://replit.com/@lemire/QuietSaltyNetwork#main.py
+
+---
 # Homework
 
-Find a simple problem that you can solve with random numbers.
+Solve a simple mathematical puzzle using z3:
+
+https://ericpony.github.io/z3py-tutorial/guide-examples.htm
