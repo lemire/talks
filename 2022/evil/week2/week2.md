@@ -20,6 +20,54 @@ twitter: [@lemire](https://twitter.com/lemire)
 GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 
+---
+
+```Python
+data = getjson("http://country.io/names.json")
+country=data["TN"]
+
+data = getjson("http://country.io/capital.json")
+capital = data["TN"]
+
+data = getjson("https://worldtimeapi.org/api/timezone/Africa/Tunis")
+time= data['datetime']
+
+print("My country is "+country)
+print("The capital of "+country+ " is "+capital)
+print("The time now in "+capital+ " is "+time [11:19])
+```
+
+---
+
+```Python
+data = getjson("http://country.io/names.json")
+country=data["TN"]
+
+data = getjson("http://country.io/capital.json")
+capital = data["TN"]
+
+data = getjson("https://worldtimeapi.org/api/timezone/Africa/Tunis")
+time= data['datetime']
+
+print("My country is "+country)
+print("The capital of "+country+ " is "+capital)
+print("The time now in "+capital+ " is "+time [11:19])
+```
+
+---
+
+```Python
+from urllib.request import urlopen
+
+def getjson(url):
+  return json.loads(urlopen(url).read().decode("utf-8"))
+
+
+data = getjson("https://api.weather.gc.ca/collections/ltce-temperature?f=json&lang=en-CA")
+
+print(data['description'])
+```
+
 
 ---
 # Week 2
