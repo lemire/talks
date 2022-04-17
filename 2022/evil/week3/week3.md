@@ -23,7 +23,118 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 # Week 3
 
 Conquer the Web
+---
 
+```Python
+    try:
+        something
+    except:
+        do something
+```
+
+---
+```Python
+file = open('file_path', 'w')
+try:
+    file.write('hello world')
+finally:
+    file.close()
+```
+---
+
+```Python
+    try:
+        something
+    except:
+        do something
+```
+
+---
+```Python
+with open('file_path', 'w') as file:
+    file.write('hello world !')
+```
+
+---
+# String aggregation
+
+- "ab" + "ac"
+- "sb" + str(1)
+
+
+---
+# HTML
+
+```HTML
+<html>
+<body>
+</body>
+</html>
+```
+
+
+---
+# HTML
+
+```HTML
+<html>
+<body>
+    <p> Hello World </p>
+</body>
+</html>
+```
+
+---
+# HTML
+
+```HTML
+<html>
+<body>
+    <p> <a href="https://google.com">Hello World</a> </p>
+</body>
+</html>
+```
+---
+# HTML
+
+---
+# TCP/UDP
+
+- UDP: fast, naive, data can be lost $\to$ media streaming
+- TCP: connection, error checks $\to$  HTTP, web
+
+---
+# HTTP/HTTPS
+
+- Get
+- Post
+- Head, Put, Delete, Connect, Options, Trace, Patch
+
+
+---
+
+Most common query is GET. A single web page can be
+dozens of GET queries.
+
+
+---
+
+```Python
+def search(keyword):
+    result = getjson("https://api.duckduckgo.com/?q="+keyword+"&format=json")
+    results = []
+    for key in result["RelatedTopics"]:
+      if "Result" in key:
+        results.append(key["Result"])
+    return results
+
+
+print(search("Hamburger"))
+```
+
+---
+
+Connections typically
 
 http requests (types)
 why can't they remain open
