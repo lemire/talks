@@ -51,6 +51,18 @@ def get_exif_data(image_file):
         exif_tags = exifread.process_file(f)
     return exif_tags 
 
+from datetime import datetime
+import sqlite3
+
+def log(long,lat):
+  con = sqlite3.connect("img.db")
+  with con:
+    tables = [row[0] for row in con.execute("SELECT name FROM sqlite_master WHERE type='table'")]
+    if not "geo" in tables:
+        con.execute("CREATE TABLE geo (date TEXT, long NUMERIC, lat NUMERIC)")
+    dt = datetime.now()
+    con.execute("INSERT INTO geo (date,long,lat) values (\""+str(dt)+"\","+str(long)+", "+str(lat)+") ")
+  con.close()
 
 # credit : https://pythonbasics.org/flask-upload-file/
 from flask import Flask, render_template, request
@@ -76,6 +88,7 @@ def upload_file():
           return render_template('upload.html')
       link = "https://www.openstreetmap.org/?mlat="+str(lat)+"&mlon="+str(long)+"&zoom=15"
       print(link)
+      log(long,lat)
       return "<html><body><a href=\""+link+"\">map</a></body></html>"
 		
 if __name__ == '__main__':
