@@ -75,7 +75,6 @@ def upload_file():
       if lat is None:
           return render_template('upload.html')
       link = "https://www.openstreetmap.org/?mlat="+str(lat)+"&mlon="+str(long)+"&zoom=15"
-      print(link)
       return "<html><body><a href=\""+link+"\">map</a></body></html>"
 		
 if __name__ == '__main__':
