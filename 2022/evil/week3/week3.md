@@ -19,6 +19,88 @@ blog: https://lemire.me
 twitter: [@lemire](https://twitter.com/lemire)
 GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
+
+---
+```Python
+from z3 import *
+
+
+jacques = Int("jacques")
+francoise = Int("francoise")
+
+jackie = Int("jackie")
+john = Int("john")
+
+serge = Int("serge")
+jane = Int("jane")
+
+simone = Int("simone")
+yves = Int("yves")
+```
+
+---
+
+```Python
+s.add(jacques >= 1)
+s.add(francoise >= 1)
+s.add(jackie >= 1)
+s.add(john >= 1)
+s.add(serge >= 1)
+s.add(jane >= 1)
+s.add(simone >= 1)
+s.add(yves >= 1)
+
+s.add(jacques <= 8)
+s.add(francoise <= 8)
+s.add(jackie <= 8)
+s.add(john <= 8)
+s.add(serge <= 8)
+s.add(jane <= 8)
+s.add(simone <= 8)
+s.add(yves <= 8)
+```
+
+
+---
+```Python
+
+s.add(jacques != francoise)
+s.add(jacques != jackie)
+s.add(jacques != john)
+s.add(jacques != serge)
+s.add(jacques != jane)
+s.add(jacques != simone)
+s.add(jacques != yves)
+
+s.add(francoise != jackie)
+s.add(francoise != john)
+s.add(francoise != serge)
+s.add(francoise != jane)
+...
+```
+---
+
+```Python
+s.add(jacques - francoise != 1)
+s.add(jacques - francoise != -1)
+
+s.add(jackie - john != 1)
+s.add(jackie - john != -1)
+
+s.add(serge - jane != 1)
+s.add(serge - jane != -1)
+
+
+s.add(simone - yves != 1)
+s.add(simone - yves != -1)
+```
+---
+
+```Python
+if(s.check() == z3.sat):
+    m = s.model()
+    print(m)
+```
 ---
 # Week 3
 
