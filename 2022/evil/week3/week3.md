@@ -30,6 +30,21 @@ solve(shoes>=1,   # we want to buy minimum a shoe
       #shoes cost 100 dollars and pullover cost 30 dollars
       100 * shoes + 30 * pullover == 500)
 ```
+
+---
+```Python
+p1 = Bool('p1') 
+p2 = Bool('p2') 
+p3 = Bool('p3') 
+p4 = Bool('p4') 
+p5 = Bool('p5') 
+p6 = Bool('p6') 
+p7 = Bool('p7') 
+
+solve(Implies(p1, p2),Implies(p2, p3), Implies(p4, Not(p6)),Implies(p7, p5), p2, p3, p5) 
+
+```
+
 ---
 ```Python
 from z3 import *
