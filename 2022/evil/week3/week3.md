@@ -19,7 +19,17 @@ blog: https://lemire.me
 twitter: [@lemire](https://twitter.com/lemire)
 GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
-
+---
+```Python
+from z3 import *
+#We received 500 dollars from the Quebec government :) :) We need to do the shopping!!
+shoes, pullover = Ints('shoes pullover')
+solve(shoes>=1,   # we want to buy minimum a shoe
+      pullover>=5,# we want to buy minimum 5 pullovers
+          
+      #shoes cost 100 dollars and pullover cost 30 dollars
+      100 * shoes + 30 * pullover == 500)
+```
 ---
 ```Python
 from z3 import *
