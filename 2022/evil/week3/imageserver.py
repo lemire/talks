@@ -55,7 +55,6 @@ def get_exif_data(image_file):
 # credit : https://pythonbasics.org/flask-upload-file/
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-from werkzeug.datastructures import  FileStorage
 
 app = Flask(__name__)
 
