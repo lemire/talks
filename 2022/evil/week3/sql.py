@@ -2,9 +2,7 @@ import sqlite3
 
 from datetime import datetime
 
-
-con = sqlite3.connect("img.db")
-with con:
+with sqlite3.connect("img.db") as con:
     tables = [row[0] for row in con.execute("SELECT name FROM sqlite_master WHERE type='table'")]
     if not "geo" in tables:
         con.execute("CREATE TABLE geo (date TEXT, long NUMERIC, lat NUMERIC)")
