@@ -25,6 +25,30 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 Launch It In Space
 
+
+
+https://aws.amazon.com
+
+
+---
+
+https://aws.amazon.com/getting-started/hands-on/serve-a-flask-app/
+
+
+---
+
+https://console.aws.amazon.com/billing/
+
+createdynamotable.png
+
+createdtable.png  
+
+initcreateuser.png 
+
+userprivileges.png
+
+createduser.png
+
 ---
 # Homework
 

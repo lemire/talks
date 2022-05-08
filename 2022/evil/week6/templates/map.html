@@ -4,15 +4,41 @@
         <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
     </head>
 
-    <body>
-        <p>Click the button to get your coordinates.</p>
+    <body onload="getLocation()">
+        <p>Click the button to mark your coordinates.</p>
 
-        <button onclick="getLocation()">Try It</button>
+        <button onclick="markCoordinates()">Try It</button>
 
         <p id="demo"></p>
 
         <script>
             var x = document.getElementById("demo");
+            var update;
+            function markCoordinates() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(upload_to_server);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+
+            function upload_to_server(position) {
+                fetch("/add?lat="+position.coords.latitude+"&long="+position.coords.longitude)
+               .then(res => res.json())
+               .then(out =>
+                 { console.log('Checkout this JSON! ', out);
+                   update(position);
+                 }
+               )      
+            }
+
+            function retrieveSaved(draw) {
+               fetch("/query")
+               .then(res => res.json())
+               .then(out =>
+                 {console.log('Checkout this JSON! ', out); 
+                  draw(out["Items"]);})
+            }
 
             function getLocation() {
                 if (navigator.geolocation) {
@@ -39,7 +65,7 @@
 
                 var LeafIcon = L.Icon.extend({
                     options: {
-                        shadowUrl: "leaf-shadow.png",
+                        shadowUrl: "/static/leaf-shadow.png",
                         iconSize: [38, 95],
                         shadowSize: [50, 64],
                         iconAnchor: [22, 94],
@@ -47,10 +73,24 @@
                         popupAnchor: [-3, -76],
                     },
                 });
-                var greenIcon = new LeafIcon({ iconUrl: "leaf-green.png" });
+                var greenIcon = new LeafIcon({ iconUrl: "/static/leaf-green.png" });
                 console.log(position.coords.latitude, position.coords.longitude)
                 var mGreen = L.marker([position.coords.latitude, position.coords.longitude], { icon: greenIcon }).bindPopup("I am a green leaf.").addTo(map);
+                function draw(items) {
+                    for(var i = 0; i < items.length; i++) {
+                        var z = items[i];
+                        var mGreen = L.marker([parseFloat(z["latitude"]), parseFloat(z["longitude"])], { icon: greenIcon }).bindPopup("I am a green leaf.").addTo(map);
+                    }
+                }
+                update = position => {
+                    var mGreen = L.marker([position.coords.latitude, position.coords.longitude], { icon: greenIcon }).bindPopup("I am a green leaf.").addTo(map); }
+                retrieveSaved(draw);
+
+                //var intervalId = window.setInterval(function(){
+                //  retrieveSaved()
+                //}, 5000);
             }
+            
         </script>
 
         <div id="map" style="width: 800px; height: 600px;"></div>
