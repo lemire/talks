@@ -26,15 +26,27 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 Launch It In Space
 
 
+https://www.docker.com
+
 
 https://aws.amazon.com
 
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
+https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-install-software
 ---
 
 https://aws.amazon.com/getting-started/hands-on/serve-a-flask-app/
 
+docker build -t flask-container .
 
+#docker image rm -f flask-container
+
+pip freeze
+
+
+ aws configure
+ ❯ aws lightsail create-container-service --service-name flask-service  --power small --scale 1                      
 ---
 
 https://console.aws.amazon.com/billing/

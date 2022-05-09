@@ -1,0 +1,20 @@
+boto3==1.22.9
+# botocore==1.25.9 # req-auto-cleaner: commented for deletion
+# click==8.0.1 # req-auto-cleaner: commented for deletion
+Flask==2.1.1
+importlib-metadata==4.11.3 # req-auto-cleaner: check package usage manually
+# itsdangerous==2.1.2 # req-auto-cleaner: commented for deletion
+# Jinja2==3.1.1 # req-auto-cleaner: commented for deletion
+# jmespath==1.0.0 # req-auto-cleaner: commented for deletion
+# joblib==1.0.1 # req-auto-cleaner: commented for deletion
+# MarkupSafe==2.1.1 # req-auto-cleaner: commented for deletion
+# Pillow==9.1.0 # req-auto-cleaner: commented for deletion
+plum-py==0.7.9 # req-auto-cleaner: check package usage manually
+python-dateutil==2.8.2 # req-auto-cleaner: check package usage manually
+# regex==2021.7.6 # req-auto-cleaner: commented for deletion
+# s3transfer==0.5.2 # req-auto-cleaner: commented for deletion
+# six==1.16.0 # req-auto-cleaner: commented for deletion
+# tqdm==4.61.2 # req-auto-cleaner: commented for deletion
+# urllib3==1.26.9 # req-auto-cleaner: commented for deletion
+# Werkzeug==2.1.1 # req-auto-cleaner: commented for deletion
+# zipp==3.8.0 # req-auto-cleaner: commented for deletion

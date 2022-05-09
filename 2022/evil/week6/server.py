@@ -38,5 +38,21 @@ def add_function():
     else:
         jsonify({})
 
+
+def list_content():
+    import os
+    for current_dir, subdirs, files in os.walk( '.' ):
+      # Current Iteration Directory
+      print( current_dir )
+
+      # Directories
+      for dirname in subdirs:
+        print( '\t' + dirname )
+
+      # Files
+      for filename in files:
+        print( '\t' + filename )
+
 if __name__ == '__main__':
-    app.run()
+    list_content()
+    app.run(host='0.0.0.0', port=5005)
