@@ -206,6 +206,8 @@ def query_function():
     return jsonify(evil.scan())
 ```
 
+---
+
 ```HTML
 <html>
         <script>
