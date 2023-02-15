@@ -23,8 +23,7 @@ std::string read_file(std::string filename) {
 std::tuple<double,double,double> overhead(size_t iterations) {
   event_collector collector;
   if(! collector.has_events() ) {
-    std::cerr << "I lack access to performance counters.\n";
-    return {0,0,0};
+    std::cerr << "# I lack access to performance counters.\n";
   }
   double elapsed_ns = 1e100;
   double cycles = 1e100;
