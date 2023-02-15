@@ -1,6 +1,7 @@
 #ifndef __EVENT_COUNTER_H
 #define __EVENT_COUNTER_H
 
+#include <algorithm>
 #include <cctype>
 #ifndef _MSC_VER
 #include <dirent.h>
@@ -54,6 +55,24 @@ struct event_count {
     });
   }
 
+  event_count min(const event_count& other) const {
+    return event_count(std::chrono::duration<double>(elapsed).count() < std::chrono::duration<double>(other.elapsed).count() ? elapsed : other.elapsed, {
+      std::min(event_counts[0],other.event_counts[0]),
+      std::min(event_counts[1],other.event_counts[1]),
+      std::min(event_counts[2],other.event_counts[2]),
+      std::min(event_counts[3],other.event_counts[3]),
+      std::min(event_counts[4],other.event_counts[4]),
+    });
+  }
+  event_count operator/(const unsigned long long denom) const {
+    return event_count(elapsed/denom, {
+      event_counts[0]/denom,
+      event_counts[1]/denom,
+      event_counts[2]/denom,
+      event_counts[3]/denom,
+      event_counts[4]/denom,
+    });
+  }
   void operator+=(const event_count& other) {
     *this = *this + other;
   }

@@ -39,7 +39,7 @@ std::tuple<double,double,double> overhead(size_t iterations) {
   return {elapsed_ns, cycles, instructions};
 }
 
-void transcode(std::string source, size_t iterations) {
+void transcode(const std::string& source, size_t iterations) {
   event_collector collector;
   if(! collector.has_events() ) {
     std::cerr << "I lack access to performance counters.\n";
@@ -62,8 +62,6 @@ void transcode(std::string source, size_t iterations) {
   for(event_count & e : events) {
     printf("%f %f %f\n", e.elapsed_ns()-elapsed_ns, e.cycles()-cycles, e.instructions()-instructions);
   }
-
-
 }
 
 
