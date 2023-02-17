@@ -83,44 +83,8 @@ double sigma_test(const std::string& source, size_t iterations) {
 }
 
 
-double compute_relative_std_dev(std::vector<double> input) {
-  // compute the mean:
-  double m = 0;
-
-  for(double v : input) {
-    m += v;
-  }
-  m /= input.size();
-
-  double std = 0;
-  for(double v : input) {
-    std += (v - m) * (v - m) / input.size();
-  }
-  return sqrt(std)/m;
-}
-
-void print_stats(const std::string& source, size_t trial_count, size_t iterations) {
-  std::vector<std::pair<event_count,event_count>> all;
-  std::vector<double> avg_ns;
-  std::vector<double> min_ns;
-
-  std::vector<double> avg_ins;
-  std::vector<double> min_ins;
-  for(size_t i = 0; i < trial_count; i++) {
-    auto t = transcode(source, iterations);
-    avg_ns.push_back(t.first.elapsed_ns());
-    min_ns.push_back(t.second.elapsed_ns());
-
-    avg_ins.push_back(t.first.instructions());
-    min_ins.push_back(t.second.instructions());
-    all.emplace_back(t);
-  }
-  std::cout << compute_relative_std_dev(avg_ns)*100 << " " << compute_relative_std_dev(min_ns)*100 << std::endl;
-  std::cout << compute_relative_std_dev(avg_ins)*100 << " " << compute_relative_std_dev(min_ins)*100 << std::endl;
-
-}
 
 int main(int , char *[]) {
-  print_stats(read_file("Arabic-Lipsum.utf8.txt"), 50, 200);
+  std::cout << sigma_test(read_file("Arabic-Lipsum.utf8.txt"), 300) << std::endl;
   return EXIT_SUCCESS;
 }

@@ -996,7 +996,7 @@ bool setup_performance_counters() {
   // check permission
   int force_ctrs = 0;
   if (kpc_force_all_ctrs_get(&force_ctrs)) {
-    printf("Permission denied, xnu/kpc requires root privileges.\n");
+    printf("#Permission denied, xnu/kpc requires root privileges.\n");
     return (worked = false);
   }
   int ret;

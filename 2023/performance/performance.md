@@ -1,4 +1,139 @@
 
+Repeated measures increase accuracy.
+
+Let $t$ be the true value and let $\epsilon$ be the noise distribution (variance $\sigma^2$).
+
+Measures are $t+\epsilon_1, t+\epsilon_2, t+\epsilon_3$.
+
+Sum  is $Nt + (\sum_i \epsilon_i)$.
+
+It has a variance of $N \sigma^2$ and a standard deviation of
+$\sqrt{N} \sigma$.
+
+Thus the average has a standard deviation of $\sigma/\sqrt{N} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$
+
+Suppose $\epsilon$ is normal distribution with mean of zero. The variance
+of  $\sum_i \epsilon_i$ is $ N \sigma^2$
 
 probability of sigma events:
 
