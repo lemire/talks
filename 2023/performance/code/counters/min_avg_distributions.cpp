@@ -100,6 +100,7 @@ double compute_relative_std_dev(std::vector<double> input) {
 }
 
 void print_stats(const std::string& source, size_t trial_count, size_t iterations) {
+  std::cout << "iterations "<< iterations << std::endl;
   std::vector<std::pair<event_count,event_count>> all;
   std::vector<double> avg_ns;
   std::vector<double> min_ns;
@@ -122,5 +123,8 @@ void print_stats(const std::string& source, size_t trial_count, size_t iteration
 
 int main(int , char *[]) {
   print_stats(read_file("Arabic-Lipsum.utf8.txt"), 50, 200);
+  print_stats(read_file("Arabic-Lipsum.utf8.txt"), 50, 2000);
+  print_stats(read_file("Arabic-Lipsum.utf8.txt"), 50, 10000);
+
   return EXIT_SUCCESS;
 }

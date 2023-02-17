@@ -52,19 +52,16 @@ std::pair<event_count,event_count> transcode(const std::string& source, size_t i
   return {accumul_event, min_event};
 }
 
-double sigma_test(const std::string& source, size_t iterations) {
+double sigma_test(const std::string& source, size_t warmup, size_t iterations) {
   std::vector<double> input;
   input.reserve(iterations);
   size_t expected_utf16words = simdutf::utf16_length_from_utf8(source.data(), source.size());
   std::unique_ptr<char16_t[]> utf16_output{new char16_t[expected_utf16words]};
-  for(size_t i = 0; i < iterations; i++) {
+  for(size_t i = 0; i < iterations + warmup; i++) {
     collector.start();
-    size_t utf16words = simdutf::convert_utf8_to_utf16le(source.data(), source.size(), utf16_output.get());
-    if(utf16words != expected_utf16words) {
-      printf("bug\n");
-    }
+    volatile size_t utf16words = simdutf::convert_utf8_to_utf16le(source.data(), source.size(), utf16_output.get());
     event_count c = collector.end();
-    input.push_back(c.elapsed_ns());
+    if(i >= warmup) { input.push_back(c.elapsed_ns()); }
   }
   // compute the mean:
   double m = 0;
@@ -85,6 +82,6 @@ double sigma_test(const std::string& source, size_t iterations) {
 
 
 int main(int , char *[]) {
-  std::cout << sigma_test(read_file("Arabic-Lipsum.utf8.txt"), 300) << std::endl;
+  std::cout << sigma_test(read_file("Arabic-Lipsum.utf8.txt"), 100, 300) << std::endl;
   return EXIT_SUCCESS;
 }
