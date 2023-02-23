@@ -15,7 +15,7 @@ _paginate: false
 
 <!--  --- -->
 
-## <!--fit--> Floating-point number parsing with perfect accuracy at a gigabyte per second
+## <!--fit--> Accurate and efficient software microbenchmarks
 
 
 Daniel Lemire 
@@ -27,17 +27,21 @@ blog: https://lemire.me
 twitter: [@lemire](https://twitter.com/lemire)
 GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
-
-
 ---
 
 # Background
 
-- Roaring bitmaps: high performance compressed indexes
-- simdjson: Parsing gigabytes of JSON per second
-- simdutf: Unicode routines (UTF8, UTF16, UTF32): billions of characters per second
-- fast_float: Fast and exact implementation of the C++ from_chars functions
-- ada: fast URL parser
+* *Fastest JSON parser in the world* (on commodity processors): https://github.com/simdjson/simdjson
+* First to parse JSON files at gigabytes per second
+
+---
+
+# Where is the code ?
+
+
+All code for this talk is online (reproducible!!!)
+
+https://github.com/lemire/talks/tree/master/2023/performance/code
 
 ---
 # How fast is your disk?
@@ -291,8 +295,6 @@ No need to freeze the CPU frequency: you can measure it.
 - x64: Requires at least a full CPU
 - ARM Graviton: generally available but limited number (e.g., 2 counters)
 
-
-Limitation: you usually have a limited budget (can't measure 25 different things)
 
 
 
