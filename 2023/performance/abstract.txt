@@ -37,7 +37,7 @@ Les logiciels sont souvent améliorés de manière incrémentale. Chaque optimis
 
 Biographie : 
 
-Daniel est professeur d'informatique au Laboratoire de science des données de l'Université du Québec (TELUQ). Il est rédacteur en chef de la revue Software : Practice and Experience. En 2020, il a reçu le Prix d'excellence 2020 de l'Université du Québec pour ses travaux sur l'accélération du traitement des documents JSON. Ses logiciels ont été utilisés par de grandes entreprises comme Google, Apple, LinkedIn, Netflix et Facebook. Il figure parmi les 500 premiers utilisateurs mondiaux de GitHub en termes de 
+Daniel est professeur d'informatique au Laboratoire de science des données de l'Université du Québec (TELUQ). Il est rédacteur en chef de la revue Software : Practice and Experience. En 2020, il a reçu le Prix d'excellence 2020 de l'Université du Québec pour ses travaux sur l'accélération du traitement des documents JSON. Ses logiciels ont été utilisés par de grandes entreprises comme Google, Apple, LinkedIn, Netflix et Facebook. On trouve ses algorithmes et son code dans plusieurs librairies standards (Rust, Go, GNU C++, Microsoft C++, .NET/C#, Numpy, etc.). IIl figure parmi les 500 premiers utilisateurs mondiaux de GitHub en
 nombre de followers : GitHub est la principale plateforme de publication de logiciels libres et compte plus de 40 millions d'utilisateurs. Il travaille sur la performance des logiciels.  Il est @lemire sur Twitter et tient un blog hebdomadaire à l'adresse https://lemire.me/.
 
 Photo : https://lemire.me/img/UTELUQ2016/Daniel-Lemire_MG_0993_HR.jpg
