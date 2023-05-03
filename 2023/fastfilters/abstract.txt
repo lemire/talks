@@ -1,0 +1,30 @@
+Filter Workshop at SPAA 2023
+
+Title: Binary Fuse Filters: Fast and Tiny Immutable Filters
+
+
+Abstract:
+
+Conventional Bloom filters provide fast approximate set membership while using 
+little memory. Engineers use them to avoid expensive disk and network accesses.
+We recently introduced the binary fuse filters that are faster and smaller 
+at query time while saving at least 30% in memory usage compared to the Bloom filters.
+The result is an immutable filter, and the construction is slightly slower (e.g., by 50%).
+
+We review some performance issues related to our binary fuse filters, but also to 
+probabilistic filters in general: e.g., how does the query time performance scale with respect
+to the number of random accesses ? For network transmission, the filters are often compressed:
+how well do different filters compress ?
+
+Biography: 
+
+Daniel Lemire is a computer science professor at the Data Science Laboratory of the University of Quebec (TELUQ).
+He is an editor of the Software: Practice and Experience journal. In 2020, he received the University of 
+Quebec’s 2020 Award of Excellence for Achievement in Research for his 
+work on the acceleration of JSON parsing. His open source software has been used by major corporations 
+such as Google, LinkedIn, Netflix and Facebook. He is among the top 500 GitHub users worldwide in terms of 
+follower count: GitHub is the main platform for open-source software publishing and it has over 40 million users.
+He works on software performance.  He is @lemire on Twitter, and he blogs weekly at https://lemire.me/
+
+Photo: https://lemire.me/img/UTELUQ2016/Daniel-Lemire_MG_0993_HR.jpg
+
