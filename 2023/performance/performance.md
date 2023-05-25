@@ -110,7 +110,7 @@ Software systems are complex systems: changes can have unexpected consequences.
 
 # System calls
 
-Ssystem calls (especially IO) may dominate, assume that they remain constant.
+System calls (especially IO) may dominate, assume that they remain constant. Idem with multicore and multi-system processes.
 
 ---
 
@@ -122,7 +122,7 @@ data structure layout changes can trigger expensive loads, assume that we keep t
 
 # Tiny functions
 
-Incertitude principle: by measuring you are affecting the execution so that you cannot measure safely tiny functions.
+Uncertainty principle: by measuring you are affecting the execution so that you cannot measure safely tiny functions.
 
 ---
 
