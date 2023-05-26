@@ -26,20 +26,6 @@ twitter: [@lemire](https://twitter.com/lemire)
 GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 
----
-
-# Probabilistic filters?
-
-- Is $x$ in the set $S$?
-- Maybe or *definitively not*
-
----
-
-# Usage scenario?
-
-- We have this expensive *database*. Querying it cost you.
-- Most queries should not end up in the data.
-- We want a small 'filter' that can prune out queries.
 
 ---
 
@@ -60,45 +46,10 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ---
 
-# Hash function
-
-- From any objet in the *universe* to a *word* (e.g., 64-bit word)
-- Result looks random
-
----
-
-```C
-uint64_t murmur64(uint64_t h) {
-  h ^= h >> 33;
-  h *= UINT64_C(0xff51afd7ed558ccd);
-  h ^= h >> 33;
-  h *= UINT64_C(0xc4ceb9fe1a85ec53);
-  h ^= h >> 33;
-  return h;
-}
-```
-
----
-
 # Conventional Bloom filter
 
 - Start with a bitset $B$.
 - Using `k` hash functions $f_1, f_2,\ldots$.
-
----
-
-# Adding an element
-
-- Given an object $x$ from the set, set up to `k` bits to 1
-- $B[f_1(x)] \leftarrow 1, B[f_2(x)] \leftarrow 1, \ldots$
-
-
----
-
-# Checking an element
-
-- Given an object $x$ from the universe, set up to `k` bits to 1
-- $(B[f_1(x)] = 1) \mathrm{~AND~} (B[f_2(x)] = 1) \mathrm{~AND~} \ldots$
 
 ---
 
@@ -125,20 +76,6 @@ uint64_t murmur64(uint64_t h) {
   return Found;
 ```
 
----
-
-
-# False positive rate
-
-
-| bits per element | hash functions | fpp           |
-|:-----------------|:---------------|:--------------|
-| 9                | 6              | 1.3%            |
-| 10                | 7              | 0.8%            |
-| 12                | 8              | 0.3%            |
-| 13                | 9              | 0.2%            |
-| 15                | 10              | 0.07%            |
-| 16                | 11              | 0.04%            |
 
 ---
 
@@ -301,47 +238,6 @@ bool contain(uint64_t key, const binary_fuse_t *filter) {
 
 ---
 
-# Construction 1
-
-- Start with array for fingerprints containing slightly more fingerprints than you have elements in the set
-- Divide the array into segments (e.g., 300 disjoint)
-- Number of fingerprints in segment: power of two (hence *binary*)
-
----
-
-# Construction 2
-
-
-- Map each object $x$ in set, to locations $B[f_1(x)]$, $B[f_2(x)]$, $B[f_3(x)]$
-- The locations should be in three consecutive segments (so relatively nearby in memory).
-
-
----
-
-# Construction 3
-
-- At the end, each location $B[i]$ is associated with some number of objects from the set
-
-
----
-
-# Construction 4
-
-- Find a location mapped from a single set element $x$, e.g., $B[f_1(x)]$
-- Record this location which is owned by $x$
-- Remove the mapping of $x$ to locations $B[f_1(x)]$, $B[f_2(x)]$, $B[f_3(x)]$
-- Repeat
-
----
-
-# Construction 5
-
-- Almost always, the construction terminates after one trial
-- Go through the matched keys, in reverse order, adn set (e.,g.) $B[f_1(x)] = f(x) \mathrm{~XOR~} B[f_2(x)] \mathrm{~XOR~} B[f_3(x)]$
-
-
----
-
 # Construction: Performance
 
 - Implemented naively: terrible performance (random access!!!)
@@ -379,7 +275,6 @@ If you are sending the filters over a network, you can further compress it.
 ---
 
 # How does the performance scale with size?
-
 
 For warm small filters, number of access is less important.
 Becomes more computational.
