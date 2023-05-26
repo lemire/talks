@@ -85,7 +85,6 @@ uint64_t murmur64(uint64_t h) {
 - Start with a bitset $B$.
 - Using `k` hash functions $f_1, f_2,\ldots$.
 
-
 ---
 
 # Adding an element
@@ -99,9 +98,33 @@ uint64_t murmur64(uint64_t h) {
 # Checking an element
 
 - Given an object $x$ from the universe, set up to `k` bits to 1
-- $(B[f_1(x)] = 1) \mathrm{AND} (B[f_2(x)] = 1) \mathrm{AND} \ldots$
+- $(B[f_1(x)] = 1) \mathrm{~AND~} (B[f_2(x)] = 1) \mathrm{~AND~} \ldots$
+
+---
+
+# Checking an element: implementation 
+
+- Typical implementation is *branchy*
+- If not $(B[f_1(x)] = 1)$, return false
+- If not $(B[f_2(x)] = 1)$, return false
+- ...
+- return true
 
 
+---
+
+
+# False positive rate
+
+
+| bits per element | hash functions | fpp           |
+|:-----------------|:---------------|:--------------|
+| 9                | 6              | 1.3%            |
+| 10                | 7              | 0.8%            |
+| 12                | 8              | 0.3%            |
+| 13                | 9              | 0.2%            |
+| 15                | 10              | 0.07%            |
+| 16                | 11              | 0.04%            |
 
 ---
 
@@ -109,7 +132,15 @@ uint64_t murmur64(uint64_t h) {
 
 - Fast construction
 - Flexible: excess capacity translates into lower false positive rate
+- Degrades smoothly to a useless but 'correct' filter
 
+---
+
+![width:30%](bloom_bits_per_entry.png) 
+
+---
+
+![width:30%](fpp.png) 
 
 ---
 
@@ -117,6 +148,48 @@ uint64_t murmur64(uint64_t h) {
 
 - 44% above the theoretical minimum in storage
 - Slower than alternatives (lots of memory accesses)
+
+---
+
+
+![width:600px](comparison.png) 
+
+
+---
+
+# Memory accesses
+
+| number of hash functions | cache misses (miss) | cache misses (hit)           |
+|:-----------------|:---------------|:--------------|
+| 8               | 3.5             | 7.5            |
+| 11               | 3.8             | 10.5            |
+
+(Intel Ice Lake processor, out-of-cache filter)
+
+---
+
+# Mispredicted branches
+
+| number of hash functions | all out | all in          |
+|:-----------------|:---------------|:--------------|
+| 8               | 0.95            | 0.0           |
+| 11               | 0.95            | 0.0            |
+
+(Intel Ice Lake processor, out-of-cache filter)
+
+
+---
+
+# Performance
+
+| number of hash functions | always out (cycles/entry) | always in (cycles/entry)         |
+|:-----------------|:---------------|:--------------|
+| 8               | 135            | 170         |
+| 11               | 140           | 230        |
+
+
+(Intel Ice Lake processor, out-of-cache filter)
+
 
 ---
 
@@ -134,7 +207,7 @@ uint64_t murmur64(uint64_t h) {
 
 ---
 
-# Binary fuse filters (was: xor filters)
+# Binary fuse filters
 
 - Based on theoretical work by Dietzfelbinger and Walzer
 - Immutable datastructure: build it once
@@ -150,9 +223,6 @@ uint64_t murmur64(uint64_t h) {
 - 4-wise version has four hits, 8% overhead
 
 
----
-
-![width:20%](comparison.png) 
 
 
 ---
@@ -163,11 +233,34 @@ uint64_t murmur64(uint64_t h) {
 - Compute 3 (or 4) hash functions: $f_1(x), f_2(x), f_3(x)$
 - Compute fingerprint function ($f(x)\to$ 8-bit word)
 - Compute XOR and compare with fingerprint:
-$(B[f_1(x)] = 1) \mathrm{XOR} (B[f_2(x)] = 1) \mathrm{XOR} (B[f_3(x)] = 1) = f(x)$
+$(B[f_1(x)] = 1) \mathrm{~XOR~} (B[f_2(x)] = 1) \mathrm{~XOR~} (B[f_3(x)] = 1) = f(x)$
 
 ---
 
-![width:20%](query_vs_fpp.png) 
+
+|  | cache misses  | mispredictions          |
+|:-----------------|:---------------|:--------------|
+| 3-wise binary fuse      | 2.8            | 0.0            |
+| 3-wise binary fuse      | 3.7             | 0.0           |
+
+(Intel Ice Lake processor, out-of-cache filter)
+
+
+---
+
+
+|  | always out (cycles/entry) | always in (cycles/entry)         | bits per entry | 
+|:-----------------|:---------------|:--------------|:-------------------------|
+| Bloom $k=8$               | 135            | 170         | 12 |
+| 3-wise bin. fuse         | 85           | 85        | 9.0 |
+| 4-wise bin. fuse        | 100          | 100        | 8.6 |
+
+(Intel Ice Lake processor, out-of-cache filter)
+
+
+---
+
+![width:1000px](overall.png) 
 
 ---
 
@@ -175,7 +268,7 @@ $(B[f_1(x)] = 1) \mathrm{XOR} (B[f_2(x)] = 1) \mathrm{XOR} (B[f_3(x)] = 1) = f(x
 
 - Start with array for fingerprints containing slightly more fingerprints than you have elements in the set
 - Divide the array into segments (e.g., 300 disjoint)
-- The segments should have size that follows a power of two (hence *binary*)
+- Number of fingerprints in segment: power of two (hence *binary*)
 
 ---
 
@@ -207,7 +300,7 @@ $(B[f_1(x)] = 1) \mathrm{XOR} (B[f_2(x)] = 1) \mathrm{XOR} (B[f_3(x)] = 1) = f(x
 # Construction 5
 
 - Almost always, the construction terminates after one trial
-- Go through the matched keys, in reverse order, adn set (e.,g.) $B[f_1(x)] = f(x) \mathrm{XOR} B[f_2(x)] \mathrm{XOR} B[f_3(x)]$
+- Go through the matched keys, in reverse order, adn set (e.,g.) $B[f_1(x)] = f(x) \mathrm{~XOR~} B[f_2(x)] \mathrm{~XOR~} B[f_3(x)]$
 
 
 ---
@@ -218,13 +311,20 @@ $(B[f_1(x)] = 1) \mathrm{XOR} (B[f_2(x)] = 1) \mathrm{XOR} (B[f_3(x)] = 1) = f(x
 - Before the construction begins, sort the elements of the sets according to the segments they are mapped to.
 - This greatly accelerates the construction
 
+
 ---
+
+![width:600px](construction.png) 
+
+<!--
+---
+
 
 ![width:20%](construction_vs_fpp.png) 
 
 ---
 
-# How does the performance scale with size?
+ # How does the performance scale with size?
 
 
 ---
@@ -237,6 +337,17 @@ $(B[f_1(x)] = 1) \mathrm{XOR} (B[f_2(x)] = 1) \mathrm{XOR} (B[f_3(x)] = 1) = f(x
 # Compressibility?
 
 If you are sending the filters over a network, you can further compress it.
+-->
+---
+
+# Compressibility
+
+|  |    bits per entry (raw)    | bits per entry (zstd) |
+|:-----------------|:---------------|:--------------|
+| Bloom $k=8$               | 12.0           | 12.0        |
+| 3-wise bin. fuse         | 9.0          | 8.59       |
+| 4-wise bin. fuse        | 8.60          | 8.39        |
+| theory        | 8.0         | 8.0       | 8.0      |
 
 ---
 
