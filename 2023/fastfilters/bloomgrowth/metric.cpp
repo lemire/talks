@@ -1,6 +1,7 @@
 #include <iostream>
-#include "zstd.h"
+#include "zstd.h" // install, e.g., libzstd-devel
 
+#include <cstring>
 #include "bloom.h"
 #include "3wise_xor_binary_fuse_filter_lowmem.h"
 #include "4wise_xor_binary_fuse_filter_lowmem.h"
