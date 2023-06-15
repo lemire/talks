@@ -215,7 +215,7 @@ bool contain(uint64_t key, const binary_fuse_t *filter) {
 |  | cache misses  | mispredictions          |
 |:-----------------|:---------------|:--------------|
 | 3-wise binary fuse      | 2.8            | 0.0            |
-| 3-wise binary fuse      | 3.7             | 0.0           |
+| 4-wise binary fuse      | 3.7             | 0.0           |
 
 (Intel Ice Lake processor, out-of-cache filter)
 
@@ -293,8 +293,10 @@ For large cold filters, accesses are costly. <!-- Block Bloom filters dominate i
 |:-------|:-------|:-------|:-------|:-------|
 | Bloom |   17 | 14 |  0.32% |      12.0 |
 | Blocked Bloom (NEON) | 3.8 | 3.8| 0.6% | 12.8  | 
-| 4-wise bin. fuse | 3.5 | 3.5 | 0.39% | 9.0  | 
+| 3-wise bin. fuse | 3.5 | 3.5 | 0.39% | 9.0  | 
 | 4-wise bin. fuse | 4.0| 4.0 | 0.39% | 8.6  | 
+
+(Apple M2)
 
 ---
 
