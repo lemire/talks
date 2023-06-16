@@ -56,8 +56,8 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 # Checking an element: implementation 
 
 - Typical implementation is *branchy*
-- If not $(B[f_1(x)] = 1)$, return false
-- If not $(B[f_2(x)] = 1)$, return false
+- If not $B[f_1(x)] = 1$, return false
+- If not $B[f_2(x)] = 1$, return false
 - ...
 - return true
 
@@ -194,7 +194,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 - Compute 3 (or 4) hash functions: $f_1(x), f_2(x), f_3(x)$
 - Compute fingerprint function ($f(x)\to$ 8-bit word)
 - Compute XOR and compare with fingerprint:
-$(B[f_1(x)] = 1) \mathrm{~XOR~} (B[f_2(x)] = 1) \mathrm{~XOR~} (B[f_3(x)] = 1) = f(x)$
+$B[f_1(x)] \mathrm{~XOR~} B[f_2(x)] \mathrm{~XOR~} B[f_3(x)] = f(x)$
 
 ---
 
