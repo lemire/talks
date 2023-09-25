@@ -6,7 +6,31 @@ description: With the end of Dennard scaling, the cost of computing is no longer
 paginate: true
 _paginate: false
 ---
+<style>
+img[alt~="top-right"] {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+</style>
 
+<style>
+img[alt~="bottom-right"] {
+  position: absolute;
+  top: 240px;
+  right: 0px;
+  width: 50%;
+}
+</style>
+
+<style>
+img[alt~="bottom"] {
+  position: absolute;
+  top: 400px;
+  right: 0px;
+  width: 55%;
+}
+</style>
 
 
 <!-- ![center](simdjsonlogo.png)-->
@@ -128,12 +152,14 @@ Input:
 
 # Wrote a C++ library (called ada)
 
-- Implemented WHATWG URL support from scratch
+- Full WHATWG URL support
 - No dependency, full portability
 - over 20,000 lines of code
 - Six months of work, 25 contributors
 - Apache-2.0, MIT 
 - https://github.com/ada-url/ada
+
+![bottom-right](baby.jpg)
 
 ---
 
@@ -201,6 +227,15 @@ Do no process byte-by-byte when you can process 16-byte by 16-byte.
 
 Compilers may do it for you, but not always.
 
+
+---
+
+# Efficient C++/JavaScript bridge
+
+- Passing multiple strings is expensive.
+- Pass one string with offsets.
+
+![bottom](components.png)
 
 ---
 
