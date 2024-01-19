@@ -19,4 +19,5 @@ https://pbs.twimg.com/card_img/1748043011655630848/_o_NrvbJ?format=jpg&name=medi
 
 https://thenota.com/post/2023/dec/20/ai-authored-novel-wins-literary-award-in-china/
 
+https://www.youtube.com/watch?v=dUxD-WYNOyw
 
