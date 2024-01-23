@@ -1,3 +1,8 @@
+"For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.”  
+
+- Richard P. Feynman
+
+
 Zuckerberg's Meta Is Spending Billions to Buy 350,000 Nvidia H100 GPUs
 
 Mark Zuckerberg plans on acquiring 350,000 Nvidia H100 GPUs to help Meta build a next-generation AI that possesses human-like intelligence. The 350,000 number is staggering, and it’ll also cost Meta a small fortune to acquire. Each H100 can cost around $30,000, meaning Zuckerberg’s company needs to pay an estimated $10.5 billion just to buy the computing power, not to mention paying all the electricity costs.
