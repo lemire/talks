@@ -2,6 +2,51 @@
 
 - Richard P. Feynman
 
+===
+13 mars
+
+10 h à 10 h 30
+
+prise de conscience.
+
+1h et 1h15
+
+avant-midi au complet
+
+perte d'emplois.
+
+niveau tâche... nature... 
+
+
+continuité.
+
+inquiétude remplacement des jobs...
+
+la mise en oeuvre, la portée informationnelle...
+
+
+1987... knowledge navigator
+
+conception vidéo
+analyse des places
+
+règlements des études -- interrogé
+
+===
+
+collaboration en ligne
+
+===
+
+STP copilot 
+
+forêts
+
+- Pas conscient du ai 
+
+- modèles 
+
+
 
 Zuckerberg's Meta Is Spending Billions to Buy 350,000 Nvidia H100 GPUs
 
