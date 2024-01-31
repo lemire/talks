@@ -2,6 +2,11 @@
 
 - Richard P. Feynman
 
+
+Software is eating the world
+Andreessen
+https://a16z.com/why-software-is-eating-the-world/
+
 ===
 13 mars
 
@@ -60,7 +65,7 @@ Les universités peuvent jouer un rôle en aidant les travailleurs déplacés pa
 
 'We know more than we can tell' (Polanya)
 
-L'automation prend du temps et elle n'est pas toujours rentable. Par exemple, les banques ont encore des humains dans leurs succursales, même si on a automatisé une grande partie des activités. Ces humains tendent à se concentrer sur des opérations spécifiques, et complexes, qu'on pourrait parfois automatiser, mais une analyse coût-bénéfice pourrait montrer qu'il faudrait des décennies ou plus pour rentabiliser l'investissement.
+L'automatisationon prend du temps et elle n'est pas toujours rentable. Par exemple, les banques ont encore des humains dans leurs succursales, même si on a automatisé une grande partie des activités. Ces humains tendent à se concentrer sur des opérations spécifiques, et complexes, qu'on pourrait parfois automatiser, mais une analyse coût-bénéfice pourrait montrer qu'il faudrait des décennies ou plus pour rentabiliser l'investissement.
 
 No compelling historical or contemporary evidence suggests that technological advances are driving us toward a jobless future. On the contrary, we anticipate that in the next two decades, industrialized countries will have more job openings than workers to fill them, and that robotics and automation will play an increasingly crucial role in closing these gaps. (Autor, 2022)
 
@@ -68,8 +73,21 @@ No compelling historical or contemporary evidence suggests that technological ad
 Software is eating the world.
 
 
+Où est le numérique et l'intelligence articielle?
 
+Baccalauréat en administration (cheminement général) (7764)
+Baccalauréat en administration (cheminement général bilingue - français/anglais) (7364)
+Baccalauréat en administration (concentration en comptabilité et finance) (6774)
+Baccalauréat en administration (concentration en développement local et économie sociale) (6771)
+Baccalauréat en administration (concentration en économie) (6775)
+Baccalauréat en administration (concentration en entrepreneuriat) (6772)
+Baccalauréat en administration (concentration en gestion des ressources humaines) (7564)
+Baccalauréat en administration (concentration en gestion des services de santé et des services sociaux) (6773)
+Baccalauréat en administration (concentration en management) (6768)
+Baccalauréat en administration (concentration en marketing) (6769)
+Baccalauréat en administration (concentration en planification financière) (6770)
 
+Les universités sont majoritairement féminines, mais la fréquentation des femmes en informatique diminue par rapport à celle des hommes depuis 30 ans.
 
 Passons aux emplois. Waymo a certainement et visiblement supprimé le conducteur de la voiture. Mais il a également créé de nombreux autres emplois qui n'existaient pas auparavant et qui sont beaucoup moins visibles - l'étiqueteur humain qui aide à collecter des données d'entraînement pour les réseaux neuronaux, l'agent d'assistance qui se connecte à distance aux véhicules qui rencontrent des problèmes, les personnes qui construisent et entretiennent la flotte de voitures, les cartes, etc. Toute une nouvelle industrie de capteurs divers et d'infrastructures connexes est créée pour assembler ces voitures hautement instrumentées et de haute technologie. De la même manière, en ce qui concerne le travail en général, de nombreux emplois changeront, d'autres disparaîtront, mais de nombreux nouveaux emplois apparaîtront également. Il s'agit davantage d'une refonte du travail que d'une suppression directe, même si la suppression est l'élément le plus important. Il est difficile d'affirmer que les chiffres globaux n'auront pas tendance à baisser à un moment donné et au fil du temps, mais cela se produit beaucoup plus lentement qu'une personne regardant naïvement la situation pourrait le penser.
 
