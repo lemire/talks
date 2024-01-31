@@ -22,6 +22,10 @@ perte d'emplois.
 
 niveau tâche... nature... 
 
+Hundreds of driverless cars are now an everyday part of traffic in San Francisco as they shuttle passengers across town, but how safe are they and how do they compare to human drivers? Waymo, owned by Google's parent company Alphabet, just released a new study that attempts to shed light on its own track record as one of San Francisco's largest driverless car companies. The findings, described as first-of-its-kind research, make the case that Waymo's driverless fleet is able to steer clear of certain types of collisions at a higher rate than human drivers.
+
+
+https://www.nbcbayarea.com/investigations/googles-waymo-safety-study-on-driverless-cars/3311188/
 
 continuité.
 
