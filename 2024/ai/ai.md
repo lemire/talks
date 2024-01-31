@@ -20,6 +20,13 @@ avant-midi au complet
 
 perte d'emplois.
 
+search engines were once AI, spam detection, and so forth. A better term might be software automatization.
+the printing press was an automated scribe.
+
+In retrospect, banning technology is rarely seen as the right move. The Ottoman empire severely restricted books and went from the most advanced society in the world, to a backward futile empire. What happened to teachers who banned wikipedia.
+
+
+
 niveau tâche... nature... 
 
 Hundreds of driverless cars are now an everyday part of traffic in San Francisco as they shuttle passengers across town, but how safe are they and how do they compare to human drivers? Waymo, owned by Google's parent company Alphabet, just released a new study that attempts to shed light on its own track record as one of San Francisco's largest driverless car companies. The findings, described as first-of-its-kind research, make the case that Waymo's driverless fleet is able to steer clear of certain types of collisions at a higher rate than human drivers.
