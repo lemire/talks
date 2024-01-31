@@ -48,6 +48,29 @@ forêts
 
 Quel sera l'effet des voitures intelligentes capables de se conduire toutes seules ? Certainement, on devrait voir des pertes d'emploi chez les chauffeurs, mais ces pertes sont compensés pas de nouveaux emplois: spécialistes en science des données, ingénieurs en informatique, etc.
 
+Automatisation tend à augmenter la productivité. Une productivité accrue tend à générer des revenus supplémentaires.
+
+L'automatisation d'une partie de la tâche d'un employé peut donner à l'employé une plus grande valeur. Par exemple, pensons à un comptable sans calculatrice. Le comptable serait réduit à faire des sommes et des multiplications sur un boulier, contribuant peu à l'entreprise. Son statut social serait moindre.
+
+Cet effet n'est pas assuré. Les propriétaires de calèche n'ont pas bénéficié de la venue de l'automobile. Les compagnies de taxi partout dans le monde ont été amoché par Uber et l'informatique mobil.
+
+Il y a donc des gagnants et des perdants. Ceux qui sont mieux à même de s'adapter gagnent, tandis que ceux qui sont pris de court et doivent 'résister' tendent à perdre, inexorablement.
+
+Les universités peuvent jouer un rôle en aidant les travailleurs déplacés par la technologie à travailler avec l'intelligence artificielle. 
+
+'We know more than we can tell' (Polanya)
+
+L'automation prend du temps et elle n'est pas toujours rentable. Par exemple, les banques ont encore des humains dans leurs succursales, même si on a automatisé une grande partie des activités. Ces humains tendent à se concentrer sur des opérations spécifiques, et complexes, qu'on pourrait parfois automatiser, mais une analyse coût-bénéfice pourrait montrer qu'il faudrait des décennies ou plus pour rentabiliser l'investissement.
+
+No compelling historical or contemporary evidence suggests that technological advances are driving us toward a jobless future. On the contrary, we anticipate that in the next two decades, industrialized countries will have more job openings than workers to fill them, and that robotics and automation will play an increasingly crucial role in closing these gaps. (Autor, 2022)
+
+
+Software is eating the world.
+
+
+
+
+
 Passons aux emplois. Waymo a certainement et visiblement supprimé le conducteur de la voiture. Mais il a également créé de nombreux autres emplois qui n'existaient pas auparavant et qui sont beaucoup moins visibles - l'étiqueteur humain qui aide à collecter des données d'entraînement pour les réseaux neuronaux, l'agent d'assistance qui se connecte à distance aux véhicules qui rencontrent des problèmes, les personnes qui construisent et entretiennent la flotte de voitures, les cartes, etc. Toute une nouvelle industrie de capteurs divers et d'infrastructures connexes est créée pour assembler ces voitures hautement instrumentées et de haute technologie. De la même manière, en ce qui concerne le travail en général, de nombreux emplois changeront, d'autres disparaîtront, mais de nombreux nouveaux emplois apparaîtront également. Il s'agit davantage d'une refonte du travail que d'une suppression directe, même si la suppression est l'élément le plus important. Il est difficile d'affirmer que les chiffres globaux n'auront pas tendance à baisser à un moment donné et au fil du temps, mais cela se produit beaucoup plus lentement qu'une personne regardant naïvement la situation pourrait le penser.
 
 Let’s turn to jobs. Certainly, and visibly, Waymo has deleted the driver of the car. But it has also created a lot of other jobs that were not there before and are a lot less visible - the human labeler helping to collect training data for neural networks, the support agent who remotely connects to the vehicles that run into any trouble, the people building and maintaining the car fleet, the maps, etc. An entire new industry of various sensors and related infrastructure is created to assemble these highly-instrumented, high-tech cars in the first place. In the same way with work more generally, many jobs will change, some jobs will disappear, but many new jobs will appear, too. It is a lot more a refactoring of work instead of direct deletion, even if that deletion is the most prominent part. It’s hard to argue that the overall numbers won’t trend down at some point and over time, but this happens significantly slower than a person naively looking at the situation might think.
