@@ -20,6 +20,20 @@ avant-midi au complet
 
 perte d'emplois.
 
+De nombreuses voix s'élèvent aujourd'hui pour réclamer une réglementation de l'intelligence artificielle. Il est probable que certains gouvernements envisagent des réglementations visant à empêcher les employeurs de remplacer les travailleurs par l'intelligence artificielle. Il est bon de rappeler que nous sommes déjà passés par là. Bastiat, économiste et philosophe français du XXe siècle, a posé la question suivante : "Qu'est-ce que la richesse ? Est-elle constituée de l'effort que nous déployons pour obtenir un résultat, ou est-ce le résultat lui-même ?" À l'époque, les hommes politiques craignaient que le train et d'autres innovations industrielles ne suppriment trop d'emplois. Comme on pouvait s'y attendre, le train a supprimé des emplois, mais en a créé beaucoup d'autres que les gens ne pouvaient pas imaginer. Les emplois existants ne sont pas la raison pour laquelle les États-Unis sont un pays riche : les États-Unis sont riches grâce à tout ce qu'ils produisent.
+
+L'intelligence artificielle est indiscernable de "l'automatisation par le logiciel". Toute l'industrie du logiciel n'est rien d'autre qu'une machine à automatiser les emplois existants. Les programmeurs de logiciels sont experts dans l'art de se rendre obsolètes. Pourtant, le pourcentage d'Américains employés dans l'industrie du logiciel a augmenté massivement au cours des dix dernières années, tout comme la part du PIB total attribuée au logiciel.
+
+Ce que les gens font dans l'industrie du logiciel ne cesse de changer. Mais il y a toujours plus d'emplois qui naissent de la destruction créative constante des logiciels. Entre 2001 et 2017, le nombre de développeurs d'applications a doublé aux États-Unis, et leur salaire moyen a augmenté de 50 %.
+
+À court terme, il y a fort à parier que l'industrie informatique continuera à croître et à créer des emplois : les percées de l'intelligence artificielle pourraient même accélérer la tendance. La tendance de fond est évidente depuis longtemps et ne montre aucun signe d'affaiblissement : "Le logiciel est en train de manger le monde" (Marc Andreessen).
+
+Qu'en est-il de l'économie dans son ensemble ? Aujourd'hui, aux États-Unis, le taux de chômage est l'un des plus bas de ces 20 dernières années, bien en dessous de 4 %. Le ratio emploi/population pour les femmes est à peu près le même qu'il y a 20 ans. Le taux d'emploi des hommes est au même niveau qu'il y a dix ans : il a chuté après la récession de 2008 et ne s'est jamais rétabli. Ce phénomène touche principalement les jeunes hommes, dont le taux d'activité s'est rapproché de celui des femmes au fil du temps, et il est plus susceptible de refléter des changements culturels que l'impact de l'intelligence artificielle.
+
+Si nous étions en train de supprimer des emplois grâce à la technologie, la première indication serait une productivité beaucoup plus élevée des travailleurs : nous ferions plus avec moins de personnes. Toutefois, l'Office of Productivity and Technology des États-Unis suggère que les gains de productivité enregistrés récemment ne sont pas d'une ampleur historique.
+
+https://cacm.acm.org/blogs/blog-cacm/273606-chatgpt-is-not-a-technological-singularity/fulltext
+
 search engines were once AI, spam detection, and so forth. A better term might be software automatization.
 the printing press was an automated scribe.
 
