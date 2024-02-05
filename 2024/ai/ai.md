@@ -3,6 +3,10 @@
 - Richard P. Feynman
 
 
+Finance worker pays out $25 million after video call with deepfake ‘chief financial officer’
+
+https://amp.cnn.com/cnn/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html
+
 Software is eating the world
 Andreessen
 https://a16z.com/why-software-is-eating-the-world/
