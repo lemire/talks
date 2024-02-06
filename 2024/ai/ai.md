@@ -2,6 +2,9 @@
 
 - Richard P. Feynman
 
+Le produit intérieur bruit du Canada en 2023 était de  2100 milliards de dollars.
+La valeur en bourse de Nvidia a atteint 1700 milliards de dollars en 2024.
+
 Human-level AI will eventually be trainable by someone no more experienced than a graduate student using the resources offered in any standard-sized university lab cluster.
 https://digitalspirits.substack.com/p/moores-law-for-intelligence
 
