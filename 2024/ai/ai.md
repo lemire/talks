@@ -2,6 +2,11 @@
 
 - Richard P. Feynman
 
+Our empirical analysis benchmarks LLMs against a ground truth set by Senior Lawyers, uncovering that advanced models match or exceed human accuracy in determining legal issues. In speed, LLMs complete reviews in mere seconds, eclipsing the hours required by their human counterparts. Cost-wise, LLMs operate at a fraction of the price, offering a staggering 99.97 percent reduction in cost over traditional methods.
+
+
+https://arxiv.org/pdf/2401.16212.pdf
+
 Le produit intérieur bruit du Canada en 2023 était de  2100 milliards de dollars.
 La valeur en bourse de Nvidia a atteint 1700 milliards de dollars en 2024.
 
