@@ -2,6 +2,8 @@
 
 - Richard P. Feynman
 
+Human-level AI will eventually be trainable by someone no more experienced than a graduate student using the resources offered in any standard-sized university lab cluster.
+https://digitalspirits.substack.com/p/moores-law-for-intelligence
 
 Finance worker pays out $25 million after video call with deepfake ‘chief financial officer’
 
