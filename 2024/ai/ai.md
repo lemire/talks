@@ -2,6 +2,19 @@
 
 - Richard P. Feynman
 
+tous les articles de wikipedia: 22.14 GB (sans les images et contenu multimédia)
+
+goliath 50 - 100 milliards d'instructions par token
+goliath-120b.Q8_0.gguf
+117GB
+
+mixtral 8 - 50  milliards d'instructions par token
+mixtral-8x7b-instruct-v0.1.Q8_0.gguf
+ 47G
+
+ Un carte SD 128 GB, sur amazon 17$.
+
+
 I discovered, to my amazement, that all through history there had been resistance ... and bitter, exaggerated, last-stitch resistance ... to every significant technological change that had taken place on earth. Usually the resistance came from those groups who stood to lose influence, status, money...as a result of the change (Isaac Asimov)
 
 Our empirical analysis benchmarks LLMs against a ground truth set by Senior Lawyers, uncovering that advanced models match or exceed human accuracy in determining legal issues. In speed, LLMs complete reviews in mere seconds, eclipsing the hours required by their human counterparts. Cost-wise, LLMs operate at a fraction of the price, offering a staggering 99.97 percent reduction in cost over traditional methods.
