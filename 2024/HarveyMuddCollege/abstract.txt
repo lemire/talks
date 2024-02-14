@@ -1,0 +1,7 @@
+Converting decimal numbers to binary: reaching gigabytes per second
+
+With disks and networks delivering gigabytes per second, reading decimal numbers within XML, JSON and CSV files becomes a bottleneck. We consider the problem of converting decimal numbers to the nearest floating binary value. We present a C++ implementation that is often 4 times faster than the standard C library on modern 64-bit systems (Intel, AMD, ARM and POWER9). Our work is available as open source software used by major systems such as Rust, Go, LLVM libc, GNU stdlib++ (GCC).
+
+Daniel is a professor of computer science at the Université du Québec (TÉLUQ), and a long-time blogger. He is @lemire on Twitter and blogs at https://lemire.me/. He published over 80 papers that have been cited over 5,000 times. He is one of the 500 most 'starred' GitHub users: https://github.com/lemire. He is an editor of the Software: Practice and Experience journal. He is a core collaborator to the Node.js project.
+
+
