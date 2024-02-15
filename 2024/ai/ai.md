@@ -2,6 +2,7 @@
 
 - Richard P. Feynman
 
+IA -- automisation, bicycle for the mind
 
 
 "Air Canada's chatbot gave a B.C. man the wrong information. Now, the airline has to pay for the mistake"
