@@ -2,6 +2,13 @@
 
 - Richard P. Feynman
 
+
+
+"Air Canada's chatbot gave a B.C. man the wrong information. Now, the airline has to pay for the mistake"
+
+https://bc.ctvnews.ca/air-canada-s-chatbot-gave-a-b-c-man-the-wrong-information-now-the-airline-has-to-pay-for-the-mistake-1.6769454
+
+
 tous les articles de wikipedia: 22.14 GB (sans les images et contenu multimédia)
 
 goliath 50 - 100 milliards d'instructions par token
