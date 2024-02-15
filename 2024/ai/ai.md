@@ -1,3 +1,10 @@
+There is no doubt that a super AI can accelerate the process of science, as even non-AI  computation has already speed it up.  If we want to know what happens to subatomic particles, we can’t just think about them. We have to build very large, very complex, very tricky physical structures to find out. Even if the smartest physicists were 1,000 smarter than they are now, without a Collider, they will know nothing new.
+
+To be useful artificial intelligences have to be embodied in the world, and that world will often set their pace of innovations. Thinkism is not enough. Without conducting experiements, building prototypes, having failures, and engaging in reality, an intelligence can have thoughts but not results. It cannot think its way to solving the world’s problems.
+
+Kevin Kelly, Thinkism https://en.wikipedia.org/wiki/Kevin_Kelly_(editor)
+
+
 "For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.”  
 
 - Richard P. Feynman
