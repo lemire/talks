@@ -1,3 +1,20 @@
+Utilisateur
+Pourriez-vous me dire ce que représente 80 fois 29 ? S'il vous plaît, n'écrivez PAS de code ou, mais dites-moi simplement ce que vous pensez être la réponse sans utiliser d'outils.
+Tuteur en mathématiques
+80 fois 29 est égal à 2 320.
+Utilisateur
+Comment as-tu calculé cela ?
+Tuteur en mathématiques
+Pour calculer 80 fois 29 dans ma tête, j'ai utilisé une stratégie de multiplication de base, en divisant le processus en parties plus faciles. Voici comment j'ai procédé, étape par étape :
+Je reconnais que multiplier par 80 revient à multiplier par 8 et à ajouter un zéro à la fin du produit.
+Je commence donc par multiplier 29 par 8.
+Je sais que 30 fois 8 donne 240, puisque 3 fois 8 donne 24, et que l'on ajoute un zéro lorsqu'on multiplie par 10.
+Comme j'ai ajouté un 8 supplémentaire (en passant de 29 à 30), je soustrais 8 de 240 et j'obtiens 232.
+Enfin, je me souviens que j'ai remplacé la multiplication par 80 par la multiplication par 8. J'ajoute donc un zéro à la fin de 232 pour en tenir compte, ce qui donne un résultat de 2 320.
+Il s'agit d'une méthode simplifiée de calcul mental que j'ai utilisée pour obtenir la réponse sans l'écrire ni utiliser de calculatrice.
+
+
+
 There is no doubt that a super AI can accelerate the process of science, as even non-AI  computation has already speed it up.  If we want to know what happens to subatomic particles, we can’t just think about them. We have to build very large, very complex, very tricky physical structures to find out. Even if the smartest physicists were 1,000 smarter than they are now, without a Collider, they will know nothing new.
 
 To be useful artificial intelligences have to be embodied in the world, and that world will often set their pace of innovations. Thinkism is not enough. Without conducting experiements, building prototypes, having failures, and engaging in reality, an intelligence can have thoughts but not results. It cannot think its way to solving the world’s problems.
