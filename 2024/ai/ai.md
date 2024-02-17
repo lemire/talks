@@ -1,3 +1,8 @@
+It seems the chatbot was more generous and thoughtful than Air Canada would like. I, for one, welcome the generosity of our new chabot overlords. 
+
+https://arstechnica.com/tech-policy/2024/02/air-canada-must-honor-refund-policy-invented-by-airlines-chatbot/
+ 
+
 Le paradoxe de Moravec est l'observation faite en intelligence artificielle et en robotique que, contrairement aux hypothèses traditionnelles, le raisonnement intellectuel nécessite très peu de calculs, alors que les capacités sensorimotrices et de perception requièrent d'énormes ressources . Ce principe a été formulé par Hans Moravec, Rodney Brooks, Marvin Minsky et d'autres dans les années 1980. Moravec a écrit en 1988 : "Il est relativement facile de faire en sorte que les ordinateurs affichent des performances dignes d'un adulte lors de tests d'intelligence, mais il est difficile, voire impossible, de leur donner les compétences d'un enfant d'un an en ce qui concerne la perception et la mobilité".
 
 
