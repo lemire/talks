@@ -1,3 +1,5 @@
+https://www.vice.com/en/article/dy3jbz/scientific-journal-frontiers-publishes-ai-generated-rat-with-gigantic-penis-in-worrying-incident?utm_source=Live+Audience&utm_campaign=98305e0a4a-briefing-ai-20240220&utm_medium=email&utm_term=0_b27a691814-98305e0a4a-51138468&mc_cid=98305e0a4a&mc_eid=9a6a1f72a7
+
 It seems the chatbot was more generous and thoughtful than Air Canada would like. I, for one, welcome the generosity of our new chabot overlords. 
 
 https://arstechnica.com/tech-policy/2024/02/air-canada-must-honor-refund-policy-invented-by-airlines-chatbot/
