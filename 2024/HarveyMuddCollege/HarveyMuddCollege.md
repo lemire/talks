@@ -32,7 +32,9 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 
 - PCIe 4 disks: 5 GB/s reading speed (sequential)
-- PCIe 5 disks: 10 GB/s
+- PCIe 5 disks: 14.5 GB/s (0.20$/GB)
+
+<!-- https://www.anandtech.com/show/21269/crucial-t705-gen5-nvme-ssd-a-145-gbps-consumer-flagship-with-2400-mts-232l-nand -->
 
 ---
 
