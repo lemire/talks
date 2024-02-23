@@ -1,3 +1,5 @@
+waterfall
+
 https://www.vice.com/en/article/dy3jbz/scientific-journal-frontiers-publishes-ai-generated-rat-with-gigantic-penis-in-worrying-incident?utm_source=Live+Audience&utm_campaign=98305e0a4a-briefing-ai-20240220&utm_medium=email&utm_term=0_b27a691814-98305e0a4a-51138468&mc_cid=98305e0a4a&mc_eid=9a6a1f72a7
 
 It seems the chatbot was more generous and thoughtful than Air Canada would like. I, for one, welcome the generosity of our new chabot overlords. 
@@ -66,7 +68,7 @@ Our empirical analysis benchmarks LLMs against a ground truth set by Senior Lawy
 https://arxiv.org/pdf/2401.16212.pdf
 
 Le produit intérieur bruit du Canada en 2023 était de  2100 milliards de dollars.
-La valeur en bourse de Nvidia a atteint 1700 milliards de dollars en 2024.
+La valeur en bourse de Nvidia a atteint 2000 milliards de dollars en 2024.
 
 Human-level AI will eventually be trainable by someone no more experienced than a graduate student using the resources offered in any standard-sized university lab cluster.
 https://digitalspirits.substack.com/p/moores-law-for-intelligence
