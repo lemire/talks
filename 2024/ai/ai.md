@@ -3,7 +3,15 @@ I found that subjects with higher quality AI were less accurate in their assessm
 https://static1.squarespace.com/static/604b23e38c22a96e9c78879e/t/61a85f09c5599734019f714c/1638424329219/Fabrizio+DellAcqua+-+Falling+Asleep+at+the+Wheel+-+Dec+2.pdf
 
 
+manque de main d'oeuvre.
+
+Innovation dans les entreprises partout au québec, etc.
+
+
 waterfall
+
+Principe de subsidiarité
+Le principe de subsidiarité est une maxime politique et sociale selon laquelle la responsabilité d'une action publique, lorsqu'elle est nécessaire, revient à l'entité compétente la plus proche de ceux qui sont directement concernés par cette action.
 
 https://www.vice.com/en/article/dy3jbz/scientific-journal-frontiers-publishes-ai-generated-rat-with-gigantic-penis-in-worrying-incident?utm_source=Live+Audience&utm_campaign=98305e0a4a-briefing-ai-20240220&utm_medium=email&utm_term=0_b27a691814-98305e0a4a-51138468&mc_cid=98305e0a4a&mc_eid=9a6a1f72a7
 
