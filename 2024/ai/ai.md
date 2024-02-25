@@ -1,3 +1,8 @@
+We are headed for a future in which it will no longer be necessary to write computer programs. Matt believes that most software will eventually be replaced by AI models that, given an appropriate description of a task, will directly execute that task, without requiring the creation or maintenance of conventional software.
+
+https://learning.acm.org/techtalks/endporgramming
+
+
 Instead, one could view code suggestions inside an IDE to be more akin to a conversation. While chatbots such as ChatGPT are already used for programming tasks, they are explicitly structured as conversations. Here, we hypothesize that interactions with Copilot, which is not a chatbot, share many characteristics with natural-language conversations.
 
 We see anecdotal evidence of this in comments posted about GitHub Copilot online (see Appendix E for examples), in which users talk about sequences of interactions. A conversation turn in this context consists of the prompt in the completion request and the reply as the completion itself. The developer's response to the completion arises from the subsequent changes incorporated in the next prompt to the model. There are clear programming parallels to factors such as specificity and repetition that have been identified to affect human judgements of conversation quality.18 Researchers have already investigated the benefits of natural-language feedback to guide program synthesis,2 so the conversational framing of coding completions is not a radical proposal. But neither is it one we have seen followed yet.
