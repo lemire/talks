@@ -1,3 +1,6 @@
+https://docs.google.com/presentation/d/1MJDj0ClOdkJ82_uIqpciVHd_aTz8uPA_9HvAAm3bYqs/edit#slide=id.g2ba59c23f69_0_152
+
+
 I am willing to place a public bet with anyone right now that the consensus view among mainstream economists, at the end of 2024, will be that there is no mass unemployment caused by artificial intelligence. I can place another public bet: productivity measures by the end of 2024  will have barely moved due to artificial intelligence. Sure, in some cases, you might do away with a graphics designer or an extra programmer, but it will take many years before generative artificial intelligence has a measurable effect on the economy as a whole. By the time the impact is felt, we will have had time to adapt. We are not facing an imminent technological singularity.
 https://cacm.acm.org/blogs/blog-cacm/273606-chatgpt-is-not-a-technological-singularity/fulltext
 
