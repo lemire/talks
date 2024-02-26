@@ -1,25 +1,158 @@
-https://docs.google.com/presentation/d/1MJDj0ClOdkJ82_uIqpciVHd_aTz8uPA_9HvAAm3bYqs/edit#slide=id.g2ba59c23f69_0_152
+---
+marp: true
+theme: base
+title: Intelligence artificielle à l'Université TÉLUQ
+description: Discussion sur l'intelligence artificielle à l'Université TÉLUQ.
+paginate: true
+_paginate: false
+---
 
 
-I am willing to place a public bet with anyone right now that the consensus view among mainstream economists, at the end of 2024, will be that there is no mass unemployment caused by artificial intelligence. I can place another public bet: productivity measures by the end of 2024  will have barely moved due to artificial intelligence. Sure, in some cases, you might do away with a graphics designer or an extra programmer, but it will take many years before generative artificial intelligence has a measurable effect on the economy as a whole. By the time the impact is felt, we will have had time to adapt. We are not facing an imminent technological singularity.
-https://cacm.acm.org/blogs/blog-cacm/273606-chatgpt-is-not-a-technological-singularity/fulltext
+
+<!-- ![center](simdjsonlogo.png)-->
+
+<!--  --- -->
+
+## <!--fit--> Intelligence artificielle
 
 
-We are headed for a future in which it will no longer be necessary to write computer programs. Matt believes that most software will eventually be replaced by AI models that, given an appropriate description of a task, will directly execute that task, without requiring the creation or maintenance of conventional software.
+Daniel Lemire
+professeur, Université du Québec (TÉLUQ)
+Montréal :canada:
+
+
+---
+
+## <!--fit-->  Qui suis-je?
+
+- Professeur d'informatique à la TÉLUQ (20 an)s
+- Directeur du département ST pendant 6 ans (2016-2023)
+- Porteur de dossier: bac. en science des données
+- Dir. du comité des programmes en informatique
+- 4 diplômés au doctorat en informatique cognitive à la TÉLUQ depuis 2018
+
+
+---
+
+"Il est relativement facile de faire en sorte que les ordinateurs affichent des performances dignes d'un adulte lors de tests d'intelligence, mais il est difficile, voire impossible, de leur donner les compétences d'un enfant d'un an en ce qui concerne la perception et la mobilité." (Paradoxe de Moravec, 1988)
+
+---
+
+1997 : Un puissant ordinateur conçu pour jouer aux échecs (Deep Blue) a battu le champion du monde (Kasparov).
+
+---
+
+2009 : Un programme informatique (Pocket Fritz) fonctionnant sur un téléphone portable atteint le niveau de Grand Maître aux échecs.
+
+---
+
+2011 : Après avoir subi les pressions de Google, l'État du Nevada autorise les voitures autonomes à circuler dans ses rues. IBM Watson, un puissant système informatique, bat les meilleurs humains au jeu Jeopardy. 
+
+---
+
+2016 : L'IA bat un joueur de Go professionnel. 
+
+Tesla équipe toutes ses voitures d'un système de conduite autonome.
+
+---
+
+2017 : DeepStack devient le premier programme informatique à battre des joueurs de poker professionnels au poker sans limite.
+
+Une entreprise allemande, DeepL, réalise une percée dans la qualité de la traduction automatique en utilisant un ordinateur de 5,1 pétaflops.
+
+Une équipe de Google (Alphabet/DeepMind) a créé un système informatique (AlphaZero) capable d'apprendre des jeux comme le Go et les échecs en quelques heures, en se basant uniquement sur les règles, puis de battre les meilleurs systèmes logiciels et tous les êtres humains.
+
+---
+
+2022 : ChatGPT est largement considéré comme une percée de l'IA : il peut produire des dissertations complètes dans diverses langues.
+
+---
+
+*Nous avons constaté qu'un étudiant utilisant l'intelligence artificielle peut réaliser des travaux de programmation sans éveiller les soupçons de MOSS, un outil de détection de plagiat et de similarité logicielle largement utilisé. Cela est vrai malgré le fait que l'intelligence n'a pas été formé aux problèmes en question et qu'il n'a pas reçu d'exemples pour travailler.*
+
+https://dl.acm.org/doi/abs/10.1145/3511808.3557079
+
+
+---
+
+2023
+
+*GPT-4 a atteint le 90e centile lors d'une simulation d'examen du barreau, le 93e centile lors d'un examen de lecture du SAT et le 89e centile lors de l'examen de mathématiques du SAT.*
+
+https://www.cnbc.com/2023/03/14/openai-announces-gpt-4-says-beats-90percent-of-humans-on-sat.html
+
+
+---
+
+10 cours de physique à l'Université Durham
+
+
+GPT-4 : 49.4%
+
+GPT-3.5 : 38.6%
+
+https://arxiv.org/pdf/2306.15609.pdf
+
+---
+
+2024: 
+
+*Notre analyse empirique compare les analyses d'une intelligence artificielle aux analyses des juristes expérimentés. L'intelligence artificielle dépassent la précision humaine dans la détermination des questions juridiques. En termes de rapidité, les intelligences artificielles réalisent des examens en quelques secondes seulement, éclipsant les heures nécessaires à leurs homologues humains. Sur le plan des coûts, les intelligences artificielles  fonctionnent à une fraction du prix, offrant une réduction stupéfiante de 99,97 % par rapport aux méthodes traditionnelles.*
+
+
+https://arxiv.org/pdf/2401.16212.pdf
+
+---
+
+2024
+
+*Étant donné les compétences considérables des intelligences artificielles en matière de rédaction d'essais, les examens non surveillés sont très vulnérables.*
+
+https://iopscience.iop.org/article/10.1088/1361-6552/ad1fa2/meta
+
+---
+
+*Le GPT-4 fait preuve d'une compétence exceptionnelle dans la résolution de problèmes financiers, atteignant un taux de précision de 85 %. Il donne rarement des réponses complètement incorrectes ou non pertinentes.*
+
+https://www.tandfonline.com/doi/full/10.1080/08832323.2023.2253963
+
+
+---
+
+![width:600px](panique.png) 
+
+
+---
+
+
+*Nous nous dirigeons vers un avenir où il ne sera plus nécessaire d'écrire des programmes informatiques.* (Matt Welsh, May 2023)
 
 https://learning.acm.org/techtalks/endporgramming
 
-
-Instead, one could view code suggestions inside an IDE to be more akin to a conversation. While chatbots such as ChatGPT are already used for programming tasks, they are explicitly structured as conversations. Here, we hypothesize that interactions with Copilot, which is not a chatbot, share many characteristics with natural-language conversations.
-
-We see anecdotal evidence of this in comments posted about GitHub Copilot online (see Appendix E for examples), in which users talk about sequences of interactions. A conversation turn in this context consists of the prompt in the completion request and the reply as the completion itself. The developer's response to the completion arises from the subsequent changes incorporated in the next prompt to the model. There are clear programming parallels to factors such as specificity and repetition that have been identified to affect human judgements of conversation quality.18 Researchers have already investigated the benefits of natural-language feedback to guide program synthesis,2 so the conversational framing of coding completions is not a radical proposal. But neither is it one we have seen followed yet.
+---
 
 
-https://cacm.acm.org/magazines/2024/3/280076-measuring-github-copilots-impact-on-productivity/fulltext
+*Aucune donnée historique ou contemporaine convaincante ne suggère que les progrès technologiques nous conduisent vers un avenir sans emploi. Au contraire, nous prévoyons qu'au cours des deux prochaines décennies, les pays industrialisés auront plus d'offres d'emploi que de travailleurs pour les occuper, et que la robotique et l'automatisation joueront un rôle de plus en plus crucial pour combler ces lacunes.* (Autor, 2022)
 
-I found that subjects with higher quality AI were less accurate in their assessments of job applications than subjects with lower quality AI. On average, recruiters receiving lower quality AI exerted more effort and spent more time evaluating the resumes, and were less likely to automatically select the AI-recommended candidate. 
+---
 
-https://static1.squarespace.com/static/604b23e38c22a96e9c78879e/t/61a85f09c5599734019f714c/1638424329219/Fabrizio+DellAcqua+-+Falling+Asleep+at+the+Wheel+-+Dec+2.pdf
+
+![width:600px](acm.png) 
+
+*Il faudra de nombreuses années avant que l'intelligence artificielle générative ait un effet mesurable sur l'économie dans son ensemble. Nous ne sommes pas confrontés à une singularité technologique imminente.*
+
+https://cacm.acm.org/blogs/blog-cacm/273606-chatgpt-is-not-a-technological-singularity
+
+
+---
+
+* Les employeurs ont besoin de professionnels capables d'utiliser l'intelligence artificielle.
+
+---
+
+* Frozen in time.
+
+---
 
 
 manque de main d'oeuvre.
@@ -39,17 +172,22 @@ It seems the chatbot was more generous and thoughtful than Air Canada would like
 https://arstechnica.com/tech-policy/2024/02/air-canada-must-honor-refund-policy-invented-by-airlines-chatbot/
  
 
-Le paradoxe de Moravec est l'observation faite en intelligence artificielle et en robotique que, contrairement aux hypothèses traditionnelles, le raisonnement intellectuel nécessite très peu de calculs, alors que les capacités sensorimotrices et de perception requièrent d'énormes ressources . Ce principe a été formulé par Hans Moravec, Rodney Brooks, Marvin Minsky et d'autres dans les années 1980. Moravec a écrit en 1988 : "Il est relativement facile de faire en sorte que les ordinateurs affichent des performances dignes d'un adulte lors de tests d'intelligence, mais il est difficile, voire impossible, de leur donner les compétences d'un enfant d'un an en ce qui concerne la perception et la mobilité".
 
-
+---
 
 Utilisateur
 Pourriez-vous me dire ce que représente 80 fois 29 ? S'il vous plaît, n'écrivez PAS de code ou, mais dites-moi simplement ce que vous pensez être la réponse sans utiliser d'outils.
-Tuteur en mathématiques
-80 fois 29 est égal à 2 320.
+
+
+IA: 80 fois 29 est égal à 2 320.
+
+
+---
+
 Utilisateur
 Comment as-tu calculé cela ?
-Tuteur en mathématiques
+
+
 Pour calculer 80 fois 29 dans ma tête, j'ai utilisé une stratégie de multiplication de base, en divisant le processus en parties plus faciles. Voici comment j'ai procédé, étape par étape :
 Je reconnais que multiplier par 80 revient à multiplier par 8 et à ajouter un zéro à la fin du produit.
 Je commence donc par multiplier 29 par 8.
@@ -58,14 +196,14 @@ Comme j'ai ajouté un 8 supplémentaire (en passant de 29 à 30), je soustrais 8
 Enfin, je me souviens que j'ai remplacé la multiplication par 80 par la multiplication par 8. J'ajoute donc un zéro à la fin de 232 pour en tenir compte, ce qui donne un résultat de 2 320.
 Il s'agit d'une méthode simplifiée de calcul mental que j'ai utilisée pour obtenir la réponse sans l'écrire ni utiliser de calculatrice.
 
+---
 
-
-There is no doubt that a super AI can accelerate the process of science, as even non-AI  computation has already speed it up.  If we want to know what happens to subatomic particles, we can’t just think about them. We have to build very large, very complex, very tricky physical structures to find out. Even if the smartest physicists were 1,000 smarter than they are now, without a Collider, they will know nothing new.
-
-To be useful artificial intelligences have to be embodied in the world, and that world will often set their pace of innovations. Thinkism is not enough. Without conducting experiements, building prototypes, having failures, and engaging in reality, an intelligence can have thoughts but not results. It cannot think its way to solving the world’s problems.
+Pour être utiles, les intelligences artificielles doivent s'incarner dans le monde, et c'est souvent le monde qui détermine leur rythme d'innovation. La pensée ne suffit pas. Si elle ne mène pas d'expériences, ne construit pas de prototypes, ne connaît pas d'échecs et ne s'engage pas dans la réalité, une intelligence peut avoir des pensées, mais pas de résultats. Elle ne peut pas résoudre les problèmes du monde par la pensée.
 
 Kevin Kelly, Thinkism https://en.wikipedia.org/wiki/Kevin_Kelly_(editor)
 
+
+---
 
 "For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.”  
 
@@ -198,7 +336,7 @@ Les universités peuvent jouer un rôle en aidant les travailleurs déplacés pa
 
 L'automatisationon prend du temps et elle n'est pas toujours rentable. Par exemple, les banques ont encore des humains dans leurs succursales, même si on a automatisé une grande partie des activités. Ces humains tendent à se concentrer sur des opérations spécifiques, et complexes, qu'on pourrait parfois automatiser, mais une analyse coût-bénéfice pourrait montrer qu'il faudrait des décennies ou plus pour rentabiliser l'investissement.
 
-No compelling historical or contemporary evidence suggests that technological advances are driving us toward a jobless future. On the contrary, we anticipate that in the next two decades, industrialized countries will have more job openings than workers to fill them, and that robotics and automation will play an increasingly crucial role in closing these gaps. (Autor, 2022)
+
 
 
 Software is eating the world.
