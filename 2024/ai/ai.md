@@ -22,6 +22,11 @@ Montréal :canada:
 
 ---
 
+halucination
+
+Retrieval-augmented generation (RAG) 
+---
+
 - Reconnaissance d'images
 - Synthèse d'images, de vidéos et de textes
 - Autocomplétion
