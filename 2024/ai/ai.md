@@ -22,6 +22,12 @@ Montréal :canada:
 
 ---
 
+- Reconnaissance d'images
+- Synthèse d'images, de vidéos et de textes
+- Autocomplétion
+- Traduction
+- Résumés
+
 Génération d'images (cas de Nicolas)
 
 Génération de questions
