@@ -25,7 +25,7 @@ Montréal :canada:
 
 ## <!--fit-->  Qui suis-je?
 
-- Professeur d'informatique à la TÉLUQ (20 an)s
+- Professeur d'informatique à la TÉLUQ (20 ans)
 - Directeur du département ST pendant 6 ans (2016-2023)
 - Porteur de dossier: bac. en science des données
 - Dir. du comité des programmes en informatique
@@ -46,11 +46,13 @@ Montréal :canada:
 
 ---
 
-2011 : Après avoir subi les pressions de Google, l'État du Nevada autorise les voitures autonomes à circuler dans ses rues. IBM Watson, un puissant système informatique, bat les meilleurs humains au jeu Jeopardy. 
+2011 : L'État du Nevada autorise les voitures autonomes à circuler dans ses rues. 
+
+IBM Watson, un puissant système informatique, bat les meilleurs humains au jeu Jeopardy. 
 
 ---
 
-2016 : L'IA bat un joueur de Go professionnel. 
+2016 : L'intelligence artificielle bat un joueur de Go professionnel. 
 
 Tesla équipe toutes ses voitures d'un système de conduite autonome.
 
@@ -77,19 +79,23 @@ https://dl.acm.org/doi/abs/10.1145/3511808.3557079
 
 2023
 
-*GPT-4 a atteint le 90e centile lors d'une simulation d'examen du barreau, le 93e centile lors d'un examen de lecture du SAT et le 89e centile lors de l'examen de mathématiques du SAT.*
+*GPT-4 a atteint le 90e centile à l'examen du barreau, le 93e centile lors d'un examen de lecture du SAT et le 89e centile lors de l'examen de mathématiques du SAT.*
 
 https://www.cnbc.com/2023/03/14/openai-announces-gpt-4-says-beats-90percent-of-humans-on-sat.html
 
 
 ---
 
-10 cours de physique à l'Université Durham
+2023
 
 
-GPT-4 : 49.4%
+*Des évaluations approfondies des passages de lecture générés et des questions d'exercice correspondantes, menées à la fois automatiquement et manuellement, démontrent que la matière générée par le système est adaptée aux étudiants et dépassent même la qualité du matériel écrits par des humains.*
 
-GPT-3.5 : 38.6%
+https://aclanthology.org/2023.bea-1.52/
+
+---
+
+GPT-4 obtient une moyenne de 49.4% aux examens de 10 cours de physique à l'Université Durham
 
 https://arxiv.org/pdf/2306.15609.pdf
 
@@ -106,20 +112,15 @@ https://arxiv.org/pdf/2401.16212.pdf
 
 2024
 
-*Étant donné les compétences considérables des intelligences artificielles en matière de rédaction d'essais, les examens non surveillés sont très vulnérables.*
+*Étant donné les compétences considérables des intelligences artificielles, les examens non surveillés sont très vulnérables.*
 
 https://iopscience.iop.org/article/10.1088/1361-6552/ad1fa2/meta
 
 ---
 
-*Le GPT-4 fait preuve d'une compétence exceptionnelle dans la résolution de problèmes financiers, atteignant un taux de précision de 85 %. Il donne rarement des réponses complètement incorrectes ou non pertinentes.*
+*Le GPT-4 fait preuve d'une compétence exceptionnelle dans la résolution de problèmes financiers, atteignant un taux de précision de 85%. Il donne rarement des réponses complètement incorrectes ou non pertinentes.*
 
 https://www.tandfonline.com/doi/full/10.1080/08832323.2023.2253963
-
-
----
-
-![width:600px](panique.png) 
 
 
 ---
@@ -133,6 +134,17 @@ https://learning.acm.org/techtalks/endporgramming
 
 
 *Aucune donnée historique ou contemporaine convaincante ne suggère que les progrès technologiques nous conduisent vers un avenir sans emploi. Au contraire, nous prévoyons qu'au cours des deux prochaines décennies, les pays industrialisés auront plus d'offres d'emploi que de travailleurs pour les occuper, et que la robotique et l'automatisation joueront un rôle de plus en plus crucial pour combler ces lacunes.* (Autor, 2022)
+
+---
+
+
+![width:600px](tauxdechomage.png) 
+
+---
+
+
+![width:600px](qualiteemploi.png) 
+
 
 ---
 
