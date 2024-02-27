@@ -20,7 +20,11 @@ Daniel Lemire
 professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
+---
 
+Génération d'images (cas de Nicolas)
+
+Génération de questions
 ---
 
 ## <!--fit-->  Qui suis-je?
