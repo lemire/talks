@@ -266,6 +266,7 @@ https://arxiv.org/pdf/2401.16212.pdf
 
 Le produit intérieur bruit du Canada en 2023 était de  2100 milliards de dollars.
 La valeur en bourse de Nvidia a atteint 2000 milliards de dollars en 2024.
+La valeur de Nvidia a été multipliée par 20 en 5 ans. La valeur des actions double tous les 14 mois.
 
 Human-level AI will eventually be trainable by someone no more experienced than a graduate student using the resources offered in any standard-sized university lab cluster.
 https://digitalspirits.substack.com/p/moores-law-for-intelligence
