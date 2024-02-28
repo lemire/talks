@@ -21,7 +21,26 @@ professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
 ---
+Currently, the five most valuable companies in the world by stock value are:
 
+Microsoft (MSFT) - $2.96 trillion
+Apple (AAPL) - $2.820 trillion
+NVIDIA (NVDA) - $1.967 trillion
+Amazon (AMZN) - $1.802 trillion
+Alphabet (GOOG) - $1.733 trillion
+
+
+20 ans (2004):
+
+Microsoft (MSFT) - $327.7 billion
+General Electric (GE) - $313.1 billion
+Walmart (WMT) - $284.8 billion
+ExxonMobil (XOM) - $276.6 billion
+Procter & Gamble (PG) - $251.7 billion
+
+
+
+---
 halucination
 
 Retrieval-augmented generation (RAG) 
