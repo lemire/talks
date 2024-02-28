@@ -1,5 +1,6 @@
 https://www.tvanouvelles.ca/2024/02/26/ia--un-robot-conversationnel-suscite-la-controverse-a-la-teluq
 
+order of the statements matter (middle seem best?)
 
 
 mistral 
