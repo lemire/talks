@@ -22,6 +22,11 @@ Montréal :canada:
 
 ---
 
+Klarna est un concurrent suédois de PayPal comptant près de 150 million d'utilisateurs. Ils utilisent un assistance basé sur OpenAI. Selon l'entrepise, il est sur un pied d'égalité avec les agents humains en ce qui concerne le taux de satisfaction des clients. Il est plus précis dans la résolution des problèmes. Les clients règlent désormais leurs courses en moins de 2 minutes, contre 11 minutes auparavant.
+
+
+---
+
 Disons 1$ pour consommer 1 million de mots, et 3$ pour produire 1 million de mots.
 
 ---
