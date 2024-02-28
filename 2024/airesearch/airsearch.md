@@ -8,6 +8,7 @@ google gemini
 
 https://mistral.ai
 
+consommé les données est plus rapide que de produire les données
 
 --- 30 minutes ---
 
