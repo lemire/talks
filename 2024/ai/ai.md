@@ -21,6 +21,32 @@ professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
 ---
+
+![width:600px](synthesia.png)
+
+
+https://www.youtube.com/watch?v=sCuxwhZWX0s
+
+---
+
+Génération d'images
+
+
+https://www.youtube.com/watch?v=wtbbKVKuXTU
+
+---
+
+Bing Chat
+
+https://www.youtube.com/watch?v=H3l9MRzEfIQ
+
+---
+
+Copilot
+
+https://www.youtube.com/watch?v=DTtdvMR2jsA
+
+---
 Currently, the five most valuable companies in the world by stock value are:
 
 Microsoft (MSFT) - $2.96 trillion
@@ -38,7 +64,25 @@ Walmart (WMT) - $284.8 billion
 ExxonMobil (XOM) - $276.6 billion
 Procter & Gamble (PG) - $251.7 billion
 
+---
 
+- Robots conversationnels dans 10% des cours
+- Production vidéo synthétique de professeurs de la TÉLUQ (au moins 2-3 professeurs)
+- génération automatique de questionnaires sur la base de la matière du cours.
+
+
+---
+
+- température
+- fenêtre
+- token 
+
+---
+
+IA: Avantage TÉLUQ
+
+- Accès au matériel du cours, textes cohérents
+- 100% en ligne
 
 ---
 halucination
@@ -55,6 +99,9 @@ Retrieval-augmented generation (RAG)
 Génération d'images (cas de Nicolas)
 
 Génération de questions
+
+
+
 ---
 
 ## <!--fit-->  Qui suis-je?
@@ -170,7 +217,12 @@ https://learning.acm.org/techtalks/endporgramming
 *Aucune donnée historique ou contemporaine convaincante ne suggère que les progrès technologiques nous conduisent vers un avenir sans emploi. Au contraire, nous prévoyons qu'au cours des deux prochaines décennies, les pays industrialisés auront plus d'offres d'emploi que de travailleurs pour les occuper, et que la robotique et l'automatisation joueront un rôle de plus en plus crucial pour combler ces lacunes.* (Autor, 2022)
 
 ---
-
+![width:600px](chapitre1.png)
+![width:600px](chapitre2.png)
+![width:600px](java1.png)
+![width:600px](java2.png)
+![width:600px](python1.png)
+![width:600px](python2.png)
 
 ![width:600px](tauxdechomage.png) 
 
