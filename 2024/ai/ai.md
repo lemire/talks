@@ -24,6 +24,14 @@ Montréal :canada:
 
 Disons 1$ pour consommer 1 million de mots, et 3$ pour produire 1 million de mots.
 
+
+---
+
+![width:600px](cartemem.png)
+
+https://www.youtube.com/watch?v=rTrSs351Dgs
+
+
 ---
 
 ![width:600px](synthesia.png)
