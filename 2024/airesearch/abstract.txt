@@ -1,0 +1,18 @@
+
+L'événement débutera par une présentation de 30 minutes suivi d'une période de discussion
+de 30 mintutes. Après une brève présentation des outils disponible, la présentation
+portera d'abord sur les fondements des grands modèles de la langue: fenêtre, température, 
+token, hallucination et génération  augmentée par récupération. La seconde partie de la
+présentation portera sur des exemples concrets dans le contexte du travail de recherche
+d'un professeur d'Université: assistance à l'écriture d'une demande de subvention, 
+utiliser l'intelligence artificielle pour faire un état de l'art, 
+utiliser l'intelligence artificielle générative pour aider à l'analyse de données (code, etc.).
+
+Daniel Lemire est professeur d’informatique à l’Université du Québec (TÉLUQ). 
+Il est l’auteur de plus de 80 publications arbitrées, incluant plus de 50 articles parus dans des 
+revues internationales. Il détient des subventions de recherche depuis plus de 20 ans. 
+Il est éditeur de la revue Software: Practice and Experience, fondée en 1971. 
+Ses logiciels sont utilisés par de grandes sociétés comme Google et Facebook. 
+Il a reçu le prix d’excellence de l’Université du Québec 2020 en recherche et création pour une 
+réalisation en recherche (tous secteurs confondus). Depuis 2018, quatre des étudiants
+qu'il a dirigé ont obtenu un doctorat en informatique cognitive à l'Université TÉLUQ.
