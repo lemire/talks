@@ -35,6 +35,19 @@ photoshop:
 
 https://www.youtube.com/watch?v=Sp6K3qpVFO0
 
+
+---
+
+IA éthique : 'politiquement correct'
+
+![width:600px](black.png)
+
+---
+
+
+/Users/dlemire/Desktop/mistralnegre.png /Users/dlemire/Desktop/gemininegre.png /Users/dlemire/Desktop/juifbing.png /Users/dlemire/Desktop/negrebing.png /Users/dlemire/Desktop/geminijuif.png
+
+
 ---
 
 ![width:600px](cartemem.png)
