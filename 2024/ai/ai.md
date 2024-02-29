@@ -22,6 +22,8 @@ Montréal :canada:
 
 ---
 
+https://github.com/Stability-AI/generative-models
+
 Intégration des connaissances : ça nous prend du contenu... un manuel, des notes de cours, etc.
 
 Est-ce qu'on peut indexer un manuel qui n'est pas notre propriété?
