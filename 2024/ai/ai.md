@@ -42,6 +42,9 @@ IA éthique : 'politiquement correct'
 
 ![width:600px](black.png)
 
+
+![width:600px](vacant.png)
+
 ---
 
 
