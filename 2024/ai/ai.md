@@ -157,10 +157,18 @@ Génération de questions
 - Dir. du comité des programmes en informatique
 - 4 diplômés au doctorat en informatique cognitive à la TÉLUQ depuis 2018
 
+---
+
+
 
 ---
 
 "Il est relativement facile de faire en sorte que les ordinateurs affichent des performances dignes d'un adulte lors de tests d'intelligence, mais il est difficile, voire impossible, de leur donner les compétences d'un enfant d'un an en ce qui concerne la perception et la mobilité." (Paradoxe de Moravec, 1988)
+
+
+---
+
+1994 : Le logiciel Chinook bat le meilleur joueur de dames au monde (par forfait).
 
 ---
 
@@ -181,6 +189,14 @@ IBM Watson, un puissant système informatique, bat les meilleurs humains au jeu 
 2016 : L'intelligence artificielle bat un joueur de Go professionnel. 
 
 Tesla équipe toutes ses voitures d'un système de conduite autonome.
+
+
+---
+
+2016
+
+Un professeur d'informatique (Georgia Tech.) disposait d'un ensemble d'assistants de personnes tutrices en ligne, toutes humaines à l'exception d'un robot. Un  étudiant de la classe a découvert que l'un des assistants n'était pas un être humain, parce qu'il avait tendance à répondre aux questions beaucoup plus rapidement que les autres. https://www.washingtonpost.com/news/innovations/wp/2016/05/11/this-professor-stunned-his-students-when-he-revealed-the-secret-identity-of-his-teaching-assistant/
+
 
 ---
 
