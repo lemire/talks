@@ -22,6 +22,26 @@ Montréal :canada:
 
 ---
 
+- Bien établi (longue tradition)
+- Compréhensible (pas de magie)
+- Pérenne (là pour rester)
+
+---
+
+Intelligence artificielle et éducation
+
+Longue tradition
+Doctorat en informatique cognitive, Gilbert Paquette, etc.
+
+---
+
+Hypothèse : les progrès en informatique et intelligence artificielle bénéficient particulièrement à la qualité l'enseignement  asynchrone.
+
+'Un manuel qui enseigne'
+
+---
+
+
 https://github.com/Stability-AI/generative-models
 
 Intégration des connaissances : ça nous prend du contenu... un manuel, des notes de cours, etc.
