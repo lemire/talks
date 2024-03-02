@@ -25,6 +25,7 @@ Montréal :canada:
 - Bien établi (longue tradition)
 - Compréhensible (pas de magie)
 - Pérenne (là pour rester)
+- Demande de l'innovation
 
 ---
 
