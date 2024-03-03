@@ -20,12 +20,41 @@ Daniel Lemire
 professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
+
+---
+
+- Sam Altman (OpenAI)
+- Bill Gates (Microsoft)
+- Steve Jobs (Apple)
+- Mark Zuckerberg (Facebook)
+
 ---
 
 Un moteur de recherche n'est qu'un chatbot très bête.
 (Pedro Domingos)
 
 ---
+
+- Bien établi (longue tradition)
+- Compréhensible (pas de magie)
+- Pérenne (là pour rester)
+- Demande de l'innovation
+
+---
+
+Intelligence artificielle et éducation
+
+Longue tradition
+Doctorat en informatique cognitive, Gilbert Paquette, etc.
+
+---
+
+Hypothèse : les progrès en informatique et intelligence artificielle bénéficient particulièrement à la qualité l'enseignement  asynchrone.
+
+'Un manuel qui enseigne'
+
+---
+
 
 https://github.com/Stability-AI/generative-models
 
