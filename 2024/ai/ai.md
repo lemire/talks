@@ -20,6 +20,20 @@ Daniel Lemire
 professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
+---
+
+"Le future est déjà arrivé, mais il n'est pas uniformément réparti."
+
+(William Gibson)
+
+---
+
+Weamo Los Angeles taxi robotaxi
+
+![width:600px](laweamo.jpg)
+
+![width:600px](weamo.png)
+
 
 ---
 
