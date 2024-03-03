@@ -22,6 +22,11 @@ Montréal :canada:
 
 ---
 
+Un moteur de recherche n'est qu'un chatbot très bête.
+(Pedro Domingos)
+
+---
+
 https://github.com/Stability-AI/generative-models
 
 Intégration des connaissances : ça nous prend du contenu... un manuel, des notes de cours, etc.
