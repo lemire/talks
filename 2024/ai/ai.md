@@ -22,6 +22,10 @@ Montréal :canada:
 
 ---
 
+Les gens sont plus enclins à adhérer au changement lorsqu'ils voient des preuves tangibles de ses avantages.
+
+---
+
 "Le future est déjà arrivé, mais il n'est pas uniformément réparti."
 
 (William Gibson)
