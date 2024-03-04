@@ -31,6 +31,8 @@ Les gens sont plus enclins à adhérer au changement lorsqu'ils voient des preuv
 (William Gibson)
 
 ---
+![width:600px](trends.jpg)
+
 
 Weamo Los Angeles taxi robotaxi
 
