@@ -22,6 +22,12 @@ Montréal :canada:
 
 ---
 
+- Petits modèles, modèles spécialisés.
+- Plus grandes fenêtres
+- approche multimodales
+- mixture of experts
+---
+
 Les gens sont plus enclins à adhérer au changement lorsqu'ils voient des preuves tangibles de ses avantages.
 
 ---
