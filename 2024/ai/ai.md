@@ -21,6 +21,40 @@ professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
 ---
+Les professions les plus exposées à l'AI comprennent les enseignants post-secondaires, particulièrement en langue et histoire.  Les secteurs les plus exposés aux progrès de l'IA sont les services juridiques et la finance.
+
+How will Language Modelers like ChatGPT Affect Occupations and Industries?
+Ed Felten (Princeton)
+Manav Raj (University of Pennsylvania) Robert Seamans (New York University)
+2023
+
+https://arxiv.org/ftp/arxiv/papers/2303/2303.01157.pdf
+
+
+---
+
+Cette technologie, qui permet d’imiter l’intelligence humaine à travers différents outils informatiques, sera notamment mise à l’essai sur le site de données ouvertes du gouvernement du Québec, avec l'ajout d'un robot conversationnel.
+
+
+Si le projet pilote est concluant, ce «chatbot» pourrait aussi faire son apparition sur d’autres sites gouvernementaux.
+
+https://www.journaldequebec.com/2024/02/29/lintelligence-artificielle-aidera-a-reduire-la-taille-de-letat-affirme-eric-caire
+
+https://www.journaldequebec.com/2024/02/29/lintelligence-artificielle-aidera-a-reduire-la-taille-de-letat-affirme-eric-caire
+
+---
+
+l'utilisation accrue de l'informatique est associée à une croissance des emplois bien rémunérés et à une diminution des emplois mal rémunérés, d'où une réaffectation substantielle des emplois, obligeant les travailleurs à acquérir de nouvelles compétences.
+
+How Computer Automation Affects Occupations: Technology, Jobs, and Skills, James Bessen, 2016
+
+---
+
+L'impact de l'IA sur le marché du travail est directement lié à l'inadéquation des compétences. Les possibilités de requalification et d'amélioration des compétences peuvent compenser les effets néfastes de l'IA sur le marché du travail.
+
+Zarifhonarvar, Ali (2023) : Economics of ChatGPT: A Labor Market View on the Occupational Impact of Artificial Intelligence, ZBW - Leibniz Information Centre for Economics, Kiel, Hamburg
+
+---
 
 - Petits modèles, modèles spécialisés.
 - Plus grandes fenêtres
@@ -266,9 +300,35 @@ Une entreprise allemande, DeepL, réalise une percée dans la qualité de la tra
 
 Une équipe de Google (Alphabet/DeepMind) a créé un système informatique (AlphaZero) capable d'apprendre des jeux comme le Go et les échecs en quelques heures, en se basant uniquement sur les règles, puis de battre les meilleurs systèmes logiciels et tous les êtres humains.
 
+Transformers (Google)
+
+---
+
+2018
+
+BERT
+
+GPT-1
+
+---
+
+2019
+
+GPT-2
+
+---
+
+2020
+
+GPT-3
+
+
 ---
 
 2022 : ChatGPT est largement considéré comme une percée de l'IA : il peut produire des dissertations complètes dans diverses langues.
+
+GPT-3.5
+
 
 ---
 
