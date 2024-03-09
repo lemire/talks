@@ -21,6 +21,47 @@ professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
 ---
+
+emploi1.png
+emploi2.png
+emploi3.png
+emploi4.png
+
+
+Gilbert Paquette
+
+---
+
+TRS-80 : 9000 transistors
+
+	
+16 milliard
+
+2 million fois plus.
+
+160 km de haut
+---
+
+Nous présentons GPQA, un ensemble de données de 448 questions à choix multiples rédigées par des experts en biologie, physique et chimie. Nous nous assurons que les questions sont de haute qualité et extrêmement difficiles : les experts qui ont ou poursuivent un doctorat dans les domaines correspondants atteignent une précision de 65%, tandis que les validateurs non-experts hautement qualifiés n'atteignent qu'une précision de 34%
+
+2023
+
+https://arxiv.org/abs/2311.12022
+
+2024: Claude 3 Opus atteint 50%, GPT-4 36%.
+
+
+---
+
+
+
+---
+
+
+---
+techno.png
+
+---
 Les professions les plus exposées à l'AI comprennent les enseignants post-secondaires, particulièrement en langue et histoire.  Les secteurs les plus exposés aux progrès de l'IA sont les services juridiques et la finance.
 
 How will Language Modelers like ChatGPT Affect Occupations and Industries?
