@@ -52,6 +52,17 @@ TRS-80 : 9000 transistors
 
 ---
 
+![width:700px](transistor.png)
+
+
+---
+
+$2^{21} \approx 2,000,000$
+
+En 42 ans: $2,000,000 \times$.
+
+---
+
 ## 1987-1989
 
 INF 5100 L’intelligence artificielle – comprendre et prolonger l’intelligence humaine
@@ -346,12 +357,17 @@ Un moteur de recherche n'est qu'un chatbot très bête.
 
 ---
 
+## Dizaines de milliers de modèles open source
 
-Le  modèle est fixe. 
+![width:600px](models.png)
 
-GPT-3 est GPT-3.
+---
 
-Il ne s'améliore pas quand on l'utilise.
+## Apprentissage/inférence
+
+- L'apprentissage est distinct de l'application du modèle.
+
+- Le  modèle est fixe. GPT-3 est GPT-3. Il ne s'améliore pas quand on l'utilise.
 
 ---
 
@@ -360,6 +376,26 @@ Il ne s'améliore pas quand on l'utilise.
 Intégration des connaissances : ça nous prend du contenu... un manuel, des notes de cours, etc.
 
 *Retrieval-augmented generation (RAG)*
+
+
+---
+
+## Programmation?
+
+On peut donner des instructions:
+
+- Répond avec empathie.
+- Répond comme un employé de la TÉLUQ.
+
+
+---
+
+## Programmation?
+
+
+- On peut filter les questions... (par ex., exiger que la question soit en français)
+- Et améliorer les réponses (liens, tableaux, etc.).
+
 
 
 ---
