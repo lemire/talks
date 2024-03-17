@@ -375,7 +375,7 @@ Un moteur de recherche n'est qu'un chatbot très bête.
 
 Intégration des connaissances : ça nous prend du contenu... un manuel, des notes de cours, etc.
 
-*Retrieval-augmented generation (RAG)*
+*Retrieval-augmented generation (RAG)* ou génération améliorée par récupération.
 
 
 ---
