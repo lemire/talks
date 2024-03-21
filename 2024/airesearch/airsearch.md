@@ -3,6 +3,19 @@ https://www.tvanouvelles.ca/2024/02/26/ia--un-robot-conversationnel-suscite-la-c
 order of the statements matter (middle seem best?)
 
 
+génération de résumé, prompt initial (comme un chercheur), RAG (fournir les références), question.
+
+Traduction : français, anglais.
+
+Génération de diagramme SVG
+
+https://twitter.com/lifeaftermyphd/status/1769620224461189336?s=61&t=vx8m95Ydj42MgGngWgz7wg
+
+https://garymarcus.substack.com/p/the-exponential-enshittification?utm_source=post-email-title&publication_id=888615&post_id=142644561&utm_campaign=email-post-title&isFreemail=true&r=2lacyn&triedRedirect=true&utm_medium=email
+
+
+
+
 mistral 
 google gemini
 
