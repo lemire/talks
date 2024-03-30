@@ -2,6 +2,7 @@ https://www.tvanouvelles.ca/2024/02/26/ia--un-robot-conversationnel-suscite-la-c
 
 order of the statements matter (middle seem best?)
 
+https://arxiv.org/abs/2403.16887
 
 génération de résumé, prompt initial (comme un chercheur), RAG (fournir les références), question.
 
