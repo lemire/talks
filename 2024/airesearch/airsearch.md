@@ -21,7 +21,21 @@ professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
 
+---
 
+![width:800px](math.png)
+
+---
+
+![width:1000px](mathreponse.png)
+
+---
+
+![width:1000px](excel1.png)
+
+---
+
+![width:1300px](excel2.png)
 
 ---
 
@@ -83,6 +97,14 @@ GPT-3.5
 https://www.cnbc.com/2023/03/14/openai-announces-gpt-4-says-beats-90percent-of-humans-on-sat.html
 
 
+---
+
+## 2023
+
+With the launch of the GPT-4 engine, the translation performance of ChatGPT is significantly boosted, becoming comparable to commercial translation products, even for distant languages. 
+
+Jiao et al. (2023)
+
 --- 
 
 ## 2023
@@ -92,6 +114,7 @@ It is estimated that slightly over 1% of all articles published in 2023 were LLM
 (Gray, 2024)
 
 https://arxiv.org/abs/2403.16887
+
 
 ---
 
@@ -162,32 +185,17 @@ Intégration des connaissances : ça nous prend du contenu... un manuel, des not
 *Retrieval-augmented generation (RAG)* ou génération améliorée par récupération.
 
 
-
 ---
 
-Est-ce que les dictées aident les enfants à mieux écrire en français ?
+## RAG
 
---
-
-Oui, les dictées sont un excellent moyen d’améliorer l’écriture en français, tant pour les enfants que pour les adultes. Voici quelques avantages des dictées :
-
-Orthographe et Syntaxe : Faire une dictée permet d’améliorer l’orthographe et la syntaxe des mots entendus lors de l’exercice. En écoutant attentivement et en écrivant correctement, on renforce sa maîtrise de la langue.
-Enrichissement du Vocabulaire : Les dictées exposent souvent à des mots inconnus ou peu fréquemment rencontrés. Elles permettent d’élargir le vocabulaire et d’apprendre de nouveaux termes.
-Conjugaison : Les dictées offrent l’occasion de pratiquer la conjugaison en choisissant la bonne forme verbale en fonction du contexte. Cela renforce la compréhension des règles grammaticales.
-En somme, les dictées sont un outil pédagogique efficace pour perfectionner ses compétences en français. Que ce soit à l’école, à la maison ou même en ligne, elles constituent un exercice utile et ludique. Si vous cherchez des dictées spécifiquement adaptées aux enfants, il existe également des ressources amusantes pour les aider à s’exercer
-
+![width:1200px](resume1.png)
 
 ---
 
 ## Synthèse
 
-![width:600px](resume1.png)
-
----
-
-## Synthèse
-
-![width:600px](resume2.png)
+![width:1200px](resume2.png)
 
 
 ---
@@ -198,7 +206,14 @@ Mon anglais n'est pas très bon. Est-ce que tu peux corriger ce texte: « I has 
 
 ---
 
+<style scoped>
+p,li {
+  font-size: 0.7em;
+  color: blue;
+    line-height: 0.9em;
 
+}
+</style>
 Sure, here is the corrected text:
 
 * Original: "I has write a book. It is a good books but it has flaw. Maybe I would write in French next times."
@@ -218,7 +233,17 @@ Here's a breakdown of the corrections:
 
 Je suis un chercheur à l'Université TÉLUQ et je veux quantifier l'efficacité de la dictée pour l'apprentissage de la langue française. Comment est-ce que je pourrais procéder ?
 
+
 ---
+
+<style scoped>
+p,li {
+  font-size: 0.7em;
+  color: blue;
+    line-height: 0.9em;
+
+}
+</style>
 
 En tant que chercheur, vous pouvez entreprendre une étude pour quantifier l’efficacité de la dictée dans l’apprentissage de la langue française. Voici quelques étapes que vous pourriez suivre :
 
@@ -263,6 +288,16 @@ Mon étudiant vient de terminer son doctorat sur l'études des changements clima
 
 ---
 
+
+<style scoped>
+p,li {
+  font-size: 0.7em;
+  color: blue;
+    line-height: 0.9em;
+
+}
+</style>
+
 Cinq évaluateurs potentiels pour la thèse de votre étudiant :
 
 * Dr. Pierre-Louis Filion, Professeur agrégé, Département des sciences forestières, Université Laval, Québec, Canada. Ses recherches portent sur la physiologie des arbres, l'écologie forestière et les changements climatiques. Il a publié de nombreux articles dans des revues scientifiques de premier plan et a une expertise reconnue dans l'étude de l'érable à sucre. https://www.ffgg.ulaval.ca/departements/sbf/
@@ -283,29 +318,50 @@ Voici quelques ressources supplémentaires qui pourraient vous être utiles pour
 
 
 J'espère que ces informations vous aideront à trouver des évaluateurs qualifiés pour la thèse de votre étudiant.
+
+---
+
+## Objectifs de recherche
+
+Je dois déposer une demande de subvention pour un projet portant sur les robots conversationnels.
+J'ai besoin de deux objectifs à long terme et cinq objectifs à long terme.
+
+
+---
+
+<style scoped>
+p,li {
+  font-size: 0.7em;
+  color: blue;
+  line-height: 0.9em;
+}
+</style>
+
+Bien sûr ! Voici quelques objectifs à long terme que vous pourriez inclure dans votre demande de subvention pour votre projet de robots conversationnels :
+
+- Structurer et accompagner les acteurs de nouvelles chaînes de valeur d’équipements robotiques ou industriels stratégiques : Votre projet pourrait viser à créer des partenariats solides entre les entreprises, les universités et les organismes de recherche pour développer des solutions innovantes dans le domaine des robots conversationnels. Cela pourrait inclure la mise en place de plateformes de collaboration, de consortiums ou de réseaux d’experts.
+- Renforcer la souveraineté nationale dans le domaine des robots conversationnels : Vous pourriez chercher à développer des technologies et des compétences spécifiques qui permettront à la France de rester compétitive sur le marché mondial des robots conversationnels. Cela pourrait impliquer la formation de talents locaux, la création de centres d’excellence ou la promotion de la recherche et du développement dans ce domaine.
+
+En ce qui concerne les objectifs à court terme, voici quelques suggestions supplémentaires :
+
+- Développer un prototype fonctionnel de robot conversationnel : Mettez l’accent sur la conception, le développement et la validation d’un prototype de robot conversationnel capable d’interagir avec les utilisateurs de manière fluide et efficace.
+- Conduire des études de marché et des analyses de besoins : Identifiez les secteurs d’application les plus prometteurs pour les robots conversationnels et évaluez les besoins spécifiques des utilisateurs. Cela vous aidera à affiner votre approche et à cibler les domaines où votre projet peut avoir le plus grand impact.
+- Établir des partenariats avec des entreprises et des institutions de recherche : Collaborez avec des entreprises du secteur, des universités et des laboratoires de recherche pour bénéficier de leurs connaissances et de leurs ressources. Ces partenariats peuvent accélérer le développement de votre projet.
+- Définir une feuille de route pour le développement du projet : Élaborez un plan détaillé pour les prochaines étapes de votre projet, y compris les jalons clés, les ressources nécessaires et les délais. Cela montrera que vous avez une vision claire de la manière dont votre projet évoluera.
+- Préparer une stratégie de communication et de sensibilisation : Pensez à la manière dont vous allez promouvoir votre projet et sensibiliser le public aux avantages des robots conversationnels. Cela peut inclure des événements, des articles de blog, des présentations, etc.
+N’oubliez pas de consulter les détails spécifiques de la subvention pour vous assurer que vos objectifs sont alignés sur les critères d’éligibilité et les priorités du programme12. Bonne chance pour votre demande de subvention ! 🤖🚀
+
 ---
 
 ## Programmation?
 
-Comment est-ce que je peux faire un test t de Student en utilisant R ?
+Donne-moi un script R qui est capable de consulter un chiffrier excel nommé donnee.xsl, de calculer la moyenne et la variance des données dans la deuxième colonne.
 
 
 ---
 
 
-![width:600px](r1.png)
-
----
-
-![width:600px](r2.png)
-
----
-
-![width:600px](r3.png)
-
----
-
-![width:600px](r4.png)
+![width:1000px](r5.png)
 
 ---
 
@@ -315,6 +371,14 @@ J'ai écrit un article intitulé « L'effet économique de la pandémie sur les 
 
 ---
 
+<style scoped>
+p,li {
+  font-size: 0.7em;
+  color: blue;
+    line-height: 0.9em;
+
+}
+</style>
 
 Revues en français:
 
@@ -343,101 +407,9 @@ Voici quelques ressources supplémentaires pour vous aider à trouver une revue 
 
 ## Conclusion
 
+- RAG
+- Synthèse
+- Correction
+- Génération d'idées
 
-
-
-
-https://www.tvanouvelles.ca/2024/02/26/ia--un-robot-conversationnel-suscite-la-controverse-a-la-teluq
-
-order of the statements matter (middle seem best?)
-
-https://arxiv.org/abs/2403.16887
-
-génération de résumé, prompt initial (comme un chercheur), RAG (fournir les références), question.
-
-Traduction : français, anglais.
-
-Génération de diagramme SVG
-
-https://twitter.com/lifeaftermyphd/status/1769620224461189336?s=61&t=vx8m95Ydj42MgGngWgz7wg
-
-https://garymarcus.substack.com/p/the-exponential-enshittification?utm_source=post-email-title&publication_id=888615&post_id=142644561&utm_campaign=email-post-title&isFreemail=true&r=2lacyn&triedRedirect=true&utm_medium=email
-
-
-
-
-mistral 
-google gemini
-
-https://mistral.ai
-
-consommé les données est plus rapide que de produire les données
-
---- 30 minutes ---
-
-exemples concrets
-
-limites 
-hallucination
-
-
-chatgpt
-
-étape du projet de recherche....
-
-demandes de subvention...
-
-
-la personne voulait utiliser des données, transformer les données... 
-
-R de Python...
-
-traitement de données...
-
--- fuite de données ---
-
-copilot -- sécurisé -- bingchat
-
-100% distance 
-
-
-
-Neila : institution de l'intelligence appliquée
-
-
-
-
-
-
-Outils et applications de l'intelligence artificielle générative.
-
-mistral, gemini, 
-
-bing image create, bing chat
-
-
-Fondements des grands modèles de la langue (fenêtre, température, token).
-
-
-Hallucination et génération augmentée par récupération (RAG)
-
-Construction des requêtes : ordre et désordre
-
-Exemples d'application. Assistance à l'écriture d'une demande de subvention.
-Utiliser l'intelligence artificielle pour faire un état de l'art. 
-Utiliser l'intelligence artificielle générative pour aider à l'analyse de données (code, etc.).
-
-
-
-Les règlements et les lois entourant l'utilisation de l'IA. Les outils recommandés. 	Une liste d'outils et de recommendations 
-Revue de littérature	
-    
-meilleurs usages de l'IA en recherche	des idées d'usage additionnelles / des savoirs faire
-"Est-il possible d'utiliser l'IA pour faire des recherches documentaires et revues de la littérature fiables (lorsque j'ai tenté, cela inventait des références qui n'existaient pas et créait des contre-sens) et si oui comment?
-"	Application et méthodes permettant de garantir la fiabilité 
-Former l’étudiant à la critique envers l’IA et à comprendre les différents types d’IA.	Définitions de l’IA, savoir critiquer l’IA, savoir utiliser l’IA de façon critique
-comment IA peut  nous aider dans la recherche .	
-Automatisation des revues de littérature et de l'analyse des données de recherche en raison du manque d'étudiant.	Des outils, des recettes à expérimenter. 
-De mon côté, je serais intéressée à en apprendre davantage sur les ChatBots (pas très connaissante à ce sujet), il semble que les ChatBots permettent de faciliter l'interaction avec d'autres chercheurs. Mais comment ? 	"1) J'aimerais avoir accès à une liste de ressources et d'outils pour faciliter mes propres projets de recherche
-2) J'aimerais comprendre comme l'IA me permettrait de renforcer mes compétences en communication écrite (par dans d'autres langues) pour diffuser mes travaux et faciliter le maillage avec d'autres chercheurs du même domaine que moi."
-    Identifier des outils et des moyens d'accélérer la recherche le tout en étant efficace et éthiquement responsable.
+- Attention au plagiat et à la fraude
