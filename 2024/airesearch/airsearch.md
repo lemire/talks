@@ -117,6 +117,17 @@ https://arxiv.org/abs/2403.16887
 
 
 ---
+## 2024
+
+AI Does Math as Well as Math Olympians
+
+The researchers reported that the program was able to solve 25 out of 30 geometry problems from past IMOs—a success rate similar to that of human gold medalists.
+
+The AI outperformed most participants, who solved an average of 15.2 out of 30 problems. (Gold-medal winners solved an average of 25.9 problems correctly.)
+
+https://www.scientificamerican.com/article/ai-matches-the-abilities-of-the-best-math-olympians/
+
+---
 
 ## 2024
 
