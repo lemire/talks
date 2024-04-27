@@ -21,21 +21,21 @@ professeur, Université du Québec (TÉLUQ)
 Montréal :canada:
 
 
----
-
-![width:800px](math.png)
 
 ---
 
-![width:1000px](mathreponse.png)
+## Paradoxe de Moravec
+
+*Ce qui est simple pour nous est difficile pour l'IA, et ce qui est difficile pour nous est simple pour l'IA.* (Moravec, 1988)
 
 ---
 
-![width:1000px](excel1.png)
+*Ce sont les analystes et les ingénieurs qui risquent d'être remplacés par des machines. Les jardiniers sont assurés d'avoir un emploi pour les décennies à venir.*
 
----
+Steven Pinker, The Language Instinct, 1994
 
-![width:1300px](excel2.png)
+
+
 
 ---
 
@@ -47,45 +47,10 @@ Montréal :canada:
 
 ---
 
-## 2011
-
- L'État du Nevada autorise les voitures autonomes à circuler dans ses rues. 
-
-
----
-
-## 2016
-
-Un professeur d'informatique (Georgia Tech.) disposait d'un ensemble d'assistants de personnes tutrices en ligne, toutes humaines à l'exception d'un robot. Un  étudiant de la classe a découvert que l'un des assistants n'était pas un être humain, parce qu'il avait tendance à répondre aux questions beaucoup plus rapidement que les autres. 
-
-https://www.washingtonpost.com/news/innovations/wp/2016/05/11/this-professor-stunned-his-students-when-he-revealed-the-secret-identity-of-his-teaching-assistant/
+![width:800px](tendance.jpeg)
 
 
 
----
-
-## 2018
-
-- BERT
-- GPT-1
-
----
-
-## 2020
-
-Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
-
-Lewis et al. (Facebook)
-
-https://arxiv.org/abs/2005.11401
-
----
-
-## 2022 
-
-ChatGPT est largement considéré comme une percée de l'IA : il peut produire des dissertations complètes dans diverses langues.
-
-GPT-3.5
 
 
 ---
@@ -96,36 +61,47 @@ GPT-3.5
 
 https://www.cnbc.com/2023/03/14/openai-announces-gpt-4-says-beats-90percent-of-humans-on-sat.html
 
+---
+
+## 2023
+
+
+Le GPT-4 est un test de QI général qui se rapproche du 99e percentile des performances humaines.
+
+(King, 2023)
 
 ---
 
 ## 2023
 
-With the launch of the GPT-4 engine, the translation performance of ChatGPT is significantly boosted, becoming comparable to commercial translation products, even for distant languages. 
+GPT-4 réussit de prestigieux tests menant à des certifications professionnelles:
 
-Jiao et al. (2023)
+- [North American Pharmacist Licensure Examination (NAPLEX)](https://www.biorxiv.org/content/10.1101/2023.12.06.570434.full.pdf) (Angel et al. 2023)
+- [Offensive Security Certified Professional (OSCP)](https://arxiv.org/pdf/2312.10603) (Noever and Ciolino, 2023)
 
---- 
 
-## 2023
-
-It is estimated that slightly over 1% of all articles published in 2023 were LLM-assisted, though this number could be extended 
-
-(Gray, 2024)
-
-https://arxiv.org/abs/2403.16887
 
 
 ---
 ## 2024
 
-AI Does Math as Well as Math Olympians
+L'IA fait des maths aussi bien que les mathématiciens olympiques
 
-The researchers reported that the program was able to solve 25 out of 30 geometry problems from past IMOs—a success rate similar to that of human gold medalists.
+IA: 25/30
 
-The AI outperformed most participants, who solved an average of 15.2 out of 30 problems. (Gold-medal winners solved an average of 25.9 problems correctly.)
+Moyenne des participants: 15/30
+
 
 https://www.scientificamerican.com/article/ai-matches-the-abilities-of-the-best-math-olympians/
+
+
+---
+
+![width:800px](math.png)
+
+---
+
+![width:1000px](mathreponse.png)
 
 ---
 
@@ -145,55 +121,15 @@ https://arxiv.org/pdf/2404.01268.pdf
 
 ![width:600px](triche2.jpeg)
 
----
-
-![width:600px](certainly.png)
-
----
-
-## La technologie
-
-
----
-
-Un moteur de recherche n'est qu'un chatbot très bête.
-(Pedro Domingos)
-
----
-
-- token (mot)
-- température
-- fenêtre de contexte
-
----
-
-![width:800px](diagramme.png)
-
----
-
-![width:600px](cartemem.png)
-
----
-
-## Dizaines de milliers de modèles open source
-
-![width:600px](models.png)
-
----
-
-## Apprentissage/inférence
-
-- L'apprentissage est distinct de l'application du modèle.
-
-- Le  modèle est fixe. GPT-3 est GPT-3. Il ne s'améliore pas quand on l'utilise.
 
 ---
 
 ## Hallucination
 
-Intégration des connaissances : ça nous prend du contenu... un manuel, des notes de cours, etc.
-
 *Retrieval-augmented generation (RAG)* ou génération améliorée par récupération.
+
+[Lewis et al., 2020](https://arxiv.org/abs/2005.11401)
+
 
 
 ---
@@ -361,6 +297,16 @@ En ce qui concerne les objectifs à court terme, voici quelques suggestions supp
 - Définir une feuille de route pour le développement du projet : Élaborez un plan détaillé pour les prochaines étapes de votre projet, y compris les jalons clés, les ressources nécessaires et les délais. Cela montrera que vous avez une vision claire de la manière dont votre projet évoluera.
 - Préparer une stratégie de communication et de sensibilisation : Pensez à la manière dont vous allez promouvoir votre projet et sensibiliser le public aux avantages des robots conversationnels. Cela peut inclure des événements, des articles de blog, des présentations, etc.
 N’oubliez pas de consulter les détails spécifiques de la subvention pour vous assurer que vos objectifs sont alignés sur les critères d’éligibilité et les priorités du programme12. Bonne chance pour votre demande de subvention ! 🤖🚀
+
+
+
+---
+
+![width:1200px](excel1.png)
+
+---
+
+![width:1300px](excel2.png)
 
 ---
 
