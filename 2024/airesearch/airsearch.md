@@ -138,6 +138,13 @@ https://arxiv.org/pdf/2404.01268.pdf
 
 ![width:1200px](resume1.png)
 
+
+---
+
+## Synthèse
+
+![width:1200px](bedard.png)
+
 ---
 
 ## Synthèse
