@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 theme: base
 title: Intelligence artificielle à l'Université TÉLUQ
 description: Discussion sur l'intelligence artificielle à l'Université TÉLUQ.
@@ -278,7 +278,7 @@ J'espère que ces informations vous aideront à trouver des évaluateurs qualifi
 ## Objectifs de recherche
 
 Je dois déposer une demande de subvention pour un projet portant sur les robots conversationnels.
-J'ai besoin de deux objectifs à long terme et cinq objectifs à long terme.
+J'ai besoin de deux objectifs à long terme et cinq objectifs à court terme.
 
 
 ---
