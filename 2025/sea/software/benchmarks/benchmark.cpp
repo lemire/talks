@@ -25,7 +25,7 @@ void pretty_print(const std::string& name,
   fmt::print(" {:5.2f} s ", agg.fastest_elapsed_ns()/1000'000'000.0);
   if (collector.has_events()) {
     fmt::print(" {:5.2f} GHz ", agg.fastest_cycles() / agg.fastest_elapsed_ns());
-    fmt::print(" {:5.2f} c ", agg.fastest_cycles());
+    fmt::print(" {:5.2f} Mc ", agg.fastest_cycles()/ 1000'000.0);
     fmt::print(" {:5.2f} Mi ", agg.fastest_instructions()/ 1000'000.0);
     fmt::print(" {:5.2f} i/c ", agg.fastest_instructions() / agg.fastest_cycles());
   }
