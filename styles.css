@@ -1,4 +1,43 @@
-/* Réinitialisation des marges et paddings pour une base propre */
+body {
+  font-family: system-ui, sans-serif;
+  background: #f8f9fa;
+  color: #222;
+  margin: 0;
+  padding: 0 0 2em 0;
+}
+h1 {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 2.2em;
+}
+h2 {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  color: #2a4d8f;
+  letter-spacing: 0.1em;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2em auto;
+  max-width: 600px;
+}
+li {
+  margin: 0.5em 0;
+  text-align: center;
+}
+a {
+  color: #1a5fb4;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+a:hover {
+  text-decoration: underline;
+}/* Réinitialisation des marges et paddings pour une base propre */
 html, body {
   margin: 0;
   padding: 0;
