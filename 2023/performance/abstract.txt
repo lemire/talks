@@ -1,0 +1,43 @@
+BID 2023
+
+Title: Accurate and efficient software microbenchmarks
+
+
+Abstract:
+
+Software is often improved incrementally. 
+Each software optimization should be assessed with microbenchmarks. 
+In a microbenchmark, we record performance measures such as elapsed time or
+instruction counts during specific tasks, often in idealized conditions.
+In principle, the process is easy: if the new code is faster, we adopt it.
+Unfortunately, there are many pitfalls, such as unrealistic statistical assumptions
+and poorly designed benchmarks. Abstractions like cloud computing add further challenges.
+We illustrate effective benchmarking practices with examples.
+
+Biography: 
+
+Daniel is a computer science professor at the Data Science Laboratory of the University of Quebec (TELUQ).
+He is an editor of the Software: Practice and Experience journal. In 2020, he received the University of 
+Quebec’s 2020 Award of Excellence for Achievement in Research for his 
+work on the acceleration of JSON parsing. His open source software has been used by major corporations 
+such as Google, LinkedIn, Netflix and Facebook. He is among the top 500 GitHub users worldwide in terms of 
+follower count: GitHub is the main platform for open-source software publishing and it has over 40 million users.
+He works on software performance.  He is @lemire on Twitter, and he blogs weekly at https://lemire.me/
+
+Photo: https://lemire.me/img/UTELUQ2016/Daniel-Lemire_MG_0993_HR.jpg
+
+--------
+
+Titre : Mesurer la performance du logiciel de manière précise et efficace
+
+
+Résumé :
+
+Les logiciels sont souvent améliorés de manière incrémentale. Chaque optimisation logicielle doit être évaluée à l'aide de microbenchmarks.  Dans un microbenchmark, nous enregistrons des mesures de performance telles que le temps écoulé ou le nombre d'instructions pendant des tâches spécifiques, souvent dans des conditions idéales. En principe, le processus est simple : si le nouveau code est plus rapide, nous l'adoptons. Malheureusement, il existe de nombreux pièges, tels que des hypothèses statistiques irréalistes et des tests de référence mal conçus. Des abstractions telles que l'infonuagique ajoutent des difficultés supplémentaires. Nous illustrons des pratiques efficaces de benchmarking et les difficultés rencontrées par des exemples.
+
+Biographie : 
+
+Daniel est professeur d'informatique au Laboratoire de science des données de l'Université du Québec (TELUQ). Il est rédacteur en chef de la revue Software : Practice and Experience. En 2020, il a reçu le Prix d'excellence 2020 de l'Université du Québec pour ses travaux sur l'accélération du traitement des documents JSON. Ses logiciels ont été utilisés par de grandes entreprises comme Google, Apple, LinkedIn, Netflix et Facebook. On trouve ses algorithmes et son code dans plusieurs librairies standards (Rust, Go, GNU C++, Microsoft C++, .NET/C#, Numpy, etc.). IIl figure parmi les 500 premiers utilisateurs mondiaux de GitHub en
+nombre de followers : GitHub est la principale plateforme de publication de logiciels libres et compte plus de 40 millions d'utilisateurs. Il travaille sur la performance des logiciels.  Il est @lemire sur Twitter et tient un blog hebdomadaire à l'adresse https://lemire.me/.
+
+Photo : https://lemire.me/img/UTELUQ2016/Daniel-Lemire_MG_0993_HR.jpg

@@ -1,0 +1,45 @@
+ 8 bits per item
+cost per miss: 2.06848
+cost per hit: 6
+fpp: 0.021488
+density: 0.527632
+ 9 bits per item
+cost per miss: 1.92015
+cost per hit: 6
+fpp: 0.013185
+density: 0.486595
+ 10 bits per item
+cost per miss: 1.99548
+cost per hit: 7
+fpp: 0.008163
+density: 0.503454
+ 11 bits per item
+cost per miss: 2.05769
+cost per hit: 8
+fpp: 0.00505
+density: 0.516803
+ 12 bits per item
+cost per miss: 1.94177
+cost per hit: 8
+fpp: 0.003133
+density: 0.486589
+ 13 bits per item
+cost per miss: 1.99459
+cost per hit: 9
+fpp: 0.001904
+density: 0.49957
+ 14 bits per item
+cost per miss: 2.03973
+cost per hit: 10
+fpp: 0.001193
+density: 0.510487
+ 15 bits per item
+cost per miss: 1.94554
+cost per hit: 10
+fpp: 0.000738
+density: 0.486579
+ 16 bits per item
+cost per miss: 1.98998
+cost per hit: 11
+fpp: 0.000483
+density: 0.49717
