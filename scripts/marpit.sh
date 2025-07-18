@@ -79,7 +79,7 @@ while read year; do
     pdfpath="$relpath.pdf"
     title=$(grep -m 1 '^title:' "$file" | sed 's/^title: //')
     description=$(grep -m 1 '^description:' "$file" | sed 's/^description: //')
-    echo "<li><a href='$htmlpath' title='$description'>$title (HTML)</a> (<a href='$pdfpath' title='$description'>PDF</a>)</li>" >> public/index.html
+    echo "<li><a href='$htmlpath' title='$description'>$title</a> <a href='$pdfpath' title='$description'>PDF</a></li>" >> public/index.html
   done
   echo "</ul>" >> public/index.html
 done < years.txt
