@@ -281,7 +281,7 @@ Number Parsing at a Gigabyte per Second, Software: Practice and Experience 51 (8
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" lang="C" data-marpit-pagination="24" style="--paginate:true;" data-marpit-pagination-total="75">
 <h1 id="knuths-random-shuffle">Knuth's random shuffle</h1>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"><span class="hljs-variable constant_">PROCEDURE</span> <span class="hljs-title function_">shuffle</span>(array)
-    <span class="hljs-variable constant_">FOR</span> j <span class="hljs-variable constant_">FROM</span> $$|array| - <span class="hljs-number">1</span>$$ <span class="hljs-variable constant_">DOWN</span> <span class="hljs-variable constant_">TO</span> <span class="hljs-number">1</span>
+    <span class="hljs-variable constant_">FOR</span> j <span class="hljs-variable constant_">FROM</span> |array| - <span class="hljs-number">1</span> <span class="hljs-variable constant_">DOWN</span> <span class="hljs-variable constant_">TO</span> <span class="hljs-number">1</span>
         k ← <span class="hljs-title function_">random_integer</span>(<span class="hljs-number">0</span>, j)
         <span class="hljs-variable constant_">SWAP</span> array[j] <span class="hljs-variable constant_">WITH</span> array[k]
     <span class="hljs-variable constant_">END</span> <span class="hljs-variable constant_">FOR</span>
@@ -324,13 +324,13 @@ Number Parsing at a Gigabyte per Second, Software: Practice and Experience 51 (8
 <h1 id="validate-1">Validate</h1>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"><span class="hljs-variable constant_">PROCEDURE</span> <span class="hljs-title function_">validate_utf16</span>(code_units)
     i ← <span class="hljs-number">0</span>
-    <span class="hljs-variable constant_">WHILE</span> i &lt; $$|code_units|$$
+    <span class="hljs-variable constant_">WHILE</span> i &lt; |code_units|
         unit ← code_units[i]
         <span class="hljs-variable constant_">IF</span> unit ≤ <span class="hljs-number">0xD7FF</span> <span class="hljs-variable constant_">OR</span> unit ≥ <span class="hljs-number">0xE000</span> <span class="hljs-variable constant_">THEN</span>
             <span class="hljs-variable constant_">INCREMENT</span> i
             <span class="hljs-variable constant_">CONTINUE</span>
         <span class="hljs-variable constant_">IF</span> unit ≥ <span class="hljs-number">0xD800</span> <span class="hljs-variable constant_">AND</span> unit ≤ <span class="hljs-number">0xDBFF</span> <span class="hljs-variable constant_">THEN</span>
-            <span class="hljs-variable constant_">IF</span> i + <span class="hljs-number">1</span> ≥ $$|code_units|$$ <span class="hljs-variable constant_">THEN</span>
+            <span class="hljs-variable constant_">IF</span> i + <span class="hljs-number">1</span> ≥ |code_units| <span class="hljs-variable constant_">THEN</span>
                 <span class="hljs-variable constant_">RETURN</span> <span class="hljs-literal">false</span>
             next_unit ← code_units[i + <span class="hljs-number">1</span>]
             <span class="hljs-variable constant_">IF</span> next_unit &lt; <span class="hljs-number">0xDC00</span> <span class="hljs-variable constant_">OR</span> next_unit &gt; <span class="hljs-number">0xDFFF</span> <span class="hljs-variable constant_">THEN</span>
@@ -344,7 +344,7 @@ Number Parsing at a Gigabyte per Second, Software: Practice and Experience 51 (8
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" lang="C" data-marpit-pagination="31" style="--paginate:true;" data-marpit-pagination-total="75">
 <h1 id="performance-results-apple-m4">Performance results (Apple M4)</h1>
 <img src="utf16check.svg" />
-<p>1 character per second might be just 4 GB/s (slower than disk)</p>
+<p>1 character per cycle might be just 4 GB/s (slower than disk)</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" lang="C" data-marpit-pagination="32" style="--paginate:true;" data-marpit-pagination-total="75">
 <h1 id="performance-results-apple-m4-1">Performance results (Apple M4)</h1>
