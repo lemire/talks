@@ -1,0 +1,26 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="100" y="20" font-family="Arial" font-size="14" text-anchor="middle">25% difference</text>
+
+  <!-- Y-axis -->
+  <line x1="50" y1="30" x2="50" y2="150" stroke="#000" stroke-width="2"/>
+  <text x="30" y="30" font-family="Arial" font-size="12" text-anchor="middle">200</text>
+  <text x="30" y="90" font-family="Arial" font-size="12" text-anchor="middle">100</text>
+  <text x="30" y="150" font-family="Arial" font-size="12" text-anchor="middle">0</text>
+  <text x="20" y="90" font-family="Arial" font-size="12" text-anchor="middle" transform="rotate(-90, 20, 90)">Cycles</text>
+
+  <!-- X-axis -->
+  <line x1="50" y1="150" x2="250" y2="150" stroke="#000" stroke-width="2"/>
+  <text x="100" y="170" font-family="Arial" font-size="12" text-anchor="middle">Not in set</text>
+  <text x="200" y="170" font-family="Arial" font-size="12" text-anchor="middle">In set</text>
+
+  <!-- Bars -->
+  <!-- Not in set (135) -->
+  <rect x="80" y="56.25" width="40" height="93.75" fill="#4CAF50"/>
+  <text x="100" y="46.25" font-family="Arial" font-size="12" text-anchor="middle">135</text>
+
+  <!-- In set (170) -->
+  <rect x="180" y="31.25" width="40" height="118.75" fill="#2196F3"/>
+  <text x="200" y="21.25" font-family="Arial" font-size="12" text-anchor="middle">170</text>
+
+</svg>
