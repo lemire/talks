@@ -2,7 +2,7 @@
 marp: true
 inlineSVG: true
 theme: base
-title: Algorithms for Modern Processor Architectures
+title: Algorithms for Modern Processor Architectures (Fall Version)
 description: For decades, Dennard scaling propelled remarkable advancements in processor technology. As transistor sizes shrank, manufacturers increased clock frequencies to enhance computational speed while simultaneously reducing power consumption, adhering to the principle of constant power density. This synergy delivered consistent performance improvements in both hardware and software. However, over the past two decades, this trend has faltered: physical and thermal constraints have caused clock frequencies to plateau, often leaving software performance stagnant as it struggles to fully utilize available hardware capabilities. Nevertheless, modern processors provide substantial opportunities for performance optimization through advanced architectural features. These include enhanced Single-Instruction-Multiple-Data (SIMD) instructions—such as Scalable Vector Extensions (SVE) and AVX-512—which enable parallel processing of large datasets, greater memory-level parallelism to improve data access efficiency, advanced branch predictors to enhance instruction flow, and broader superscalar execution to execute multiple instructions per cycle more effectively. We advocate for a comprehensive approach: robust mathematical models grounded in a current and detailed understanding of system architecture. Through this lens, we explore how algorithmic design can leverage these characteristics of contemporary processors, drawing insights from practical case studies in widely used software. Our findings underscore the critical need to align software design with hardware capabilities to overcome the challenges of the post-Dennard era.
 paginate: true
 _paginate: false
@@ -13,7 +13,7 @@ _paginate: false
 <!-- ![center](simdjsonlogo.png)-->
 
 <!--  --- -->
-![bg right 95%](images/highperf.png)
+![bg right](images/highperf.png)
 
 
 ## <!--fit--> Algorithms for Modern Processor Architectures
@@ -47,7 +47,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ---
 
-![bg right 95%](images/hmb.png)
+![bg right](images/hmb.png)
 
 # High Bandwidth Memory
 
@@ -60,7 +60,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ---
 
-![bg right 95%](images/clock.png)
+![bg right](images/clock.png)
 
 
 # Some numbers
