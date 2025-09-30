@@ -1,0 +1,24 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+
+  <!-- Y-axis -->
+  <line x1="50" y1="30" x2="50" y2="150" stroke="#000" stroke-width="2"/>
+  <text x="30" y="30" font-family="Arial" font-size="12" text-anchor="middle">8</text>
+  <text x="30" y="90" font-family="Arial" font-size="12" text-anchor="middle">4</text>
+  <text x="30" y="150" font-family="Arial" font-size="12" text-anchor="middle">0</text>
+  <text x="20" y="90" font-family="Arial" font-size="12" text-anchor="middle" transform="rotate(-90, 20, 90)">Cache misses</text>
+
+  <!-- X-axis -->
+  <line x1="50" y1="150" x2="250" y2="150" stroke="#000" stroke-width="2"/>
+  <text x="100" y="170" font-family="Arial" font-size="12" text-anchor="middle">Not in set</text>
+  <text x="200" y="170" font-family="Arial" font-size="12" text-anchor="middle">In set</text>
+
+  <!-- Bars -->
+  <!-- Not in set (3.5) -->
+  <rect x="80" y="90" width="40" height="60" fill="#4CAF50"/>
+  <text x="100" y="80" font-family="Arial" font-size="12" text-anchor="middle">3.5</text>
+
+  <!-- In set (7.5) -->
+  <rect x="180" y="30" width="40" height="120" fill="#2196F3"/>
+  <text x="200" y="20" font-family="Arial" font-size="12" text-anchor="middle">7.5</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg width="1200" height="600" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+   .bar-cycles { fill: #1f77b4; }
+   .bar-instructions { fill: #ff7f0e; }
+   .bar-inscycle { fill: #2ca02c; }
+   .bar-label { font: 18px sans-serif; text-anchor: middle; }
+   .axis-text { font: 20px sans-serif; }
+   .title { font: 24px sans-serif; font-weight: bold; }
+  </style>
+
+  <!-- Cycles Chart -->
+  <text x="200" y="520" class="title" text-anchor="middle">Cycles</text>
+  <text x="50" y="450" class="axis-text">0</text>
+  <text x="50" y="390" class="axis-text">1</text>
+  <text x="50" y="330" class="axis-text">2</text>
+  <text x="50" y="270" class="axis-text">3</text>
+  <text x="50" y="210" class="axis-text">4</text>
+  <text x="50" y="150" class="axis-text">5</text>
+  <text x="50" y="90" class="axis-text">6</text>
+  <text x="50" y="30" class="axis-text">7</text>
+  <text x="110" y="480" class="axis-text" text-anchor="middle">Branch</text>
+  <text x="190" y="480" class="axis-text" text-anchor="middle">Finite</text>
+  <rect x="90" y="30" width="70" height="420" class="bar-cycles" />
+  <text x="125" y="15" class="bar-label">7</text>
+  <rect x="170" y="384" width="70" height="66" class="bar-cycles" />
+  <text x="205" y="369" class="bar-label">1.1</text>
+
+  <!-- Instructions Chart -->
+  <text x="600" y="520" class="title" text-anchor="middle">Instructions</text>
+  <text x="450" y="450" class="axis-text">0</text>
+  <text x="450" y="397.5" class="axis-text">1</text>
+  <text x="450" y="345" class="axis-text">2</text>
+  <text x="450" y="292.5" class="axis-text">3</text>
+  <text x="450" y="240" class="axis-text">4</text>
+  <text x="450" y="187.5" class="axis-text">5</text>
+  <text x="450" y="135" class="axis-text">6</text>
+  <text x="450" y="82.5" class="axis-text">7</text>
+  <text x="450" y="30" class="axis-text">8</text>
+  <text x="510" y="480" class="axis-text" text-anchor="middle">Branch</text>
+  <text x="590" y="480" class="axis-text" text-anchor="middle">Finite</text>
+  <rect x="490" y="30" width="70" height="420" class="bar-instructions" />
+  <text x="525" y="15" class="bar-label">8</text>
+  <rect x="570" y="82.5" width="70" height="367.5" class="bar-instructions" />
+  <text x="605" y="67.5" class="bar-label">7</text>
+
+  <!-- Instructions per Cycle Chart -->
+  <text x="1000" y="520" class="title" text-anchor="middle">Instructions per cycle</text>
+  <text x="850" y="450" class="axis-text">0</text>
+  <text x="850" y="384.375" class="axis-text">1</text>
+  <text x="850" y="318.75" class="axis-text">2</text>
+  <text x="850" y="253.125" class="axis-text">3</text>
+  <text x="850" y="187.5" class="axis-text">4</text>
+  <text x="850" y="121.875" class="axis-text">5</text>
+  <text x="850" y="56.25" class="axis-text">6</text>
+  <text x="910" y="480" class="axis-text" text-anchor="middle">Branch</text>
+  <text x="990" y="480" class="axis-text" text-anchor="middle">Finite</text>
+  <rect x="890" y="377.8125" width="70" height="72.1875" class="bar-inscycle" />
+  <text x="925" y="362.8125" class="bar-label">1.1</text>
+  <rect x="970" y="30" width="70" height="420" class="bar-inscycle" />
+  <text x="1005" y="15" class="bar-label">6.4</text>
+</svg>
