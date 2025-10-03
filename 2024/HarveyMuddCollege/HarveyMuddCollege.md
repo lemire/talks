@@ -279,7 +279,7 @@ Tricks:
 
 - Stands for SIMD within a register
 - Use normal instructions, portable (in C, C++,...)
-- A 64-bit registers can be viewed as 8 bytes
+- A 64-bit register can be viewed as 8 bytes
 - Requires some cleverness
 
 ---
