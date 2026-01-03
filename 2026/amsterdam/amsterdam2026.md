@@ -123,14 +123,6 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ![bg right 90%](images/simdjsondesign.png)
 
-# simdjson: Design
-
-
-* First scan identifies the structural characters, start of all strings at about 10 GB/s using SIMD instructions.
-* Validates Unicode at 30 GB/s.
-* Rest of parsing relies on the generated index.
-* Allows fast skipping. (Only parse what we need)
-* Can minify JSON at 10 to 20 GB/s
 
 
 ---
@@ -144,6 +136,66 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 - WatermelonDB, Apache Doris, Meta Velox, Milvus,  QuestDB,  StarRocks
 
 <img src="images/nodejs.jpg" width="20%"> <img src="images/clickhouse.jpg" width="20%">
+
+
+
+# simdjson: Design
+
+
+* First scan identifies the structural characters, start of all strings at about 10 GB/s using SIMD instructions.
+* Validates Unicode at 30 GB/s.
+* Rest of parsing relies on the generated index.
+* Allows fast skipping. (Only parse what we need)
+* Can minify JSON at 10 to 20 GB/s
+
+
+---
+
+# Classifying characters
+
+- comma (0x2c) `,`
+- colon (0x3a) `:`
+- brackets (0x5b,0x5d, 0x7b, 0x7d): `[, ], {, }`
+- white-space (0x09, 0x0a, 0x0d, 0x20)
+- others
+
+
+---
+
+# Vectorized classification
+
+* Most SIMD ISAs support 'vectorized lookup tables' (at least 16-element)
+* If we had 256-element tables, we could do `H(c)`.
+* For 16-element tables, need two tables `H1`and `H2`.
+* Find two tables `H1` and `H2` such as the bitwise AND of the look classify the characters: `H1(low(& 0xf) & H2(c >> 4)`
+
+---
+
+```C
+low_nibble_mask = {16, 0, 0, 0, 0, 0, 0, 0, 0, 8, 12, 1, 2, 9, 0, 0};
+high_nibble_mask = {8, 0, 18, 4, 0, 1, 0, 1, 0, 0, 0, 3, 2, 1, 0, 0};
+```
+
+Five instructions:
+```C
+    nib_lo = input & 0xf;
+    nib_hi = input >> 4;
+    shuf_lo = lookup(low_nibble_mask, nib_lo);
+    shuf_hi = lookup(high_nibble_mask, nib_hi);
+    return shuf_lo & shuf_hi;
+```
+
+
+
+---
+
+
+- comma (0x2c): 1
+- colon (0x3a): 2
+- brackets (0x5b,0x5d, 0x7b, 0x7d): 4
+- most white-space (0x09, 0x0a, 0x0d): 8
+- white space (0x20): 16
+- others: 0
 
 
 
@@ -217,58 +269,11 @@ if (!needs_escape)
 
 ---
 
-## <!--fit--> Example 2. Classifying characters
-
-- comma (0x2c) `,`
-- colon (0x3a) `:`
-- brackets (0x5b,0x5d, 0x7b, 0x7d): `[, ], {, }`
-- white-space (0x09, 0x0a, 0x0d, 0x20)
-- others
-
-
----
-
-# Vectorized classification
-
-- Most SIMD ISAs support 'vectorized lookup tables' (at least 16-element)
-- Find two tables `H1` and `H2` such as the bitwise AND of the look classify the characters: `H1(low(& 0xf) & H2(c >> 4)`
-
----
-
-```C
-low_nibble_mask = {16, 0, 0, 0, 0, 0, 0, 0, 0, 8, 12, 1, 2, 9, 0, 0};
-high_nibble_mask = {8, 0, 18, 4, 0, 1, 0, 1, 0, 0, 0, 3, 2, 1, 0, 0};
-```
-
-Five instructions:
-```C
-    nib_lo = input & 0xf;
-    nib_hi = input >> 4;
-    shuf_lo = lookup(low_nibble_mask, nib_lo);
-    shuf_hi = lookup(high_nibble_mask, nib_hi);
-    return shuf_lo & shuf_hi;
-```
-
-
-
----
-
-
-- comma (0x2c): 1
-- colon (0x3a): 2
-- brackets (0x5b,0x5d, 0x7b, 0x7d): 4
-- most white-space (0x09, 0x0a, 0x0d): 8
-- white space (0x20): 16
-- others: 0
-
-
----
-
 ![bg right 90%](simdutf.png)
 
-- Part of Safari, Chrome, and most browsers
-- Process Unicode and Base64 formats at gigabytes per second
-- Support LoongArch, x64, ARM, POWER, RISC-V
+* Part of Safari, Chrome, and most browsers
+* Process Unicode and Base64 formats at gigabytes per second
+* Support LoongArch, x64, ARM, POWER, RISC-V
 
 ---
 
@@ -386,6 +391,12 @@ Test in your browser at https://simdutf.github.io/browserbase64/
 - simdjson and simdutf are community efforts (Geoff Langdale, John Keiser, Paul Dreik, Yagiz Nizipli and others)
 
 ---
+
+---
+
+
+---
+
 
 # Measurements
 
