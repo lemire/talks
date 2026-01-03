@@ -1,0 +1,13 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="white"/>
+
+<text x="300" y="30" text-anchor="middle" font-size="16">Performance (GB/s)</text>
+<text x="300" y="380" text-anchor="middle" font-size="14">Implementation</text>
+<rect x="25" y="317.0" width="150" height="33.00000000000001" fill="#1f77b4"/>
+<text x="100" y="307.0" text-anchor="middle" font-size="14">2.2</text>
+<text x="100" y="370" text-anchor="middle" font-size="14">scalar</text>
+<rect x="225" y="66.5" width="150" height="283.5" fill="#1f77b4"/>
+<text x="300" y="56.5" text-anchor="middle" font-size="14">18.9</text>
+<text x="300" y="370" text-anchor="middle" font-size="14">ARM NEON</text>
+</svg>
+
