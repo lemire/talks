@@ -60,8 +60,8 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ![bg right width:90%](sandisk2025.png)
 
-- Sony PlayStation 5 (2020): 5&nbsp;GB/s
-- Sony PlayStation 6 (2027): 15&nbsp;GB/s (?)
+* Sony PlayStation 5 (2020): 5&nbsp;GB/s
+* Sony PlayStation 6 (2027): 15&nbsp;GB/s (?)
 
 
 
@@ -91,9 +91,9 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ![bg right width:95%](openbench.png)
 
-- openbenchmarking.org
-- 14 GB/s, less than 5.7 GHz
-- Parsing JSON at better than 2.5&nbsp;bytes per cycle
+* openbenchmarking.org
+* 14 GB/s, less than 5.7 GHz
+* Parsing JSON at better than 2.5&nbsp;bytes per cycle
 
 ---
 
@@ -127,13 +127,11 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ---
 
-# Usage
+# You are probably using simdjson
 
-**You are probably using simdjson:**
-
-- Node.js, Electron,...
-- ClickHouse
-- WatermelonDB, Apache Doris, Meta Velox, Milvus,  QuestDB,  StarRocks
+* Node.js, Electron,...
+* ClickHouse
+* WatermelonDB, Apache Doris, Meta Velox, Milvus,  QuestDB,  StarRocks
 
 <img src="images/nodejs.jpg" width="20%"> <img src="images/clickhouse.jpg" width="20%">
 
