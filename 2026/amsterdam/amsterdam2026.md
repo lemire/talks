@@ -121,11 +121,10 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ---
 
+
 ![bg right 90%](images/simdjsondesign.png)
 
 
-
----
 
 # You are probably using simdjson
 
@@ -133,9 +132,9 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 * ClickHouse
 * WatermelonDB, Apache Doris, Meta Velox, Milvus,  QuestDB,  StarRocks
 
-<img src="images/nodejs.jpg" width="20%"> <img src="images/clickhouse.jpg" width="20%">
+<img src="images/nodejs.jpg" width="40%"> <img src="images/clickhouse.jpg" width="40%">
 
-
+---
 
 # simdjson: Design
 
@@ -195,6 +194,14 @@ Five instructions:
 - white space (0x20): 16
 - others: 0
 
+---
+
+
+# Deserialization (Apple Silicon)
+
+
+<img src="images/perf_with_simdjson_parsing.png" width="80%"/>
+
 
 
 ---
@@ -253,14 +260,6 @@ auto needs_escape = check_all_conditions_parallel(chunk);
 if (!needs_escape)
     return false;  // Fast path!
 ```
-
----
-
-
-# Deserialization (Apple Silicon)
-
-
-<img src="images/perf_with_simdjson_parsing.png" width="80%"/>
 
 
 
@@ -345,9 +344,19 @@ PROCEDURE validate_utf16(code_units)
 
 ---
 
+# Example
+
+- `text = "Hello, World!"`
+
+```
+SGVsbG8sIFdvcmxkIQ==
+```
+
+---
+
 # New JavaScript functions
 
-```javasript
+```javascript
 const b64 = Uint8Array.toBase64(bytes);      // string          
 const recovered = Uint8Array.fromBase64(b64); // Uint8Array, matches original 'bytes'
 ```
@@ -361,13 +370,24 @@ const recovered = Uint8Array.fromBase64(b64); // Uint8Array, matches original 'b
 
 # Result in the browser (Safari, Apple M4)
 
-```
-Uint8Array.fromBase64()          0.00292 ms (±0.88%) → 10716.22 MiB/s
-Uint8Array.fromBase64() (line breaks) 0.00499 ms (±41.96%) → 6266.53 MiB/s
-Uint8Array.toBase64()            0.00154 ms (±1.19%) → 20247.26 MiB/s
-```
+
+| function  | speed |
+|-----------|-------|
+| `Uint8Array.fromBase64()` | 11 GiB/s |
+| `Uint8Array.toBase64()` | 20 GiB/s |
+
 
 Test in your browser at https://simdutf.github.io/browserbase64/ 
+
+
+---
+![bg right 105%](avx512encoding.png)
+
+
+
+# AVX-512 base64 encoding/decoding
+
+- Encoding a 64-byte block requires only two non-memory instructions `vpermb` (twice) and `vpmultishiftqb`.
 
 ---
 
