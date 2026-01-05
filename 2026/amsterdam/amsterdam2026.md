@@ -86,6 +86,40 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 * One byte per cycle: 4 GB/s
 *  **Easily CPU bound**
 
+
+---
+
+![bg right 95%](images/alice.png)
+
+
+# JSON
+
+* Portable, simple
+* Used by ~97% of API requests. [Landscape of API Traffic 2021 - Cloudflare](https://blog.cloudflare.com/landscape-of-api-traffic/#:~:text=We%20begin%20by%20examining%20the,first%20week%20of%20February%202021)
+* scalar values
+  * strings (must be escaped)
+  * numbers (but not `NaN` or `Inf`)
+* composed values
+  * objects (key/value)
+  * arrays (list)
+
+
+
+
+---
+
+# JSON Downside?
+
+Reading and writing JSON can be *slow*. E.g., 100 MB/s to 300 MB/s.
+
+- Slower than fast disks or fast networks
+
+```bash
+$ go run parse_twitter.go
+Parsed 0.63 GB in 6.961 seconds (90.72 MB/s)
+```
+
+
 ---
 
 
@@ -122,6 +156,21 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 ---
 
 
+
+![bg right](images/avx.jpeg)
+
+
+# SIMD Support in simdjson
+
+* x64: SSSE3 (128-bit), AVX-2 (256-bit), AVX-512 (512-bit)
+* ARM NEON
+* POWER (PPC64)
+* Loongson: LSX (128-bit) and LASX (256-bit)
+* RISC-V: *upcoming*
+
+
+---
+
 ![bg right 90%](images/simdjsondesign.png)
 
 
@@ -145,6 +194,41 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 * Allows fast skipping. (Only parse what we need)
 * Can minify JSON at 10 to 20 GB/s
 
+
+---
+
+# C++26 (compile-time reflection)
+
+<img src="images/tofrom.svg" width="100%">
+
+
+---
+
+# Automatic Deserialization (C++26)
+
+```cpp
+struct Player {
+    \\ ....
+}
+
+// Deserialization - one line!
+Player load_player(std::string& json_str) {
+    return simdjson::from(json_str);  // That's it!
+}
+```
+
+
+---
+
+# Automatic Serialization  (C++26)
+
+```cpp
+// Serialization - one line!
+void save_player(const Player& p) {
+    std::string json = simdjson::to_json(p);  // That's it!
+    // Save json to file...
+}
+```
 
 ---
 
@@ -203,12 +287,6 @@ Five instructions:
 <img src="images/perf_with_simdjson_parsing.png" width="80%"/>
 
 
-
----
-
-# C++26 (compile-time reflection)
-
-<img src="images/tofrom.svg" width="100%">
 
 ---
 
@@ -312,6 +390,15 @@ PROCEDURE validate_utf16(code_units)
     RETURN true
 ```
 
+---
+
+# toWellFormed()
+
+```javascript
+const str = "ab\uD800";
+console.log(str.toWellFormed());
+// "ab�"
+```
 
 ---
 
@@ -333,6 +420,18 @@ PROCEDURE validate_utf16(code_units)
 | GB/s          | 2.2         | 18.9        |
 | ins/byte      | 12.0        | 0.9         |
 
+
+---
+
+# In Browser (Apple M4)
+
+- Chromium : 16 GB/s (**uses our new function**)
+- Firefox : 3.4 GB/s
+- Safari : 1.2 GB/s
+
+
+
+https://lemire.github.io/browserwellformed/
 
 ---
 
