@@ -1,0 +1,3 @@
+Tokenmaxxing
+
+Daniel Lemire, "Can your AI rewrite your code in assembly?," in Daniel Lemire's blog, April 5, 2026, https://lemire.me/blog/2026/04/05/can-your-ai-rewrite-your-code-in-assembly/.
