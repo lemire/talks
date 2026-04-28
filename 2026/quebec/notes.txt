@@ -5,3 +5,9 @@ Daniel Lemire, "Can your AI rewrite your code in assembly?," in Daniel Lemire's 
 AI skills
 
 autoresearch
+
+mcp 
+
+code from iphone
+
+git worktree
