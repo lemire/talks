@@ -8,16 +8,35 @@ _paginate: false
 inlineSVG: true
 ---
 
+
 ## <!--fit--> La prochaine frontière : IA et code
 
-Christian Jauvin
+Christian Jauvin, professeur
 Daniel Lemire, professeur
 Université du Québec (TÉLUQ)
 Montréal :canada:
 
-blog: https://lemire.me
-X: [@lemire](https://x.com/lemire)
-GitHub: [https://github.com/lemire/](https://github.com/lemire/)
+blogs: https://cjauvin.github.io  https://lemire.me
+
+X: [@ChristianJauvin](https://x.com/ChristianJauvin)  [@lemire](https://x.com/lemire)
+GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github.com/lemire/](https://github.com/lemire/)
+
+
+
+ reordered so each one builds on the last:
+
+MCP — The foundation. Before agents can do anything interesting, they need a standard way to talk to tools and data. Start here because everything downstream assumes the model can reach outside itself.
+
+Google Calendar, Drive, Slack, GitHub, Git, Postgres,
+
+Hooks
+
+AI Skills — Now that the model can call tools, how do you package capabilities so it knows when and how to use them? Skills are the layer above raw tool access — instructions, examples, and scaffolding that turn a tool into a reliable behavior.
+Language Servers — A concrete, killer example of skill-shaped tool integration: give the agent the same code intelligence your IDE has. This makes the abstract idea of "good tooling" visceral — go-to-definition, type info, diagnostics, all available to the model.
+Hooks — Once your agent is doing real work, you need control. Hooks are how you intercept, validate, log, or block agent behavior at runtime. This is the discipline layer — the move from "it works on my machine" to "it works in production."
+Git worktrees — With a controlled single agent working well, the next question is parallelism. Worktrees let one agent (or many) operate on isolated branches simultaneously without stepping on each other. The infrastructure prerequisite for what comes next.
+Subagents / agent orchestration — Now spawn them. A primary agent delegates specialized work to children — research, refactoring, testing — each in its own context and (often) its own worktree. This is where the earlier pieces compound.
+Autoresearch — The capstone. An agent that plans, spawns subagents, uses MCP-connected tools and skills, runs in worktrees, is governed by hooks, and goes off for hours to investigate something. Every prior topic shows up here.
 
 ---
 

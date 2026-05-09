@@ -1,0 +1,13 @@
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Software Box -->
+  <rect x="20" y="30" width="80" height="40" fill="#4CAF50" stroke="#000" stroke-width="2"/>
+  <text x="30" y="55" font-family="Arial" font-size="14" fill="#fff">Software</text>
+  
+  <!-- Memory Box -->
+  <rect x="200" y="30" width="80" height="40" fill="#2196F3" stroke="#000" stroke-width="2"/>
+  <text x="210" y="55" font-family="Arial" font-size="14" fill="#fff">Memory</text>
+  
+  <!-- Arrow -->
+  <line x1="100" y1="50" x2="200" y2="50" stroke="#000" stroke-width="2"/>
+  <polygon points="200,50 190,45 190,55" fill="#000"/>
+</svg>
