@@ -1,0 +1,20 @@
+<svg width="620" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="620" height="400" fill="#f5f5f5"/>
+  <text x="300" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">PCI Express Bandwidth Comparison</text>
+  <!-- PCIe 4.0 -->
+  <rect x="50" y="311" width="100" height="39" fill="#4CAF50"/>
+  <text x="100" y="291" text-anchor="middle" font-family="Arial" font-size="16">PCIe 4.0 (2011)</text>
+  <text x="100" y="336" text-anchor="middle" font-family="Arial" font-size="16">31.5 GB/s</text>
+  <!-- PCIe 5.0 -->
+  <rect x="200" y="272" width="100" height="78" fill="#2196F3"/>
+  <text x="250" y="252" text-anchor="middle" font-family="Arial" font-size="16">PCIe 5.0 (2017)</text>
+  <text x="250" y="297" text-anchor="middle" font-family="Arial" font-size="16">63 GB/s</text>
+  <!-- PCIe 6.0 -->
+  <rect x="350" y="191" width="100" height="159" fill="#FFC107"/>
+  <text x="400" y="171" text-anchor="middle" font-family="Arial" font-size="16">PCIe 6.0 (2019)</text>
+  <text x="400" y="216" text-anchor="middle" font-family="Arial" font-size="16">128 GB/s</text>
+  <!-- PCIe 7.0 -->
+  <rect x="500" y="50" width="100" height="300" fill="#F44336"/>
+  <text x="550" y="30" text-anchor="middle" font-family="Arial" font-size="16">PCIe 7.0 (2022)</text>
+  <text x="550" y="75" text-anchor="middle" font-family="Arial" font-size="16">242 GB/s</text>
+</svg>
