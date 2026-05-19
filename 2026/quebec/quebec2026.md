@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: base
-title: "La prochaine frontière : IA et code"
+title: La prochaine frontière : IA et code
 description: "Présentation sur l'impact de l'intelligence artificielle sur le développement logiciel, la génération de code, la performance et l'avenir de la profession de programmeur."
 paginate: true
 _paginate: false
@@ -41,11 +41,7 @@ GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github
 
 Nous pouvous définir une variable en Java ainsi.
 
-```java
-int x = 1;
-```
-
-Notez les différents éléments de la syntaxe.
+Notez les *différents* éléments de la syntaxe.
 
 - Type
 - Nom de variable
@@ -96,8 +92,11 @@ mkdir -p ~/.claude/skills/plotdata
 ```MarkDown
 ---
 name: data-plot
-description: Fetches data from the web (government sites, open data portals, etc.) and generates publication-quality matplotlib plots in both French and English. Use when the user asks to visualize, chart, plot, or graph data from an online source — especially statistics, government data, economic indicators, or any query that needs a downloaded dataset turned into a figure.
-allowed-tools: Bash(mkdir *) Bash(uv *) Bash(python3 *) Bash(curl *) Bash(wget *) Bash(ls *) Bash(cat *) Bash(cd *) WebFetch WebSearch Read Write Edit
+description: Fetches data from the web and generates
+ publication-quality matplotlib plots in both French and English.
+allowed-tools: Bash(mkdir *) Bash(uv *) Bash(python3 *) 
+  Bash(curl *) Bash(wget *) Bash(ls *) Bash(cat *) Bash(cd *) 
+  WebFetch WebSearch Read Write Edit
 argument-hint: [query describing the data to plot]
 ---
 ```
@@ -109,11 +108,12 @@ argument-hint: [query describing the data to plot]
 
 # Data Plot Skill
 
-Given a query, find reliable online data, download it, and produce bilingual (French/English) matplotlib plots.
+Given a query, find reliable online data, download it, and produce bilingual 
+(French/English) matplotlib plots.
 
 ## Working directory
 
-All output goes in `~/myplots/<slug>/` where `<slug>` is a short kebab-case name for the query.
+All output goes in `~/myplots/<slug>/` where `<slug>` is a short kebab-case name
 
 1. Ensure `~/myplots` exists (`mkdir -p ~/myplots`)
 2. Create the subdirectory for this query, e.g. `~/myplots/canada-population-2024/`
@@ -121,9 +121,9 @@ All output goes in `~/myplots/<slug>/` where `<slug>` is a short kebab-case name
 
 ## Data sourcing
 
-- Prefer official/government sources: Statistics Canada, Statistique Canada, data.gouv, U.S. Census, Eurostat, World Bank, OECD, etc.
+- Prefer official/government sources
 - Prefer machine-readable formats in this order: **CSV > JSON > HTML table**
-- Use WebSearch + WebFetch to locate the dataset URL. Verify the URL returns the expected format before scripting.
+- Use WebSearch + WebFetch to locate the dataset URL.
 - Record the exact source URL and access date for the README.
 
 ## Python environment
@@ -142,7 +142,8 @@ uv add pandas matplotlib requests
 # Utilisation
 
 ```
- /plotdata  I want the fertility rate per canadian province along with the percentage of woman in each  province with a university degree.
+ /plotdata  I want the fertility rate per canadian province along 
+  with the percentage of woman in each  province with a university degree.
 ````
 
 ---
@@ -155,10 +156,14 @@ uv add pandas matplotlib requests
 ---
 
 
-![](plot_sm.png)
-
+![bg_right](plot_sm.png)
 
 ---
+
+Rest is garbage -- stop here.
+
+---
+
 
  reordered so each one builds on the last:
 
@@ -166,10 +171,7 @@ MCP — The foundation. Before agents can do anything interesting, they need a s
 
 Google Calendar, Drive, Slack, GitHub, Git, Postgres,
 
-Hooks
 
-AI Skills — Now that the model can call tools, how do you package capabilities so it knows when and how to use them? Skills are the layer above raw tool access — instructions, examples, and scaffolding that turn a tool into a reliable behavior.
-Language Servers — A concrete, killer example of skill-shaped tool integration: give the agent the same code intelligence your IDE has. This makes the abstract idea of "good tooling" visceral — go-to-definition, type info, diagnostics, all available to the model.
 Hooks — Once your agent is doing real work, you need control. Hooks are how you intercept, validate, log, or block agent behavior at runtime. This is the discipline layer — the move from "it works on my machine" to "it works in production."
 Git worktrees — With a controlled single agent working well, the next question is parallelism. Worktrees let one agent (or many) operate on isolated branches simultaneously without stepping on each other. The infrastructure prerequisite for what comes next.
 Subagents / agent orchestration — Now spawn them. A primary agent delegates specialized work to children — research, refactoring, testing — each in its own context and (often) its own worktree. This is where the earlier pieces compound.
