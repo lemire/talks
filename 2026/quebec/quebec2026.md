@@ -22,6 +22,143 @@ X: [@ChristianJauvin](https://x.com/ChristianJauvin)  [@lemire](https://x.com/le
 GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github.com/lemire/](https://github.com/lemire/)
 
 
+---
+
+
+![](aiuse.png)
+
+---
+
+
+![](claude.png)
+
+---
+
+# MarkDown
+
+```markdown
+## Introduction à Java (exemple)
+
+Nous pouvous définir une variable en Java ainsi.
+
+```java
+int x = 1;
+```
+
+Notez les différents éléments de la syntaxe.
+
+- Type
+- Nom de variable
+- Assignation d'une valeur
+```
+
+
+---
+
+# Skills (compétences)
+
+
+- Un dossier réutilisable contenant un fichier `SKILL.md` 
+- Un mécanisme de chargement dynamique : l'IA ne charge que le nom et la description au démarrage
+- Un moyen de créer des agents spécialisés
+
+
+---
+
+# Exemple
+
+- Aller chercher des données officielles
+- Créer un graphique (`PNG`)
+- Anglais/Français
+
+
+---
+
+# Créer le dossier
+
+Le skill va se nommer `plotdata`.
+
+```
+mkdir -p ~/.claude/skills/plotdata
+```
+
+
+---
+
+# Créer le fichier
+
+```
+~/.claude/skills/plotdata/SKILL.md
+```
+
+---
+
+```MarkDown
+---
+name: data-plot
+description: Fetches data from the web (government sites, open data portals, etc.) and generates publication-quality matplotlib plots in both French and English. Use when the user asks to visualize, chart, plot, or graph data from an online source — especially statistics, government data, economic indicators, or any query that needs a downloaded dataset turned into a figure.
+allowed-tools: Bash(mkdir *) Bash(uv *) Bash(python3 *) Bash(curl *) Bash(wget *) Bash(ls *) Bash(cat *) Bash(cd *) WebFetch WebSearch Read Write Edit
+argument-hint: [query describing the data to plot]
+---
+```
+
+
+---
+
+```MarkDown
+
+# Data Plot Skill
+
+Given a query, find reliable online data, download it, and produce bilingual (French/English) matplotlib plots.
+
+## Working directory
+
+All output goes in `~/myplots/<slug>/` where `<slug>` is a short kebab-case name for the query.
+
+1. Ensure `~/myplots` exists (`mkdir -p ~/myplots`)
+2. Create the subdirectory for this query, e.g. `~/myplots/canada-population-2024/`
+3. All scripts, data, README, and PNGs go in that subdirectory
+
+## Data sourcing
+
+- Prefer official/government sources: Statistics Canada, Statistique Canada, data.gouv, U.S. Census, Eurostat, World Bank, OECD, etc.
+- Prefer machine-readable formats in this order: **CSV > JSON > HTML table**
+- Use WebSearch + WebFetch to locate the dataset URL. Verify the URL returns the expected format before scripting.
+- Record the exact source URL and access date for the README.
+
+## Python environment
+
+Always use `uv` for dependencies. Initialize the project in the subdirectory:
+
+```bash
+cd ~/myplots/<slug>
+uv init --no-readme --no-workspace
+uv add pandas matplotlib requests
+```
+
+
+---
+
+# Utilisation
+
+```
+ /plotdata  I want the fertility rate per canadian province along with the percentage of woman in each  province with a university degree.
+````
+
+---
+
+
+
+![](claudeplotresult.png)
+
+
+---
+
+
+![](plot_sm.png)
+
+
+---
 
  reordered so each one builds on the last:
 
