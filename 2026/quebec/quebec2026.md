@@ -155,8 +155,42 @@ uv add pandas matplotlib requests
 
 ---
 
+# Et voilà!
 
-![bg_right](plot_sm.png)
+- Rédige le skill une fois
+- Automatise la production de graphiques
+
+![bg right:40% contain](plot_sm.png)
+
+
+---
+
+```
+/plotdata fait un graphique qui donne l'âge moyen 
+par province au Canada, et ajoute l'âge moyen 
+aux États-Unis (comme onzième province).
+```
+
+![bg right:40% contain](plot_age.png)
+
+
+
+---
+
+# Permissions
+
+
+- `~/.claude/settings.json``
+
+```json
+{
+  "permissions": {
+    "allow": ["Read", "Write", "Edit", "Bash(git status)", "Bash(git commit -m:*)"],
+    "deny": ["Read(.env*)", "Bash(rm -rf /)", "Bash(sudo:*)"],
+    "ask": ["Bash(git push --force:*)", "Bash(docker run:*)"]
+  }
+}
+```
 
 ---
 
