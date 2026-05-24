@@ -27,6 +27,29 @@ GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github
 
 ![](aiuse.png)
 
+
+---
+
+![bg right:40% contain](andreesen.png)
+
+
+> Um, and so I I actually people talk about this concept called AGI, which means artificial general intelligence, which basically means an AI that's as smart as a person. And I actually think we crossed that about 3 months ago. (Andreesen, 19 mai 2026)
+
+
+
+---
+
+
+![bg right:40% contain](progress.png)
+
+
+---
+
+
+![bg right:40% contain](ranking.png)
+
+
+
 ---
 
 
@@ -191,6 +214,83 @@ aux États-Unis (comme onzième province).
   }
 }
 ```
+
+---
+
+# allow, deny, ask
+
+- `allow`: actions autorisées automatiquement (faible risque, frequentes).
+- `deny`: actions interdites en tout temps (secrets, operations destructives).
+- `ask`: actions sensibles qui exigent une confirmation explicite.
+
+
+
+---
+
+# MCP (Model Context Protocol)
+
+- Relie un LLM a des outils externes.
+- Il standardise l'acces aux outils.
+- Exemple: Git, Slack, Oracle,  PostgreSQL, SSH, Google Drive.
+
+
+---
+
+# Etendre des skills en securite
+
+- N'exposer que les actions strictement nécessaires dans le serveur MCP.
+- Traçabilite: journaliser les appels MCP et auditer regulierement.
+
+Exemple: pour un skill SSH/SFTP, on autorise lecture/ecriture dans un seul dossier et on place toute operation destructive en mode `ask`.
+
+
+---
+
+# Exemple de serveur MCP: server.py
+
+- Ce script démarre un serveur MCP nomme `ssh-files`.
+- Il lit `credentials.json` (host, username, remotedirectory) pour se connecter en SSH/SFTP.
+- Il expose des outils: `upload_file`, `download_file`, `list_files`, `make_dir`, `delete_file`, `delete_dir`.
+- Tous les chemins sont confinés à `remotedirectory` (protection contre la sortie de sandbox).
+- Il applique des garde-fous: verification des clés SSH.
+
+---
+
+```
+claude mcp add ssh-files server.py
+```
+
+
+---
+
+`claude mcp list`
+
+  - claude.ai Google Drive — needs authentication
+  - claude.ai Gmail — needs authentication
+  - claude.ai Google Calendar — needs authentication
+  - ssh-files (./ssh-mcp/server.py) — ✓ Connected
+
+
+---
+
+
+> Upload using the  ssh-files  MCP to a corresponding directory. And give me the URL. Create a nice index.html file.
+
+---
+
+
+```
+/data-plot Estimated market value of Anthropic, OpenAI and xAI.
+```
+
+---
+
+
+![bg right:40% contain](web.png)
+
+
+https://lemire.me/plot_data/ai-lab-valuations/
+
 
 ---
 
