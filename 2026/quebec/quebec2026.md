@@ -48,6 +48,18 @@ GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github
 
 ![bg right:40% contain](ranking.png)
 
+---
+
+
+![](copilot.png)
+
+
+
+
+---
+
+
+![](grok.png)
 
 
 ---
