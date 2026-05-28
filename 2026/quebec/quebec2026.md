@@ -332,6 +332,12 @@ https://lemire.me/trad4030/
 
 ![bg right:40% contain](nouveau.png)
 
+---
+
+# Organisation du travail
+
+- codeur/analyste
+- architecte/programmeur
 
 ---
 
