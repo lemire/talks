@@ -153,6 +153,102 @@ def upload_file(local_path: str, remote_path: str, overwrite: bool = True) -> st
     return f"Uploaded {local} -> {target} ({size} bytes)"
 
 
+def _ensure_remote_dir(sftp: paramiko.SFTPClient, target_dir: str, seen: set[str]) -> None:
+    """Create target_dir (and missing parents) inside the sandbox, once.
+
+    `seen` caches directories already known to exist for this session so a
+    batch of files sharing parents does not re-stat the same paths repeatedly.
+    """
+    if target_dir in seen or target_dir == SANDBOX_ROOT:
+        seen.add(target_dir)
+        return
+    parts = target_dir[len(SANDBOX_ROOT) + 1 :].split("/")
+    current = SANDBOX_ROOT
+    for part in parts:
+        if not part:
+            continue
+        current = posixpath.join(current, part)
+        if current in seen:
+            continue
+        try:
+            sftp.stat(current)
+        except FileNotFoundError:
+            sftp.mkdir(current)
+        seen.add(current)
+
+
+@mcp.tool()
+def upload_files(
+    files: list[dict[str, str]],
+    overwrite: bool = True,
+    make_parents: bool = True,
+) -> dict[str, Any]:
+    """Upload many files (hundreds) over a single reused SSH/SFTP session.
+
+    This is far faster than calling upload_file repeatedly, which reconnects
+    for every file. All transfers share one connection.
+
+    Args:
+        files: List of {"local_path": ..., "remote_path": ...} mappings. Each
+            remote_path is relative to the sandbox (or an absolute path inside
+            it). Paths are resolved and confined to the sandbox.
+        overwrite: If False, existing remote files are skipped (not an error).
+        make_parents: If True, create any missing parent directories.
+
+    Returns:
+        A summary with per-file results: counts of uploaded/skipped/failed and
+        a list of any failures with their error messages.
+    """
+    if not files:
+        return {"uploaded": 0, "skipped": 0, "failed": 0, "failures": [], "total": 0}
+
+    # Validate and resolve everything up front so a bad entry fails fast,
+    # before we open the connection.
+    resolved: list[tuple[Path, str]] = []
+    for i, entry in enumerate(files):
+        local_raw = entry.get("local_path")
+        remote_raw = entry.get("remote_path")
+        if not local_raw or not remote_raw:
+            raise ValueError(
+                f"files[{i}] must have both 'local_path' and 'remote_path'"
+            )
+        local = Path(local_raw).expanduser()
+        if not local.is_file():
+            raise FileNotFoundError(f"Local file does not exist: {local}")
+        resolved.append((local, _resolve(remote_raw)))
+
+    uploaded = 0
+    skipped = 0
+    failures: list[dict[str, str]] = []
+    seen_dirs: set[str] = set()
+
+    with _Session() as sftp:
+        for local, target in resolved:
+            try:
+                if not overwrite:
+                    try:
+                        sftp.stat(target)
+                    except FileNotFoundError:
+                        pass
+                    else:
+                        skipped += 1
+                        continue
+                if make_parents:
+                    _ensure_remote_dir(sftp, posixpath.dirname(target), seen_dirs)
+                sftp.put(str(local), target)
+                uploaded += 1
+            except Exception as exc:  # noqa: BLE001 - report, keep going
+                failures.append({"local_path": str(local), "error": str(exc)})
+
+    return {
+        "total": len(resolved),
+        "uploaded": uploaded,
+        "skipped": skipped,
+        "failed": len(failures),
+        "failures": failures,
+    }
+
+
 @mcp.tool()
 def download_file(remote_path: str, local_path: str, overwrite: bool = True) -> str:
     """Download a file from inside the sandbox to local disk.
