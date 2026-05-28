@@ -50,6 +50,16 @@ GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github
 
 ---
 
+# Agentic AI
+
+
+- Comprendre des objectifs
+- Les décomposer en étapes
+- Utiliser des outils (recherche web, exécution de code, APIs, etc.)
+- Itérer et s’adapter en fonction des résultats
+
+---
+
 
 ![](copilot.png)
 
@@ -269,7 +279,7 @@ Exemple: pour un skill SSH/SFTP, on autorise lecture/ecriture dans un seul dossi
 ---
 
 ```
-claude mcp add ssh-files server.py
+claude mcp add ssh-files server.py  --scope user 
 ```
 
 
@@ -302,6 +312,25 @@ claude mcp add ssh-files server.py
 
 
 https://lemire.me/plot_data/ai-lab-valuations/
+
+
+---
+
+Bonjour Claude,
+Dans le dossier "TRA 4030", tu vas trouver des documents word (docx) représentant le contenu du cours TRA 4030 dans son état actuel.
+Je veux que tu me fasses un site web moderne (dans le dossier html) avec une version moderne du cours. Tu vas copier le contenu du cours vers mon site à https://lemire.me/trad4030/
+La TÉLUQ a l'habitude de diviser un cours en modules. Dans chaque module, il y a des sections courantes comme "démarrer, s'informer, etc.". Je t'invite à explorer le contenu du site https://m2.teluq.ca/course/view.php?id=3274
+Essaie de copier le style du site.
+N'oublie pas d'inclure une feuille de route. Le cours dure 15 semaines.
+
+![bg right:40% contain](vieux.png)
+
+
+---
+
+https://lemire.me/trad4030/
+
+![bg right:40% contain](nouveau.png)
 
 
 ---
