@@ -36,6 +36,50 @@ GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github
 > Um, and so I I actually people talk about this concept called AGI, which means artificial general intelligence, which basically means an AI that's as smart as a person. And I actually think we crossed that about 3 months ago. (Andreesen, 19 mai 2026)
 
 
+---
+
+# Big AI
+
+
+- xAI 2023
+- Anthropic 2021
+- OpenAI 2019 (for profit)
+
+---
+
+
+| Company            | Valuation        || Date              |
+|--------------------|--------------------|-------------------|
+| **Bombardier**    | $21 billion**   | May 2026         |
+| **Quebecor**      | $9.5–11 billion | May 2026         |
+
+---
+
+| Company            | Valuation              | Type                     | Date              |
+|--------------------|------------------------|--------------------------|-------------------|
+| **Intel**         | **$608 billion**      | Public market cap       | May 2026         |
+| **Oracle**        | **$580–630 billion**  | Public market cap       | May 2026         |
+| **Bombardier**    | $21–22 billion        | Public market cap       | May 2026         |
+| **Manulife**      | $64 billion           | Public market cap       | May 2026         |
+| **Quebecor**      | $10–11 billion        | Public market cap       | May 2026         |
+
+
+- Canadians corps (minus banks) : $2600 billion
+
+---
+
+| Company            | Valuation        || Date              |
+|--------------------|--------------------|-------------------|
+| **xAI**           | $250 billion      | Feb 2026         |
+| **OpenAI**        | $852 billion      | Mar 2026         |
+| **Anthropic**     | $965 billion      | May 2026         |
+| **Bombardier**    | $21 billion   | May 2026         |
+
+
+
+---
+
+![](revenu.png)
 
 ---
 
