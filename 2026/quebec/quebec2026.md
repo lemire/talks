@@ -30,7 +30,7 @@ section {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 25px;
+  font-size: 28px;
   line-height: 1.5;
   letter-spacing: .005em;
   padding: 70px 80px 64px;
@@ -102,7 +102,7 @@ section table thead th {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .06em;
-  font-size: .72em;
+  font-size: .8em;
   color: var(--muted);
   border-bottom: 2px solid var(--ink) !important;
   text-align: left;
@@ -150,14 +150,17 @@ pre {
   border: 1px solid var(--rule);
   border-radius: 12px;
   padding: .9em 1.15em;
-  font-size: .66em;
+  font-size: .74em;
   line-height: 1.55;
   box-shadow: 0 8px 24px rgba(28, 28, 40, .07);
 }
 pre code { color: var(--ink); background: none; }
+/* larger code for short command/prompt slides */
+section.prompt pre { font-size: 1.02em; line-height: 1.6; }
 
 /* ---------- figures (exclude inline emoji) ---------- */
-section img:not(.emoji) {
+section img:not(.emoji),
+section video {
   display: block;
   margin: 0 auto;
   max-height: 80%;
@@ -169,18 +172,22 @@ section img.emoji {
   box-shadow: none;
   border-radius: 0;
 }
+section video {
+  max-height: 68%;
+  max-width: 80%;
+}
 
 /* ---------- footer & pagination ---------- */
 footer {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: .04em;
   color: var(--muted);
   opacity: .9;
 }
 section::after {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
 }
 
@@ -232,14 +239,7 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
-# D'où je viens
-
-- Créateur de bibliothèques haute performance largement utilisées (intégrées dans de grands navigateurs) 
-- A contribué à plusieurs librairies standards dont Go et C#.
-- Classé parmi les 2 % de scientifiques les plus cités au monde (classement Stanford/Elsevier), avec plus de 100 articles évalués par les pairs.
-- Parmi les 1000 développeurs les plus suivis sur GitHub.
-- Contributeur au noyau de Node.js, notamment en revue de code C++ et l'amélioration des performances.
-
+<video src="iannick.mp4" width="50%" autoplay muted loop playsinline controls></video>
 
 ---
 
@@ -284,31 +284,42 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 | Manuvie | 64 milliards $ | Capitalisation boursière | mai 2026 |
 | Quebecor | 10 à 11 milliards $ | Capitalisation boursière | mai 2026 |
 
-- Entreprises canadiennes (hors banques) : 2600 milliards $
 
 ---
 
-| Entreprise | Valorisation | Date |
-|---|---:|---|
-| xAI | 250 milliards $ | fév. 2026 |
-| OpenAI | 852 milliards $ | mars 2026 |
-| Anthropic | 965 milliards $ | mai 2026 |
-| Bombardier | 21 milliards $ | mai 2026 |
+| Entreprise | date de fondation | Valorisation | Date |
+|---|---:|---:|---|
+| xAI | 2023 | 250 milliards $ | fév. 2026 |
+| OpenAI | 2021 |  852 milliards $ | mars 2026 |
+| Anthropic | 2019 | 965 milliards $ | mai 2026 |
+| Somme | | 2067 milliards $ | mai 2026 |
+
+
+- Entreprises canadiennes (hors banques) : 2600 milliards $
 
 ---
 
 ![](revenu.png)
 
----
-
-![bg right:40% contain](progress.png)
-
 
 ---
 
-![bg right:40% contain](ranking.png)
+
+## GitHub Copilot
+
+![](copilot.png)
+
 
 ---
+
+## GitHub Copilot + Visual Studio Code
+
+- Suggestion de code en contexte (2024!!!)
+- Génération de fonctions complètes
+- Chat intégré dans l’IDE
+
+---
+
 
 # IA agentique
 
@@ -319,16 +330,30 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
-![](copilot.png)
+# Ligne de commandes
+
+
+- Elle est textuelle et déterministe
+- Elle expose des outils puissants et composables (git, curl, jq, grep, find, awk, etc.)
+- Elle permet l’exécution directe de code et de scripts
+- Elle est facilement scriptable et observable
+
 
 ---
 
-![](grok.png)
+# Git
+
+
+
+- Branchement rapide : `git checkout -b feature/ia-agent` ou `git switch -c`, git worktrees
+- Itération sans peur : commits atomiques + git reset
+- Revue et validation : git diff, git log, git blame
+- Sauvegarde d’états : possibilité de revenir en arrière facilement si l’agent part dans une mauvaise direction
 
 
 ---
 
-![](claude.png)
+<img src="plan.svg" width="70%" alt="Plan">
 
 ---
 
@@ -346,6 +371,33 @@ Notez les différents éléments de la syntaxe.
 - Affectation d'une valeur
 ```
 
+
+
+---
+
+## Grok Build
+
+
+![](grok.png)
+
+
+---
+
+## Claude Code
+
+![](claude.png)
+
+---
+
+# Agentique : Pas seulement pour les programmeurs
+
+
+
+- Préparer une réunion stratégique avec 
+  - ordre du jour, 
+  - données et scénarios, 
+  - consultation des agendas, 
+  - échanges par courriel
 
 ---
 
@@ -460,13 +512,15 @@ ayant un diplôme universitaire.
 
 ---
 
+<!-- _class: prompt -->
+
 ```text
 /plotdata Fais un graphique qui donne l'âge moyen
 par province au Canada, et ajoute l'âge moyen
 des États-Unis (comme onzième province).
 ```
 
-![bg right:40% contain](plot_age.png)
+![bg right:45% contain](plot_age.png)
 
 ---
 
@@ -553,10 +607,15 @@ claude mcp list
 
 ---
 
-![bg right:40% contain](web.png)
+![bg right:60% contain](web.png)
 
 
 https://lemire.me/plot_data/ai-lab-valuations/
+
+
+---
+
+# Réviser un vieux cours
 
 
 ---
@@ -575,7 +634,12 @@ N'oublie pas d'inclure une feuille de route. Le cours dure 15 semaines.
 
 https://lemire.me/trad4030/
 
-![bg right:40% contain](nouveau.png)
+![bg right:60% contain](nouveau.png)
+
+
+---
+
+# Créer une nouvelle application web à une journée
 
 
 ---
@@ -594,7 +658,7 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ---
 
-# Vendredi 8 mai 2026
+
 
 ## 8 h 25
 
@@ -603,7 +667,6 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ---
 
-# Vendredi 8 mai 2026
 
 ## 8 h 45
 
@@ -621,15 +684,34 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ---
 
-<https://encrerouge.ink>
+<https://encrerouge.ink> ![bg right:60% contain](pdt.png)
+
 
 
 ---
 
-# Organisation du travail
+# Organisation du travail désuette
 
-- Codeur-analyste
-- Architecte-programmeur
+
+
+---
+
+
+![](pucodeur.png)
+
+
+
+---
+
+
+
+![](outil.png)
+
+
+
+---
+
+<video src="avocat.mp4" width="50%" autoplay muted loop playsinline controls></video>
 
 ---
 
