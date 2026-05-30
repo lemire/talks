@@ -623,7 +623,7 @@ https://lemire.me/plot_data/ai-lab-valuations/
 Bonjour Claude,
 Dans le dossier TRA 4030, tu vas trouver des documents Word (docx) représentant le contenu du cours TRA 4030 dans son état actuel.
 Je veux que tu me fasses un site web moderne (dans le dossier html) avec une version modernisée du cours. Tu vas copier le contenu du cours vers mon site à https://lemire.me/trad4030/
-La TÉLUQ a l'habitude de diviser un cours en modules. Dans chaque module, il y a des sections courantes comme démarrer, s'informer, etc. Je t'invite à explorer le contenu du site https://m2.teluq.ca/course/view.php?id=3274
+Je t'invite à explorer le contenu du site https://m2.teluq.ca/course/view.php?id=3274
 Essaie de copier le style du site.
 N'oublie pas d'inclure une feuille de route. Le cours dure 15 semaines.
 
