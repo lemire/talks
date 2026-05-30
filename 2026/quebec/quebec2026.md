@@ -25,7 +25,20 @@ GitHub: [https://github.com/cjauvin](https://github.com/cjauvin) [https://github
 ---
 
 
-![](aiuse.png)
+<!-- ![](aiuse.png) -->
+
+
+---
+
+
+![](sota_frontier.png)
+
+
+---
+
+
+
+![](sota_frontier_open.png)
 
 
 ---

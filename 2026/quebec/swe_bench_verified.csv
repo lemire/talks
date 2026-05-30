@@ -1,0 +1,51 @@
+model,release_date,date_confidence,type,swe_bench_verified_pct
+Claude Mythos Preview (not public),2026-04-07,confirmed,closed,93.9
+GPT-5.5,2026-04-23,confirmed,closed,88.7
+Claude Opus 4.8,2026-05-28,confirmed,closed,88.6
+Claude Opus 4.7 (Adaptive),2026-04-16,confirmed,closed,87.6
+GPT-5.3 Codex,2026-02-05,confirmed,closed,85.0
+Claude Opus 4.5,2025-11-24,confirmed,closed,80.9
+Claude Opus 4.6,2026-02-05,confirmed,closed,80.8
+DeepSeek V4 Pro (Max),2026-04-24,confirmed,open,80.6
+Gemini 3.1 Pro,2026-02-19,confirmed,closed,80.6
+Qwen3.7 Max,2026-05-15,approximate,closed,80.4
+Kimi K2.6,2026-04-20,approximate,open,80.2
+GPT-5.2,2025-12-11,confirmed,closed,80.0
+Claude Sonnet 4.6,2026-02-17,confirmed,closed,79.6
+DeepSeek V4 Pro (High),2026-04-24,confirmed,open,79.4
+DeepSeek V4 Flash (Max),2026-04-24,confirmed,open,79.0
+Qwen3.6 Plus,2026-03-30,confirmed,closed,78.8
+DeepSeek V4 Flash (High),2026-04-24,confirmed,open,78.6
+MiMo-V2-Pro,2026-04-10,approximate,closed,78.0
+GLM-5,2026-03-15,approximate,open,77.8
+Mistral Medium 3.5 128B,2026-03-15,approximate,open,77.6
+Muse Spark,2026-04-08,confirmed,closed,77.4
+Qwen3.6-27B,2026-04-22,confirmed,open,77.2
+Claude Sonnet 4.5,2025-09-29,confirmed,closed,77.2
+Kimi K2.5 (Reasoning),2026-02-15,approximate,closed,76.8
+Kimi K2.5,2026-02-15,approximate,open,76.8
+Grok 4.20,2026-03-10,approximate,closed,76.7
+Qwen3.5 397B,2026-02-15,approximate,open,76.2
+MiMo-V2-Omni,2026-04-10,approximate,closed,74.8
+Laguna M.1,,unknown,closed,74.6
+Claude 4.1 Opus,2025-08-05,confirmed,closed,74.5
+Hy3 Preview,,unknown,open,74.4
+GLM-4.7,2026-01-20,approximate,open,73.8
+DeepSeek V4 Flash,2026-04-24,confirmed,open,73.7
+DeepSeek V4 Pro,2026-04-24,confirmed,open,73.6
+Qwen3.6-35B-A3B,2026-04-15,confirmed,open,73.4
+MiMo-V2-Flash,2026-04-10,approximate,open,73.4
+Claude Haiku 4.5,2025-10-15,confirmed,closed,73.3
+Claude 4 Sonnet,2025-05-22,confirmed,closed,72.7
+Qwen3.5-27B,2026-02-15,approximate,open,72.4
+Qwen3.5-122B-A10B,2026-02-15,approximate,open,72.0
+Grok Code Fast 1,2025-08-26,approximate,closed,70.8
+Laguna XS.2,,unknown,open,69.9
+Qwen3.5-35B-A3B,2026-02-15,approximate,open,69.2
+Gemini 2.5 Pro,2025-03-25,confirmed,closed,63.8
+GPT-4.1,2025-04-14,confirmed,closed,54.6
+ZAYA1-74B-Preview,,unknown,open,53.2
+o3-mini,2025-01-31,confirmed,closed,49.3
+Claude 3.5 Sonnet,2024-06-20,confirmed,closed,49.0
+DeepSeek V3,2024-12-26,confirmed,open,42.0
+GPT-4.1 mini,2025-04-14,confirmed,closed,23.6
