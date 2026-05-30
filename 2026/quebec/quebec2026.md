@@ -239,7 +239,15 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
-<video src="iannick.mp4" width="50%" autoplay muted loop playsinline controls></video>
+<video src="iannick.mp4" width="50%" playsinline controls preload="auto"></video>
+
+---
+
+![bg right:40% contain](andreesen.png)
+
+
+> En fait, on parle souvent de ce concept appelé AGI, pour intelligence artificielle générale, c'est-à-dire une IA aussi intelligente qu'une personne. Et je pense en réalité que nous avons franchi ce seuil il y a environ trois mois. (Andreesen, 19 mai 2026)
+
 
 ---
 
@@ -249,14 +257,6 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 ---
 
 ![](sota_frontier_open.png)
-
-
----
-
-![bg right:40% contain](andreesen.png)
-
-
-> En fait, on parle souvent de ce concept appelé AGI, pour intelligence artificielle générale, c'est-à-dire une IA aussi intelligente qu'une personne. Et je pense en réalité que nous avons franchi ce seuil il y a environ trois mois. (Andreesen, 19 mai 2026)
 
 
 ---
@@ -711,7 +711,7 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ---
 
-<video src="avocat.mp4" width="50%" autoplay muted loop playsinline controls></video>
+<video src="avocat.mp4" width="50%" playsinline controls preload="auto"></video>
 
 ---
 
