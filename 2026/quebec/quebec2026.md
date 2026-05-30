@@ -634,7 +634,7 @@ N'oublie pas d'inclure une feuille de route. Le cours dure 15 semaines.
 
 https://lemire.me/trad4030/
 
-![bg right:60% contain](nouveau.png)
+![bg right:55% contain](nouveau.png)
 
 
 ---
