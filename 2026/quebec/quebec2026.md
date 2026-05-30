@@ -4,7 +4,7 @@ theme: default
 title: La prochaine frontière : IA et code
 description: "Présentation sur l'impact de l'intelligence artificielle sur le développement logiciel, la génération de code, la performance et l'avenir de la profession de programmeur."
 paginate: true
-footer: "Daniel Lemire · lemire.me"
+footer: ""
 inlineSVG: true
 ---
 
