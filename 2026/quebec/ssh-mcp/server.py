@@ -249,6 +249,135 @@ def upload_files(
     }
 
 
+def _walk_remote_tree(
+    sftp: paramiko.SFTPClient, root: str
+) -> tuple[dict[str, paramiko.SFTPAttributes], list[str]]:
+    """Recursively inventory a remote directory inside the sandbox.
+
+    Returns a (files, dirs) pair where `files` maps each remote file path to
+    its attributes and `dirs` is the list of subdirectory paths. Both use
+    absolute remote paths. A missing root yields empty collections.
+    """
+    files: dict[str, paramiko.SFTPAttributes] = {}
+    dirs: list[str] = []
+    try:
+        entries = sftp.listdir_attr(root)
+    except FileNotFoundError:
+        return files, dirs
+    for entry in entries:
+        path = posixpath.join(root, entry.filename)
+        if stat.S_ISDIR(entry.st_mode or 0):
+            dirs.append(path)
+            sub_files, sub_dirs = _walk_remote_tree(sftp, path)
+            files.update(sub_files)
+            dirs.extend(sub_dirs)
+        else:
+            files[path] = entry
+    return files, dirs
+
+
+@mcp.tool()
+def sync_directory(
+    local_dir: str,
+    remote_dir: str = ".",
+    delete: bool = True,
+    dry_run: bool = False,
+) -> dict[str, Any]:
+    """Mirror a local directory tree onto the sandboxed remote directory.
+
+    This behaves like `rsync -a --delete`: every file under `local_dir` is
+    copied to the matching location under `remote_dir`, files whose size and
+    mtime already match are skipped, and (when `delete` is True) any remote
+    file or directory with no local counterpart is removed. All transfers
+    share a single SSH/SFTP session.
+
+    Args:
+        local_dir: Local source directory whose contents are mirrored.
+        remote_dir: Destination directory relative to the sandbox (or an
+            absolute path inside it). Defaults to the sandbox root.
+        delete: If True, delete remote files/dirs that are absent locally.
+        dry_run: If True, report the planned actions without changing anything.
+
+    Returns:
+        A summary with counts of uploaded/skipped/deleted entries plus the
+        explicit lists of paths uploaded and deleted.
+    """
+    local_root = Path(local_dir).expanduser()
+    if not local_root.is_dir():
+        raise NotADirectoryError(f"Local directory does not exist: {local_root}")
+    remote_root = _resolve(remote_dir)
+
+    # Inventory the local tree as remote-relative paths so we can diff it
+    # against whatever currently lives on the remote side.
+    local_files: dict[str, Path] = {}
+    local_dirs: set[str] = set()
+    for path in local_root.rglob("*"):
+        rel = path.relative_to(local_root).as_posix()
+        remote_path = posixpath.normpath(posixpath.join(remote_root, rel))
+        if path.is_dir():
+            local_dirs.add(remote_path)
+        elif path.is_file():
+            local_files[remote_path] = path
+
+    uploaded: list[str] = []
+    skipped = 0
+    deleted: list[str] = []
+    seen_dirs: set[str] = set()
+
+    with _Session() as sftp:
+        remote_files, remote_dirs = _walk_remote_tree(sftp, remote_root)
+
+        for remote_path, local_path in sorted(local_files.items()):
+            try:
+                attrs = remote_files[remote_path]
+                local_stat = local_path.stat()
+                unchanged = (
+                    attrs.st_size == local_stat.st_size
+                    and attrs.st_mtime is not None
+                    and int(attrs.st_mtime) == int(local_stat.st_mtime)
+                )
+            except KeyError:
+                unchanged = False
+            if unchanged:
+                skipped += 1
+                continue
+            if not dry_run:
+                _ensure_remote_dir(sftp, posixpath.dirname(remote_path), seen_dirs)
+                sftp.put(str(local_path), remote_path)
+                # Preserve mtime so future syncs can skip unchanged files.
+                st = local_path.stat()
+                sftp.utime(remote_path, (st.st_atime, st.st_mtime))
+            uploaded.append(remote_path)
+
+        if delete:
+            for remote_path in sorted(remote_files):
+                if remote_path not in local_files:
+                    if not dry_run:
+                        sftp.remove(remote_path)
+                    deleted.append(remote_path)
+            # Remove now-empty remote dirs, deepest first, that have no
+            # local counterpart.
+            for remote_path in sorted(remote_dirs, key=len, reverse=True):
+                if remote_path == remote_root or remote_path in local_dirs:
+                    continue
+                if not dry_run:
+                    try:
+                        sftp.rmdir(remote_path)
+                    except OSError:
+                        continue  # not empty / already gone; leave it be
+                deleted.append(remote_path)
+
+    return {
+        "remote_directory": remote_root,
+        "dry_run": dry_run,
+        "uploaded": len(uploaded),
+        "skipped": skipped,
+        "deleted": len(deleted),
+        "uploaded_paths": uploaded,
+        "deleted_paths": deleted,
+    }
+
+
 @mcp.tool()
 def download_file(remote_path: str, local_path: str, overwrite: bool = True) -> str:
     """Download a file from inside the sandbox to local disk.
