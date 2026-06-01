@@ -615,6 +615,12 @@ https://lemire.me/plot_data/ai-lab-valuations/
 
 ---
 
+
+<video src="lucie.mp4" width="50%" playsinline controls preload="auto"></video>
+
+
+---
+
 # Réviser un vieux cours
 
 
@@ -635,6 +641,12 @@ N'oublie pas d'inclure une feuille de route. Le cours dure 15 semaines.
 https://lemire.me/trad4030/
 
 ![bg right:55% contain](nouveau.png)
+
+
+---
+
+
+<video src="annemarie.mp4" width="50%" playsinline controls preload="auto"></video>
 
 
 ---
@@ -684,8 +696,16 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ---
 
+![](wassim.png)
+
+---
+
 <https://encrerouge.ink> ![bg right:60% contain](pdt.png)
 
+
+---
+
+<video src="carle.mp4" width="50%" playsinline controls preload="auto"></video>
 
 
 ---
@@ -708,6 +728,10 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 ![](outil.png)
 
 
+
+---
+
+# La mauvaise nouvelle...
 
 ---
 
