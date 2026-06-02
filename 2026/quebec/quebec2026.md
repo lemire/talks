@@ -303,6 +303,19 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 | **Total sources publiques**                       | **160 – 175 M$ CA**    |
 | Vente à ServiceNow (USA) | 230 millions US |
 
+
+---
+
+![bg right:60% contain](yoda.png)
+
+
+
+> « La peur est le chemin vers le côté obscur. »
+— Maître Yoda (Star Wars, L’Empire contre-attaque)
+
+
+
+
 ---
 
 
@@ -662,9 +675,22 @@ N'oublie pas d'inclure une feuille de route. Le cours dure 15 semaines.</small>
 <video src="annemarie.mp4" width="50%" playsinline controls preload="auto"></video>
 
 
+
+---
+
+![bg right:60% contain](resistance.jpg)
+
+
+
+> « La résistance est inutile. »
+— Jean-Luc Picard (Star Trek)
+
+
 ---
 
 # Créer une nouvelle application web à une journée
+
+
 
 
 ---
@@ -775,18 +801,22 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ---
 
-<video src="avocat.mp4" width="50%" playsinline controls preload="auto"></video>
+<video src="avocat.mp4" width="80%" playsinline controls preload="auto"></video>
+
 
 
 
 ---
 
-![bg right:60% contain](yoda.png)
+![bg right:45% contain](andor.png)
 
 
+>  Tu es devenu plus que ta peur. Laisse cela te protéger.
 
-> « La peur est le chemin vers le côté obscur. »
-— Maître Yoda (Star Wars, L’Empire contre-attaque)
+
+— Cassian Andor (Andor, 2e saison)
+
+
 
 
 ---
