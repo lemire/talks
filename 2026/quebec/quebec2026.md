@@ -711,6 +711,12 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ![](wassim.png)
 
+
+
+---
+
+![](seb.png)
+
 ---
 
 <iframe src="https://encrerouge.ink" width="100%" height="560" style="border:0; border-radius:6px;" loading="lazy"></iframe>
