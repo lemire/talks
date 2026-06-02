@@ -708,6 +708,20 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 <video src="carle.mp4" width="50%" playsinline controls preload="auto"></video>
 
 
+
+---
+
+# Optimisation du code
+
+![bg right:60% contain](pr.png)
+
+
+- Deux optimisations (10% chacune)
+- Librairie hyper optimisée (meilleure au monde)
+
+
+---
+
 ---
 
 # Organisation du travail désuette
