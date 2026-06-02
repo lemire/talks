@@ -267,23 +267,6 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 - Anthropic 2021
 - OpenAI 2019 (à but lucratif)
 
----
-
-| Entreprise | Valorisation | Date |
-|---|---:|---|
-| Bombardier | 21 milliards $ | mai 2026 |
-| Quebecor | 9,5 à 11 milliards $ | mai 2026 |
-
----
-
-| Entreprise | Valorisation | Type | Date |
-|---|---:|---|---|
-| Intel | 608 milliards $ | Capitalisation boursière | mai 2026 |
-| Oracle | 580 à 630 milliards $ | Capitalisation boursière | mai 2026 |
-| Bombardier | 21 à 22 milliards $ | Capitalisation boursière | mai 2026 |
-| Manuvie | 64 milliards $ | Capitalisation boursière | mai 2026 |
-| Quebecor | 10 à 11 milliards $ | Capitalisation boursière | mai 2026 |
-
 
 ---
 
@@ -299,8 +282,30 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
-![](revenu.png)
+| Période              | Run rate de revenu annualisé | Source / Notes |
+|----------------------|------------------------------|----------------|
+| Fin 2025            | ~9 milliards USD            |  |
+| Février 2026        | 14 milliards USD            | levée de fonds Series G |
+| Mars 2026           | ~19 milliards USD           | Bloomberg |
+| Avril 2026          | 30 milliards USD            | Annonce officielle d’Anthropic |
+| **Mai 2026**        | **47 milliards USD**        | Annonce Anthropic (levée de fonds Series&nbsp;H, 29 mai 2026) |
 
+---
+
+# Pendant Québécois (Bengio/ElementAI)
+
+---
+
+![](bengio.png)
+
+
+---
+
+| Institution / Source                              | Montant estimé          | Date / Ronde       |
+|---------------------------------------------------|-------------------------|--------------------|
+| Total levé par Element AI                     | **~340 M$ CA**         | 2017 – 2019       |
+| **Total sources publiques**                       | **160 – 175 M$ CA**    |
+| Venter à ServiceNow (USA) | 230 millions US |
 
 ---
 
@@ -327,6 +332,14 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 - Les décomposer en étapes
 - Utiliser des outils (recherche web, exécution de code, API, etc.)
 - Itérer et s'adapter en fonction des résultats
+
+---
+
+
+# IA agentique vs. Bengio/Mila
+
+
+
 
 ---
 
@@ -721,6 +734,11 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 
 ---
+
+
+![](population.png)
+
+
 
 ---
 
