@@ -301,7 +301,7 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 |---------------------------------------------------|-------------------------|--------------------|
 | Total levé par Element AI                     | **~340 M$ CA**         | 2017 – 2019       |
 | **Total sources publiques**                       | **160 – 175 M$ CA**    |
-| Venter à ServiceNow (USA) | 230 millions US |
+| Vente à ServiceNow (USA) | 230 millions US |
 
 ---
 
