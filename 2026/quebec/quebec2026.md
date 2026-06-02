@@ -802,3 +802,7 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 
 <https://roaringbitmap.org>
+
+<https://simdutf.github.io/simdutf/>
+
+<https://fastfloat.github.io/fast_float/>
