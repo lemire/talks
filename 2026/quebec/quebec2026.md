@@ -294,10 +294,6 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 # Pendant Québécois (Bengio/ElementAI)
 
----
-
-![](bengio.png)
-
 
 ---
 
@@ -338,6 +334,10 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 # IA agentique vs. Bengio/Mila
 
+
+---
+
+![](bengio.png)
 
 
 
@@ -769,6 +769,18 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 <video src="avocat.mp4" width="50%" playsinline controls preload="auto"></video>
 
+
+
+---
+
+![bg right:60% contain](yoda.png)
+
+
+
+> « La peur est le chemin vers le côté obscur. »
+— Maître Yoda (Star Wars, L’Empire contre-attaque)
+
+
 ---
 
 <!-- _class: lead -->
@@ -776,6 +788,9 @@ Après-midi : la direction transmet les fichiers Excel des plans de travail.
 
 ## Questions&nbsp;?
 
-**Daniel Lemire** — [lemire.me](https://lemire.me)
+**Daniel Lemire** — [lemire.me](https://lemire.me) (blog)
 
-:canada:
+<https://simdjson.org>
+
+
+<https://roaringbitmap.org>
