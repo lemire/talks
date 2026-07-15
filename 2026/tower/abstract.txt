@@ -13,7 +13,7 @@ Using concrete examples and tangible benchmarks, I will cover many interesting a
 bio: 
 
 Daniel Lemire is a professor of computer science at Université of Quebec. His research and engineering work focus on high-performance computing, efficient data structures, and software performance optimization. He is the author of widely adopted open-source libraries.  His contributions appear in major standard libraries and systems, including .NET, Rust, Go, Node.js, Google Chrome, and Safari. 
-He ranks among the top 2% of scientists worldwide by citation impact according to the Stanford University / Elsevier ranking. He serves as editor of the journal Software: Practice and Experience (Wiley, founded in 1971) and has received the 2020 Université du Québec Award of Excellence in Research for his work on accelerating JSON parsing. On GitHub, he is among the 1000 most followed developers out of over 100 million developers.
+He ranks among the top 2% of scientists worldwide by citation impact according to the Stanford University / Elsevier ranking. He serves as editor of the journal Software: Practice and Experience (Wiley, founded in 1971) and has received the 2020 Université du Québec Award of Excellence in Research for his work on accelerating JSON parsing. On GitHub, he is among the 1000 most followed developers out of over 100 million developers. He is @lemire on X and he blogs weekly at https://lemire.me/.
 
 
 additional notes: 
