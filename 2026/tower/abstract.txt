@@ -3,9 +3,10 @@ title: Make Your Code Faster with Data Parallelism
 
 Abstract: 
 
+
 Our processor speeds, as measured by clock frequency, remain broadly stagnant. However, this should not be confused with a lack of progress. Recent processors are far superior to those from a few years ago. They compute faster mostly through better parallelism.
-Their parallelism takes different forms: multi-core and memory-level parallelism, speculative superscalar execution, and data parallelism. Data parallelism is often poorly exploited.
-To support data parallelism, modern processors include several powerful SIMD (Single Instruction, Multiple Data) units. Yet it remains a challenge to fully leverage SIMD instructions, even today with our advanced optimizing compilers and LLM-based AI agents.
+Their parallelism takes different forms: multi-core and memory-level parallelism, speculative superscalar execution, and data parallelism.
+To support data parallelism, modern processors include several powerful SIMD (Single Instruction, Multiple Data) units. Yet it remains a challenge to fully leverage SIMD instructions, even today with our advanced optimizing compilers and LLM-based AI agents. We sometimes need to design algorithms from the ground up with the SIMD instructions we have. I will illustrate this point through examples.
 Not all software can benefit from data parallelism, but it is easy to underestimate its applicability. For example, it may seem unexpected that JSON parsing is a good application. Indeed, all the main JavaScript engines (Bun, Node.js, Deno) parse JSON in a data-parallel manner.
 Using concrete examples and tangible benchmarks, I will cover many interesting and perhaps unexpected use cases where data parallelism gives a much-needed edge. I will show how combining thorough benchmarks with performance counters can deliver impressive performance breakthroughs.
 
