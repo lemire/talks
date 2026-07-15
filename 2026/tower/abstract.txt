@@ -1,0 +1,19 @@
+title: Make Your Code Faster with Data Parallelism
+
+
+Abstract: 
+
+Our processor speeds, as measured by clock frequency, remain broadly stagnant. However, this should not be confused with a lack of progress. Recent processors are far superior to those from a few years ago. They compute faster mostly through better parallelism.
+Their parallelism takes different forms: multi-core and memory-level parallelism, speculative superscalar execution, and data parallelism. Data parallelism is often poorly exploited.
+To support data parallelism, modern processors include several powerful SIMD (Single Instruction, Multiple Data) units. Yet it remains a challenge to fully leverage SIMD instructions, even today with our advanced optimizing compilers and LLM-based AI agents.
+Not all software can benefit from data parallelism, but it is easy to underestimate its applicability. For example, it may seem unexpected that JSON parsing is a good application. Indeed, all the main JavaScript engines (Bun, Node.js, Deno) parse JSON in a data-parallel manner.
+Using concrete examples and tangible benchmarks, I will cover many interesting and perhaps unexpected use cases where data parallelism gives a much-needed edge. I will show how combining thorough benchmarks with performance counters can deliver impressive performance breakthroughs.
+
+bio: 
+
+Daniel Lemire is a professor of computer science at Université of Quebec. His research and engineering work focus on high-performance computing, efficient data structures, and software performance optimization. He is the author of widely adopted open-source libraries.  His contributions appear in major standard libraries and systems, including .NET, Rust, Go, Node.js, Google Chrome, and Safari. 
+He ranks among the top 2% of scientists worldwide by citation impact according to the Stanford University / Elsevier ranking. He serves as editor of the journal Software: Practice and Experience (Wiley, founded in 1971) and has received the 2020 Université du Québec Award of Excellence in Research for his work on accelerating JSON parsing. On GitHub, he is among the 1000 most followed developers out of over 100 million developers.
+
+
+additional notes: 
+cover llvm-mca/llm
