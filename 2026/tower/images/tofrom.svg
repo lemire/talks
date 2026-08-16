@@ -1,0 +1,32 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="300" fill="#f5f5f5"/>
+
+  <!-- Box for Player class -->
+  <rect x="50" y="80" width="200" height="100" rx="10" fill="#e0f7fa"/>
+  <text x="150" y="110" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Player Class</text>
+  <text x="150" y="140" text-anchor="middle" font-family="Arial" font-size="14">name: "Alice"</text>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial" font-size="14">score: 100</text>
+
+  <!-- Box for JSON -->
+  <rect x="350" y="80" width="200" height="100" rx="10" fill="#fff3e0"/>
+  <text x="450" y="110" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">JSON</text>
+  <text x="450" y="140" text-anchor="middle" font-family="Arial" font-size="14">{ "name": "Alice",</text>
+  <text x="450" y="160" text-anchor="middle" font-family="Arial" font-size="14">"score": 100 }</text>
+
+  <!-- Arrow from Player to JSON -->
+  <path d="M250 130 H350" fill="none" stroke="#0288d1" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="300" y="120" text-anchor="middle" font-family="Arial" font-size="14">simdjson::to_json</text>
+
+  <!-- Arrow from JSON to Player -->
+  <path d="M350 150 H250" fill="none" stroke="#0288d1" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="300" y="170" text-anchor="middle" font-family="Arial" font-size="14">simdjson::from</text>
+
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0288d1"/>
+    </marker>
+  </defs>
+
+</svg>

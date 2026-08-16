@@ -1,0 +1,53 @@
+<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif; font-size: 16px; background: white;">
+  
+  <!-- Axes -->
+  <line x1="100" y1="400" x2="800" y2="400" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="400" x2="100" y2="80" stroke="#333" stroke-width="2"/>
+  
+  <!-- Y-axis labels (GB/s) -->
+  <text x="85" y="400" text-anchor="end" font-size="16">0</text>
+  <text x="85" y="350" text-anchor="end" font-size="16">4</text>
+  <text x="85" y="300" text-anchor="end" font-size="16">8</text>
+  <text x="85" y="250" text-anchor="end" font-size="16">16</text>
+  <text x="85" y="200" text-anchor="end" font-size="16">24</text>
+  <text x="85" y="150" text-anchor="end" font-size="16">32</text>
+  
+  <!-- Horizontal grid lines -->
+  <line x1="100" y1="400" x2="800" y2="400" stroke="#ddd"/>
+  <line x1="100" y1="350" x2="800" y2="350" stroke="#ddd"/>
+  <line x1="100" y1="300" x2="800" y2="300" stroke="#ddd"/>
+  <line x1="100" y1="250" x2="800" y2="250" stroke="#ddd"/>
+  <line x1="100" y1="200" x2="800" y2="200" stroke="#ddd"/>
+  <line x1="100" y1="150" x2="800" y2="150" stroke="#ddd"/>
+  
+  <!-- X-axis year labels -->
+  <text x="150" y="430" text-anchor="middle" font-size="18">2003</text>
+  <text x="250" y="430" text-anchor="middle" font-size="18">2007</text>
+  <text x="350" y="430" text-anchor="middle" font-size="18">2010</text>
+  <text x="450" y="430" text-anchor="middle" font-size="18">2017</text>
+  <text x="550" y="430" text-anchor="middle" font-size="18">2019</text>
+  <text x="650" y="430" text-anchor="middle" font-size="18">2022</text>
+  <text x="750" y="430" text-anchor="middle" font-size="18">2025</text>
+  
+  <!-- Data points and connecting lines -->
+  <polyline fill="none" stroke="#0066cc" stroke-width="5" points="
+    150,395.6
+    250,391.1
+    350,382.2
+    450,364.4
+    550,328.9
+    650,257.8
+    750,115.6"/>
+  
+  <!-- Dots -->
+  <circle cx="150" cy="395.6" r="10" fill="#0066cc"/>
+  <circle cx="250" cy="391.1" r="10" fill="#0066cc"/>
+  <circle cx="350" cy="382.2" r="10" fill="#0066cc"/>
+  <circle cx="450" cy="364.4" r="10" fill="#0066cc"/>
+  <circle cx="550" cy="328.9" r="10" fill="#0066cc"/>
+  <circle cx="650" cy="257.8" r="10" fill="#0066cc"/>
+  <circle cx="750" cy="115.6" r="10" fill="#0066cc"/>
+</svg>
+
+
+
