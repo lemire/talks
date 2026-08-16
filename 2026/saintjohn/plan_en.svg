@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 960" width="560" height="960" role="img" aria-labelledby="title desc">
+  <title id="title">AI development loop</title>
+  <desc id="desc">Flow chart: Goal → Task breakdown → Git branch → AI + terminal → Test &amp; validate → Satisfied? → Commit + PR (with feedback loop)</desc>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="560" height="960" fill="#f1f5f9"/>
+
+  <!-- Drop shadow filter -->
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <!-- Arrow marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- ===== NODE 1: Objectif ===== -->
+  <g transform="translate(240, 70)">
+    <rect x="-90" y="-28" width="180" height="56" rx="14" fill="#312e81" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="23" font-weight="600" fill="#ffffff">Goal</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 240 98 L 240 128" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ===== NODE 2: Décomposition en tâches ===== -->
+  <g transform="translate(240, 175)">
+    <rect x="-130" y="-28" width="260" height="56" rx="14" fill="#1e3a8a" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#ffffff">Break into tasks</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 240 203 L 240 233" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ===== NODE 3: Création de branche Git ===== -->
+  <g transform="translate(240, 280)">
+    <rect x="-128" y="-28" width="256" height="56" rx="14" fill="#1e3a8a" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#ffffff">Create a Git branch</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 240 308 L 240 338" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ===== NODE 4: IA + Terminal (highlighted as key AI step) ===== -->
+  <g transform="translate(240, 385)">
+    <rect x="-92" y="-28" width="184" height="56" rx="14" fill="#0f766e" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#ffffff">AI + terminal</text>
+  </g>
+
+  <!-- Arrow 4 (diagonal to Test) -->
+  <path d="M 200 413 Q 165 445 155 472" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ===== NODE 5: Test &amp; Validation (left offset) ===== -->
+  <g transform="translate(145, 500)">
+    <rect x="-100" y="-28" width="200" height="56" rx="14" fill="#1e40af" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#ffffff">Test &amp; validate</text>
+  </g>
+
+  <!-- Arrow 5 (to diamond) -->
+  <path d="M 145 528 Q 175 555 200 580" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ===== NODE 6: Satisfait ? (diamond decision) ===== -->
+  <g transform="translate(240, 630)">
+    <!-- Amber diamond -->
+    <polygon points="0,-52 115,0 0,52 -115,0" fill="#b45309" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="700" fill="#ffffff">Good enough?</text>
+  </g>
+
+  <!-- "Oui" edge label (pill) -->
+  <g transform="translate(240, 720)">
+    <rect x="-28" y="-15" width="56" height="30" rx="15" fill="#166534"/>
+    <text x="0" y="6" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#ffffff">Yes</text>
+  </g>
+
+  <!-- Arrow "Oui" down to Commit -->
+  <path d="M 240 682 L 240 735" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ===== NODE 7: Commit + PR (success) ===== -->
+  <g transform="translate(240, 810)">
+    <rect x="-92" y="-28" width="184" height="56" rx="14" fill="#166534" filter="url(#shadow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#ffffff">Commit + PR</text>
+  </g>
+
+  <!-- ===== Feedback loop: "Non" back to IA + Terminal ===== -->
+  <!-- The long curved path on the right side -->
+  <path d="M 355 605 Q 395 530 395 420 Q 395 395 320 385" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+
+  <!-- "Non" edge label (pill) -->
+  <g transform="translate(410, 480)">
+    <rect x="-28" y="-15" width="56" height="30" rx="15" fill="#b45309"/>
+    <text x="0" y="6" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#ffffff">No</text>
+  </g>
+
+  <!-- Subtle legend / flow direction hint at bottom -->
+  <text x="280" y="930" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#64748b">Feedback loop until the tests pass</text>
+</svg>

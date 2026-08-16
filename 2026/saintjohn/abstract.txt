@@ -1,0 +1,13 @@
+Programming in the Era of AI
+
+By some accounts, much of the practice of software programming has been transformed in recent months. Tools like Cursor, Claude Code, and GitHub Copilot have reached a level where many leading developers have largely stopped typing code manually. By combining powerful yet imperfect large language models with supporting tools, we now have agentic AI — a significant breakthrough.
+Starting from high-level requirements, these AI systems can design an application, write the code, test it, and deploy it. 
+On established benchmarks like SWE-bench Verified, frontier models have already achieved superhuman performance on certain programming tasks. Open-source models make these capabilities widely accessible and inexpensive to run.
+We must therefore update — and in many cases reinvent — what we teach, how we program, and how we conduct research on software issues.
+As a result of these developments, we must update what we teach, how we organize development work, and which research questions we prioritize. In this talk, I will examine the practical components that make current agentic approaches effective. I will discuss the role of benchmarks and tests as guiding constraints, techniques for context management, and methods for orchestrating parallel agents. The focus will be on realistic capabilities and immediately applicable practices.
+
+
+bio: 
+
+Daniel Lemire is a professor of computer science at Université of Quebec. His research and engineering work focus on high-performance computing, efficient data structures, and software performance optimization. He is the author of widely adopted open-source libraries.  His contributions appear in major standard libraries and systems, including .NET, Rust, Go, Node.js, Google Chrome, and Safari. 
+He ranks among the top 2% of scientists worldwide by citation impact according to the Stanford University / Elsevier ranking. He serves as editor of the journal Software: Practice and Experience (Wiley, founded in 1971) and has received the 2020 Université du Québec Award of Excellence in Research for his work on accelerating JSON parsing. On GitHub, he is among the 1000 most followed developers out of over 100 million developers.
