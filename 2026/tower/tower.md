@@ -37,17 +37,6 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 * Node.js core contributor (C++ review, performance, security).
 * Editor, *Software: Practice and Experience* (Wiley, founded 1971).
 
----
-
-# The plan
-
-1. Why parallelism is the only game left
-2. The kinds of parallelism in your CPU
-3. SIMD and SWAR: the basics
-4. Case studies: numbers, text, JSON, Unicode, base64
-5. Why your compiler will not do this for you
-6. Can an LLM write your SIMD code?
-7. Measuring properly
 
 ---
 
@@ -55,7 +44,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 # Part 1
 
-## Why parallelism is the only game left
+## Parallelism for the win
 
 ---
 
@@ -82,7 +71,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 | Apple M4  | 2024  | 4.5 GHz    | 28 billions    |
 | AMD Zen 5 | 2024  | 5.7 GHz    | 50 billions    |
 
-**Frequency: flat. Transistors: 1000×.**
+**Frequency: +50% in 25 years. Transistors: 1000×.**
 
 ---
 
@@ -98,7 +87,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 * More cache, more memory-level parallelism ($\to$ more instructions per cycle)
 * Better **data-level parallelism** (SIMD) ($\to$ **fewer instructions**)
 
-The last one is different: the hardware does not do it *for* you. You rewrite the instruction stream to be shorter.
+The last one is different: the hardware does not do it *for* you. 
 
 ---
 
@@ -133,9 +122,14 @@ The last one is different: the hardware does not do it *for* you. You rewrite th
 
 # High Bandwidth Memory
 
-* Xeon Max processors contain 64&nbsp;GB of HBM
-* Bandwidth 800&nbsp;GB/s
-* That is 32 copies of Wikipedia per second
+
+| Generation | Year | Bandwidth (per stack) |
+|------------|--------------|----------------------------|
+| HBM2E      | 2020    | ~460 GB/s                  |
+| HBM3       | 2022         | 819 GB/s                   |
+| HBM3E      | 2024    | ~1.2 TB/s                  |
+| HBM4       | 2026    | >2.8 TB/s |
+| HBM4E      | 2027         | ~4 TB/s                    |
 
 ---
 
@@ -145,7 +139,17 @@ The last one is different: the hardware does not do it *for* you. You rewrite th
 * Your memory delivers hundreds of gigabytes per second.
 * Your software processes bytes **one at a time**.
 
-**You are CPU bound, and it is your own fault.**
+**You are CPU bound.**
+
+
+---
+
+![bg right 95%](plots/strstr_bandwidth.svg)
+
+# Zen 5 AWS (EPYC 9R45, c8a)
+
+- STREAM single thread bandwidth: 46 GB/s
+- `strstr`, 32-byte needle: 9.5 GB/s
 
 ---
 
