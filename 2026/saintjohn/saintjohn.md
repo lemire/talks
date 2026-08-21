@@ -221,6 +221,21 @@ section.lead p { font-size: .92em; color: var(--muted); margin: .25em 0; }
 section.lead strong { color: var(--ink); }
 section.lead a { border-bottom: none; }
 section.lead footer { display: none; }
+
+/* chart slides: pack title, figure, and caption from the top */
+section.chart {
+  justify-content: flex-start;
+}
+section.chart h1 {
+  margin-bottom: .15em;
+}
+section.chart img:not(.emoji) {
+  max-height: 390px;
+  max-width: 100%;
+  margin: .1em auto .05em;
+  box-shadow: none;
+  border-radius: 0;
+}
 </style>
 
 <!-- _class: lead -->
@@ -247,15 +262,20 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
-# The plan
+<!-- _class: lead -->
 
-1. Where we actually are
-2. What makes an agent work
-   - benchmarks and tests as constraints
-   - context management
-   - orchestrating parallel agents
-3. Field reports
-4. What we must change: teaching, work, research
+## Preface
+
+## Back in the 1990s
+
+---
+
+# The singularity
+
+> « I believe that the creation of greater than human intelligence will occur during the next thirty years. (I'll be surprised if this event occurs before 2005 or after 2030.)  »
+
+Vernor Vinge, 1993
+
 
 ---
 
@@ -267,11 +287,20 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
-![](aiuse.png)
+![bg](aiuse.png)
 
 ---
 
+![bg](aiuseaugust.png)
+
+
+---
+
+<!-- _class: chart -->
+
 # What that poll really shows
+
+![](no_code_fraction.png)
 
 - this is a practice change, not a tool upgrade.
 
@@ -289,11 +318,11 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
-![](sota_frontier.png)
+![bg](sota_frontier.png)
 
 ---
 
-![](sota_frontier_open.png)
+![bg](sota_frontier_open.png)
 
 
 ---
@@ -316,9 +345,16 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 
 
-![](token_prices-2.png)
+![bg](token_prices-2.png)
 
 
+---
+
+![bg right:60% contain](stripe.png)
+
+> January 1st marked the beginning of the singularity.
+
+—Stripe, August 19, 2026
 
 ---
 
@@ -353,7 +389,7 @@ All Canadian public companies, excluding banks: **$2.6 trillion**
 
 ---
 
-![](revenu.png)
+![bg](revenu.png)
 
 ---
 
