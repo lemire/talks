@@ -666,6 +666,26 @@ A million tokens is roughly a 3000-page book. So the problem is solved?
 
 ---
 
+<!-- _class: prompt -->
+
+# AGENT.md
+
+Put the rules you are tired of repeating in a file the agent **always** reads.
+
+```markdown
+# AGENT.md
+
+- After every C++ change, run `clang-format`.
+- Tests must pass under ASan and UBSan.
+- Do not invent APIs. If it is not in the tree, it does not exist.
+```
+
+Grok: `AGENT.md` / `AGENTS.md`. Claude: `CLAUDE.md`.
+
+Commit it. Then every session, every teammate, every subagent starts from the same contract.
+
+---
+
 <!-- _class: lead -->
 
 ## Orchestration
