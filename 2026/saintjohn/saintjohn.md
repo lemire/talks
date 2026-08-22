@@ -674,19 +674,105 @@ A million tokens is roughly a 3000-page book. So the problem is solved?
 
 ---
 
-# Why parallelism, concretely
-
-- A single agent run is minutes of wall-clock time, and most of it is spent waiting on a build or a test suite.
-- Running four agents costs four times the tokens and roughly zero extra minutes.
-
-**`git worktree` is the enabling primitive:**
+# git worktree: two directories, one repository
 
 ```bash
-git worktree add ../work-a -b feature-a
-git worktree add ../work-b -b feature-b
+git worktree add ../feat-a -b feat-a
 ```
 
-Each agent gets its own directory and its own branch. Same repository, no shared working tree, no file collisions. Merge or discard independently.
+Each checkout has its own files and its own branch.
+The objects live in one `.git`.
+
+Two agents editing `src/foo.c` in the **same** working tree overwrite each other.
+A worktree is the isolation primitive. Parallelism is why you need it.
+
+---
+
+# Why parallelism, concretely
+
+- A single agent run is minutes of wall-clock time, mostly waiting on a build or a test suite.
+- Four agents cost four times the tokens and roughly **zero extra minutes**.
+
+Worktrees keep them from colliding on disk.
+The next question is *what kind of parallel*: a **child**, or a **new conversation**.
+
+---
+
+# Subagent vs new session
+
+A **subagent** is a child **inside this conversation**.
+It has its own context window. It reports a **summary** back.
+
+A **new session** is a **separate conversation**.
+Nothing comes back unless you copy it.
+
+Both can sit in a worktree. They are not the same thing.
+
+---
+
+<!-- _class: compact -->
+
+# Commands
+
+| | New session | Subagent |
+|---|---|---|
+| **Grok** | `/new` · `grok --worktree=feat "…"` | "spawn a subagent to review this" |
+| **Claude** | `/clear` · `claude --worktree feat` | "use a subagent to …" · `@explore` |
+
+A worktree isolates **files**. A subagent isolates **context**. You can combine them.
+
+---
+
+# Context window
+
+**Subagent**
+- fresh window for the dirty work: grep, logs, failing tests
+- the parent keeps the plan
+- only a **summary** is written back into the parent
+
+**New session**
+- also a fresh window
+- **nothing** is written back automatically
+- you are the merge, in Git or by paste
+
+---
+
+# When the subagent is better
+
+Use a subagent when the parent still needs the result **in this conversation**.
+
+- find every call site — do not dump forty files into my context
+- run the tests — tell me what failed
+- review this patch — return findings
+
+The parent stays the coordinator.
+The child is disposable context.
+
+---
+
+# When a new session is better
+
+Start a new session — usually in a worktree — when the work is a **job**, not a lookup.
+
+- a second feature, a second PR
+- hours of iteration you do not want in this transcript
+- a model that should not inherit this session's wrong assumptions
+
+You will merge in Git, not in the chat.
+
+---
+
+# Trade-offs
+
+| | Subagent | New session |
+|---|---|---|
+| Reports back | yes, a summary | only if you copy |
+| Shares your plan | yes | no |
+| Pollutes parent context | little | none |
+| File isolation | optional worktree | you pick the directory |
+| Lifetime | dies with the task | you resume it |
+
+**Default:** subagent for a question. New session for a branch of work.
 
 ---
 
@@ -735,18 +821,6 @@ A model asked to defend its own work will defend it.
 
 **And you still have to read the results.** That does not parallelize at all.
 
----
-
-# The honest accounting
-
-| | cost |
-|---|---|
-| Tokens | multiplied by the number of agents |
-| Wall-clock | roughly unchanged |
-| **Your review time** | **multiplied by the number of agents** |
-
-Parallelism buys throughput only if verification is automated.
-Otherwise you have built a machine for generating homework.
 
 ---
 
