@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-labelledby="title desc">
+  <title id="title">How an LLM works</title>
+  <desc id="desc">A square loop: text is split into tokens, each token becomes a vector, the network emits the next token, which is appended to the text.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 Z" fill="#9a2b2b"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="800" fill="#faf8f4"/>
+
+  <!-- top-left: text -->
+  <g transform="translate(40, 40)">
+    <rect width="280" height="240" rx="22" fill="#f3efe7" stroke="#e4ded3" stroke-width="2.5"/>
+    <text x="140" y="88" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="48" font-weight="600" fill="#1c1c28">text</text>
+    <text x="140" y="160" text-anchor="middle" font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="30" fill="#9a2b2b">def add(a, b):</text>
+  </g>
+
+  <!-- top-right: tokens -->
+  <g transform="translate(480, 40)">
+    <rect width="280" height="240" rx="22" fill="#f3efe7" stroke="#e4ded3" stroke-width="2.5"/>
+    <text x="140" y="64" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="48" font-weight="600" fill="#1c1c28">tokens</text>
+    <g font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="28" fill="#1c1c28">
+      <rect x="28" y="90" width="104" height="50" rx="10" fill="#fff" stroke="#c45c52" stroke-width="2"/>
+      <text x="80" y="124" text-anchor="middle">def</text>
+      <rect x="148" y="90" width="104" height="50" rx="10" fill="#fff" stroke="#c45c52" stroke-width="2"/>
+      <text x="200" y="124" text-anchor="middle">add</text>
+      <rect x="48" y="154" width="184" height="50" rx="10" fill="#fff" stroke="#c45c52" stroke-width="2"/>
+      <text x="140" y="188" text-anchor="middle">(a, b):</text>
+    </g>
+  </g>
+
+  <!-- bottom-right: vectors -->
+  <g transform="translate(480, 520)">
+    <rect width="280" height="240" rx="22" fill="#f3efe7" stroke="#e4ded3" stroke-width="2.5"/>
+    <text x="140" y="64" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="48" font-weight="600" fill="#1c1c28">vectors</text>
+    <g transform="translate(36, 92)">
+      <rect width="24" height="40" fill="#9a2b2b"/><rect x="28" width="24" height="40" fill="#c45c52"/><rect x="56" width="24" height="40" fill="#1c1c28"/><rect x="84" width="24" height="40" fill="#5c5c6b"/><rect x="112" width="24" height="40" fill="#c45c52"/><rect x="140" width="24" height="40" fill="#9a2b2b"/><rect x="168" width="24" height="40" fill="#e4ded3"/><rect x="196" width="24" height="40" fill="#5c5c6b"/>
+    </g>
+    <g transform="translate(36, 140)">
+      <rect width="24" height="40" fill="#5c5c6b"/><rect x="28" width="24" height="40" fill="#1c1c28"/><rect x="56" width="24" height="40" fill="#9a2b2b"/><rect x="84" width="24" height="40" fill="#e4ded3"/><rect x="112" width="24" height="40" fill="#1c1c28"/><rect x="140" width="24" height="40" fill="#c45c52"/><rect x="168" width="24" height="40" fill="#9a2b2b"/><rect x="196" width="24" height="40" fill="#c45c52"/>
+    </g>
+    <g transform="translate(36, 188)">
+      <rect width="24" height="40" fill="#c45c52"/><rect x="28" width="24" height="40" fill="#e4ded3"/><rect x="56" width="24" height="40" fill="#5c5c6b"/><rect x="84" width="24" height="40" fill="#9a2b2b"/><rect x="112" width="24" height="40" fill="#c45c52"/><rect x="140" width="24" height="40" fill="#1c1c28"/><rect x="168" width="24" height="40" fill="#5c5c6b"/><rect x="196" width="24" height="40" fill="#9a2b2b"/>
+    </g>
+  </g>
+
+  <!-- bottom-left: next token -->
+  <g transform="translate(40, 520)">
+    <rect width="280" height="240" rx="22" fill="#9a2b2b"/>
+    <text x="140" y="96" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="48" font-weight="600" fill="#faf8f4">next</text>
+    <text x="140" y="162" text-anchor="middle" font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="40" fill="#faf8f4">return</text>
+  </g>
+
+  <!-- arrows around the square -->
+  <path d="M 330 160 L 468 160" fill="none" stroke="#9a2b2b" stroke-width="5" marker-end="url(#arr)"/>
+  <path d="M 620 290 L 620 508" fill="none" stroke="#9a2b2b" stroke-width="5" marker-end="url(#arr)"/>
+  <path d="M 470 640 L 332 640" fill="none" stroke="#9a2b2b" stroke-width="5" marker-end="url(#arr)"/>
+  <path d="M 180 510 L 180 292" fill="none" stroke="#9a2b2b" stroke-width="5" marker-end="url(#arr)"/>
+
+  <text x="400" y="136" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="600" fill="#5c5c6b">tokenize</text>
+  <text x="668" y="418" text-anchor="start" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="600" fill="#5c5c6b">embed</text>
+  <text x="400" y="684" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="600" fill="#5c5c6b">network</text>
+  <text x="48" y="418" text-anchor="start" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="600" fill="#5c5c6b">append</text>
+</svg>
