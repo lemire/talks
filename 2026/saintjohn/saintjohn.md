@@ -236,6 +236,29 @@ section.chart img:not(.emoji) {
   box-shadow: none;
   border-radius: 0;
 }
+section.diagram {
+  justify-content: flex-start;
+}
+section.diagram img:not(.emoji) {
+  max-height: 500px;
+  width: auto;
+  max-width: 100%;
+  margin-top: .2em;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+section.compact {
+  justify-content: flex-start;
+}
+section.compact table {
+  font-size: .78em;
+  margin: .25em auto;
+}
+section.compact table th,
+section.compact table td {
+  padding: .32em .65em;
+}
 </style>
 
 <!-- _class: lead -->
@@ -366,30 +389,8 @@ Vernor Vinge, 1993
 
 ---
 
-# Three companies, founded within a decade
 
-| Company | Founded | Valuation | Date |
-|---|---|---:|---|
-| OpenAI | 2015 | $852 billion | Mar. 2026 |
-| Anthropic | 2021 | $965 billion | May 2026 |
-| xAI | 2023 | $250 billion | Feb. 2026 |
-| **Sum** | | **$2.07 trillion** | |
-
----
-
-| Company | Valuation | Date |
-|---|---:|---|
-| Intel | $608 billion | May 2026 |
-| Oracle | $580–630 billion | May 2026 |
-| Manulife | $64 billion | May 2026 |
-| Bombardier | $21 billion | May 2026 |
-| Quebecor | $10–11 billion | May 2026 |
-
-All Canadian public companies, excluding banks: **$2.6 trillion**
-
----
-
-![bg](revenu.png)
+![bg](github-outage.png)
 
 ---
 
@@ -401,84 +402,141 @@ All Canadian public companies, excluding banks: **$2.6 trillion**
 
 ---
 
-# 2024: autocomplete
+<!-- _class: diagram -->
 
-![](copilot.png)
+# How an LLM works
 
----
-
-# GitHub Copilot + Visual Studio Code
-
-- In-context code suggestion
-- Whole-function generation
-- Chat inside the IDE
-
-Useful. But **you** were still the loop.
+![](llm_pipeline.svg)
 
 ---
 
-# Agentic AI
+# Tokens in, tokens out
 
-An agent can:
+- Text is chopped into **tokens**: words, pieces of words, punctuation.
+- Each token becomes a **vector** in a high-dimensional space.
+- The network looks at those vectors and picks a likely next token.
+- Sample one. Append it. Repeat.
 
-- Understand a goal
-- Break it into steps
-- Use tools (shell, web search, code execution, APIs)
-- Observe the result and **adapt**
-
-The model stopped being an oracle and became a worker.
+That is the entire machine.
 
 ---
 
-<img src="plan_en.svg" width="42%" alt="AI development loop">
+<!-- _class: compact -->
+
+# The weights
+
+**0.5 GB per billion parameters** at 4-bit. Active parameters are computed per token; the **total still sits in RAM**.
+
+| Model | Lab | Total / active | 4-bit | License |
+|---|---|---|---:|---|
+| Qwen3.8 Max | Alibaba | 2.4T / ~95B | 1.2 TB | Custom |
+| Kimi K3 | Moonshot | 2.8T / ~104B | 1.4 TB | Custom |
+| GLM-5.2 | Zhipu | 753B / ~40B | 380 GB | MIT |
+| DeepSeek V4 Pro | DeepSeek | 1.6T / ~49B | 800 GB | MIT |
+| MiniMax M3 | MiniMax | 428B / ~23B | 210 GB | Community |
+
+Closed models (Claude, GPT, Grok) do not publish the number.
 
 ---
 
-# Why the command line won
+![bg](grok-weights.png)
 
-- It is textual and deterministic.
-- It exposes powerful, composable tools: `git`, `curl`, `jq`, `grep`, `find`, `awk`, compilers, test runners.
-- Code can be executed directly, and the output read back.
-- It is scriptable and observable.
-
-The terminal is the richest tool API ever built, and it already exists.
 
 ---
 
-# Why Git matters more than ever
 
-- **Cheap branching**: `git switch -c feature/agent-1`, and `git worktree` for parallel work.
-- **Fearless iteration**: atomic commits plus `git reset`.
-- **Review and validation**: `git diff`, `git log`, `git blame`.
-- **An undo button** when the agent goes in a bad direction.
+# How can a language model write software?
 
-Git is the safety harness that makes delegation rational.
+* I write a query, it is maybe 80 characters.
+* I get back a full program with 100,000 lines.
+* Not how it works, there is more information invovled.
 
 ---
 
-# Why Markdown
 
-```markdown
-## Introduction to Java (example)
+# The inference loop
 
-We can define a variable in Java like this.
-
-Notice the different elements of the syntax.
-
-- Type
-- Variable name
-- Assigning a value
+```text
+while not done:
+    action = model(context)     # tokens out
+    result = tool(action)       # shell, tests, git
+    context += result           # tokens in
 ```
 
-Structured enough for a machine, readable enough for a human, diffable in Git.
+
+Every serious coding product ships this loop.
 
 ---
 
-![](grok.png)
+# That is why agents can code
+
+- **Write** a patch as tokens.
+- **Run** the tests as a tool.
+- **Read** the failure as tokens.
+- **Try again.**
+
 
 ---
 
-![](claude.png)
+
+
+# Agentic
+
+The model is no longer answering. It is **acting**.
+
+- call a tool
+- read the result
+- decide the next step
+- repeat
+
+Chat completes a sentence. An agent completes a **job**.
+
+
+
+---
+
+# The loop is dumb
+
+Same loop, different models → wildly different SWE-bench scores.
+
+A weak model in the loop thrashes:
+
+- misreads failures
+- patches symptoms
+- oscillates between two wrong fixes
+
+
+---
+
+# Reinforcement learning 
+
+**act, get graded, update.**
+
+```text
+trajectory = model acts in environment   # patch, proof, tool calls
+reward     = verifier(trajectory)        # tests pass? answer correct?
+weights   += learn from reward           # reinforce what worked
+```
+
+- RL rewards **outcomes** — trajectories no human ever wrote.
+
+
+---
+
+# The trick: put the loop in the training
+
+Code has a rare property: the reward is **mechanically verifiable**.
+
+Tests pass or they don't. The build compiles or it doesn't.
+
+Reinforcement learning on verifiable rewards (RLVR):
+
+- run the model in the loop, on real repositories
+- reward trajectories that converge to green tests
+- update the weights
+
+The model no longer learns to predict plausible code.
+It learns to **make the loop converge**.
 
 ---
 
@@ -608,112 +666,6 @@ A million tokens is roughly a 3000-page book. So the problem is solved?
 
 ---
 
-# A project memory file
-
-```markdown
-# CLAUDE.md
-
-## Build
-`cmake -B build && cmake --build build -j`
-
-## Test
-`ctest --test-dir build --output-on-failure`
-
-## Rules
-- C++17. No exceptions in the hot path.
-- Every SIMD kernel needs a scalar reference + a fuzzer.
-- Never edit files under `third_party/`.
-```
-
-Written once. Read at the start of every session. This is the highest-leverage file in the repository.
-
----
-
-# Permissions
-
-```json
-{
-  "permissions": {
-    "allow": ["Read", "Write", "Edit", "Bash(git status)", "Bash(git commit -m:*)"],
-    "deny": ["Read(.env*)", "Bash(rm -rf /)", "Bash(sudo:*)"],
-    "ask": ["Bash(git push --force:*)", "Bash(docker run:*)"]
-  }
-}
-```
-
-`~/.claude/settings.json`
-
----
-
-# allow, deny, ask
-
-- **allow**: automatically authorized (low risk, frequent)
-- **deny**: forbidden at all times (secrets, destructive operations)
-- **ask**: sensitive actions requiring explicit confirmation
-
-The goal is not to be safe. The goal is to be safe enough that you stop supervising every keystroke.
-
----
-
-# MCP (Model Context Protocol)
-
-- Connects a model to external tools
-- Standardizes tool access across vendors
-- Examples: Git, Slack, Oracle, PostgreSQL, SSH, Google Drive, your internal API
-
-If the command line is the universal tool API, MCP is the one for everything that is not a command line.
-
----
-
-# Extending capabilities securely
-
-- Expose **only** the strictly necessary actions in the MCP server
-- Confine every path to a sandbox directory
-- Traceability: log MCP calls and audit them regularly
-
-For an SSH/SFTP skill: read and write in a single folder, and every destructive operation goes in `ask` mode.
-
----
-
-# Example MCP server: `server.py`
-
-- Starts an MCP server named `ssh-files`
-- Reads `credentials.json` (host, username, remote directory)
-- Exposes `upload_file`, `download_file`, `list_files`, `make_dir`, `delete_file`, `delete_dir`
-- All paths confined to the remote directory (no sandbox escape)
-- Verifies SSH host keys
-
----
-
-```bash
-claude mcp add ssh-files server.py --scope user
-```
-
-```text
-claude mcp list
-
-  - claude.ai Google Drive — authentication required
-  - ssh-files (./ssh-mcp/server.py) — connected
-```
-
----
-
-<!-- _class: prompt -->
-
-```text
-/plotdata Estimated market value of Anthropic, OpenAI, and xAI.
-
-Then upload the result using the ssh-files MCP into the
-corresponding directory, create a nice index.html file,
-and give me the URL.
-```
-
-![bg right:40% contain](web.png)
-
-https://lemire.me/plot_data/ai-lab-valuations/
-
----
-
 <!-- _class: lead -->
 
 ## Orchestration
@@ -801,15 +753,6 @@ Otherwise you have built a machine for generating homework.
 <!-- _class: lead -->
 
 ## Part 3
-
-## Field reports
-
-
----
-
-<!-- _class: lead -->
-
-## Part 4
 
 ## What we must change
 
