@@ -276,6 +276,16 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
+# TODO
+
+- add https://lemire.me/benchmarks/ada_history/index.html https://claude.ai/code/artifact/ce1fe8b4-f5eb-4732-9cdd-a8437a36d99b
+- information limit https://x.com/lemire/status/2091229055802634669?s=46&t=-zo9kVFDyKuN4X1cdtkIrw  
+- generic software -> specialized software (my own web framework, my own video recording software)
+- verfiable vs non-verifiable, Cette notion de ce qui est vérifiable et de ce qui est difficilement vérifiable.
+- more performant software (bar higher), more correct software 
+
+---
+
 # Where I am coming from
 
 - Author of high-performance libraries integrated into major browsers, runtimes and standard libraries: **simdutf**, **fast_float**, **simdjson**, **Roaring Bitmaps**.
