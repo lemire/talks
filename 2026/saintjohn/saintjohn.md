@@ -278,6 +278,7 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 # TODO
 
+- add https://lemire.me/blog/2026/09/05/ai-programming-a-layered-model/
 - add https://lemire.me/benchmarks/ada_history/index.html https://claude.ai/code/artifact/ce1fe8b4-f5eb-4732-9cdd-a8437a36d99b
 - information limit https://x.com/lemire/status/2091229055802634669?s=46&t=-zo9kVFDyKuN4X1cdtkIrw  
 - generic software -> specialized software (my own web framework, my own video recording software)
