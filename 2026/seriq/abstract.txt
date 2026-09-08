@@ -10,32 +10,44 @@ Une bibliothèque libre comme simdjson ou simdutf s'exécute aujourd'hui dans No
 navigateurs web et dans les bases de données : elle traite des données pour des milliards de
 personnes, chaque jour. Comment la recherche universitaire se rend-elle jusque-là ?
 
-Ma thèse est simple : le logiciel libre n'est pas seulement un moyen de diffuser des résultats,
-c'est une méthode de recherche à part entière. Il impose la reproductibilité, parce que le code
-et les bancs d'essai sont publics et que n'importe qui peut vérifier — ou réfuter — nos
-affirmations. Il soumet le travail à une évaluation par les pairs bien réelle : les revues de
-code, les rapports de bogues et les demandes d'intégration constituent souvent un arbitrage plus
-exigeant que bien des comités de lecture. Et il fait venir à nous les données du monde réel :
-cas adversariaux, entrées pathologiques, bogues sur des architectures exotiques — autant de
-choses qu'on n'obtient pas en vase clos.
+Le modèle linéaire de l'innovation propose une réponse simple : le professeur réfléchit et
+publie, l'ingénieur lit et conçoit, le client consomme. L'histoire réelle des innovations lui
+donne rarement raison. Comme le disait Michael Stonebraker, prix Turing : « I never come up with
+anything by going off to a mountaintop to think. Instead, my ideas come from two sources: talking
+to real users with real problems and then trying to solve them. »
 
-J'illustrerai cette thèse par une histoire concrète, celle de simdjson : du code d'abord, puis un
-article scientifique (avec Geoff Langdale), puis une adoption industrielle massive, puis d'autres
-articles. Le cycle se répète : l'analyse des nombres à virgule flottante s'avère être un goulot
-d'étranglement, ce qui mène à l'algorithme Eisel-Lemire, lui aussi largement adopté ; la
-validation UTF-8 pose le même genre de problème et donne naissance à simdutf, adopté à son tour.
-Chaque fois, l'usage réel révèle le prochain problème de recherche.
+Ma thèse est que le logiciel libre n'est pas seulement un moyen de diffuser des résultats : c'est
+une méthode de recherche à part entière. Il impose la reproductibilité, parce que le code et les
+bancs d'essai sont publics et que n'importe qui peut vérifier — ou réfuter — nos affirmations. Il
+soumet le travail à une évaluation par les pairs bien réelle : les revues de code, les rapports de
+bogues et les demandes d'intégration constituent souvent un arbitrage plus exigeant que bien des
+comités de lecture. Et il fait venir à nous les données du monde réel : cas adversariaux, entrées
+pathologiques, architectures exotiques, charges de travail que personne n'aurait pensé à
+fabriquer.
+
+J'illustrerai cette thèse par une histoire concrète, celle de simdjson. Le cycle n'y suit pas
+l'ordre attendu : d'abord le code, puis un billet de blogue, GitHub et quelques messages sur X,
+puis l'adoption industrielle — et l'article scientifique (avec Geoff Langdale) vient après. Ce
+cycle se répète : l'usage révèle le goulot suivant. L'analyse des nombres à virgule flottante
+devient le facteur limitant, ce qui mène à l'algorithme Eisel-Lemire, adopté par les bibliothèques
+standards de Rust, Go, .NET et C++. La validation UTF-8 pose le même genre de problème et donne
+naissance à simdutf, adopté à son tour par Node.js, Bun et les navigateurs. Aucun de ces problèmes
+n'était au programme de recherche du départ.
 
 Je terminerai par les tensions honnêtes de cette approche : la maintenance est ingrate et sans
-fin, et les incitatifs académiques sont mal alignés — les comités comptent les articles, pas les
-demandes d'intégration.
+fin — une faille dans votre code est une faille dans Node.js — et les incitatifs académiques sont
+mal alignés : les comités comptent les articles, pas les demandes d'intégration.
 
 
 Plan (10 minutes) :
 
-1. Accroche (1-2 min) — Une bibliothèque libre comme simdjson ou simdutf tourne aujourd'hui dans
-   Node.js, les navigateurs, les bases de données. Question : comment la recherche universitaire
-   finit-elle dans la poche de milliards de gens ?
+1. Accroche (1-2 min) — Une bibliothèque libre comme simdjson, simdutf ou fast_float tourne
+   aujourd'hui dans Node.js, les navigateurs, les bases de données. Question : comment la
+   recherche universitaire finit-elle dans la poche de milliards de gens ?
+   - D'où viennent les idées ? La citation de Michael Stonebraker.
+   - Le modèle linéaire de l'innovation, et pourquoi il est faux (sous-vêtements et révolution
+     industrielle, origine du clavier, ChatGPT : GPU de jeu + textes du web + chat, la relativité
+     et le train).
 
 2. Le libre comme méthode de recherche (3-4 min)
    - Reproductibilité : le code et les bancs d'essai sont publics; n'importe qui peut vérifier
@@ -46,7 +58,8 @@ Plan (10 minutes) :
      exotiques — impossible à obtenir en vase clos.
 
 3. Étude de cas concrète (3-4 min) — Une seule, racontée en profondeur : simdjson.
-   code -> article (avec Langdale) -> adoption industrielle massive -> autres articles
+   Le cycle : code -> blogue / X / GitHub -> adoption -> article -> goulot suivant -> et ça
+   recommence.
      -> analyse lente des nombres -> algorithme Eisel-Lemire -> adoption massive
      -> validation UTF-8 -> simdutf -> adoption massive
 
