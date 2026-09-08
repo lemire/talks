@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 470" width="1020" height="470" role="img" aria-label="Cycle : code, blogue et X et GitHub, adoption, article, goulot suivant">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#14595e"/>
+    </marker>
+  </defs>
+  <g font-family="Inter, Helvetica, Arial, sans-serif" text-anchor="middle">
+
+    <g>
+      <rect x="25" y="40" width="270" height="110" rx="14" fill="#ffffff" stroke="#14595e" stroke-width="2.5"/>
+      <text x="160" y="88" font-size="26" font-weight="600" fill="#1c1c28">Code libre</text>
+      <text x="160" y="122" font-size="17" fill="#5c5c6b">on résout, on mesure</text>
+    </g>
+    <g>
+      <rect x="375" y="40" width="270" height="110" rx="14" fill="#ffffff" stroke="#14595e" stroke-width="2.5"/>
+      <text x="510" y="88" font-size="24" font-weight="600" fill="#1c1c28">Blogue · X · GitHub</text>
+      <text x="510" y="122" font-size="17" fill="#5c5c6b">on raconte, on diffuse</text>
+    </g>
+    <g>
+      <rect x="725" y="40" width="270" height="110" rx="14" fill="#ffffff" stroke="#14595e" stroke-width="2.5"/>
+      <text x="860" y="88" font-size="26" font-weight="600" fill="#1c1c28">Adoption</text>
+      <text x="860" y="122" font-size="17" fill="#5c5c6b">le monde s&#39;en sert</text>
+    </g>
+
+    <g>
+      <rect x="725" y="300" width="270" height="110" rx="14" fill="#ffffff" stroke="#14595e" stroke-width="2.5"/>
+      <text x="860" y="348" font-size="26" font-weight="600" fill="#1c1c28">Article</text>
+      <text x="860" y="382" font-size="17" fill="#5c5c6b">on explique pourquoi</text>
+    </g>
+    <g>
+      <rect x="375" y="300" width="270" height="110" rx="14" fill="#f3efe7" stroke="#14595e" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <text x="510" y="348" font-size="26" font-weight="600" fill="#1c1c28">Goulot suivant</text>
+      <text x="510" y="382" font-size="17" fill="#5c5c6b">révélé par l&#39;usage</text>
+    </g>
+
+    <path d="M 303 95 L 367 95" stroke="#14595e" stroke-width="2.5" marker-end="url(#a)"/>
+    <path d="M 653 95 L 717 95" stroke="#14595e" stroke-width="2.5" marker-end="url(#a)"/>
+    <path d="M 860 158 L 860 292" stroke="#14595e" stroke-width="2.5" marker-end="url(#a)"/>
+    <path d="M 717 355 L 653 355" stroke="#14595e" stroke-width="2.5" marker-end="url(#a)"/>
+    <path d="M 367 355 L 174 355 Q 160 355 160 341 L 160 160" fill="none" stroke="#14595e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+
+    <text x="252" y="248" font-size="19" fill="#14595e" font-style="italic">et le cycle</text>
+    <text x="252" y="274" font-size="19" fill="#14595e" font-style="italic">recommence</text>
+  </g>
+</svg>
