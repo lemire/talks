@@ -606,6 +606,16 @@ puis il en **vérifie** les réponses.
 
 ---
 
+<!-- _class: quote -->
+
+# La leçon du transfert
+
+> The problem in this business isn't to keep people from stealing your ideas; it's making them steal your ideas.
+
+<p class="attrib"><strong>Howard Aiken</strong> — cité par David Patterson, prix Turing 2017</p>
+
+---
+
 <!-- _class: lead -->
 
 ## Merci
