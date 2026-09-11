@@ -285,6 +285,14 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 - generic software -> specialized software (my own web framework, my own video recording software)
 - verfiable vs non-verifiable, Cette notion de ce qui est vérifiable et de ce qui est difficilement vérifiable.
 - more performant software (bar higher), more correct software 
+- historical reviewers
+- explicit knowledge, genie in the bottle
+- AI and credentialism, reputation system
+- system understanding, animation, videos
+- Omarchy
+- spam filters
+
+
 
 ---
 
