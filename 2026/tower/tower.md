@@ -18,10 +18,15 @@ _paginate: false
 
 ![bg right](images/highperf.png)
 
-## <!--fit--> Make Your Code Faster with Data Parallelism
+<style scoped>
+h2 { font-size: 2.4em; line-height: 1.1; }
+.affil { font-size: 0.6em; }
+</style>
+
+## Make Your Code Faster with Data Parallelism
 
 Daniel Lemire, professor
-Université du Québec (TÉLUQ)
+<span class="affil">Université du Québec (TÉLUQ)</span>
 Montréal :canada:
 
 blog: https://lemire.me
@@ -75,19 +80,60 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ---
 
-<img src="Transistor-Count-over-time.png" width="80%">
+![bg right 95%](plots/p4_vs_9800x3d.svg)
+
+# Clock frequency: 25 years
+
+- Pentium 4 (2000): 1.3 to 2 GHz
+- AMD Ryzen 7 9800X3D (2024): 4.7 to 5.2 GHz
+- **About 2.5× in 25 years**
 
 ---
 
-# Where do the transistors go?
+![bg right 95%](plots/ryzen_frequency.svg)
 
-* More cores
-* More superscalar execution (more instructions per cycle)
-* Better speculative execution ($\to$ more instructions per cycle)
-* More cache, more memory-level parallelism ($\to$ more instructions per cycle)
-* Better **data-level parallelism** (SIMD) ($\to$ **fewer instructions**)
 
-The last one is different: the hardware does not do it *for* you. 
+# Clock frequency: AMD Ryzen 7, 2022–2024
+
+
+- Up 15% is two years
+
+---
+
+![bg right 95%](plots/ryzen_transistors.svg)
+
+# Transistors: AMD Ryzen 7, 2022–2024
+
+- 8 cores 
+- Up 50% is two years
+
+
+---
+
+![bg right 95%](plots/ryzen_delta.svg)
+
+# +5.5 B transistors, 2022–2024
+
+- Same 8 cores
+- **76%** went into the core die
+- 24% into the I/O die
+- Cache die unchanged
+
+---
+
+
+| | Zen 3 (2022) | Zen 4 (2023) | Zen 5 (2024) |
+|---|---|---|---|
+| L2 per core | 512 KB | 1 MB | 1 MB |
+| L1 data cache | 32 KB | 32 KB | 48 KB |
+| Dispatch width | 6 | 6 | 8 |
+| Integer ALUs | 4 | 4 | 6 |
+| Reorder buffer | 256 | 320 | 448 |
+| SIMD arithmetic units | 4 × 256-bit | 4 × 256-bit | **4 × 512-bit** |
+| Loads per cycle | 2 × 256-bit | 2 × 256-bit | **2 × 512-bit** |
+| Stores per cycle | 1 × 256-bit | 1 × 256-bit | **1 × 512-bit** |
+
+
 
 ---
 
