@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" font-family="Helvetica, Arial, sans-serif">
+<text x="30" y="40" font-size="30" font-weight="bold" fill="#0b0b0b">Is this byte a digit?</text>
+<text x="176" y="96" text-anchor="middle" font-size="20" fill="#8a8985">byte (hex)</text>
+<text x="408" y="96" text-anchor="middle" font-size="20" fill="#8a8985">byte + 6</text>
+<text x="114" y="118" text-anchor="middle" font-size="18" fill="#8a8985">high</text>
+<text x="178" y="118" text-anchor="middle" font-size="18" fill="#8a8985">low</text>
+<text x="346" y="118" text-anchor="middle" font-size="18" fill="#8a8985">high</text>
+<text x="410" y="118" text-anchor="middle" font-size="18" fill="#8a8985">low</text>
+<text x="50" y="171.0" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="30" fill="#0b0b0b">'7'</text>
+<rect x="84" y="130" width="60" height="60" rx="6" fill="#2a78d6"/>
+<text x="114.0" y="169.0" text-anchor="middle" font-size="26" font-weight="bold" fill="white">3</text>
+<rect x="148" y="130" width="60" height="60" rx="6" fill="#dfe6f0"/>
+<text x="178.0" y="169.0" text-anchor="middle" font-size="26" font-weight="bold" fill="#0b0b0b">7</text>
+<text x="268" y="171.0" text-anchor="middle" font-size="28" fill="#0b0b0b">+6 →</text>
+<rect x="316" y="130" width="60" height="60" rx="6" fill="#2a78d6"/>
+<text x="346.0" y="169.0" text-anchor="middle" font-size="26" font-weight="bold" fill="white">3</text>
+<rect x="380" y="130" width="60" height="60" rx="6" fill="#dfe6f0"/>
+<text x="410.0" y="169.0" text-anchor="middle" font-size="26" font-weight="bold" fill="#0b0b0b">D</text>
+<text x="470" y="171.0" font-size="28" font-weight="bold" fill="#1baf7a">✓ digit</text>
+<text x="50" y="265.0" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="30" fill="#0b0b0b">':'</text>
+<rect x="84" y="224" width="60" height="60" rx="6" fill="#2a78d6"/>
+<text x="114.0" y="263.0" text-anchor="middle" font-size="26" font-weight="bold" fill="white">3</text>
+<rect x="148" y="224" width="60" height="60" rx="6" fill="#dfe6f0"/>
+<text x="178.0" y="263.0" text-anchor="middle" font-size="26" font-weight="bold" fill="#0b0b0b">A</text>
+<text x="268" y="265.0" text-anchor="middle" font-size="28" fill="#0b0b0b">+6 →</text>
+<rect x="316" y="224" width="60" height="60" rx="6" fill="#eb6834"/>
+<text x="346.0" y="263.0" text-anchor="middle" font-size="26" font-weight="bold" fill="white">4</text>
+<rect x="380" y="224" width="60" height="60" rx="6" fill="#dfe6f0"/>
+<text x="410.0" y="263.0" text-anchor="middle" font-size="26" font-weight="bold" fill="#0b0b0b">0</text>
+<text x="470" y="265.0" font-size="28" font-weight="bold" fill="#eb6834">✗</text>
+<text x="50" y="359.0" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="30" fill="#0b0b0b">'a'</text>
+<rect x="84" y="318" width="60" height="60" rx="6" fill="#eb6834"/>
+<text x="114.0" y="357.0" text-anchor="middle" font-size="26" font-weight="bold" fill="white">6</text>
+<rect x="148" y="318" width="60" height="60" rx="6" fill="#dfe6f0"/>
+<text x="178.0" y="357.0" text-anchor="middle" font-size="26" font-weight="bold" fill="#0b0b0b">1</text>
+<text x="268" y="359.0" text-anchor="middle" font-size="28" fill="#0b0b0b">+6 →</text>
+<rect x="316" y="318" width="60" height="60" rx="6" fill="#eb6834"/>
+<text x="346.0" y="357.0" text-anchor="middle" font-size="26" font-weight="bold" fill="white">6</text>
+<rect x="380" y="318" width="60" height="60" rx="6" fill="#dfe6f0"/>
+<text x="410.0" y="357.0" text-anchor="middle" font-size="26" font-weight="bold" fill="#0b0b0b">7</text>
+<text x="470" y="359.0" font-size="28" font-weight="bold" fill="#eb6834">✗</text>
+<rect x="30" y="422" width="580" height="150" rx="10" fill="#f3f3f1"/>
+<text x="50" y="462" font-size="24" fill="#0b0b0b">Digit ⇔ high nibble is <tspan font-weight="bold" fill="#2a78d6">3</tspan> before <tspan font-style="italic">and</tspan> after +6</text>
+<text x="50" y="502" font-size="24" fill="#0b0b0b">0x30 … 0x39  →  0x36 … 0x3F</text>
+<text x="50" y="542" font-size="24" fill="#0b0b0b">0x3A … 0x3F  →  0x40 … 0x45  (carries out)</text>
+<text x="320" y="612" text-anchor="middle" font-size="24" fill="#8a8985">Same trick on 8 bytes at once: next slide</text>
+</svg>

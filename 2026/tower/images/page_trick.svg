@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 640" font-family="Helvetica, Arial, sans-serif">
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#e6e6e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#8a8985" stroke-width="2"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8985"/></marker></defs>
+<text x="60" y="40" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >memory, in 4 KB pages</text>
+<rect x="60" y="110" width="560" height="170" rx="10" fill="#f3f3f1" stroke="#8a8985" stroke-width="2" />
+<text x="76" y="144" font-size="20" fill="#8a8985" text-anchor="start" >page n (mapped)</text>
+<rect x="628" y="110" width="560" height="170" rx="10" fill="url(#hatch)" stroke="#8a8985" stroke-width="2" />
+<text x="1172" y="144" font-size="20" fill="#8a8985" text-anchor="end" >page n+1: maybe unmapped</text>
+<text x="624" y="310" font-size="18" fill="#0b0b0b" text-anchor="middle" >page boundary (addr &amp; 4095 == 0)</text>
+<line x1="624" y1="100" x2="624" y2="286" stroke="#0b0b0b" stroke-width="3"/>
+<rect x="510" y="194" width="31" height="44" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="525.5" y="223.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >P</text>
+<rect x="544" y="194" width="31" height="44" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="559.5" y="223.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >U</text>
+<rect x="578" y="194" width="31" height="44" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="593.5" y="223.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >T</text>
+<text x="498" y="224" font-size="20" fill="#0b0b0b" text-anchor="end" font-family="Menlo, Consolas, monospace" >p →</text>
+<rect x="510" y="182" width="544" height="68" rx="8" fill="none" stroke="#eb6834" stroke-width="4" stroke-dasharray="8,6"/>
+<text x="510" y="94" font-size="21" fill="#eb6834" text-anchor="start" font-weight="bold" >16-byte load at p: 3 bytes here, 13 bytes in the next page</text>
+<text x="1188" y="310" font-size="20" fill="#eb6834" text-anchor="end" font-weight="bold" >unmapped → SIGSEGV</text>
+<rect x="60" y="330" width="1180" height="100" rx="12" fill="#f3f3f1" />
+<text x="650" y="372" font-size="26" fill="#0b0b0b" text-anchor="middle" font-weight="bold" >a load that stays inside one page cannot fault</text>
+<text x="650" y="410" font-size="20" fill="#8a8985" text-anchor="middle" >the OS maps memory page by page; the protection unit is 4 KB, never a single byte</text>
+<rect x="60" y="470" width="700" height="150" rx="12" fill="#1f1f1d" />
+<text x="80" y="510" font-size="20" fill="#e8e6df" text-anchor="start" font-family="Menlo, Consolas, monospace" >if ((addr &amp; 4095) &lt;= 4096 - 16)  [[likely]]</text>
+<text x="80" y="542" font-size="20" fill="#1baf7a" text-anchor="start" font-family="Menlo, Consolas, monospace" >    return load16(p);            // wide, branch-free</text>
+<text x="80" y="574" font-size="20" fill="#eb6834" text-anchor="start" font-family="Menlo, Consolas, monospace" >copy len bytes to a 16-byte buffer;  // rare</text>
+<text x="80" y="606" font-size="20" fill="#eb6834" text-anchor="start" font-family="Menlo, Consolas, monospace" >return load16(buffer);</text>
+<text x="800" y="504" font-size="22" fill="#0b0b0b" text-anchor="start" font-weight="bold" >one branch, taken 99.6% of the time</text>
+<text x="800" y="536" font-size="20" fill="#8a8985" text-anchor="start" >(15 of every 4096 addresses)</text>
+<text x="800" y="574" font-size="20" fill="#8a8985" text-anchor="start" >the predictor learns it instantly;</text>
+<text x="800" y="602" font-size="20" fill="#8a8985" text-anchor="start" >8 unpredictable branches → 1 predictable one</text>
+</svg>

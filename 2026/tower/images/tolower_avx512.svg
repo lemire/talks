@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1330 560" font-family="Helvetica, Arial, sans-serif">
+<text x="20" y="40" font-size="24" font-weight="bold" fill="#0b0b0b">input c</text>
+<text x="20" y="68" font-family="Menlo, Consolas, monospace" font-size="19" fill="#8a8985">A = set1('A'), Z_A = set1(25), a_A = set1(32)</text>
+<rect x="580" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="606.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">H</text>
+<rect x="638" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="664.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">e</text>
+<rect x="696" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="722.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">L</text>
+<rect x="754" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="780.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">L</text>
+<rect x="812" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="838.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">o</text>
+<rect x="870" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="896.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">,</text>
+<rect x="928" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="954.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace"> </text>
+<rect x="986" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="1012.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">W</text>
+<rect x="1044" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="1070.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="1102" y="24" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="1128.0" y="58.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">!</text>
+<text x="1168" y="58.0" font-size="22" fill="#8a8985">… 64 lanes</text>
+<text x="20" y="156" font-size="24" font-weight="bold" fill="#0b0b0b">1. subtract 'A'</text><text x="20" y="184" font-family="Menlo, Consolas, monospace" font-size="19" fill="#2a78d6">ca = _mm512_sub_epi8(c, A)</text><text x="20" y="208" font-size="19" fill="#8a8985">wraps around when c &lt; 'A'</text>
+<rect x="580" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="606.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">7</text>
+<rect x="638" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="664.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">36</text>
+<rect x="696" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="722.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">11</text>
+<rect x="754" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="780.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">11</text>
+<rect x="812" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="838.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">46</text>
+<rect x="870" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="896.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">235</text>
+<rect x="928" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="954.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">223</text>
+<rect x="986" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="1012.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">22</text>
+<rect x="1044" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="1070.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">239</text>
+<rect x="1102" y="140" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="1128.0" y="174.0" text-anchor="middle" font-size="19" font-weight="bold" fill="#0b0b0b">224</text>
+<text x="1168" y="174.0" font-size="22" fill="#8a8985">… 64 lanes</text>
+<text x="867.0" y="116" text-anchor="middle" font-size="26" fill="#8a8985">↓</text>
+<text x="20" y="272" font-size="24" font-weight="bold" fill="#0b0b0b">2. compare ≤ 25, unsigned</text><text x="20" y="300" font-family="Menlo, Consolas, monospace" font-size="19" fill="#2a78d6">mask = _mm512_cmple_epu8_mask(ca, Z_A)</text><text x="20" y="324" font-size="19" fill="#8a8985">one compare checks both bounds</text>
+<rect x="580" y="256" width="52" height="52" rx="6" fill="#eb6834"/>
+<text x="606.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">1</text>
+<rect x="638" y="256" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="664.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">0</text>
+<rect x="696" y="256" width="52" height="52" rx="6" fill="#eb6834"/>
+<text x="722.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">1</text>
+<rect x="754" y="256" width="52" height="52" rx="6" fill="#eb6834"/>
+<text x="780.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">1</text>
+<rect x="812" y="256" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="838.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">0</text>
+<rect x="870" y="256" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="896.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">0</text>
+<rect x="928" y="256" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="954.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">0</text>
+<rect x="986" y="256" width="52" height="52" rx="6" fill="#eb6834"/>
+<text x="1012.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">1</text>
+<rect x="1044" y="256" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="1070.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">0</text>
+<rect x="1102" y="256" width="52" height="52" rx="6" fill="#dfe6f0"/>
+<text x="1128.0" y="290.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">0</text>
+<text x="1168" y="290.0" font-size="22" fill="#8a8985">… (mask)</text>
+<text x="867.0" y="232" text-anchor="middle" font-size="26" fill="#8a8985">↓</text>
+<text x="20" y="388" font-size="24" font-weight="bold" fill="#0b0b0b">3. add 32 where mask is set</text><text x="20" y="416" font-family="Menlo, Consolas, monospace" font-size="19" fill="#2a78d6">out = _mm512_mask_add_epi8(c, mask, c, a_A)</text><text x="20" y="440" font-size="19" fill="#8a8985">other lanes keep c</text>
+<rect x="580" y="372" width="52" height="52" rx="6" fill="#1baf7a"/>
+<text x="606.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">h</text>
+<rect x="638" y="372" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="664.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">e</text>
+<rect x="696" y="372" width="52" height="52" rx="6" fill="#1baf7a"/>
+<text x="722.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">l</text>
+<rect x="754" y="372" width="52" height="52" rx="6" fill="#1baf7a"/>
+<text x="780.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">l</text>
+<rect x="812" y="372" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="838.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">o</text>
+<rect x="870" y="372" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="896.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">,</text>
+<rect x="928" y="372" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="954.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace"> </text>
+<rect x="986" y="372" width="52" height="52" rx="6" fill="#1baf7a"/>
+<text x="1012.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">w</text>
+<rect x="1044" y="372" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="1070.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="1102" y="372" width="52" height="52" rx="6" fill="#2a78d6"/>
+<text x="1128.0" y="406.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white" font-family="Menlo, Consolas, monospace">!</text>
+<text x="1168" y="406.0" font-size="22" fill="#8a8985">… 64 lanes</text>
+<text x="867.0" y="348" text-anchor="middle" font-size="26" fill="#8a8985">↓</text>
+<text x="640.0" y="530" text-anchor="middle" font-size="26" font-weight="bold" fill="#0b0b0b">3 instructions, 64 characters, no branch</text>
+</svg>

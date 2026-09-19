@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 560" font-family="Helvetica, Arial, sans-serif">
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#e6e6e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#8a8985" stroke-width="2"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8985"/></marker></defs>
+<rect x="40" y="60" width="340" height="230" rx="14" fill="#f3f3f1" stroke="#2a78d6" stroke-width="4" />
+<rect x="40" y="60" width="340" height="58" rx="14" fill="#2a78d6" />
+<rect x="40" y="100" width="340" height="18" rx="0" fill="#2a78d6" />
+<text x="210.0" y="99" font-size="28" fill="white" text-anchor="middle" font-weight="bold" >AVX-512 kernels</text>
+<text x="210.0" y="156" font-size="21" fill="#0b0b0b" text-anchor="middle" >IPv4 in a 16-byte register</text>
+<text x="210.0" y="188" font-size="21" fill="#0b0b0b" text-anchor="middle" >IPv6 in a 64-byte register</text>
+<text x="210.0" y="220" font-size="21" fill="#0b0b0b" text-anchor="middle" >~50 instructions</text>
+<text x="210.0" y="252" font-size="21" fill="#0b0b0b" text-anchor="middle" >one branch</text>
+<rect x="480" y="60" width="340" height="230" rx="14" fill="#f3f3f1" stroke="#1baf7a" stroke-width="4" />
+<rect x="480" y="60" width="340" height="58" rx="14" fill="#1baf7a" />
+<rect x="480" y="100" width="340" height="18" rx="0" fill="#1baf7a" />
+<text x="650.0" y="99" font-size="28" fill="white" text-anchor="middle" font-weight="bold" >ada</text>
+<text x="650.0" y="156" font-size="21" fill="#0b0b0b" text-anchor="middle" >WHATWG URL parser, C++</text>
+<text x="650.0" y="188" font-size="21" fill="#0b0b0b" text-anchor="middle" >github.com/ada-url/ada</text>
+<text x="650.0" y="220" font-size="21" fill="#0b0b0b" text-anchor="middle" >picks the kernel</text>
+<text x="650.0" y="252" font-size="21" fill="#0b0b0b" text-anchor="middle" >at compile time</text>
+<rect x="920" y="60" width="340" height="230" rx="14" fill="#f3f3f1" stroke="#008300" stroke-width="4" />
+<rect x="920" y="60" width="340" height="58" rx="14" fill="#008300" />
+<rect x="920" y="100" width="340" height="18" rx="0" fill="#008300" />
+<text x="1090.0" y="99" font-size="28" fill="white" text-anchor="middle" font-weight="bold" >Node.js</text>
+<text x="1090.0" y="156" font-size="21" fill="#0b0b0b" text-anchor="middle" >new URL(s)</text>
+<text x="1090.0" y="188" font-size="21" fill="#0b0b0b" text-anchor="middle" >URL.canParse(s)</text>
+<text x="1090.0" y="220" font-size="21" fill="#0b0b0b" text-anchor="middle" >every http://host/</text>
+<text x="1090.0" y="252" font-size="21" fill="#0b0b0b" text-anchor="middle" >on the runtime</text>
+<line x1="390" y1="175.0" x2="468" y2="175.0" stroke="#8a8985" stroke-width="4" marker-end="url(#arrow)"/>
+<line x1="830" y1="175.0" x2="908" y2="175.0" stroke="#8a8985" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="40" y="350" font-size="22" fill="#0b0b0b" text-anchor="start" >Measured in Node.js, Xeon Gold 6548N, 100 000 URLs per corpus, best of 5:</text>
+<text x="400" y="394" font-size="22" fill="#8a8985" text-anchor="start" font-family="Menlo, Consolas, monospace" >new URL(s)</text>
+<text x="700" y="394" font-size="22" fill="#8a8985" text-anchor="start" font-family="Menlo, Consolas, monospace" >URL.canParse(s)</text>
+<text x="40" y="440" font-size="22" fill="#0b0b0b" text-anchor="start" >IPv4 hosts</text>
+<text x="400" y="440" font-size="24" fill="#008300" text-anchor="start" font-weight="bold" >+8%</text>
+<text x="700" y="440" font-size="24" fill="#008300" text-anchor="start" font-weight="bold" >+13%</text>
+<text x="40" y="480" font-size="22" fill="#0b0b0b" text-anchor="start" >IPv6, random</text>
+<text x="400" y="480" font-size="24" fill="#008300" text-anchor="start" font-weight="bold" >+8%</text>
+<text x="700" y="480" font-size="24" fill="#008300" text-anchor="start" font-weight="bold" >+20%</text>
+<text x="40" y="520" font-size="22" fill="#0b0b0b" text-anchor="start" >IPv6, traffic-like</text>
+<text x="400" y="520" font-size="24" fill="#008300" text-anchor="start" font-weight="bold" >+2%</text>
+<text x="700" y="520" font-size="24" fill="#008300" text-anchor="start" font-weight="bold" >+9%</text>
+<text x="1000" y="440" font-size="20" fill="#8a8985" text-anchor="start" >2 300–3 200 instructions</text>
+<text x="1000" y="468" font-size="20" fill="#8a8985" text-anchor="start" >per new URL; the address</text>
+<text x="1000" y="496" font-size="20" fill="#8a8985" text-anchor="start" >parser was a few hundred</text>
+<text x="1000" y="524" font-size="20" fill="#8a8985" text-anchor="start" >of them</text>
+</svg>

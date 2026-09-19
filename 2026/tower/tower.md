@@ -14,6 +14,11 @@ _paginate: false
   display: flex;
   justify-content: center;
 }
+/* full-bleed figure slides: small padding, compact title, figure fills the rest */
+section.fig { padding: 24px 36px; }
+section.fig h1 { font-size: 1.35em; margin: 0 0 10px 0; }
+section.fig img { max-height: 575px; max-width: 100%; display: block; margin: 0 auto; }
+section.fig p { margin: 8px 0 0 0; font-size: 0.85em; text-align: center; }
 </style>
 
 ![bg right](images/highperf.png)
@@ -65,24 +70,9 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 ---
 
-# Frequencies and transistors
-
-| processor | year  | frequency  | transistors    |
-|-----------|-------|------------|----------------|
-| Pentium 4 | 2000  | 3.8 GHz    | 0.040 billions |
-| Intel Haswell  | 2013  | 4.4 GHz    | 1.4 billions  |
-| Apple M1  | 2020  | 3.2 GHz    | 16 billions    |
-| Apple M3  | 2024  | 4.05 GHz   | 25 billions    |
-| Apple M4  | 2024  | 4.5 GHz    | 28 billions    |
-| AMD Zen 5 | 2024  | 5.7 GHz    | 50 billions    |
-
-**Frequency: +50% in 25 years. Transistors: 1000×.**
-
----
-
 ![bg right 95%](plots/p4_vs_9800x3d.svg)
 
-# Clock frequency: 25 years
+# Clock frequency: 25&nbsp;years
 
 - Pentium 4 (2000): 1.3 to 2 GHz
 - AMD Ryzen 7 9800X3D (2024): 4.7 to 5.2 GHz
@@ -97,6 +87,22 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 
 - Up 15% is two years
+
+---
+
+# Geekbench 6: Apple M2–M5, 2022–2025
+
+<img src="plots/apple_m2m5_geekbench.svg" width="92%">
+
+Single-core: **+52%**. Multi-core: **+83%**. Same 4 P-cores.
+
+---
+
+# Geekbench 6: AMD Ryzen 7, 2022–2024
+
+<img src="plots/ryzen_geekbench.svg" width="92%">
+
+Single-core: **+47%**. Multi-core: **+58%**. Same 8 cores.
 
 ---
 
@@ -119,73 +125,54 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 - 24% into the I/O die
 - Cache die unchanged
 
----
-
-
-| | Zen 3 (2022) | Zen 4 (2023) | Zen 5 (2024) |
-|---|---|---|---|
-| L2 per core | 512 KB | 1 MB | 1 MB |
-| L1 data cache | 32 KB | 32 KB | 48 KB |
-| Dispatch width | 6 | 6 | 8 |
-| Integer ALUs | 4 | 4 | 6 |
-| Reorder buffer | 256 | 320 | 448 |
-| SIMD arithmetic units | 4 × 256-bit | 4 × 256-bit | **4 × 512-bit** |
-| Loads per cycle | 2 × 256-bit | 2 × 256-bit | **2 × 512-bit** |
-| Stores per cycle | 1 × 256-bit | 1 × 256-bit | **1 × 512-bit** |
-
-
 
 ---
 
-# Doubles every 3 years
 
-![bg right width:120%](pcie.svg)
-<div class="center-table">
-
-| Specification  | year                | one channel      |
-|--------------|--------------------|--------|
-| PCIe 1.x  | 2003   | 500 MB/s |
-|  PCIe 2.x |  2007   | 1 GB/s |
-|  PCIe 3.x |  2010   | 2 GB/s |
-|  PCIe 4.x |  2017  | 4 GB/s |
-| PCIe 5.x  | 2019  | 8 GB/s |
-|  PCIe 6.x|  2022  | 16 GB/s|
-|  PCIe 7.x |  2025 | 32 GB/s|
+<div style="margin-left:auto;margin-right:auto">
+<img src="plots/zen_core_specs.svg" width="90%">
 </div>
+
+---
+
+# What changed in the core: SIMD (same 8 cores)
+
+<img src="plots/zen_simd_specs.svg" width="100%">
+
+
+
+---
+
+![bg right 95%](plots/simdjson_ryzen.svg)
+
+# Same software, three years apart
+
+- simdjson, PartialTweets benchmark, one core
+- Same code: **2.4×** from 2022 to 2024
+- The library is designed for data parallelism
+- Same $
+
+
 
 ---
 
 # Disk at gigabytes per second
 
-![bg right width:90%](sandisk2025.png)
+![bg right width:90%](samsunpm.png)
 
-* Sony PlayStation 5 (2020): 5&nbsp;GB/s
-* Sony PlayStation 6 (2027): 15&nbsp;GB/s (?)
+| device | year | PCI | read speed |
+|--------|------|-----------|-----------:|
+| PS5 | 2020 | 4.0 | 5 GB/s |
+| WD Black SN8100 | 2025 | 5.0 | 14.9&nbsp;GB/s |
+| Samsung PM1763 | 2026 | 6.0 | 28.4&nbsp;GB/s |
 
----
-
-![bg right](images/hmb.png)
-
-# High Bandwidth Memory
-
-
-| Generation | Year | Bandwidth (per stack) |
-|------------|--------------|----------------------------|
-| HBM2E      | 2020    | ~460 GB/s                  |
-| HBM3       | 2022         | 819 GB/s                   |
-| HBM3E      | 2024    | ~1.2 TB/s                  |
-| HBM4       | 2026    | >2.8 TB/s |
-| HBM4E      | 2027         | ~4 TB/s                    |
+     |
 
 ---
 
-# The squeeze
+# **You are CPU bound.**
 
-* Your storage delivers gigabytes per second.
-* Your memory delivers hundreds of gigabytes per second.
-* Your software processes bytes **one at a time**.
-
-**You are CPU bound.**
+## More than you know.
 
 
 ---
@@ -197,113 +184,17 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 - STREAM single thread bandwidth: 46 GB/s
 - `strstr`, 32-byte needle: 9.5 GB/s
 
----
 
-<!-- ============ PART 2 ============ -->
-
-# Part 2
-
-## The kinds of parallelism
 
 ---
 
-# 1. Multicore
-
-* The one everyone knows.
-* Hard: synchronization, false sharing, non-determinism.
-* Does nothing for a single request that must finish in 2&nbsp;ms.
-* Multiplies your energy bill by the number of cores.
-
-**Do this last, not first.**
-
----
-
-# 2. Superscalar and speculative execution
-
-| processor       | year    | arithmetic logic units    | SIMD units |
-|-----------------|---------|---------------------------|-----|
-| Pentium 4       |  2000   |    2                      | $2 \times 128$ |
-| AMD Zen 2       |  2019   |    4                      | $2 \times 256$ |
-| Apple M*        |  2019   |    6+                     | $4 \times 128$ |
-| Intel Lion Cove |  2024   |    6                      | $4 \times 256$ |
-| AMD Zen 5       |  2024   |    6                      | $4 \times 512$ |
-
-Processors *predict* branches and execute code *speculatively*. A misprediction costs 10–20 cycles.
-
----
-
-# How much can your processor learn?
-
-![](plots/size_vs_cycles_english.png)
-
----
-
-# Apple M4 can learn 10,000 random (0/1) branches
-
-<img src="brm.svg" width="55%" />
-
-1. Benchmark over **massive** inputs, or you are measuring the branch predictor's memory.
-2. Prefer a branchless solution when it costs you nothing.
-
----
-
-# 3. Memory-level parallelism
-
-* Latency to RAM: ~100&nbsp;ns (400 cycles).
-* But you can have dozens of loads in flight at once.
-
-| cycle | action | action | pizza en route |
-|-------|--------|---------|----------------|
-| 1    | order pizza A |      |             |
-| 2    | order pizza B |      | A🚚            |
-| 3   | order pizza C |      | A🚚, B🚚            |
-| 4   | order pizza D | eat pizza A 🍕    | B🚚, C🚚 |
-| 5   | order pizza E | eat pizza B 🍕    |  C🚚, D🚚 |
-
----
-
-# Little's Law
-
-* Latency harms throughput
-* Parallelism hides latency
-
-$$\mathrm{throughput} = \frac{\mathrm{parallelism}}{\mathrm{latency}}$$
-
----
-
-![](plots/bandwidth_vs_lanes_english.png)
-
----
-
-# Bloom filter
-
-<img src="bloom.svg" width="95%" />
-
-Restructure the queries so several memory accesses are in flight at once.
-
----
-
-# Bloom filter (Intel Ice Lake, out-of-cache)
-
-<img src="cyclesdiffs.svg" width="52%"/>
-
-Same algorithm. Same hash functions. **Different memory access pattern.**
-
----
-
-# 4. Data-level parallelism
+# Data-level parallelism
 
 ## The rest of this talk
 
 ---
 
-<!-- ============ PART 3 ============ -->
-
-# Part 3
-
-## SIMD and SWAR
-
----
+![bg right 95%](images/simd_lanes.svg)
 
 ## SIMD (Single Instruction, Multiple Data)
 
@@ -321,9 +212,11 @@ Same algorithm. Same hash functions. **Different memory access pattern.**
 * **POWER**: AltiVec/VSX · **LoongArch**: LSX, LASX
 * **WebAssembly**: 128-bit SIMD, in every browser
 
-Portability is mostly solved: compile several kernels, dispatch at runtime on CPU features. C++26 adds data-parallel types (`std::simd`).
+Portability: compile several kernels, dispatch at runtime on CPU features. C++26 adds data-parallel types (`std::simd`).
 
 ---
+
+![bg right 95%](images/swar_ascii.svg)
 
 # SWAR: SIMD within a register
 
@@ -336,6 +229,8 @@ Portability is mostly solved: compile several kernels, dispatch at runtime on CP
 **A great place to start.**
 
 ---
+
+![bg right 95%](images/swar_digit.svg)
 
 ## Check whether we have 8 digits
 
@@ -375,58 +270,10 @@ test    rax, rdx
 
 ---
 
-<!-- ============ PART 4 ============ -->
-
-# Part 4
-
-## Case studies
-
----
-
-# Case study: parsing a number
-
-- `1.3321321e-12` to `double`
-
-```cpp
-double result;
-fast_float::from_chars(
-  input.data(), input.data() + input.size(), result);
-```
-
-* Used by major browsers (Safari, Chrome), GCC (12+), C#, Rust, MySQL, Go, Python
-* About $4 \times$ faster than the conventional alternatives
-
----
-
-We massively reduced the number of CPU instructions required.
-
-| function | instructions |
-|----------|--------------|
-| strtod   |     $> 1000$     |
-| our parser   |    $\approx 200$     |
-
-*Reference*:
-Number Parsing at a Gigabyte per Second, Software: Practice and Experience 51 (8), 2021
-
-https://github.com/fastfloat/fast_float
-
----
-
-<img src="parsingnumber.svg" width="90%">
-
----
-
-# The lesson
-
-* We did not make the instructions faster.
-* We **removed** instructions.
-* Data parallelism is an instruction-count strategy.
-
----
 
 <!-- ============ PART 5 ============ -->
 
-# Case study: 64 characters, 3 instructions
+# Case study: ASCII processing
 
 ---
 
@@ -446,22 +293,7 @@ One byte per iteration. One unpredictable branch per byte.
 
 # 64 characters in 3 instructions
 
-- Compute $c-\mathrm{A}$
-```cpp
-__m512i ca = _mm512_sub_epi8(c, _mm512_set1_epi8('A'));
-```
-
-- Turn $c-\mathrm{'A'} \leq \mathrm{Z}-\mathrm{A}$ into a mask
-```cpp
-__mmask64 is_upper = _mm512_cmple_epu8_mask(ca, _mm512_set1_epi8('Z' - 'A'));
-```
-
-- Add $\mathrm{a} - \mathrm{A}$ to $c$ according to the mask
-```cpp
-__m512i result = _mm512_mask_add_epi8(c, is_upper, c, to_lower);
-```
-
-**No branch at all.**
+<img src="images/tolower_avx512.svg" width="100%">
 
 ---
 
@@ -510,39 +342,56 @@ jne        .LBB0_1
 
 # llvm-mca says...
 
-```text
-                             scalar        AVX-512
-Iterations:                     100            100
-Instructions:                   900            800
-Total Cycles:                   206            216
-uOps Per Cycle:                4.37           4.63
-IPC:                           4.37           3.70
-```
-
-* Bytes processed: **100** vs **6400**
-* Cycles per byte: **2.06** vs **0.034**
+<img src="plots/mca_tolower.svg" width="88%">
 
 **About 60× fewer cycles per byte.**
 
----
-
-# Read that table again
-
-* The scalar loop has the **higher IPC** (4.37 vs 3.70).
-* The scalar loop retires **more instructions per cycle**.
-* The scalar loop is **60× slower**.
-
-**IPC is not a performance metric. It is a diagnostic.**
 
 ---
 
 # What llvm-mca will not tell you
 
-* It assumes perfect branch prediction — the scalar loop's real cost is worse.
-* It assumes every load hits L1 — real code will be memory bound.
+* It assumes perfect branch prediction
+* It assumes every load hits L1
+* It often ignores memory alignment issues
 * It models one microarchitecture at a time.
 
-Use it to *explain* a measurement, not to replace one.
+It is a model. Not reality.
+
+---
+
+# Reality: Intel Xeon Gold 6548N (Emerald Rapids)
+
+<img src="plots/tolower_reality.svg" width="90%">
+
+---
+
+# Model vs reality
+
+* Model assumptions hold (L1, predictable, aligned): **within 3%** of llvm-mca
+* Unpredictable branches: scalar is **5× slower** than the model
+* 256 MB in RAM: AVX-512 is **6× slower** than the model (memory-bound, ~17 GB/s)
+* Reality: AVX-512 is **~65× faster** than scalar on real text
+
+
+---
+
+# Alignment: 64-byte loads and stores, 64 offsets
+
+<img src="plots/tolower_alignment.svg" width="90%">
+
+Only 1 offset in 64 matches the model. The other 63 straddle two cache lines: **+30%**.
+
+---
+
+# Masked loads and stores
+
+* AVX-512 loads and stores take a 64-bit mask: one bit per byte
+* Masked-out bytes are not read, not written, and **cannot fault**
+* Round `p` down to the cache line, mask off the bytes before `p`: the rest of the loop is aligned
+* Same trick handles the tail: no scalar loop, no branch
+
+<img src="images/masked_align.svg" width="100%">
 
 ---
 
@@ -667,6 +516,43 @@ Five instructions, 16 to 64 bytes at a time:
 
 ---
 
+
+![bg fit](images/classify_grid.svg)
+
+---
+
+# Classification, 64 bytes at a time
+
+<img src="images/classify_flow.svg" width="100%">
+
+---
+
+# When the instruction set gives you the instruction: SVE2
+
+* ARM SVE2 has `match`: input vector, a 16-byte *set*, one predicate bit per byte in the set
+* NEON has nothing like it; on x64 the closest thing (`pcmpistrm`) is slow
+* Our structural-character classifier: **4 NEON instructions → 1**
+* The catch: a predicate lives in a predicate register; materialize it with `svsel` + weights, reduce with `addp`
+* NEON–SVE bridge (`svset_neonq_u8`, `svget_neonq_u8`): mix both, no assembly
+
+---
+<!-- _class: fig -->
+
+# NEON vs SVE2 `match`, one 16-byte block
+
+<img src="images/sve2_match.svg">
+
+---
+<!-- _class: fig -->
+
+# simdjson indexing stage, AWS Graviton 4 and 5
+
+<img src="plots/sve2_results.svg">
+
+Whole parse: +2–4% on Graviton 4, +1–2% on Graviton 5. Madhurendra Purbay (ARM), simdjson PR 2866.
+
+---
+
 # Serialization is also a data-parallel problem
 
 * JSON requires escaping `"`, `\`, and control characters.
@@ -731,6 +617,112 @@ No macros. No code generation step. No runtime reflection cost.
 # Serialization (Apple Silicon)
 
 <img src="images/perf_with_simdjson.png" width="80%"/>
+
+---
+
+# Deserialization (Intel Xeon Gold 6548N)
+
+<img src="images/perf_with_simdjson_parsing_xeon.png" width="80%"/>
+
+---
+
+# Serialization (Intel Xeon Gold 6548N)
+
+<img src="images/perf_with_simdjson_xeon.png" width="80%"/>
+
+---
+
+<!-- ============ IP ADDRESSES ============ -->
+
+# Case study: IP addresses
+
+---
+
+# `192.168.0.1` → 32 bits
+
+* Every server logs the client address. Every firewall evaluates a rule. Every URL parser meets an IP literal.
+* The usual tool: `inet_pton` from the C library, ~340 instructions per address.
+* An IPv4 address is at most 15 bytes: it fits in **one** 16-byte register.
+* An IPv6 address is at most 45 bytes: it fits in **one** 64-byte register.
+
+**Load the whole address once. Never walk it.**
+
+---
+<!-- _class: fig -->
+
+
+# IPv4 in six steps, no loop
+
+<img src="images/ipv4_pipeline.svg">
+
+---
+<!-- _class: fig -->
+
+
+# IPv4 parsing, Intel Xeon Gold 6548N
+
+<img src="plots/ip_results.svg">
+
+10× over `inet_pton` on IPv4, 10× on traffic-like IPv6. 6–60× fewer instructions.
+
+---
+<!-- _class: fig -->
+
+
+# Deployed: ada → Node.js
+
+<img src="images/ada_node.svg">
+
+---
+
+<!-- ============ PERFECT HASHING ============ -->
+
+# Case study: perfect hashing
+
+---
+
+# The lookup *is* the workload
+
+* Map a string to a value: HTTP method, header name, URL scheme, keyword, MIME type
+* The keys are **fixed when you write the code**
+* Yet we hash, mask, probe, chase a pointer, compare: `std::unordered_map`, 12.8 ns
+* With the keys known at compile time, we can build a **perfect hash**: no collisions, one candidate per slot
+
+Library: [github.com/ConstexprCore/perfect_hash](https://github.com/ConstexprCore/perfect_hash) (with Francisco Geiman Thiesen)
+
+---
+<!-- _class: fig -->
+
+
+# One hash, one comparison
+
+<img src="images/phf_slots.svg">
+
+---
+<!-- _class: fig -->
+
+
+# Compare the whole key at once
+
+<img src="images/phf_compare16.svg">
+
+---
+<!-- _class: fig -->
+
+
+# The memory page trick
+
+<img src="images/page_trick.svg">
+
+---
+<!-- _class: fig -->
+
+
+# URL schemes, 6 keys, Apple M3 Max
+
+<img src="plots/phf_results.svg">
+
+1.19 ns, 4.9 cycles, 8.7 instructions per cycle, **zero** branch mispredictions.
 
 ---
 
@@ -845,6 +837,22 @@ console.log(str.toWellFormed());
 The SIMD **correction** function (which copies the data) beats the non-SIMD **validation** function.
 
 ---
+<!-- _class: fig -->
+
+
+# Repair, 64 bytes at a time
+
+<img src="images/utf16fix_flow.svg">
+
+---
+<!-- _class: fig -->
+
+
+# One function, every V8 embedder
+
+<img src="images/utf16fix_deploy.svg">
+
+---
 
 # UTF-16 correction, Apple M4
 
@@ -900,6 +908,40 @@ const recovered = Uint8Array.fromBase64(b64);
 | `Uint8Array.toBase64()` | 20 GiB/s |
 
 Test in your browser: https://simdutf.github.io/browserbase64/
+
+---
+
+# The web's Base64 is not RFC 4648
+
+* ES2026 `Uint8Array.fromBase64` follows WHATWG *forgiving base64*: **ignore** ASCII whitespace, **reject** anything else
+* MIME e-mail breaks lines every 76 characters; DNS zone files put spaces every 50; JSON and data URLs wrap freely
+* Every earlier SIMD decoder assumed clean input: one `\n` and it falls back to a byte loop
+
+**Keep the SIMD throughput on input that has whitespace in it.**
+
+---
+<!-- _class: fig -->
+
+
+# Decode in blocks, compact the rare ones
+
+<img src="images/base64_blocks.svg">
+
+---
+<!-- _class: fig -->
+
+
+# Base64 decoding with whitespace
+
+<img src="plots/base64_results.svg">
+
+---
+<!-- _class: fig -->
+
+
+# In the browsers, in the runtimes
+
+<img src="images/base64_deploy.svg">
 
 ---
 

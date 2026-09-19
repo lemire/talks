@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 640" font-family="Helvetica, Arial, sans-serif">
+<text x="60" y="40" font-size="30" font-weight="bold" fill="#0b0b0b">Scalar: 1 instruction, 1 result</text>
+<text x="46" y="107.0" text-anchor="end" font-size="26" fill="#0b0b0b">a</text><rect x="60" y="70" width="56" height="56" rx="6" fill="#2a78d6"/><text x="88.0" y="107.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">3</text>
+<text x="138" y="109.0" font-size="30" fill="#0b0b0b">+</text>
+<rect x="176" y="70" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="204.0" y="107.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">2</text>
+<text x="254" y="109.0" font-size="30" fill="#0b0b0b">=</text>
+<rect x="292" y="70" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="320.0" y="107.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">5</text>
+<text x="378" y="109.0" font-size="26" fill="#8a8985">× 8 instructions</text>
+<text x="60" y="210" font-size="30" font-weight="bold" fill="#0b0b0b">SIMD: 1 instruction, 8 results</text>
+<text x="46" y="277.0" text-anchor="end" font-size="26" fill="#0b0b0b">a</text>
+<rect x="60" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="88.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">3</text>
+<rect x="122" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="150.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">1</text>
+<rect x="184" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="212.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">4</text>
+<rect x="246" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="274.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">1</text>
+<rect x="308" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="336.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">5</text>
+<rect x="370" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="398.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">9</text>
+<rect x="432" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="460.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">2</text>
+<rect x="494" y="240" width="56" height="56" rx="6" fill="#2a78d6"/>
+<text x="522.0" y="277.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">6</text>
+<text x="305.0" y="318" text-anchor="middle" font-size="30" fill="#0b0b0b">+</text>
+<text x="46" y="367.0" text-anchor="end" font-size="26" fill="#0b0b0b">b</text>
+<rect x="60" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="88.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">2</text>
+<rect x="122" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="150.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">7</text>
+<rect x="184" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="212.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">1</text>
+<rect x="246" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="274.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">8</text>
+<rect x="308" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="336.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">2</text>
+<rect x="370" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="398.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">8</text>
+<rect x="432" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="460.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">1</text>
+<rect x="494" y="330" width="56" height="56" rx="6" fill="#eb6834"/>
+<text x="522.0" y="367.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">8</text>
+<line x1="60" y1="418" x2="550" y2="418" stroke="#0b0b0b" stroke-width="3"/>
+<text x="46" y="477.0" text-anchor="end" font-size="26" fill="#0b0b0b">c</text>
+<rect x="60" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="88.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">5</text>
+<rect x="122" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="150.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">8</text>
+<rect x="184" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="212.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">5</text>
+<rect x="246" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="274.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">9</text>
+<rect x="308" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="336.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">7</text>
+<rect x="370" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="398.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">17</text>
+<rect x="432" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="460.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">3</text>
+<rect x="494" y="440" width="56" height="56" rx="6" fill="#1baf7a"/>
+<text x="522.0" y="477.0" text-anchor="middle" font-size="24" font-weight="bold" fill="white">14</text>
+<text x="305.0" y="548" text-anchor="middle" font-size="26" fill="#8a8985">one 512-bit register = 8 × 64-bit lanes</text>
+<text x="305.0" y="586" text-anchor="middle" font-size="26" fill="#8a8985">(or 16 × 32-bit, or 64 × 8-bit)</text>
+</svg>
