@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 700" font-family="Helvetica, Arial, sans-serif">
+<text x="90" y="40" font-size="30" font-weight="bold" fill="#0b0b0b">Is every byte ASCII?</text>
+<text x="90" y="78" font-size="18" fill="#8a8985">bit 63</text>
+<text x="628" y="78" text-anchor="end" font-size="18" fill="#8a8985">bit 0</text>
+<text x="76" y="130.0" text-anchor="end" font-size="26" fill="#0b0b0b">x</text>
+<rect x="90" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="121.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">J</text>
+<text x="121.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0x4A</text>
+<rect x="158" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="189.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">S</text>
+<text x="189.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0x53</text>
+<rect x="226" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="257.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">O</text>
+<text x="257.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0x4F</text>
+<rect x="294" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="325.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">N</text>
+<text x="325.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0x4E</text>
+<rect x="362" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="393.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">é</text>
+<text x="393.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0xC3</text>
+<rect x="430" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="461.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white"> </text>
+<text x="461.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0x20</text>
+<rect x="498" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="529.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">o</text>
+<text x="529.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0x6F</text>
+<rect x="566" y="90" width="62" height="62" rx="6" fill="#2a78d6"/>
+<text x="597.0" y="129.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">k</text>
+<text x="597.0" y="174" text-anchor="middle" font-size="18" fill="#8a8985">0x6B</text>
+<text x="359.0" y="214" text-anchor="middle" font-size="30" fill="#0b0b0b">&amp;</text>
+<text x="76" y="272.0" text-anchor="end" font-size="26" fill="#0b0b0b">m</text>
+<rect x="90" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="121.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="158" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="189.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="226" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="257.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="294" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="325.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="362" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="393.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="430" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="461.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="498" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="529.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="566" y="232" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="597.0" y="271.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<line x1="90" y1="340" x2="628" y2="340" stroke="#0b0b0b" stroke-width="3"/>
+<text x="76" y="396.0" text-anchor="end" font-size="26" fill="#0b0b0b"></text>
+<rect x="90" y="356" width="62" height="62" rx="6" fill="#dfe6f0"/>
+<text x="121.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">00</text>
+<rect x="158" y="356" width="62" height="62" rx="6" fill="#dfe6f0"/>
+<text x="189.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">00</text>
+<rect x="226" y="356" width="62" height="62" rx="6" fill="#dfe6f0"/>
+<text x="257.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">00</text>
+<rect x="294" y="356" width="62" height="62" rx="6" fill="#dfe6f0"/>
+<text x="325.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">00</text>
+<rect x="362" y="356" width="62" height="62" rx="6" fill="#eb6834"/>
+<text x="393.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="white">80</text>
+<rect x="430" y="356" width="62" height="62" rx="6" fill="#dfe6f0"/>
+<text x="461.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">00</text>
+<rect x="498" y="356" width="62" height="62" rx="6" fill="#dfe6f0"/>
+<text x="529.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">00</text>
+<rect x="566" y="356" width="62" height="62" rx="6" fill="#dfe6f0"/>
+<text x="597.0" y="395.0" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0b0b">00</text>
+<text x="359.0" y="458" text-anchor="middle" font-size="26" fill="#0b0b0b">non-zero → a non-ASCII byte</text>
+<rect x="60" y="508" width="598" height="112" rx="10" fill="#f3f3f1"/>
+<text x="80" y="550" font-family="Menlo, Consolas, monospace" font-size="24" fill="#0b0b0b">m = 0x8080808080808080;</text>
+<text x="80" y="592" font-family="Menlo, Consolas, monospace" font-size="24" fill="#0b0b0b">ascii = ((x &amp; m) == 0);</text>
+<text x="359.0" y="658" text-anchor="middle" font-size="26" fill="#8a8985">8 bytes checked with one 64-bit AND</text>
+</svg>

@@ -1,0 +1,112 @@
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+   Compiling serde-benchmark v0.1.0 (/work/simdjson/benchmark/static_reflect/serde-benchmark)
+    Finished `release` profile [optimized] target(s) in 14.17s
+-rwxr-xr-x. 2 root root 602856 Sep 18 03:01 target/release/libserde_benchmark.so
+BUILD_DONE
+=== parsing run 1 ===
+# Reading file /work/simdjson/build/jsonexamples/twitter.json
+# input volume: 631515 bytes
+bench_nlohmann_parsing                                       :  152.70 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_rapidjson_parsing                                      :  843.25 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_yyjson_parsing                                         :  1181.43 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_simdjson_static_reflection_parsing                     :  4817.53 MB/s   0.01 Ms/s 
+# input volume: 631515 bytes
+bench_simdjson_from_parsing                                  :  4799.44 MB/s   0.01 Ms/s 
+# Note: Rust/Serde parsing test
+# input volume: 631515 bytes
+bench_rust_parsing                                           :  1904.11 MB/s   0.00 Ms/s 
+=== serialization run 1 ===
+# Reading file /work/simdjson/build/jsonexamples/twitter.json
+# output volume: 81927 bytes
+bench_nlohmann                                               :  175.86 MB/s   0.00 Ms/s 
+# output volume: 81927 bytes
+bench_yyjson                                                 :  1538.57 MB/s   0.02 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_static_reflection                             :  7618.50 MB/s   2.23 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_reuse_buffer                                  :  10233.05 MB/s   3.00 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_to                                            :  6574.37 MB/s   1.93 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_to_reuse                                      :  6592.60 MB/s   1.93 Ms/s 
+# output volume: 81927 bytes
+bench_rust                                                   :  1363.92 MB/s   0.02 Ms/s 
+# output volume: 81927 bytes
+bench_reflect_cpp                                            :  1212.12 MB/s   0.01 Ms/s 
+=== parsing run 2 ===
+# Reading file /work/simdjson/build/jsonexamples/twitter.json
+# input volume: 631515 bytes
+bench_nlohmann_parsing                                       :  152.78 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_rapidjson_parsing                                      :  850.13 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_yyjson_parsing                                         :  1180.99 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_simdjson_static_reflection_parsing                     :  4830.25 MB/s   0.01 Ms/s 
+# input volume: 631515 bytes
+bench_simdjson_from_parsing                                  :  4812.98 MB/s   0.01 Ms/s 
+# Note: Rust/Serde parsing test
+# input volume: 631515 bytes
+bench_rust_parsing                                           :  1903.31 MB/s   0.00 Ms/s 
+=== serialization run 2 ===
+# Reading file /work/simdjson/build/jsonexamples/twitter.json
+# output volume: 81927 bytes
+bench_nlohmann                                               :  175.84 MB/s   0.00 Ms/s 
+# output volume: 81927 bytes
+bench_yyjson                                                 :  1534.81 MB/s   0.02 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_static_reflection                             :  7586.79 MB/s   2.22 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_reuse_buffer                                  :  10094.36 MB/s   2.96 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_to                                            :  6543.72 MB/s   1.92 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_to_reuse                                      :  6577.77 MB/s   1.93 Ms/s 
+# output volume: 81927 bytes
+bench_rust                                                   :  1358.53 MB/s   0.02 Ms/s 
+# output volume: 81927 bytes
+bench_reflect_cpp                                            :  1213.60 MB/s   0.01 Ms/s 
+=== parsing run 3 ===
+# Reading file /work/simdjson/build/jsonexamples/twitter.json
+# input volume: 631515 bytes
+bench_nlohmann_parsing                                       :  153.24 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_rapidjson_parsing                                      :  840.98 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_yyjson_parsing                                         :  1174.76 MB/s   0.00 Ms/s 
+# input volume: 631515 bytes
+bench_simdjson_static_reflection_parsing                     :  4802.14 MB/s   0.01 Ms/s 
+# input volume: 631515 bytes
+bench_simdjson_from_parsing                                  :  4797.10 MB/s   0.01 Ms/s 
+# Note: Rust/Serde parsing test
+# input volume: 631515 bytes
+bench_rust_parsing                                           :  1892.97 MB/s   0.00 Ms/s 
+=== serialization run 3 ===
+# Reading file /work/simdjson/build/jsonexamples/twitter.json
+# output volume: 81927 bytes
+bench_nlohmann                                               :  175.65 MB/s   0.00 Ms/s 
+# output volume: 81927 bytes
+bench_yyjson                                                 :  1543.76 MB/s   0.02 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_static_reflection                             :  7601.85 MB/s   2.23 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_reuse_buffer                                  :  10235.28 MB/s   3.00 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_to                                            :  6463.60 MB/s   1.89 Ms/s 
+# output volume: 81927 bytes
+bench_simdjson_to_reuse                                      :  6582.90 MB/s   1.93 Ms/s 
+# output volume: 81927 bytes
+bench_rust                                                   :  1365.19 MB/s   0.02 Ms/s 
+# output volume: 81927 bytes
+bench_reflect_cpp                                            :  1212.41 MB/s   0.01 Ms/s 

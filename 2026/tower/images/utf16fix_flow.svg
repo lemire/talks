@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" font-family="Helvetica, Arial, sans-serif">
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#e6e6e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#8a8985" stroke-width="2"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8985"/></marker></defs>
+<text x="365.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >0</text>
+<text x="440.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >1</text>
+<text x="515.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >2</text>
+<text x="590.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >3</text>
+<text x="665.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >4</text>
+<text x="740.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >5</text>
+<text x="815.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >6</text>
+<text x="890.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >7</text>
+<text x="965.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >8</text>
+<text x="1040.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >9</text>
+<text x="1115.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >10</text>
+<text x="1190.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >11</text>
+<text x="20" y="58" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >block</text>
+<text x="20" y="86" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >load(in)</text>
+<rect x="330" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="365.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >w</text>
+<rect x="405" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="440.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >o</text>
+<rect x="480" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="515.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >r</text>
+<rect x="555" y="40" width="70" height="50" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="590.0" y="71.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >D800</text>
+<rect x="630" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="665.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >l</text>
+<rect x="705" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="740.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >d</text>
+<rect x="780" y="40" width="70" height="50" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="815.0" y="71.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >D83D</text>
+<rect x="855" y="40" width="70" height="50" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="890.0" y="71.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >DE0A</text>
+<rect x="930" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="965.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >!</text>
+<rect x="1005" y="40" width="70" height="50" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="1040.0" y="71.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >DC00</text>
+<rect x="1080" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1115.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >x</text>
+<rect x="1155" y="40" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1190.0" y="71.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >y</text>
+<text x="20" y="138" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >lookback</text>
+<text x="20" y="166" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >load(in - 1)</text>
+<rect x="330" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="365.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0020</text>
+<rect x="405" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="440.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >w</text>
+<rect x="480" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="515.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >o</text>
+<rect x="555" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="590.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >r</text>
+<rect x="630" y="120" width="70" height="50" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="665.0" y="151.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >D800</text>
+<rect x="705" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="740.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >l</text>
+<rect x="780" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="815.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >d</text>
+<rect x="855" y="120" width="70" height="50" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="890.0" y="151.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >D83D</text>
+<rect x="930" y="120" width="70" height="50" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="965.0" y="151.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >DE0A</text>
+<rect x="1005" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1040.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >!</text>
+<rect x="1080" y="120" width="70" height="50" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="1115.0" y="151.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >DC00</text>
+<rect x="1155" y="120" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1190.0" y="151.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >x</text>
+<text x="1237" y="144" font-size="18" fill="#8a8985" text-anchor="start" >one lane</text>
+<text x="1237" y="166" font-size="18" fill="#8a8985" text-anchor="start" >earlier</text>
+<text x="20" y="238" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >lb_is_high</text>
+<text x="20" y="266" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >(lookback &amp; FC00) == D800</text>
+<rect x="330" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="365.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="405" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="440.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="480" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="515.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="555" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="590.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="630" y="220" width="70" height="44" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="665.0" y="249.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="705" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="740.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="780" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="815.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="855" y="220" width="70" height="44" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="890.0" y="249.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="930" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="965.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1005" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1040.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1080" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1115.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1155" y="220" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1190.0" y="249.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<text x="20" y="308" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >block_is_low</text>
+<text x="20" y="336" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >(block &amp; FC00) == DC00</text>
+<rect x="330" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="365.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="405" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="440.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="480" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="515.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="555" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="590.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="630" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="665.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="705" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="740.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="780" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="815.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="855" y="290" width="70" height="44" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="890.0" y="319.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="930" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="965.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1005" y="290" width="70" height="44" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="1040.0" y="319.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="1080" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1115.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1155" y="290" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1190.0" y="319.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<text x="20" y="393" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >illseq = XOR</text>
+<text x="20" y="421" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >lb_is_high ^ block_is_low</text>
+<rect x="330" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="365.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="405" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="440.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="480" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="515.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="555" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="590.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="630" y="375" width="70" height="44" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="665.0" y="404.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="705" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="740.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="780" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="815.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="855" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="890.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="930" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="965.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1005" y="375" width="70" height="44" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="1040.0" y="404.2" font-size="20" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="1080" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1115.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1155" y="375" width="70" height="44" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1190.0" y="404.2" font-size="20" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<text x="1237" y="395" font-size="18" fill="#008300" text-anchor="start" font-weight="bold" >all zero:</text>
+<text x="1237" y="417" font-size="18" fill="#008300" text-anchor="start" font-weight="bold" >copy, done</text>
+<text x="890.0" y="441" font-size="16" fill="#008300" text-anchor="middle" >1 ^ 1 = 0: a valid pair</text>
+<text x="20" y="498" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >output (rare path)</text>
+<text x="20" y="526" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >blend(block, FFFD, mask)</text>
+<rect x="330" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="365.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >w</text>
+<rect x="405" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="440.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >o</text>
+<rect x="480" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="515.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >r</text>
+<rect x="555" y="480" width="70" height="50" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="590.0" y="511.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >FFFD</text>
+<rect x="630" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="665.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >l</text>
+<rect x="705" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="740.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >d</text>
+<rect x="780" y="480" width="70" height="50" rx="6" fill="#008300" stroke="white" stroke-width="1.5" />
+<text x="815.0" y="511.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >D83D</text>
+<rect x="855" y="480" width="70" height="50" rx="6" fill="#008300" stroke="white" stroke-width="1.5" />
+<text x="890.0" y="511.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >DE0A</text>
+<rect x="930" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="965.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >!</text>
+<rect x="1005" y="480" width="70" height="50" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="1040.0" y="511.48" font-size="18" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >FFFD</text>
+<rect x="1080" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1115.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >x</text>
+<rect x="1155" y="480" width="70" height="50" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1190.0" y="511.48" font-size="18" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >y</text>
+<text x="590.0" y="554" font-size="16" fill="#e87ba4" text-anchor="middle" >lone high → U+FFFD</text>
+<text x="852.5" y="554" font-size="16" fill="#008300" text-anchor="middle" >😊 kept</text>
+<text x="1040.0" y="554" font-size="16" fill="#e87ba4" text-anchor="middle" >lone low → U+FFFD</text>
+<rect x="20" y="590" width="1360" height="80" rx="10" fill="#f3f3f1" />
+<text x="700" y="622" font-size="21" fill="#0b0b0b" text-anchor="middle" >2 loads, 2 ANDs, 2 compares, 1 XOR, 1 test per block: no loop-carried state, no per-unit branch</text>
+<text x="700" y="654" font-size="20" fill="#8a8985" text-anchor="middle" >idempotent, so the tail is just one more block aligned to the end of the input</text>
+</svg>

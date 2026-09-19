@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 760" font-family="Helvetica, Arial, sans-serif">
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#e6e6e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#8a8985" stroke-width="2"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8985"/></marker></defs>
+<text x="426.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >0</text>
+<text x="482.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >1</text>
+<text x="538.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >2</text>
+<text x="594.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >3</text>
+<text x="650.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >4</text>
+<text x="706.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >5</text>
+<text x="762.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >6</text>
+<text x="818.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >7</text>
+<text x="874.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >8</text>
+<text x="930.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >9</text>
+<text x="986.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >10</text>
+<text x="1042.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >11</text>
+<text x="1098.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >12</text>
+<text x="1154.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >13</text>
+<text x="1210.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >14</text>
+<text x="1266.0" y="30" font-size="16" fill="#8a8985" text-anchor="middle" >15</text>
+<text x="20" y="58" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >1. masked load, len = 11</text>
+<text x="20" y="86" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >mask_loadu_epi8(pad='0', len)</text>
+<text x="20" y="110" font-size="18" fill="#8a8985" text-anchor="start" >pad with '0': neither dot nor error</text>
+<rect x="400" y="40" width="52" height="52" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="426.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="456" y="40" width="52" height="52" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="482.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >9</text>
+<rect x="512" y="40" width="52" height="52" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="538.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >2</text>
+<rect x="568" y="40" width="52" height="52" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="594.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >.</text>
+<rect x="624" y="40" width="52" height="52" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="650.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="680" y="40" width="52" height="52" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="706.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >6</text>
+<rect x="736" y="40" width="52" height="52" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="762.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >8</text>
+<rect x="792" y="40" width="52" height="52" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="818.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >.</text>
+<rect x="848" y="40" width="52" height="52" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="874.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="904" y="40" width="52" height="52" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="930.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >.</text>
+<rect x="960" y="40" width="52" height="52" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="986.0" y="73.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="1016" y="40" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1042.0" y="73.92" font-size="22" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1072" y="40" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1098.0" y="73.92" font-size="22" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1128" y="40" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1154.0" y="73.92" font-size="22" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1184" y="40" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1210.0" y="73.92" font-size="22" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1240" y="40" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1266.0" y="73.92" font-size="22" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<text x="20" y="168" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >2. dots → partition p</text>
+<text x="20" y="196" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >p = cmpeq(v, '.') | 1 &lt;&lt; len</text>
+<text x="20" y="220" font-size="18" fill="#8a8985" text-anchor="start" >p = 0xA88: the whole layout in 16 bits</text>
+<rect x="400" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="426.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="456" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="482.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="512" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="538.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="568" y="150" width="52" height="52" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="594.0" y="183.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="624" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="650.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="680" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="706.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="736" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="762.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="792" y="150" width="52" height="52" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="818.0" y="183.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="848" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="874.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="904" y="150" width="52" height="52" rx="6" fill="#eb6834" stroke="white" stroke-width="1.5" />
+<text x="930.0" y="183.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="960" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="986.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1016" y="150" width="52" height="52" rx="6" fill="#eda100" stroke="white" stroke-width="1.5" />
+<text x="1042.0" y="183.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="1072" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1098.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1128" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1154.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1184" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1210.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1240" y="150" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1266.0" y="183.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<text x="1042.0" y="224" font-size="17" fill="#eda100" text-anchor="middle" font-weight="bold" >end</text>
+<text x="20" y="268" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >3. perfect hash → key</text>
+<text x="20" y="296" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >k = (p * 0x00CF7800) &gt;&gt; 24</text>
+<text x="20" y="320" font-size="18" fill="#8a8985" text-anchor="start" >81 layouts → 81 distinct keys</text>
+<rect x="400" y="252" width="892" height="48" rx="8" fill="#f3f3f1" />
+<text x="846.0" y="284" font-size="21" fill="#0b0b0b" text-anchor="middle" font-family="Menlo, Consolas, monospace" >0xA88 × 0x00CF7800  →  k = 136   →   shuffle_table[136], aux_table[136]</text>
+<text x="20" y="358" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >4. table shuffle</text>
+<text x="20" y="386" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >shuffle_epi8(v, table[k])</text>
+<text x="20" y="410" font-size="18" fill="#8a8985" text-anchor="start" >octet → [0, hundreds, tens, ones]</text>
+<rect x="400" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="426.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="456" y="340" width="52" height="52" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="482.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="512" y="340" width="52" height="52" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="538.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >9</text>
+<rect x="568" y="340" width="52" height="52" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="594.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >2</text>
+<rect x="624" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="650.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="680" y="340" width="52" height="52" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="706.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="736" y="340" width="52" height="52" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="762.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >6</text>
+<rect x="792" y="340" width="52" height="52" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="818.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >8</text>
+<rect x="848" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="874.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="904" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="930.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="960" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="986.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1016" y="340" width="52" height="52" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="1042.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1072" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1098.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1128" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1154.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1184" y="340" width="52" height="52" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1210.0" y="373.92" font-size="22" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1240" y="340" width="52" height="52" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="1266.0" y="373.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<path d="M400,406 v-10 h220 v10" stroke="#2a78d6" stroke-width="3" fill="none"/>
+<text x="510.0" y="438" font-size="17" fill="#2a78d6" text-anchor="middle" font-weight="bold" >octet 0</text>
+<path d="M624,406 v-10 h220 v10" stroke="#1baf7a" stroke-width="3" fill="none"/>
+<text x="734.0" y="438" font-size="17" fill="#1baf7a" text-anchor="middle" font-weight="bold" >octet 1</text>
+<path d="M848,406 v-10 h220 v10" stroke="#4a3aa7" stroke-width="3" fill="none"/>
+<text x="958.0" y="438" font-size="17" fill="#4a3aa7" text-anchor="middle" font-weight="bold" >octet 2</text>
+<path d="M1072,406 v-10 h220 v10" stroke="#e87ba4" stroke-width="3" fill="none"/>
+<text x="1182.0" y="438" font-size="17" fill="#e87ba4" text-anchor="middle" font-weight="bold" >octet 3</text>
+<text x="20" y="488" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >5. VNNI dot product</text>
+<text x="20" y="516" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >dpbusd_epi32(digits, weights)</text>
+<text x="20" y="540" font-size="18" fill="#8a8985" text-anchor="start" >weights [0, 100, 10, 1] × 4</text>
+<rect x="400" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="426.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="456" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="482.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >100</text>
+<rect x="512" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="538.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >10</text>
+<rect x="568" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="594.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="624" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="650.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="680" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="706.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >100</text>
+<rect x="736" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="762.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >10</text>
+<rect x="792" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="818.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="848" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="874.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="904" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="930.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >100</text>
+<rect x="960" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="986.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >10</text>
+<rect x="1016" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1042.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<rect x="1072" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1098.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1128" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1154.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >100</text>
+<rect x="1184" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1210.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >10</text>
+<rect x="1240" y="470" width="52" height="40" rx="6" fill="#f3f3f1" stroke="white" stroke-width="1.5" />
+<text x="1266.0" y="496.12" font-size="17" fill="#8a8985" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<text x="846.0" y="544" font-size="26" fill="#8a8985" text-anchor="middle" >↓</text>
+<rect x="400" y="560" width="220" height="52" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="510.0" y="594.64" font-size="24" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >192</text>
+<rect x="624" y="560" width="220" height="52" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="734.0" y="594.64" font-size="24" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >168</text>
+<rect x="848" y="560" width="220" height="52" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="958.0" y="594.64" font-size="24" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >0</text>
+<rect x="1072" y="560" width="220" height="52" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="1182.0" y="594.64" font-size="24" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >1</text>
+<text x="20" y="668" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >6. validate</text>
+<text x="20" y="696" font-size="18" fill="#2a78d6" text-anchor="start" font-family="Menlo, Consolas, monospace" >p == aux[k] | non-digit | &gt; 255</text>
+<text x="20" y="720" font-size="18" fill="#8a8985" text-anchor="start" >all in mask registers: one branch</text>
+<rect x="400" y="652" width="892" height="52" rx="8" fill="#f3f3f1" />
+<text x="846.0" y="686" font-size="21" fill="#0b0b0b" text-anchor="middle" >192.168.0.1  →  0xC0A80001    ·    ~50 instructions, no loop, no per-digit branch</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 620" font-family="Helvetica, Arial, sans-serif">
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#e6e6e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#8a8985" stroke-width="2"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8985"/></marker></defs>
+<rect x="40" y="30" width="1220" height="62" rx="10" fill="#f3f3f1" />
+<text x="650" y="72" font-size="30" fill="#0b0b0b" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >slot = (len + asso[key[0]]) &amp; 7</text>
+<text x="40" y="140" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >keys, known at compile time</text>
+<text x="40" y="180" font-size="20" fill="#8a8985" text-anchor="start" >key</text>
+<text x="230" y="180" font-size="20" fill="#8a8985" text-anchor="start" >len</text>
+<text x="320" y="180" font-size="20" fill="#8a8985" text-anchor="start" >key[0]</text>
+<text x="420" y="180" font-size="20" fill="#8a8985" text-anchor="start" >asso</text>
+<text x="510" y="180" font-size="20" fill="#8a8985" text-anchor="start" >slot</text>
+<rect x="40" y="198" width="150" height="44" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="115.0" y="227.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >GET</text>
+<text x="240" y="230" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >3</text>
+<text x="340" y="230" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >G</text>
+<text x="436" y="230" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >0</text>
+<text x="522" y="230" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, monospace" >3</text>
+<rect x="40" y="250" width="150" height="44" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="115.0" y="279.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >PUT</text>
+<text x="240" y="282" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >3</text>
+<text x="340" y="282" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >P</text>
+<text x="436" y="282" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >1</text>
+<text x="522" y="282" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, monospace" >4</text>
+<rect x="40" y="302" width="150" height="44" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="115.0" y="331.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >POST</text>
+<text x="240" y="334" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >4</text>
+<text x="340" y="334" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >P</text>
+<text x="436" y="334" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >1</text>
+<text x="522" y="334" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, monospace" >5</text>
+<rect x="40" y="354" width="150" height="44" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="115.0" y="383.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >DELETE</text>
+<text x="240" y="386" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >6</text>
+<text x="340" y="386" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >D</text>
+<text x="436" y="386" font-size="24" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >0</text>
+<text x="522" y="386" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, monospace" >6</text>
+<text x="40" y="470" font-size="22" fill="#8a8985" text-anchor="start" font-family="Menlo, Consolas, monospace" >asso: G → 0, P → 1, D → 0</text>
+<text x="40" y="504" font-size="20" fill="#8a8985" text-anchor="start" >found by a bounded greedy search</text>
+<text x="40" y="532" font-size="20" fill="#8a8985" text-anchor="start" >at compile time (constexpr)</text>
+<text x="700" y="150" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="bold" >8 slots, one candidate each</text>
+<rect x="700" y="180" width="66" height="66" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="733.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >0</text>
+<rect x="772" y="180" width="66" height="66" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="805.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >1</text>
+<rect x="844" y="180" width="66" height="66" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="877.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >2</text>
+<rect x="916" y="180" width="66" height="66" rx="6" fill="#2a78d6" stroke="white" stroke-width="1.5" />
+<text x="949.0" y="218.4" font-size="15" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >GET</text>
+<text x="949.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >3</text>
+<rect x="988" y="180" width="66" height="66" rx="6" fill="#1baf7a" stroke="white" stroke-width="1.5" />
+<text x="1021.0" y="218.4" font-size="15" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >PUT</text>
+<text x="1021.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >4</text>
+<rect x="1060" y="180" width="66" height="66" rx="6" fill="#4a3aa7" stroke="white" stroke-width="1.5" />
+<text x="1093.0" y="218.4" font-size="15" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >POST</text>
+<text x="1093.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >5</text>
+<rect x="1132" y="180" width="66" height="66" rx="6" fill="#e87ba4" stroke="white" stroke-width="1.5" />
+<text x="1165.0" y="218.4" font-size="15" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >DELETE</text>
+<text x="1165.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >6</text>
+<rect x="1204" y="180" width="66" height="66" rx="6" fill="#e6e6e3" stroke="white" stroke-width="1.5" />
+<text x="1237.0" y="270" font-size="18" fill="#8a8985" text-anchor="middle" >7</text>
+<rect x="700" y="330" width="130" height="48" rx="6" fill="#0b0b0b" stroke="white" stroke-width="1.5" />
+<text x="765.0" y="361.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >PUT</text>
+<text x="848" y="362" font-size="22" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >→ 3 + 1 = slot 4</text>
+<path d="M800,330 V290 H1021.0 V280" stroke="#1baf7a" stroke-width="2.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="6,5"/>
+<text x="848" y="400" font-size="20" fill="#008300" text-anchor="start" >"PUT" == "PUT"?  yes: return the value</text>
+<rect x="700" y="450" width="130" height="48" rx="6" fill="#0b0b0b" stroke="white" stroke-width="1.5" />
+<text x="765.0" y="481.92" font-size="22" fill="white" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" >PATCH</text>
+<text x="848" y="482" font-size="22" fill="#0b0b0b" text-anchor="start" font-family="Menlo, Consolas, monospace" >→ 5 + 1 = slot 6</text>
+<path d="M730,450 V308 H1165.0 V280" stroke="#eb6834" stroke-width="2.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="6,5"/>
+<text x="848" y="520" font-size="20" fill="#eb6834" text-anchor="start" >"PATCH" == "DELETE"?  no: not in the set</text>
+<text x="700" y="580" font-size="22" fill="#0b0b0b" text-anchor="start" font-weight="bold" >one hash, one comparison, no probing, no chain</text>
+</svg>

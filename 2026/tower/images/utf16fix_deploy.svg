@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 390" font-family="Helvetica, Arial, sans-serif">
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#e6e6e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#8a8985" stroke-width="2"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8985"/></marker></defs>
+<rect x="40" y="90.0" width="300" height="150" rx="16" fill="#2a78d6" />
+<text x="190.0" y="152.0" font-size="34" fill="white" text-anchor="middle" font-weight="bold" >simdutf</text>
+<text x="190.0" y="190.0" font-size="20" fill="white" text-anchor="middle" >to_well_formed_utf16</text>
+<path d="M340,165.0 C410,165.0 410,105.0 474,105.0" stroke="#8a8985" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="480" y="57.0" width="300" height="96" rx="12" fill="#f3f3f1" stroke="#2a78d6" stroke-width="4" />
+<text x="630.0" y="99.0" font-size="26" fill="#2a78d6" text-anchor="middle" font-weight="bold" >V8</text>
+<text x="630.0" y="129.0" font-size="18" fill="#8a8985" text-anchor="middle" >JavaScript engine</text>
+<line x1="780" y1="105.0" x2="832" y2="105.0" stroke="#8a8985" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="840" y="114.0" font-size="22" fill="#0b0b0b" text-anchor="start" >Chrome, Edge, Brave, Opera, Electron, Deno</text>
+<path d="M340,165.0 C410,165.0 410,225.0 474,225.0" stroke="#8a8985" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="480" y="177.0" width="300" height="96" rx="12" fill="#f3f3f1" stroke="#008300" stroke-width="4" />
+<text x="630.0" y="219.0" font-size="26" fill="#008300" text-anchor="middle" font-weight="bold" >Node.js 25</text>
+<text x="630.0" y="249.0" font-size="18" fill="#8a8985" text-anchor="middle" >String.prototype.toWellFormed</text>
+<line x1="780" y1="225.0" x2="832" y2="225.0" stroke="#8a8985" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="840" y="234.0" font-size="22" fill="#0b0b0b" text-anchor="start" >5× faster than Node.js 24</text>
+<text x="650.0" y="370" font-size="20" fill="#8a8985" text-anchor="middle" >one C++ function, every V8 embedder, every well-formedness check on a JavaScript string</text>
+</svg>
