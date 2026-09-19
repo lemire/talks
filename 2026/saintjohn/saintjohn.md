@@ -291,7 +291,7 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 - system understanding, animation, videos
 - Omarchy
 - spam filters
-
+- Formal verification
 
 
 ---
