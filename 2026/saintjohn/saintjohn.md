@@ -292,7 +292,7 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 - Omarchy
 - spam filters
 - Formal verification
-
+- https://x.com/thorstenball/status/2101305394190557466?s=46&t=-zo9kVFDyKuN4X1cdtkIrw
 
 ---
 
