@@ -244,10 +244,6 @@ To recognize a digit:
 
 ---
 
-<img src="swar.svg" >
-
----
-
 ```cpp
  // load 8 input bytes into val
  bool is_made_of_eight_digits_fast(uint64_t val)  noexcept  {
@@ -391,6 +387,8 @@ Only 1 offset in 64 matches the model. The other 63 straddle two cache lines: **
 * Round `p` down to the cache line, mask off the bytes before `p`: the rest of the loop is aligned
 * Same trick handles the tail: no scalar loop, no branch
 
+---
+
 <img src="images/masked_align.svg" width="100%">
 
 ---
@@ -398,6 +396,8 @@ Only 1 offset in 64 matches the model. The other 63 straddle two cache lines: **
 <!-- ============ JSON ============ -->
 
 # Case study: JSON
+
+Joint work with many people such as Geoff Langdale (Intel), John Keiser (Microsoft),  Francisco Geiman Thiesen (Microsoft), etc.
 
 ---
 
@@ -422,14 +422,6 @@ Parsed 0.63 GB in 6.961 seconds (90.72 MB/s)
 * It is a textbook state machine.
 
 This was the conventional wisdom. It was wrong.
-
----
-
-![bg right width:95%](openbench.png)
-
-* openbenchmarking.org
-* 14 GB/s, at less than 5.7 GHz
-* Parsing JSON at better than **2.5 bytes per cycle**
 
 ---
 
@@ -463,14 +455,19 @@ This was the conventional wisdom. It was wrong.
 **Stage 2 (mostly serial):** walk the index and build values
 * the hard, branchy work now runs on ~5% of the bytes
 
+
 ---
 
-# simdjson: the numbers
+# Deserialization (Intel Xeon Gold 6548N)
 
-* Structural scan: about **10 GB/s**
-* UTF-8 validation: about **30 GB/s**
-* Minification: **10 to 20 GB/s**
-* Fast skipping: only parse what you actually read
+<img src="images/perf_with_simdjson_parsing_xeon.png" width="80%"/>
+
+---
+
+# Serialization (Intel Xeon Gold 6548N)
+
+<img src="images/perf_with_simdjson_xeon.png" width="80%"/>
+
 
 ---
 
@@ -530,10 +527,7 @@ Five instructions, 16 to 64 bytes at a time:
 # When the instruction set gives you the instruction: SVE2
 
 * ARM SVE2 has `match`: input vector, a 16-byte *set*, one predicate bit per byte in the set
-* NEON has nothing like it; on x64 the closest thing (`pcmpistrm`) is slow
 * Our structural-character classifier: **4 NEON instructions → 1**
-* The catch: a predicate lives in a predicate register; materialize it with `svsel` + weights, reduce with `addp`
-* NEON–SVE bridge (`svset_neonq_u8`, `svget_neonq_u8`): mix both, no assembly
 
 ---
 <!-- _class: fig -->
@@ -542,14 +536,6 @@ Five instructions, 16 to 64 bytes at a time:
 
 <img src="images/sve2_match.svg">
 
----
-<!-- _class: fig -->
-
-# simdjson indexing stage, AWS Graviton 4 and 5
-
-<img src="plots/sve2_results.svg">
-
-Whole parse: +2–4% on Graviton 4, +1–2% on Graviton 5. Madhurendra Purbay (ARM), simdjson PR 2866.
 
 ---
 
@@ -561,23 +547,11 @@ Whole parse: +2–4% on Graviton 4, +1–2% on Graviton 5. Madhurendra Purbay (A
 
 ---
 
+<!-- _class: fig -->
+
 # SIMD string escaping
 
-**Traditional (1 byte at a time):**
-```cpp
-for (char c : str) {
-    if (c == '"' || c == '\\' || c < 0x20)
-        return true;
-}
-```
-
-**SIMD (64 bytes at once):**
-```cpp
-auto chunk = load_64_bytes(str);
-auto needs_escape = check_all_conditions_parallel(chunk);
-if (!needs_escape)
-    return false;  // Fast path!
-```
+<img src="images/escape_simd.svg">
 
 ---
 
@@ -608,33 +582,11 @@ No macros. No code generation step. No runtime reflection cost.
 
 ---
 
-# Deserialization (Apple Silicon)
-
-<img src="images/perf_with_simdjson_parsing.png" width="80%"/>
-
----
-
-# Serialization (Apple Silicon)
-
-<img src="images/perf_with_simdjson.png" width="80%"/>
-
----
-
-# Deserialization (Intel Xeon Gold 6548N)
-
-<img src="images/perf_with_simdjson_parsing_xeon.png" width="80%"/>
-
----
-
-# Serialization (Intel Xeon Gold 6548N)
-
-<img src="images/perf_with_simdjson_xeon.png" width="80%"/>
-
----
-
 <!-- ============ IP ADDRESSES ============ -->
 
 # Case study: IP addresses
+
+Joint work with Yagiz Nizipli (SpaceX)
 
 ---
 
@@ -681,14 +633,14 @@ No macros. No code generation step. No runtime reflection cost.
 
 ---
 
-# The lookup *is* the workload
+# Looking up!
 
 * Map a string to a value: HTTP method, header name, URL scheme, keyword, MIME type
 * The keys are **fixed when you write the code**
 * Yet we hash, mask, probe, chase a pointer, compare: `std::unordered_map`, 12.8 ns
 * With the keys known at compile time, we can build a **perfect hash**: no collisions, one candidate per slot
 
-Library: [github.com/ConstexprCore/perfect_hash](https://github.com/ConstexprCore/perfect_hash) (with Francisco Geiman Thiesen)
+Library: [github.com/ConstexprCore/perfect_hash](https://github.com/ConstexprCore/perfect_hash) (with Francisco Geiman Thiesen at Microsoft)
 
 ---
 <!-- _class: fig -->
@@ -774,67 +726,6 @@ PROCEDURE validate_utf16(code_units)
         RETURN false
     RETURN true
 ```
-
----
-
-# Performance results (Apple M4)
-
-<img src="utf16check.svg">
-
-1 character per cycle might be just 4 GB/s — slower than your disk.
-
----
-
-# Now make the input adversarial
-
-<img src="utf16checkrandom.svg">
-
-We are now barely at 1 GB/s. **The branch predictor was doing the work.**
-
----
-
-# Finite state machine to the rescue
-
-```cpp
-static uint8_t transition_table[3][256] = { {...}, {...}, {...} };
-
-bool is_valid_utf16_ff(std::span<uint16_t> code_units) {
-    uint8_t state = 0; // Start in Initial state
-    for (auto code_unit : code_units) {
-        uint8_t high_byte = code_unit >> 8;
-        state = transition_table[state][high_byte];
-    }
-    return state == 0; // Valid only if we end in Initial state
-}
-```
-
-Three states: default, just saw a high surrogate, error. **No branches.**
-
----
-
-# The finite-state approach can be $7 \times$ faster
-
-<img src="finitefast.svg" width="88%" />
-
----
-
-# But we can do better than validation
-
-```javascript
-const str = "ab\uD800";
-console.log(str.toWellFormed());
-// "ab�"
-```
-
-`String.prototype.toWellFormed()` must *copy and repair*, not merely check.
-
----
-
-# UTF-16, random (adversarial), Apple M4
-
-<img src="utf16finite.svg" width="100%">
-
-The SIMD **correction** function (which copies the data) beats the non-SIMD **validation** function.
 
 ---
 <!-- _class: fig -->
@@ -963,44 +854,6 @@ Test in your browser: https://simdutf.github.io/browserbase64/
 
 ---
 
-# Auto-vectorization: the good case
-
-Successive differences: `out[i] = in[i] - in[i-1]`
-
-<img src="nonsimd.svg" width="80%">
-
-Scalar: **1 cycle** per element, 6 instructions per element.
-
----
-
-# Auto-vectorization: the good case
-
-<img src="simd.svg" width="80%">
-
-Vectorized: **0.25 cycles** per element, 0.9 instructions per element. 4× faster, for free.
-
-Note the instructions per cycle went **down**, from 6 to 3.8.
-
----
-
-# But look at the prefix sum
-
-* `out[i] = out[i-1] + in[i]`
-* Same shape of loop. Same data. Same compiler.
-* **Unchanged**: 1 cycle per element, in both builds.
-* There is a loop-carried dependency, so the compiler gives up.
-
----
-
-# And yet the prefix sum *does* vectorize
-
-* Shift-and-add, $\log_2 n$ steps: a classic parallel-prefix network.
-* The compiler cannot invent it, because it is **a different algorithm**, not a different schedule.
-
-**This is the whole talk in one slide.**
-
----
-
 # What compilers can do
 
 * Unroll loops
@@ -1011,15 +864,15 @@ Note the instructions per cycle went **down**, from 6 to 3.8.
 
 * Change your data layout
 * Change your algorithm
-* Decide that a rare case can be handled on a slow path
 
 ---
 
-# Unrolling is not vectorizing
 
-<img src="unrolling.svg" width="80%" />
+# After decades of autovectorization research
 
-Fewer cycles, yes. But you are still touching one element at a time.
+- C# (.NET) has intrinsics
+- C++ added std::simd
+- Java Vector
 
 ---
 
@@ -1031,7 +884,7 @@ Fewer cycles, yes. But you are still touching one element at a time.
 
 ---
 
-# The honest answer: partly
+# Partly
 
 Frontier models in 2026 are genuinely good at:
 
@@ -1042,62 +895,15 @@ Frontier models in 2026 are genuinely good at:
 
 ---
 
-# Where they still struggle
-
-* **Inventing** the vectorized algorithm (the nibble-lookup trick, the prefix network)
-* Reasoning about throughput vs. latency and port pressure
-* Knowing that a 512-bit instruction may downclock the core
-* Noticing that the fast path is fast only on *your* data
-
-They optimize what you measured. They do not choose what to measure.
-
----
-
 # What actually works: close the loop
 
-Give the agent the three things it cannot produce on its own:
+Help your agent.
 
 1. **A benchmark** it can run, over realistic inputs
 2. **A differential fuzzer** against a scalar reference
 3. **`llvm-mca`** (or `perf`) so it can see cycles, not vibes
 
 Then let it iterate.
-
----
-
-# A workable prompt shape
-
-```text
-Here is a scalar reference implementation and a fuzzer that
-compares any candidate against it.
-
-Here is a benchmark: `make bench` prints cycles per byte.
-
-Write an AVX2 version. After each attempt, run the fuzzer and
-the benchmark, and run llvm-mca on the inner loop. Do not stop
-until the fuzzer passes and cycles/byte is below 0.2.
-```
-
-The constraint is the contribution. The agent supplies the patience.
-
----
-
-# The failure mode to watch for
-
-* An agent will happily produce SIMD code that is **correct on your test inputs** and wrong on the surrogate pair, the truncated block, the empty string, the 63-byte tail.
-* Tail handling is where hand-written SIMD goes to die, and LLMs inherit that.
-* **Fuzz the tails. Fuzz the alignment. Fuzz the adversarial input.**
-
----
-
-# The division of labour
-
-| you | the agent |
-|---|---|
-| choose the algorithm | write the intrinsics |
-| define correctness | run the fuzzer |
-| define the benchmark | iterate on the schedule |
-| decide when it is fast enough | port to the other instruction sets |
 
 ---
 
@@ -1149,18 +955,6 @@ Timings tell you *that* something is slow. Counters tell you *why*.
 
 `perf stat`, `Instruments`, or a library such as `performancecounters`.
 
----
-
-# The diagnostic table I always build
-
-| variant | ns/byte | instr/byte | cycles/byte | IPC | branch miss/byte |
-|---|---|---|---|---|---|
-| scalar | | | | | |
-| SWAR | | | | | |
-| SIMD | | | | | |
-
-If instructions/byte did not drop, you did not do data parallelism.
-If cycles/byte did not drop, find out which counter did move.
 
 ---
 
@@ -1181,7 +975,6 @@ If cycles/byte did not drop, find out which counter did move.
 **Good signs**
 * You touch every byte or every element
 * The work per element is small and uniform
-* You have an unpredictable branch per element
 * You are validating, scanning, transcoding, filtering, or counting
 
 **Bad signs**
@@ -1191,7 +984,7 @@ If cycles/byte did not drop, find out which counter did move.
 
 ---
 
-# It applies more often than you think
+# Data parallelism applies more often than you think
 
 * JSON parsing — every JavaScript engine
 * Unicode validation — every browser
