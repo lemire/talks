@@ -555,33 +555,6 @@ Five instructions, 16 to 64 bytes at a time:
 
 ---
 
-# C++26 compile-time reflection
-
-<img src="images/tofrom.svg" width="100%">
-
----
-
-# One line each way (C++26)
-
-```cpp
-struct Player {
-    std::string username;
-    int level;
-};
-
-Player load_player(std::string& json_str) {
-    return simdjson::from(json_str);
-}
-
-std::string save_player(const Player& p) {
-    return simdjson::to_json(p);
-}
-```
-
-No macros. No code generation step. No runtime reflection cost.
-
----
-
 <!-- ============ IP ADDRESSES ============ -->
 
 # Case study: IP addresses
@@ -618,63 +591,31 @@ Joint work with Yagiz Nizipli (SpaceX)
 10× over `inet_pton` on IPv4, 10× on traffic-like IPv6. 6–60× fewer instructions.
 
 ---
-<!-- _class: fig -->
 
+<!-- ============ PART 5 ============ -->
 
-# Deployed: ada → Node.js
+# Part 5
 
-<img src="images/ada_node.svg">
-
----
-
-<!-- ============ PERFECT HASHING ============ -->
-
-# Case study: perfect hashing
+## Why your compiler will not do this for you
 
 ---
 
-# Looking up!
 
-* Map a string to a value: HTTP method, header name, URL scheme, keyword, MIME type
-* The keys are **fixed when you write the code**
-* Yet we hash, mask, probe, chase a pointer, compare: `std::unordered_map`, 12.8 ns
-* With the keys known at compile time, we can build a **perfect hash**: no collisions, one candidate per slot
+# After decades of autovectorization research
 
-Library: [github.com/ConstexprCore/perfect_hash](https://github.com/ConstexprCore/perfect_hash) (with Francisco Geiman Thiesen at Microsoft)
+- C# (.NET) has intrinsics
+- C++ added std::simd
+- Java Vector
 
 ---
-<!-- _class: fig -->
 
+## <!--fit--> Questions?
 
-# One hash, one comparison
+Daniel Lemire — [lemire.me](https://lemire.me)
 
-<img src="images/phf_slots.svg">
+X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github.com/lemire/)
 
----
-<!-- _class: fig -->
-
-
-# Compare the whole key at once
-
-<img src="images/phf_compare16.svg">
-
----
-<!-- _class: fig -->
-
-
-# The memory page trick
-
-<img src="images/page_trick.svg">
-
----
-<!-- _class: fig -->
-
-
-# URL schemes, 6 keys, Apple M3 Max
-
-<img src="plots/phf_results.svg">
-
-1.19 ns, 4.9 cycles, 8.7 instructions per cycle, **zero** branch mispredictions.
+:canada:
 
 ---
 
@@ -766,6 +707,207 @@ PROCEDURE validate_utf16(code_units)
 
 Test it yourself: https://lemire.github.io/browserwellformed/
 
+
+---
+
+
+---
+
+# Data parallelism applies more often than you think
+
+* JSON parsing — every JavaScript engine
+* Unicode validation — every browser
+* base64 — the JavaScript standard library
+* Number parsing — every compiler toolchain
+* Bitmap indexes, hashing, compression, `memchr`, CSV, regex prefiltering
+
+"Inherently serial" is usually a statement about the algorithm you happen to know.
+
+---
+
+# Interested? Check these projects
+
+* **simdjson** — the fastest JSON parser in the world https://simdjson.org
+  * Node.js, Bun, Deno, Electron
+  * ClickHouse, WatermelonDB, Apache Doris, Meta Velox, Milvus, QuestDB, StarRocks
+* **simdutf** — Unicode (UTF-8/16/32) and base64 https://github.com/simdutf/simdutf
+  * Node.js, Bun, WebKit (Safari), Chromium (Chrome, Edge)
+* **fast_float** — number parsing https://github.com/fastfloat/fast_float
+* **Roaring Bitmaps** — https://roaringbitmap.org
+
+---
+
+# Credit
+
+- simdjson reflection work with Francisco Geiman Thiesen (Microsoft)
+- simdutf UTF-16 correction is joint work with Robert Clausecker
+- simdjson and simdutf are community efforts (Geoff Langdale, John Keiser, Paul Dreik, Yagiz Nizipli and others)
+
+---
+
+
+---
+
+
+# Extra slides
+
+
+---
+<!-- _class: fig -->
+
+
+# Deployed: ada → Node.js
+
+<img src="images/ada_node.svg">
+
+---
+
+
+
+<!-- ============ PART 7 ============ -->
+
+# Part 7
+
+## Measure properly, or do not bother
+
+---
+
+# Measurements
+
+* We often assume that measurements (timings) are normally distributed.
+* If they were, the 'error' would fall off as $1/\sqrt{N}$.
+* It is often an incorrect assumption.
+
+---
+
+![](plots/normal_distribution_plot.png)
+
+---
+
+# What if we dealt with log-normal distributions?
+
+![](plots/lognormal_distribution_plot.png)
+
+---
+
+# Real-world measurements
+
+* You cannot assume normality
+* Measurements are **not independent**
+* Reality: the absolute **minimum** is often the *reliable* metric
+* Margin: the difference between the mean and the minimum
+
+<!--https://lemire.me/blog/2023/04/27/hotspot-performance-engineering-fails/-->
+
+---
+
+# Use performance counters
+
+Timings tell you *that* something is slow. Counters tell you *why*.
+
+* **instructions retired** — did I actually remove work?
+* **cycles** — the ground truth
+* **branch misses** — is the predictor carrying me?
+* **cache misses** — am I memory bound after all?
+
+`perf stat`, `Instruments`, or a library such as `performancecounters`.
+
+
+---
+
+# Hot-spot engineering fails
+
+* A profiler shows you where the cycles are *now*.
+* It does not show you the 30% of instructions spread evenly over every function.
+* Reducing the total instruction count beats optimizing the top-of-profile function.
+
+<!--https://lemire.me/blog/2023/04/27/hotspot-performance-engineering-fails/-->
+
+
+
+---
+
+<!-- ============ PART 6 ============ -->
+
+# Part 6
+
+## Can an LLM write your SIMD code?
+
+---
+
+# Partly
+
+Frontier models in 2026 are genuinely good at:
+
+* Recalling intrinsic names and semantics (better than I am)
+* Translating a working NEON kernel to AVX2, or to RVV
+* Writing the scalar reference implementation and the test harness
+* Explaining an unfamiliar instruction
+
+---
+
+# What actually works: close the loop
+
+Help your agent.
+
+1. **A benchmark** it can run, over realistic inputs
+2. **A differential fuzzer** against a scalar reference
+3. **`llvm-mca`** (or `perf`) so it can see cycles, not vibes
+
+Then let it iterate.
+
+
+
+
+<!-- ============ PERFECT HASHING ============ -->
+
+# Case study: perfect hashing
+
+---
+
+# Looking up!
+
+* Map a string to a value: HTTP method, header name, URL scheme, keyword, MIME type
+* The keys are **fixed when you write the code**
+* Yet we hash, mask, probe, chase a pointer, compare: `std::unordered_map`, 12.8 ns
+* With the keys known at compile time, we can build a **perfect hash**: no collisions, one candidate per slot
+
+Library: [github.com/ConstexprCore/perfect_hash](https://github.com/ConstexprCore/perfect_hash) (with Francisco Geiman Thiesen at Microsoft)
+
+---
+<!-- _class: fig -->
+
+
+# One hash, one comparison
+
+<img src="images/phf_slots.svg">
+
+---
+<!-- _class: fig -->
+
+
+# Compare the whole key at once
+
+<img src="images/phf_compare16.svg">
+
+---
+<!-- _class: fig -->
+
+
+# The memory page trick
+
+<img src="images/page_trick.svg">
+
+---
+<!-- _class: fig -->
+
+
+# URL schemes, 6 keys, Apple M3 Max
+
+<img src="plots/phf_results.svg">
+
+1.19 ns, 4.9 cycles, 8.7 instructions per cycle, **zero** branch mispredictions.
+
 ---
 
 <!-- ============ PART 8 ============ -->
@@ -843,194 +985,3 @@ Test in your browser: https://simdutf.github.io/browserbase64/
 - Encoding a 64-byte block requires only **two** non-memory instructions:
   `vpermb` (twice) and `vpmultishiftqb`.
 - The right instruction turns an algorithm into a lookup.
-
----
-
-<!-- ============ PART 5 ============ -->
-
-# Part 5
-
-## Why your compiler will not do this for you
-
----
-
-# What compilers can do
-
-* Unroll loops
-* Vectorize simple, dependency-free, contiguous loops
-* Choose instruction schedules
-
-# What compilers cannot do
-
-* Change your data layout
-* Change your algorithm
-
----
-
-
-# After decades of autovectorization research
-
-- C# (.NET) has intrinsics
-- C++ added std::simd
-- Java Vector
-
----
-
-<!-- ============ PART 6 ============ -->
-
-# Part 6
-
-## Can an LLM write your SIMD code?
-
----
-
-# Partly
-
-Frontier models in 2026 are genuinely good at:
-
-* Recalling intrinsic names and semantics (better than I am)
-* Translating a working NEON kernel to AVX2, or to RVV
-* Writing the scalar reference implementation and the test harness
-* Explaining an unfamiliar instruction
-
----
-
-# What actually works: close the loop
-
-Help your agent.
-
-1. **A benchmark** it can run, over realistic inputs
-2. **A differential fuzzer** against a scalar reference
-3. **`llvm-mca`** (or `perf`) so it can see cycles, not vibes
-
-Then let it iterate.
-
----
-
-<!-- ============ PART 7 ============ -->
-
-# Part 7
-
-## Measure properly, or do not bother
-
----
-
-# Measurements
-
-* We often assume that measurements (timings) are normally distributed.
-* If they were, the 'error' would fall off as $1/\sqrt{N}$.
-* It is often an incorrect assumption.
-
----
-
-![](plots/normal_distribution_plot.png)
-
----
-
-# What if we dealt with log-normal distributions?
-
-![](plots/lognormal_distribution_plot.png)
-
----
-
-# Real-world measurements
-
-* You cannot assume normality
-* Measurements are **not independent**
-* Reality: the absolute **minimum** is often the *reliable* metric
-* Margin: the difference between the mean and the minimum
-
-<!--https://lemire.me/blog/2023/04/27/hotspot-performance-engineering-fails/-->
-
----
-
-# Use performance counters
-
-Timings tell you *that* something is slow. Counters tell you *why*.
-
-* **instructions retired** — did I actually remove work?
-* **cycles** — the ground truth
-* **branch misses** — is the predictor carrying me?
-* **cache misses** — am I memory bound after all?
-
-`perf stat`, `Instruments`, or a library such as `performancecounters`.
-
-
----
-
-# Hot-spot engineering fails
-
-* A profiler shows you where the cycles are *now*.
-* It does not show you the 30% of instructions spread evenly over every function.
-* Reducing the total instruction count beats optimizing the top-of-profile function.
-
-<!--https://lemire.me/blog/2023/04/27/hotspot-performance-engineering-fails/-->
-
----
-
-<!-- ============ CONCLUSION ============ -->
-
-# When is data parallelism worth it?
-
-**Good signs**
-* You touch every byte or every element
-* The work per element is small and uniform
-* You are validating, scanning, transcoding, filtering, or counting
-
-**Bad signs**
-* Deep pointer chasing
-* Genuinely irregular control flow with expensive bodies
-* You are already memory bound at full bandwidth
-
----
-
-# Data parallelism applies more often than you think
-
-* JSON parsing — every JavaScript engine
-* Unicode validation — every browser
-* base64 — the JavaScript standard library
-* Number parsing — every compiler toolchain
-* Bitmap indexes, hashing, compression, `memchr`, CSV, regex prefiltering
-
-"Inherently serial" is usually a statement about the algorithm you happen to know.
-
----
-
-# What to take home
-
-1. Clock speeds are flat; parallelism is where performance lives.
-2. Data parallelism reduces **instructions**, not just time.
-3. Your compiler schedules; it does not redesign. That part is yours.
-4. Branchy code looks great in a synthetic benchmark and dies on real data.
-5. IPC is a diagnostic, not a goal. The minimum time is your metric.
-6. AI agents are excellent hands and mediocre architects — give them a benchmark and a fuzzer.
-
----
-
-# Interested? Check these projects
-
-* **simdjson** — the fastest JSON parser in the world https://simdjson.org
-  * Node.js, Bun, Deno, Electron
-  * ClickHouse, WatermelonDB, Apache Doris, Meta Velox, Milvus, QuestDB, StarRocks
-* **simdutf** — Unicode (UTF-8/16/32) and base64 https://github.com/simdutf/simdutf
-  * Node.js, Bun, WebKit (Safari), Chromium (Chrome, Edge)
-* **fast_float** — number parsing https://github.com/fastfloat/fast_float
-* **Roaring Bitmaps** — https://roaringbitmap.org
-
----
-
-# Credit
-
-- simdjson reflection work with Francisco Geiman Thiesen (Microsoft)
-- simdutf UTF-16 correction is joint work with Robert Clausecker
-- simdjson and simdutf are community efforts (Geoff Langdale, John Keiser, Paul Dreik, Yagiz Nizipli and others)
-
----
-
-## <!--fit--> Questions?
-
-Daniel Lemire — [lemire.me](https://lemire.me)
-
-X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github.com/lemire/)
-
-:canada:
