@@ -294,6 +294,11 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 - Formal verification
 - https://x.com/thorstenball/status/2101305394190557466?s=46&t=-zo9kVFDyKuN4X1cdtkIrw
 
+
+---
+
+"/Users/dlemire/Desktop/ipo.png"
+
 ---
 
 # Where I am coming from
