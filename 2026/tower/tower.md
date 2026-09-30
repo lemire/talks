@@ -182,8 +182,8 @@ Single-core: **+47%**. Multi-core: **+58%**. Same 8 cores.
 
 # Zen 5 AWS (EPYC 9R45, c8a)
 
-- STREAM single thread bandwidth: 46 GB/s
-- `strstr`, 32-byte needle: 9.5 GB/s
+- STREAM single thread bandwidth: 46&nbsp;GB/s
+- `strstr`, 32-byte needle: 9.5&nbsp;GB/s
 
 
 
