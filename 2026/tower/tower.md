@@ -88,6 +88,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 
 - Up 15% is two years
 
+<!--
 ---
 
 # Geekbench 6: Apple M2–M5, 2022–2025
@@ -95,6 +96,7 @@ GitHub: [https://github.com/lemire/](https://github.com/lemire/)
 <img src="plots/apple_m2m5_geekbench.svg" width="92%">
 
 Single-core: **+52%**. Multi-core: **+83%**. Same 4 P-cores.
+-->
 
 ---
 
@@ -166,7 +168,6 @@ Single-core: **+47%**. Multi-core: **+58%**. Same 8 cores.
 | WD Black SN8100 | 2025 | 5.0 | 14.9&nbsp;GB/s |
 | Samsung PM1763 | 2026 | 6.0 | 28.4&nbsp;GB/s |
 
-     |
 
 ---
 
@@ -200,7 +201,7 @@ Single-core: **+47%**. Multi-core: **+58%**. Same 8 cores.
 
 * Process 16, 32 or 64 bytes with **one** instruction
 * Supported on every modern CPU — your phone included
-* Not a niche feature: it is most of the silicon area of a modern core
+* Not a niche feature
 
 ---
 
@@ -234,6 +235,15 @@ Portability: compile several kernels, dispatch at runtime on CPU features. C++26
 
 ## Check whether we have 8 digits
 
+```asm
+add     rax, rdi
+add     rdi, rdx
+or      rax, rdi
+test    rax,
+```
+
+<!--
+```
 In ASCII/UTF-8, the digits 0, 1, ..., 9 have values
 0x30, 0x31, ..., 0x39.
 
@@ -263,6 +273,7 @@ test    rax, rdx
 ```
 
 **Four instructions for eight characters, and no branch.**
+-->
 
 ---
 
@@ -360,6 +371,9 @@ It is a model. Not reality.
 
 <img src="plots/tolower_reality.svg" width="90%">
 
+
+<!--
+
 ---
 
 # Model vs reality
@@ -368,7 +382,7 @@ It is a model. Not reality.
 * Unpredictable branches: scalar is **5× slower** than the model
 * 256 MB in RAM: AVX-512 is **6× slower** than the model (memory-bound, ~17 GB/s)
 * Reality: AVX-512 is **~65× faster** than scalar on real text
-
+-->
 
 ---
 
@@ -412,6 +426,7 @@ Joint work with many people such as Geoff Langdale (Intel), John Keiser (Microso
 $ go run parse_twitter.go
 Parsed 0.63 GB in 6.961 seconds (90.72 MB/s)
 ```
+<!--
 
 ---
 
@@ -422,6 +437,7 @@ Parsed 0.63 GB in 6.961 seconds (90.72 MB/s)
 * It is a textbook state machine.
 
 This was the conventional wisdom. It was wrong.
+-->
 
 ---
 
@@ -429,7 +445,7 @@ This was the conventional wisdom. It was wrong.
 
 # You are probably using simdjson
 
-* Node.js, Bun, Deno, Electron
+* Node.js, Electron
 * ClickHouse
 * WatermelonDB, Apache Doris, Meta Velox, Milvus, QuestDB, StarRocks
 
@@ -439,7 +455,7 @@ This was the conventional wisdom. It was wrong.
 
 # Every major JavaScript engine parses JSON with SIMD
 
-* `JSON.parse` in Node.js, Bun and Deno is data-parallel.
+* `JSON.parse` in Node.js, Bun and Deno is data-parallel (simdjson inspired).
 * Billions of calls per second worldwide.
 * Nobody had to change a single line of JavaScript.
 
@@ -483,6 +499,8 @@ We need to sort every byte into a class:
 
 A switch statement per byte? No.
 
+<!--
+
 ---
 
 # Vectorized classification
@@ -510,6 +528,7 @@ Five instructions, 16 to 64 bytes at a time:
 ```
 
 **This trick generalizes: any 256-way classification into 8 classes.**
+-->
 
 ---
 
@@ -522,12 +541,16 @@ Five instructions, 16 to 64 bytes at a time:
 
 <img src="images/classify_flow.svg" width="100%">
 
+
+<!--
+
 ---
 
 # When the instruction set gives you the instruction: SVE2
 
 * ARM SVE2 has `match`: input vector, a 16-byte *set*, one predicate bit per byte in the set
 * Our structural-character classifier: **4 NEON instructions → 1**
+-->
 
 ---
 <!-- _class: fig -->
