@@ -298,6 +298,41 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
+**Report on ideas from replies to your post** ([https://x.com/lemire/status/2109392496950218957](https://x.com/lemire/status/2109392496950218957)) **plus Ronan Tournier’s comment** ([https://x.com/RonanTournier/status/2110054920661488002](https://x.com/RonanTournier/status/2110054920661488002)).
+
+Your post asked for talk ideas on AI and programming for a young audience. You later posted a thank-you noting you would try to give credit. Below is a concise synthesis of the substantive suggestions that appeared, grouped by theme, with author credit.
+
+### Verification, testing, and code quality limits
+- **Mathieu Ropert (@MatRopert)**: Generation of large volumes of code is limited by how well and how quickly you can verify it. Skipping learning programming means you cannot properly review implementations; without solid test coverage you end up doing endless manual testing.
+- **Denis Yaroshevskiy (@dyaroshev)**: AI produces poor tests in large quantities—lots of copy-paste that does little.
+- **Nabendu Biswas (@nabendu82)**: Workflows that also generate unit tests after the code help produce better results.
+- **Jordi Villar (@jrdi)**: The agent writes the code, but someone still has to explain why it is slow, wrong, or both—that is the person people will want to hire.
+- **opdroid1234**: How to use AI to be more rigorous about the software you write.
+
+### Teaching, fundamentals, and what still matters
+- **Mario Figueiredo (@fromdevoid)**: The core open question is how to teach software development in the AI era. Students leave with old syllabi and face a job market that looks very different from the theory they learned. There is no agreed, systematic, teachable methodology for agentic development; people are improvising and lack formal ways to measure results.
+- **Marcus Birkenkrahe (@birkenkrahe)**: Open with the question students always ask—“Is it still worth learning to program?” Yes, but the job is shifting. Expertise moves from producing code to judging, supervising, and taking responsibility for it. That requires fundamentals plus domain knowledge outside pure CS (biology, finance, music, etc.) so you can decide what is worth building and whether the result makes sense. If the AI does the struggling for you, you learn nothing. He expects more demand, not less: everyone will build personal software and someone has to keep it safe and running. Building has become more fun.
+- **Guillaume Comeau (@gcomeaudotcom)**: Which fundamentals matter more (or less) than teachers realize, and why? Does a collaborative context add value beyond many individual contexts? Are security risks a difference in degree or in kind?
+- **Joyful Badger (@JoyfulBadger)**: How to think, how to set goals, and how to express yourself clearly.
+
+### State of tools, cognitive dissonance, and data scarcity
+- **Hassan Abedi (@Hassan_Abedi)**: Current state of AI-assisted coding tools and where they are heading in the near future; or the cognitive dissonance of people who use these tools daily for software engineering yet say they hate “AI slop.”
+- **Ninad Sachania (@NinadSachania)**: Gell-Mann Amnesia (the tendency to trust reporting/expertise in domains you do not know while recognizing its flaws in domains you do know—relevant to how people assess AI-generated code).
+- **aa1337**: Demonstrate AI reading all your blog posts and using that knowledge to obtain large speedups on a widely used piece of code.
+- **Ronan Tournier (@RonanTournier)** (reply to your thank-you post): The need for ever more coding examples to feed the models. He is impressed by current results but notes the scarcity for advanced SQL—there simply are not enough high-quality advanced examples online (SQL standing in for any domain whose sophisticated code is under-represented on the public internet). (He also corrected a typo: “feed” not “feet.”)
+
+### Practical takeaways for the talk
+The recurring threads are:
+1. Verification and judgment remain the bottleneck (testing quality, explaining why something is wrong/slow, responsibility).
+2. Teaching and curricula have not caught up; students need both fundamentals and new agentic practices, plus domain knowledge outside pure coding.
+3. Data limitations still matter in less-represented areas (advanced SQL and similar domains).
+4. Soft skills (clear thinking, goal-setting, expression) and rigorous use of AI tools are useful entry points for a young audience.
+
+These points come directly from the listed authors. If you want quotes expanded, a particular angle prioritized, or help turning any of them into slide outlines, say which ones.
+
+
+---
+
 "/Users/dlemire/Desktop/ipo.png"
 
 ---
