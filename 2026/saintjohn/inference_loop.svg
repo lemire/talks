@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" width="1100" height="500" role="img" aria-labelledby="title desc">
+  <title id="title">The inference loop</title>
+  <desc id="desc">A loop: the context goes into the model, the model emits an action as tokens, a tool (shell, tests, git) runs it, and the result is appended to the context as tokens, until done.</desc>
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0.5 L 9 5 L 0 9.5 Z" fill="#2a78d6"/>
+    </marker>
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0.5 L 9 5 L 0 9.5 Z" fill="#eb6834"/>
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0.5 L 9 5 L 0 9.5 Z" fill="#1baf7a"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="500" fill="#faf8f4"/>
+
+  <!-- context -->
+  <g transform="translate(20, 60)">
+    <rect width="240" height="200" rx="24" fill="#d6f0e6" stroke="#1baf7a" stroke-width="5"/>
+    <text x="120" y="95" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="54" font-weight="600" fill="#1c1c28">context</text>
+    <text x="120" y="150" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" fill="#5c5c6b">everything so far</text>
+  </g>
+
+  <!-- model -->
+  <g transform="translate(430, 60)">
+    <rect width="240" height="200" rx="24" fill="#d5e5f8" stroke="#2a78d6" stroke-width="5"/>
+    <text x="120" y="95" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="54" font-weight="600" fill="#1c1c28">model</text>
+    <text x="120" y="150" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" fill="#5c5c6b">the LLM</text>
+  </g>
+
+  <!-- tool -->
+  <g transform="translate(840, 60)">
+    <rect width="240" height="200" rx="24" fill="#fbe1d6" stroke="#eb6834" stroke-width="5"/>
+    <text x="120" y="95" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="54" font-weight="600" fill="#1c1c28">tool</text>
+    <text x="120" y="150" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" fill="#5c5c6b">shell, tests, git</text>
+  </g>
+
+  <!-- context -> model -->
+  <line x1="266" y1="160" x2="418" y2="160" stroke="#1baf7a" stroke-width="7" marker-end="url(#arr-green)"/>
+
+  <!-- model -> tool: action, tokens out -->
+  <line x1="676" y1="160" x2="828" y2="160" stroke="#2a78d6" stroke-width="7" marker-end="url(#arr-blue)"/>
+  <text x="755" y="138" text-anchor="middle" font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="30" font-weight="500" fill="#1c1c28">action</text>
+  <text x="755" y="204" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="600" fill="#2a78d6">tokens out</text>
+
+  <!-- tool -> context: result, tokens in -->
+  <path d="M 960 268 C 960 430, 760 430, 550 430 C 340 430, 140 430, 140 280" fill="none" stroke="#eb6834" stroke-width="7" marker-end="url(#arr-orange)"/>
+  <text x="550" y="410" text-anchor="middle" font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="30" font-weight="500" fill="#1c1c28">context += result</text>
+  <text x="550" y="478" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="600" fill="#eb6834">tokens in · repeat until done</text>
+</svg>

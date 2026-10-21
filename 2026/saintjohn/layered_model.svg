@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-labelledby="title desc">
+  <title id="title">A layered model for AI programming</title>
+  <desc id="desc">A small core that changes slowly, is read and tested, surrounded by outer layers that move fast and are maintained with AI. Outer layers depend on the core; the core never depends on them.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0.5 L 9 5 L 0 9.5 Z" fill="#eb6834"/>
+    </marker>
+  </defs>
+
+  <rect width="600" height="600" fill="#faf8f4"/>
+
+  <!-- outer layers -->
+  <circle cx="300" cy="300" r="285" fill="#fbe1d6" stroke="#eb6834" stroke-width="6"/>
+  <text x="300" y="92" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="44" font-weight="600" fill="#1c1c28">everything else</text>
+  <text x="300" y="130" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" fill="#5c5c6b">moves fast, bugs expected</text>
+  <text x="300" y="490" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" fill="#5c5c6b">AI writes and fixes</text>
+
+  <!-- core -->
+  <circle cx="300" cy="310" r="125" fill="#d5e5f8" stroke="#2a78d6" stroke-width="6"/>
+  <text x="300" y="312" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="54" font-weight="600" fill="#1c1c28">core</text>
+  <text x="300" y="352" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="24" fill="#5c5c6b">slow, read, tested</text>
+
+  <!-- dependencies point inward only -->
+  <line x1="40" y1="310" x2="165" y2="310" stroke="#eb6834" stroke-width="6" marker-end="url(#arr)"/>
+  <line x1="560" y1="310" x2="435" y2="310" stroke="#eb6834" stroke-width="6" marker-end="url(#arr)"/>
+</svg>
