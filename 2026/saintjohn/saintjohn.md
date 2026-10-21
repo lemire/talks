@@ -385,6 +385,23 @@ Vernor Vinge, 1993
 
 ---
 
+![bg contain](arxiv_monthly.png)
+
+---
+
+# arXiv capped submissions at two a month
+
+- October 1, 2026: **two submissions per person per month.**
+- September 2026: over 40,000 papers, up from about 20,000 two years earlier.
+- Doubling every two years. Moderated by volunteers.
+- Google stopped accepting new bug reports in its open-source bounty program: they could not cope with the influx.
+
+**Producing got cheap. Human attention did not.**
+
+<small>lemire.me/blog/2026/10/04/arxiv-capped-submissions-at-two-a-month/</small>
+
+---
+
 ![bg contain](software_dev_postings.svg)
 
 ---
