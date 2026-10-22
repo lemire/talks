@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 480" width="1100" height="480" fill="#1c1c28" role="img" aria-labelledby="title desc">
+  <title id="title">Metacognition</title>
+  <desc id="desc">A function with an off-by-one bug passes its tests. The model says it is correct with full confidence, but never ran the edge case that fails.</desc>
+  <style>
+    .serif { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-weight: 600; }
+    .sans { font-family: Inter, "Helvetica Neue", Arial, sans-serif; }
+    .mono { font-family: "JetBrains Mono", "SF Mono", Menlo, monospace; }
+    .muted { fill: #5c5c6b; }
+  </style>
+
+  <rect width="1100" height="480" fill="#faf8f4"/>
+
+  <!-- the code -->
+  <rect x="20" y="20" width="420" height="330" rx="20" fill="#f3efe7" stroke="#e4ded3" stroke-width="3"/>
+  <text x="44" y="62" class="sans muted" font-size="22" font-weight="600">the code</text>
+  <g class="mono" font-size="20">
+    <text x="44" y="110">def last_window(xs, k):</text>
+    <text x="92" y="142">out = []</text>
+    <rect x="38" y="154" width="396" height="34" rx="6" fill="#fbe1d6"/>
+    <text x="92" y="178">for i in range(len(xs) - k):</text>
+    <text x="140" y="210">out.append(xs[i:i+k])</text>
+    <text x="92" y="242">return out</text>
+  </g>
+  <line x1="356" y1="186" x2="430" y2="186" stroke="#d6362b" stroke-width="3"/>
+  <text x="44" y="310" class="sans" font-size="26" font-weight="600" fill="#1baf7a">tests  ✓  ✓  ✓</text>
+
+  <!-- the model's answer -->
+  <rect x="470" y="20" width="300" height="160" rx="20" fill="#d5e5f8" stroke="#2a78d6" stroke-width="4"/>
+  <text x="620" y="62" text-anchor="middle" class="sans muted" font-size="22" font-weight="600">the model</text>
+  <text x="620" y="108" text-anchor="middle" class="serif" font-size="30">“Yes, it meets</text>
+  <text x="620" y="146" text-anchor="middle" class="serif" font-size="30">the spec.”</text>
+
+  <text x="470" y="236" class="sans muted" font-size="22" font-weight="600">confidence</text>
+  <rect x="470" y="252" width="300" height="34" rx="17" fill="#e4ded3"/>
+  <rect x="470" y="252" width="300" height="34" rx="17" fill="#2a78d6"/>
+  <text x="620" y="276" text-anchor="middle" class="sans" font-size="22" font-weight="600" fill="#ffffff">100%</text>
+  <text x="470" y="330" class="sans" font-size="24" font-weight="600" fill="#d6362b">actually: wrong</text>
+
+  <!-- what it never checked -->
+  <rect x="800" y="20" width="280" height="330" rx="20" fill="#fbe1d6" stroke="#eb6834" stroke-width="4"/>
+  <text x="940" y="62" text-anchor="middle" class="sans muted" font-size="22" font-weight="600">never checked</text>
+  <text x="824" y="110" class="mono" font-size="18">last_window(</text>
+  <text x="824" y="136" class="mono" font-size="18">  [1, 2, 3], 3)</text>
+  <text x="824" y="172" class="mono" font-size="18" fill="#d6362b">→ []      ✗</text>
+  <text x="824" y="200" class="mono muted" font-size="18">want [[1, 2, 3]]</text>
+  <g class="sans" font-size="22">
+    <text x="824" y="252">· no counter-example</text>
+    <text x="824" y="284">· no doubt</text>
+    <text x="824" y="316">· slow to update</text>
+  </g>
+
+  <text x="550" y="430" text-anchor="middle" class="serif" font-size="32">AI can be overconfident: sure of itself, never checking.</text>
+</svg>

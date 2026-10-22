@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 400" width="1100" height="400" fill="#1c1c28" role="img" aria-labelledby="title desc">
+  <title id="title">Visual-spatial reasoning</title>
+  <desc id="desc">Two meshed gears. Turning the large gear clockwise turns the small gear counter-clockwise. The model looking at the picture says clockwise, even though it can recite that meshed gears reverse direction.</desc>
+  <style>
+    .serif { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-weight: 600; }
+    .sans { font-family: Inter, "Helvetica Neue", Arial, sans-serif; }
+    .muted { fill: #5c5c6b; }
+  </style>
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0.5 L 9 5 L 0 9.5 Z" fill="#2a78d6"/>
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0.5 L 9 5 L 0 9.5 Z" fill="#1baf7a"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="400" fill="#faf8f4"/>
+
+  <!-- large gear: 24 teeth on r=130 -->
+  <circle cx="230" cy="235" r="130" fill="none" stroke="#2a78d6" stroke-width="24" stroke-dasharray="17.02 17.02"/>
+  <circle cx="230" cy="235" r="122" fill="#d5e5f8" stroke="#2a78d6" stroke-width="4"/>
+  <circle cx="230" cy="235" r="14" fill="#2a78d6"/>
+  <!-- small gear: 12 teeth on r=65, meshed at distance 195 -->
+  <circle cx="425" cy="235" r="65" fill="none" stroke="#eb6834" stroke-width="24" stroke-dasharray="17.02 17.02"/>
+  <circle cx="425" cy="235" r="57" fill="#fbe1d6" stroke="#eb6834" stroke-width="4"/>
+  <circle cx="425" cy="235" r="10" fill="#eb6834"/>
+
+  <!-- you turn the large gear clockwise -->
+  <path d="M 66.5 140.5 A 189 189 0 0 1 230 46" fill="none" stroke="#2a78d6" stroke-width="7" marker-end="url(#arr-blue)"/>
+  <text x="40" y="28" class="sans" font-size="24" font-weight="600" fill="#2a78d6">you turn it clockwise</text>
+  <!-- truth: small gear turns counter-clockwise -->
+  <path d="M 532 173 A 124 124 0 0 0 425 111" fill="none" stroke="#1baf7a" stroke-width="7" marker-end="url(#arr-green)"/>
+  <text x="430" y="78" class="sans" font-size="24" font-weight="600" fill="#1baf7a">truth: counter-clockwise</text>
+
+  <!-- the model, looking at the picture -->
+  <rect x="660" y="110" width="420" height="120" rx="20" fill="#fbe1d6" stroke="#eb6834" stroke-width="4"/>
+  <text x="684" y="148" class="sans muted" font-size="22" font-weight="600">the model, looking at the picture</text>
+  <text x="684" y="198" class="serif" font-size="30">“It turns clockwise.”</text>
+  <text x="1046" y="198" class="sans" font-size="34" font-weight="700" fill="#d6362b">✗</text>
+
+  <!-- the model, asked the rule -->
+  <rect x="660" y="250" width="420" height="120" rx="20" fill="#d6f0e6" stroke="#1baf7a" stroke-width="4"/>
+  <text x="684" y="288" class="sans muted" font-size="22" font-weight="600">the model, asked the rule</text>
+  <text x="684" y="338" class="serif" font-size="30">“Meshed gears reverse.”</text>
+  <text x="1046" y="338" class="sans" font-size="34" font-weight="700" fill="#1baf7a">✓</text>
+
+</svg>

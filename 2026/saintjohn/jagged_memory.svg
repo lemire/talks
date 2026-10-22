@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 480" width="1100" height="480" fill="#1c1c28" role="img" aria-labelledby="title desc">
+  <title id="title">Long-term memory</title>
+  <desc id="desc">Over weeks 1 to 3 the agent is told, in a session, a commit and a design note, never to call internal_api from the public module. In week 6 it calls internal_api from the public module, because only the current session is in its context.</desc>
+  <style>
+    .serif { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-weight: 600; }
+    .sans { font-family: Inter, "Helvetica Neue", Arial, sans-serif; }
+    .mono { font-family: "JetBrains Mono", "SF Mono", Menlo, monospace; }
+    .muted { fill: #5c5c6b; }
+  </style>
+
+  <rect width="1100" height="480" fill="#faf8f4"/>
+
+  <!-- what the agent was told -->
+  <g>
+    <rect x="20" y="30" width="200" height="190" rx="18" fill="#d5e5f8" stroke="#2a78d6" stroke-width="4"/>
+    <text x="40" y="70" class="sans muted" font-size="22" font-weight="600">session</text>
+    <text x="40" y="112" class="sans" font-size="22">“Never call</text>
+    <text x="40" y="142" class="mono" font-size="20">internal_api</text>
+    <text x="40" y="172" class="sans" font-size="22">from public/.”</text>
+
+    <rect x="250" y="30" width="200" height="190" rx="18" fill="#d5e5f8" stroke="#2a78d6" stroke-width="4"/>
+    <text x="270" y="70" class="sans muted" font-size="22" font-weight="600">commit</text>
+    <text x="270" y="112" class="sans" font-size="22">“Go through</text>
+    <text x="270" y="142" class="sans" font-size="22">the wrapper:</text>
+    <text x="270" y="172" class="sans" font-size="22">licensing.”</text>
+
+    <rect x="480" y="30" width="200" height="190" rx="18" fill="#d5e5f8" stroke="#2a78d6" stroke-width="4"/>
+    <text x="500" y="70" class="sans muted" font-size="22" font-weight="600">design note</text>
+    <text x="500" y="112" class="sans" font-size="22">“Keep</text>
+    <text x="500" y="142" class="mono" font-size="20">internal_api</text>
+    <text x="500" y="172" class="sans" font-size="22">out of public/.”</text>
+  </g>
+
+  <!-- what the agent sees now -->
+  <rect x="740" y="14" width="350" height="222" rx="22" fill="none" stroke="#2a78d6" stroke-width="3" stroke-dasharray="10 7"/>
+  <text x="915" y="262" text-anchor="middle" class="sans" font-size="20" font-weight="600" fill="#2a78d6">the agent's context now</text>
+  <rect x="760" y="30" width="310" height="190" rx="18" fill="#fbe1d6" stroke="#eb6834" stroke-width="4"/>
+  <text x="780" y="70" class="sans muted" font-size="22" font-weight="600">new feature</text>
+  <text x="780" y="118" class="mono" font-size="20"># public/feature.py</text>
+  <text x="780" y="152" class="mono" font-size="20" fill="#d6362b">internal_api.fetch()</text>
+  <text x="1036" y="200" class="sans" font-size="40" font-weight="700" fill="#d6362b">✗</text>
+
+  <!-- timeline -->
+  <line x1="40" y1="320" x2="1060" y2="320" stroke="#5c5c6b" stroke-width="4"/>
+  <g fill="#2a78d6">
+    <circle cx="120" cy="320" r="11"/>
+    <circle cx="350" cy="320" r="11"/>
+    <circle cx="580" cy="320" r="11"/>
+  </g>
+  <circle cx="915" cy="320" r="13" fill="#eb6834"/>
+  <g class="sans" font-size="24" text-anchor="middle">
+    <text x="120" y="362">week 1</text>
+    <text x="350" y="362">week 2</text>
+    <text x="580" y="362">week 3</text>
+    <text x="915" y="362">week 6</text>
+  </g>
+  <text x="350" y="290" text-anchor="middle" class="sans muted" font-size="22">learned… then out of reach</text>
+
+  <text x="550" y="436" text-anchor="middle" class="serif" font-size="32">AI has a limited context window, compared to human beings.</text>
+</svg>
