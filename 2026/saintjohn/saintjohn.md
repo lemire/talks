@@ -611,12 +611,39 @@ Hans Moravec, *Mind Children*, 1988
 <small>lemire.me/blog/2026/09/05/ai-programming-a-layered-model/</small>
 
 
+
+---
+
+# Emerging idea: AI cloning
+
+
+- WordCraft → Microsoft Word  https://getartcraft.com/apps/wordcraft
+- GridCraft → Microsoft Excel https://getartcraft.com/apps/gridcraft
+- DeckCraft → Microsoft PowerPoint https://getartcraft.com/apps/deckcraft
+- PhotoCraft → Photoshop https://getartcraft.com/apps/photocraft
+- VectorCraft → Illustrator https://getartcraft.com/apps/vectorcraft
+
+
+---
+
+## Business challenge
+
+- Once your application is public, people can clone it.
+- Meaning of copyright changed. Think fashion industry, cooking.
+
 ---
 
 # Emerging idea: cheap custom software
 
 1. Build your own video software https://github.com/lemire/lemirecut
 2. Your own election-night app https://lemire.me/montmorency2026/
+
+---
+
+## Business opportunity
+
+- Help people deploy software specific for their needs, even if just 3 users.
+- Build throw-away application (short lived)
 
 
 ---
@@ -628,6 +655,17 @@ Hans Moravec, *Mind Children*, 1988
 
 
 
+
+---
+
+# Summary
+
+1. **It is real**: benchmarks near saturation; mature libraries 2–5× faster in one summer.
+2. **Cheaper code means more code** (Jevons), not less work.
+3. **An agent is a model in a loop**: tools, tests, reinforcement on verifiable outcomes.
+4. **The skills are jagged**: superhuman at some tasks, weak at self-doubt, touch, space and memory.
+5. **Human attention is the bottleneck**: review, moderation, trust.
+6. **New practices are emerging**: ephemeral testing, a small stable core, custom software for a few users.
 
 ---
 
