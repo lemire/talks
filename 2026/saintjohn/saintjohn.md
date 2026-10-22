@@ -188,8 +188,14 @@ footer {
 }
 section::after {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 500;
   color: var(--muted);
+  right: 24px;
+  bottom: 18px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(250, 248, 244, .85);
 }
 
 /* ---------- lead (title / closing / section dividers) ---------- */
@@ -276,6 +282,16 @@ X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github
 
 ---
 
+# Normal vs. revolutionary science
+
+Thomas Kuhn, *The Structure of Scientific Revolutions* (1962)
+
+- **Normal science**: puzzle-solving inside an accepted paradigm. Shared tools, shared methods, shared idea of what counts as a good answer.
+- **Revolutionary science**: anomalies pile up, the old paradigm cracks, a new one replaces it.
+- After a revolution, the old experts are not always the best guides.
+
+**Is programming in a period of normal science, or of revolution?**
+
 ---
 
 # Where I am coming from
@@ -337,6 +353,22 @@ Vernor Vinge, 1993
 
 ---
 
+# Terminal-Bench 4.0
+
+- The agent gets a **real terminal** in a sandboxed container.
+- Tasks: build, configure, debug, migrate, train... whatever the shell allows.
+- Success = automated tests check the final state of the machine.
+- 66 hard tasks, up to 8 hours each (August 2026).
+
+**Human experts scored about 50% on Terminal-Bench 2.0.**
+**There is no human baseline for 4.0.**
+
+---
+
+![bg contain](8Jn4M.png)
+
+---
+
 ![bg right:60% contain](stripe.png)
 
 > January 1st marked the beginning of the singularity.
@@ -357,7 +389,7 @@ Vernor Vinge, 1993
 
 - Six mature open-source libraries: roaring, CRoaring, ada, fast_float, simdjson, simdutf.
 - Shipped in GCC, Chromium, Node.js... used by millions.
- d
+ 
 ---
 
 ![bg contain](summer_timeline.png)
@@ -365,10 +397,25 @@ Vernor Vinge, 1993
 ---   c
 
 
+
 ---
 
+<!-- _class: lead -->
 
-![bg](github-outage.png)
+## Are we all going to be out of a job?
+
+
+
+---
+
+![bg contain](U6BRG.png)
+
+---
+
+![bg contain](software_dev_postings.svg)
+
+
+
 
 ---
 
@@ -383,32 +430,12 @@ Vernor Vinge, 1993
 - Tokens got cheaper: we consume far more tokens.
 - Code got cheaper: we write far more code, and review, test, host and maintain it.
 
----
-
-![bg contain](arxiv_monthly.png)
-
----
-
-# arXiv capped submissions at two a month
-
-- October 1, 2026: **two submissions per person per month.**
-- September 2026: over 40,000 papers, up from about 20,000 two years earlier.
-- Doubling every two years. Moderated by volunteers.
-- Google stopped accepting new bug reports in its open-source bounty program: they could not cope with the influx.
-
-**Producing got cheap. Human attention did not.**
-
-<small>lemire.me/blog/2026/10/04/arxiv-capped-submissions-at-two-a-month/</small>
-
----
-
-![bg contain](software_dev_postings.svg)
 
 ---
 
 <!-- _class: lead -->
 
-## Memory
+## How does it work
 
 ---
 
@@ -428,6 +455,10 @@ Vernor Vinge, 1993
 
 ![bg fit](grok-weights.png)
 
+
+---
+
+![bg contain](4dVwN.png)
 
 ---
 
@@ -460,37 +491,94 @@ Vernor Vinge, 1993
 ![](rl_loop.svg)
 
 
+
+---
+
+![bg contain](HTyCNdbX0AAEu9V.jpeg)
+
+
+---
+
+<!-- _class: diagram -->
+
+# Jagged: metacognition
+
+![](jagged_metacognition.svg)
+
+---
+
+<!-- _class: diagram -->
+
+# Jagged: sensorimotor skill
+
+![](jagged_sensorimotor.svg)
+
+---
+
+# Moravec's paradox
+
+> « It is comparatively easy to make computers exhibit adult level performance on intelligence tests or playing checkers, and difficult or impossible to give them the skills of a one-year-old when it comes to perception and mobility. »
+
+Hans Moravec, *Mind Children*, 1988
+
+---
+
+<!-- _class: diagram -->
+
+# Jagged: visual-spatial reasoning
+
+![](jagged_spatial.svg)
+
+---
+
+<!-- _class: diagram -->
+
+# Jagged: long-term memory
+
+![](jagged_memory.svg)
+
+
 ---
 
 <!-- _class: lead -->
 
-## Challenges
+## Human attention is limited
+
+---
+
+![bg contain](llm_writing.png)
+
+---
+
+
+
+![bg contain](arxiv_monthly.png)
+
+---
+
+# arXiv capped submissions at two a month
+
+- October 1, 2026: **two submissions per person per month.**
+- September 2026: over 40,000 papers, up from about 20,000 two years earlier.
+- Doubling every two years. Moderated by volunteers.
+- Google stopped accepting new bug reports in its open-source bounty program: they could not cope with the influx.
+
+
+<small>lemire.me/blog/2026/10/04/arxiv-capped-submissions-at-two-a-month/</small>
+
+
+
+
+---
+
+
+![bg](github-outage.png)
 
 
 ---
 
 ![bg contain](bugpoll.png)
 
-
----
-
-# Teaching 
-
-- How to teach software development in the AI era. @fromdevoid
-- “Is it still worth learning to program?” @birkenkrahe
-- Are security risks a difference in degree or in kind? @gcomeaudotcom
-- How to think, how to set goals, and how to express yourself clearly. @JoyfulBadger
-
-
----
-
-# Quality
-
-- Include the tests! @nabendu82
-- Can you verify the code? @MatRopert
-- How good are the tests? @dyaroshev
-- How to have rigor? @opdroid1234
-- Someone still needs to explain/understand? @jrdi
 
 ---
 
@@ -544,7 +632,6 @@ Vernor Vinge, 1993
 ---
 
 <!-- _class: lead -->
-<!-- _paginate: false -->
 
 ## Questions?
 
@@ -556,49 +643,4 @@ Vernor Vinge, 1993
 
 :canada:
 
-
-
-# TODO
-
-- fast paced bug catching https://x.com/lemire/status/2096307923861336399?s=20
-- add https://lemire.me/blog/2026/09/05/ai-programming-a-layered-model/
-- verfiable vs non-verifiable, Cette notion de ce qui est vérifiable et de ce qui est difficilement vérifiable.
-- more performant software (bar higher), more correct software 
-- historical reviewers
-- explicit knowledge, genie in the bottle
-- AI and credentialism, reputation system
-- system understanding, animation, videos
-- spam filters
-- Formal verification
-- https://x.com/thorstenball/status/2101305394190557466?s=46&t=-zo9kVFDyKuN4X1cdtkIrw
-- jagged skills
-
-
----
-
-**Report on ideas from replies to your post** ([https://x.com/lemire/status/2109392496950218957](https://x.com/lemire/status/2109392496950218957)) **plus Ronan Tournier’s comment** ([https://x.com/RonanTournier/status/2110054920661488002](https://x.com/RonanTournier/status/2110054920661488002)).
-
-Your post asked for talk ideas on AI and programming for a young audience. You later posted a thank-you noting you would try to give credit. Below is a concise synthesis of the substantive suggestions that appeared, grouped by theme, with author credit.
-
-
-
-
-### State of tools, cognitive dissonance, and data scarcity
-- **Hassan Abedi (@Hassan_Abedi)**: Current state of AI-assisted coding tools and where they are heading in the near future; or the cognitive dissonance of people who use these tools daily for software engineering yet say they hate “AI slop.”
-- **Ninad Sachania (@NinadSachania)**: Gell-Mann Amnesia (the tendency to trust reporting/expertise in domains you do not know while recognizing its flaws in domains you do know—relevant to how people assess AI-generated code).
-- **aa1337**: Demonstrate AI reading all your blog posts and using that knowledge to obtain large speedups on a widely used piece of code.
-- **Ronan Tournier (@RonanTournier)** (reply to your thank-you post): The need for ever more coding examples to feed the models. He is impressed by current results but notes the scarcity for advanced SQL—there simply are not enough high-quality advanced examples online (SQL standing in for any domain whose sophisticated code is under-represented on the public internet). (He also corrected a typo: “feed” not “feet.”)
-
-### Practical takeaways for the talk
-The recurring threads are:
-1. Verification and judgment remain the bottleneck (testing quality, explaining why something is wrong/slow, responsibility).
-2. Teaching and curricula have not caught up; students need both fundamentals and new agentic practices, plus domain knowledge outside pure coding.
-3. Data limitations still matter in less-represented areas (advanced SQL and similar domains).
-4. Soft skills (clear thinking, goal-setting, expression) and rigorous use of AI tools are useful entry points for a young audience.
-
-These points come directly from the listed authors. If you want quotes expanded, a particular angle prioritized, or help turning any of them into slide outlines, say which ones.
-
-
----
-
-"/Users/dlemire/Desktop/ipo.png"
+credit : @fromdevoid @birkenkrahe @gcomeaudotcom @JoyfulBadger @nabendu82 @MatRopert @dyaroshev @opdroid1234 @jrdi @Hassan_Abedi @NinadSachania @RonanTournier
