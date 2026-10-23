@@ -318,16 +318,35 @@ Thomas Kuhn, *The Structure of Scientific Revolutions* (1962)
 Vernor Vinge, 1993
 
 
+
 ---
 
 <!-- _class: lead -->
 
-## Part 1
 
 ## Where we actually are
 
 
 ---
+
+
+# A world of compute
+
+> « software is eating the world »
+
+Andressen, 2011
+
+---
+
+
+# A world of AI
+
+> « Software is eating the world, but AI is going to eat software. »
+
+Jensen Huang (Nvidia)
+
+---
+
 
 ![bg contain](screenshot_20261020.png)
 
@@ -459,6 +478,15 @@ Vernor Vinge, 1993
 ---
 
 ![bg contain](4dVwN.png)
+
+
+---
+
+# Virtuous circle
+
+- AI helps us build better, faster software
+- Better, faster software helps us build better AI
+
 
 ---
 
@@ -643,7 +671,7 @@ Hans Moravec, *Mind Children*, 1988
 ## Business opportunity
 
 - Help people deploy software specific for their needs, even if just 3 users.
-- Build throw-away application (short lived)
+- Build throw-away application (short lived): E.g., an application for one event
 
 
 ---
@@ -660,10 +688,9 @@ Hans Moravec, *Mind Children*, 1988
 
 # Summary
 
-1. **It is real**: benchmarks near saturation; mature libraries 2–5× faster in one summer.
+1. **It is real**: mature libraries 2–5× faster in one summer.
 2. **Cheaper code means more code** (Jevons), not less work.
-3. **An agent is a model in a loop**: tools, tests, reinforcement on verifiable outcomes.
-4. **The skills are jagged**: superhuman at some tasks, weak at self-doubt, touch, space and memory.
+3. **The skills are jagged**: superhuman at some tasks, weak at self-doubt, touch, space and memory.
 5. **Human attention is the bottleneck**: review, moderation, trust.
 6. **New practices are emerging**: ephemeral testing, a small stable core, custom software for a few users.
 
