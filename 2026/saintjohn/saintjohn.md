@@ -700,11 +700,7 @@ Hans Moravec, *Mind Children*, 1988
 
 ## Questions?
 
-**Daniel Lemire** — [lemire.me](https://lemire.me) (blog)
-
-<https://simdjson.org> · <https://roaringbitmap.org>
-
-<https://simdutf.github.io/simdutf/> · <https://fastfloat.github.io/fast_float/>
+**Daniel Lemire** — [lemire.me](https://lemire.me) 
 
 :canada:
 
