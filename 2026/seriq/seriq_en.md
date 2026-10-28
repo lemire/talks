@@ -224,13 +224,13 @@ section.lead footer { display: none; }
 
 /* chart slides: pack title, figure, and caption from the top */
 section.chart {
-  justify-content: flex-start;
+  justify-content: center;
 }
 section.chart h1 {
   margin-bottom: .15em;
 }
 section.chart img:not(.emoji) {
-  max-height: 390px;
+  max-height: 540px;
   max-width: 100%;
   margin: .1em auto .05em;
   box-shadow: none;
@@ -328,12 +328,49 @@ section.lead h3 {
   margin: .1em 0 .7em;
 }
 
-/* the cycle diagram: vertically centred, wide */
+/* colour-highlighted JSON on the parsing slide */
+section.step { justify-content: flex-start; }
+section.step h1 { margin-bottom: .28em; }
+section.step .kicker { margin: .05em 0 0; }
+section.step ul { margin: .2em 0 0; }
+section.step pre {
+  font-size: .72em;
+  line-height: 1.28;
+  margin: .28em 0 0;
+  padding: .5em .95em .4em;
+}
+section.step .k { color: var(--accent); font-weight: 500; }
+section.step .s { color: #9a3e2b; }
+section.step .n { color: #1d4e89; }
+section.step .p { color: var(--muted); }
 section.diagram { justify-content: center; }
 section.diagram img:not(.emoji) {
   max-height: 420px;
   max-width: 100%;
   margin: .35em auto 0;
+}
+
+/* title across the top, examples on the left, figure on the right */
+section.split-figure {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-rows: auto 1fr;
+  align-content: center;
+  column-gap: 1.5em;
+}
+section.split-figure h1 { grid-column: 1 / -1; }
+section.split-figure ul { margin: .2em 0 0; }
+section.split-figure p:has(img) {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  align-self: center;
+}
+section.split-figure img:not(.emoji) {
+  max-height: 430px;
+  max-width: 100%;
+  width: auto;
+  margin: 0;
 }
 
 /* quote slide */
@@ -349,6 +386,51 @@ section.quote .attrib {
   color: var(--muted);
 }
 section.quote .attrib strong { color: var(--ink); }
+
+/* quote with a portrait on the right */
+section.quote.with-photo {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.4em;
+}
+section.quote.with-photo .quote-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: .45em;
+}
+section.quote.with-photo blockquote {
+  font-size: 1.08em;
+  max-width: none;
+  margin: 0;
+}
+section.quote.with-photo .attrib { margin: .95em 0 0 .15em; }
+section.quote.with-photo figure.portrait {
+  margin: 0;
+  flex: 0 0 auto;
+}
+section.quote.with-photo figure.portrait img {
+  width: 332px;
+  height: 442px;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+section.quote.with-photo figure.portrait.wide img {
+  width: 480px;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+section.quote.with-photo figure.portrait figcaption {
+  margin-top: .4em;
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: var(--muted);
+  text-align: right;
+}
 
 </style>
 
@@ -367,32 +449,158 @@ blog: https://lemire.me
 
 X: [@lemire](https://x.com/lemire) · GitHub: [github.com/lemire](https://github.com/lemire/)
 
+
 ---
 
-# This morning, without knowing it…
+<!-- _class: quote with-photo -->
 
-<div class="stats">
-<div class="stat"><div class="n">2019</div><div class="l">first release</div></div>
-<div class="stat"><div class="n">20 k+</div><div class="l">GitHub stars</div></div>
-<div class="stat"><div class="n">10⁹</div><div class="l">devices</div></div>
+<div class="quote-text">
+
+<blockquote>
+<p>The problem in this business isn't to keep people from stealing your ideas; it's making them steal your ideas.</p>
+</blockquote>
+
+<p class="attrib"><strong>Howard Aiken</strong><br>quoted by David Patterson, 2017 Turing Award</p>
+
 </div>
 
-- You opened a web page: **simdutf** validated its text.
-- Your app read some JSON: **simdjson** parsed it.
-- A number went from text to binary: **fast_float** took care of it.
-
-<p class="note">Node.js, Chrome, Safari, Rust, Go, .NET, ClickHouse… code written in a university lab, in Quebec.</p>
+<figure class="portrait wide">
+<img src="aiken.jpg" alt="Howard Aiken">
+</figure>
 
 ---
 
-<!-- _class: lead big -->
+<!-- _footer: "" -->
 
-## The question
+![bg contain](arxiv_monthly.png)
 
-How does academic research end up
-**in the pockets of billions of people?**
+---
+
+# The linear model of innovation
+
+- The professor thinks. The professor publishes.
+- The engineer reads, designs.
+- The customer consumes.
+
+---
+
+<!-- _class: quote with-photo -->
+
+<div class="quote-text">
+
+<blockquote>
+<p>The industrial revolution was driven by demand for cheap and better clothing for the masses.</p>
+</blockquote>
 
 
+</div>
+
+<figure class="portrait">
+<img src="eugenie.jpg">
+<figcaption>David Monniaux, CC BY-SA 4.0</figcaption>
+</figure>
+
+---
+
+<!-- _class: quote with-photo -->
+
+<div class="quote-text">
+
+<blockquote>
+<p>In effect, our customer has vanished and been replaced by either the whales or a vacuum. This loss of our customer has resulted in a collection of bad effects. First, there are no “real world” clients to keep us focused.</p>
+</blockquote>
+
+<p class="attrib"><strong>Michael Stonebraker</strong> — “Where We Have Failed”<br><em>Making Databases Work</em>, 2018</p>
+
+</div>
+
+<figure class="portrait">
+<img src="stonebraker.jpg" alt="Michael Stonebraker">
+<figcaption>David Monniaux, CC BY-SA 4.0</figcaption>
+</figure>
+
+
+
+
+
+
+---
+
+<!-- _class: lead -->
+
+
+## A story: *simdjson*
+
+
+---
+
+<!-- _class: step -->
+
+# Step 1 — parsing JSON
+
+<p class="kicker">2019</p>
+
+- JSON is everywhere, and parsing it is **slow**
+
+<pre><code><span class="p">{</span>
+  <span class="k">"Image"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="k">"Width"</span><span class="p">:</span> <span class="n">800</span><span class="p">,</span>
+    <span class="k">"Height"</span><span class="p">:</span> <span class="n">600</span><span class="p">,</span>
+    <span class="k">"Title"</span><span class="p">:</span> <span class="s">"View from 15th Floor"</span><span class="p">,</span>
+    <span class="k">"Thumbnail"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="k">"Url"</span><span class="p">:</span> <span class="s">"http://www.example.com/81989943"</span><span class="p">,</span>
+      <span class="k">"Height"</span><span class="p">:</span> <span class="n">125</span><span class="p">,</span>
+      <span class="k">"Width"</span><span class="p">:</span> <span class="n">100</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+---
+
+<!-- _class: quote with-photo -->
+
+<div class="quote-text">
+
+<blockquote>
+<p>The scientist builds in order to study; the engineer studies in order to build.</p>
+</blockquote>
+
+<p class="attrib"><strong>Frederick P. Brooks, Jr.</strong><br>“The Computer Scientist as Toolsmith II,” CACM, 1996</p>
+
+</div>
+
+<figure class="portrait">
+<img src="brooks.jpg" alt="Frederick P. Brooks, Jr.">
+<figcaption>David Monniaux, CC BY-SA 3.0</figcaption>
+</figure>
+
+---
+
+<!-- _class: chart -->
+<!-- _footer: "" -->
+
+![JSON parsing: simdjson at 4800 MB/s on an Intel Xeon Gold 6548N, twitter.json](simdjson_parsing.png)
+
+---
+
+<!-- _class: quote -->
+
+# The real publication
+
+> An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.
+
+<p class="attrib"><strong>Jon Claerbout</strong> — as recorded by Buckheit and Donoho, 1995</p>
+
+
+---
+
+# Step 2 — bottleneck: numbers
+
+<p class="kicker">Revealed by use</p>
+
+- Once everything else is fast, parsing **floating-point numbers** becomes the bottleneck.
+- Result: the **Eisel-Lemire** algorithm, exact and fast (*Number Parsing at a Gigabyte per Second*).
+- Adoption: Rust, Go, .NET, C++ — the standard libraries themselves.
 ---
 
 <!-- _class: quote -->
@@ -405,131 +613,7 @@ How does academic research end up
 
 ---
 
-# The linear model of innovation
-
-- The professor thinks. The professor publishes.
-- The engineer reads, designs.
-- The customer consumes.
-
-
----
-
-# Toward a real model of innovation
-
-- Industrial revolution: underwear.
-- Where the keyboard came from.
-- ChatGPT: GPUs (games), text (the web), chat (Discord).
-- Relativity (trains)
-
----
-
-<!-- _class: lead -->
-
-## Part 1
-
-## Open source as a research *method*
-
----
-
-
-
-> Open source is not just a way to publish research results: it is a research method in its own right.
-
----
-
-# 1. Reproducibility
-
-- The code **and** the benchmarks are public.
-- Anyone can rerun the measurements — on their own machine, with their own data.
-- So anyone can **prove you wrong**. That is the point.
-
-<p class="note">A performance gain that does not survive a stranger's machine was never a result.</p>
-
----
-
-# 2. Peer review that is actually real
-
-<div class="cols">
-<div>
-
-### Journal referees
-
-- 2 to 3 reviewers
-- They read the description
-- One verdict, once
-- Anonymous, no follow-up
-
-</div>
-<div>
-
-### Public code review
-
-- Hundreds of eyes
-- They run the code
-- A verdict on **every** release
-- Signed, and you must answer
-
-</div>
-</div>
-
-<p class="note">Code reviews, issues and pull requests are often a more demanding form of review than a journal's referees.</p>
-
----
-
-# 3. Real-world data comes to you
-
-- **Adversarial cases**: it doesn't work, it isn't fast enough.
-- **Exotic architectures**: ARM, POWER, RISC-V, WebAssembly.
-- **Real workloads**: the files nobody would have thought to make up.
-
-
-
-
-
----
-
-<!-- _class: lead -->
-
-## Part 2
-
-## A story: *simdjson*
-
----
-
-<!-- _class: diagram -->
-
-# The cycle
-
-![The cycle: open code, paper, adoption, next bottleneck](cycle_en.svg)
-
----
-
-# Act 1 — parsing JSON
-
-<p class="kicker">2019</p>
-
-- JSON is everywhere, and parsing it is **slow**: hundreds of megabytes per second, at best.
-- **Code first**: simdjson, written with Geoff Langdale — several **gigabytes per second**, thanks to SIMD instructions.
-- **Then a blog post**, GitHub, a few posts on X. Within days, thousands of readers.
-- **Then adoption**: databases, analytics engines, JavaScript runtimes.
-- **The paper comes after**: *Parsing Gigabytes of JSON per Second* (VLDB Journal).
-
-<p class="note">The order matters: the software was already adopted when the paper came out — and the paper would not exist without the measurements that real use made possible.</p>
-
----
-
-# Act 2 — an unexpected bottleneck: numbers
-
-<p class="kicker">Revealed by use</p>
-
-- Once everything else is fast, parsing **floating-point numbers** becomes the bottleneck.
-- Nobody would have posed this problem *a priori*: profiling a real parser pointed to it.
-- Result: the **Eisel-Lemire** algorithm, exact and fast (*Number Parsing at a Gigabyte per Second*).
-- Adoption: Rust, Go, .NET, C++ — the standard libraries themselves.
-
----
-
-# Act 3 — another bottleneck: UTF-8
+# Step 3 — another bottleneck: UTF-8
 
 <p class="kicker">Revealed by use</p>
 
@@ -540,79 +624,23 @@ How does academic research end up
 
 ---
 
-# The same cycle, three times
+<!-- _class: quote with-photo -->
 
-| Problem | Code | Adoption | Paper |
-|---|---|---|---|
-| JSON parsing | simdjson | databases, JS engines | VLDB Journal |
-| Number parsing | fast_float | Rust, Go, .NET, C++ | Software: P&E |
-| UTF-8 validation | simdutf | Node.js, Bun, browsers | Software: P&E |
+<div class="quote-text">
 
-<p class="note">Each row grew out of the one before. None of them was in the original research plan.</p>
+<blockquote>
+<p>For my successful projects, the early indicators were not papers or awards, but non-researchers trying to use our ideas.</p>
+</blockquote>
 
----
-
-<!-- _class: lead -->
-
-## Part 3
-
-## The honest tensions
-
----
-
-# Maintenance is thankless
-
-- Success is paid for in **bug reports**, porting requests, questions.
-- A security flaw in your code is a security flaw in Node.js.
-- This work is **endless** and **invisible** — it shows up on no academic CV.
-
-<p class="note">Publishing a paper means you are done. Publishing a library means you are just getting started.</p>
-
----
-
-# The incentives are misaligned
-
-<div class="cols">
-<div>
-
-### What committees count
-
-- Papers
-- Citations
-- Grants
+<p class="attrib"><strong>David Patterson</strong><br>“How to Build a Bad Research Center,” CACM, 2014</p>
 
 </div>
-<div>
 
-### What changes the world
+<figure class="portrait">
+<img src="patterson.jpg" alt="David Patterson">
+<figcaption>Peg Skorpinski, CC BY-SA 3.0</figcaption>
+</figure>
 
-- Pull requests
-- Maintained releases
-- Users
-
-</div>
-</div>
-
-**There is no "adopted by a billion devices" box on a promotion form.**
-
----
-
-<!-- _class: lead big -->
-
-## My takeaway
-
-Open code **raises** the research questions,
-then it **checks** the answers.
-
----
-
-<!-- _class: quote -->
-
-# The lesson of technology transfer
-
-> The problem in this business isn't to keep people from stealing your ideas; it's making them steal your ideas.
-
-<p class="attrib"><strong>Howard Aiken</strong> — quoted by David Patterson, 2017 Turing Award</p>
 
 ---
 
